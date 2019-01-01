@@ -30,15 +30,15 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
          
          
          // Do any additional setup after loading the view, typically from a nib.
-         guard let driver1 = AvailableDrivers(name: "Armando Contreras Vargas - Zgas") else {
+        guard let driver1 = AvailableDrivers(id: 1,name: "Armando Contreras Vargas - Zgas") else {
              fatalError("Unable to instantiate meal1")
          }
 
-         guard let driver2 = AvailableDrivers(name: "Federico Esparragoza Tristan - Imperial") else {
+         guard let driver2 = AvailableDrivers(id: 2,name: "Federico Esparragoza Tristan - Imperial") else {
              fatalError("Unable to instantiate meal2")
          }
 
-         guard let driver3 = AvailableDrivers(name: "Fernando Díaz Barrientos - Gaserito") else {
+         guard let driver3 = AvailableDrivers(id: 3,name: "Fernando Díaz Barrientos - Gaserito") else {
              fatalError("Unable to instantiate meal2")
          }
          

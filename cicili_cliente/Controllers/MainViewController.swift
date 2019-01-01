@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
 class MainViewController: UIViewController, AddressTableDelegate, AvailableDriversDelegate {
@@ -15,9 +16,12 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     var addresRequest: AddressTable?
     
     @IBOutlet weak var mapView: MKMapView!
-    private let locationManager = LocationManager.shared
+    //private let locationManager = LocationManager.shared
     private var locationList: CLLocation?
     let regionRadius: CLLocationDistance = 1000
+    
+    let locationManagerCL = CLLocationManager()
+    let regionInMeters: Double = 10000
     
     var cliente: Cliente?
 
@@ -70,11 +74,16 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
                                 debugPrint(statusUpdated)
                                 self.setupCard()
                                 
-                                self.startLocationUpdates()
-                                self.centerMapOnLocation(location: self.locationManager.location!)
+                                //self.startLocationUpdates()
+                                //self.centerMapOnLocation(location: self.locationManager.location!)
 
-                                let currentLat = "\(self.locationManager.location!.coordinate.latitude)"
-                                let currentLon = "\(self.locationManager.location!.coordinate.longitude)"
+                                self.checkLocationServices()
+                                var currentLat = "0"
+                                var currentLon = "0"
+                                if self.locationManagerCL.location != nil {
+                                     currentLat = "\(self.locationManagerCL.location!.coordinate.latitude)"
+                                     currentLon = "\(self.locationManagerCL.location!.coordinate.longitude)"
+                                }
                                 RequestManager.fetchMainSearch(oauthToken: self.cliente!.token!,parameters: [WSKeys.parameters.PLATITUD: currentLat, WSKeys.parameters.PLONGITUD: currentLon] , success: { response in
                                     
                                     print("En success status updated \(response)")
@@ -161,19 +170,59 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
      }
     
     func addAvailableDrivers(drivers: AvailableDrivers) {
-    self.TxtDriver.text=drivers.name
+        self.TxtDriver.text=drivers.name
+        self.TxtDriver.tag = drivers.id
+        
+        debugPrint("selected driver \(self.TxtDriver.tag) \(self.TxtDriver.text ?? "")")
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    private func startLocationUpdates() {
+    // -> setting for mapkit
+    
+    func setupLocationManager() {
+        locationManagerCL.delegate = self
+        locationManagerCL.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    
+    func centerViewOnUserLocation() {
+        if let location = locationManagerCL.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Show alert letting the user know they have to turn this on.
+        }
+    }
+    
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            centerViewOnUserLocation()
+            locationManagerCL.startUpdatingLocation()
+            break
+        case .denied:
+            // Show alert instructing them how to turn on permissions
+            break
+        case .notDetermined:
+            locationManagerCL.requestWhenInUseAuthorization()
+        case .restricted:
+            // Show an alert letting them know what's up
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
+    // --------------------------
+    /*private func startLocationUpdates() {
          locationManager.delegate = self
          locationManager.distanceFilter = 2
          locationManager.startUpdatingLocation()
@@ -185,7 +234,9 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
                                                    latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
          mapView.setRegion(coordinateRegion, animated: true)
          mapView.showsUserLocation = true;
-       }
+       }*/
+
+    // <- setting for mapkit
     
     func setupCard() {
         visualEffectView = UIVisualEffectView()
@@ -336,17 +387,6 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         
     }
 
-   
-    /*@IBAction func showAddressTableXib(_ sender: Any) {
-    
-    animateTransitionIfNeeded(state: nextState, duration: 0.9)
-    
-    }*/
-    /*@IBAction func showBSheet(_ sender: UIButton) {
-        let viewController: MainViewController = MainViewController()
-        let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: viewController)
-        present(bottomSheet, animated: true, completion: nil)
-    }*/
     
     func addPin(driverData: NearDrivers){
              // show pin on map
@@ -360,13 +400,24 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
 
 extension MainViewController: CLLocationManagerDelegate {
 
-func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-  for newLocation in locations {
-    let howRecent = newLocation.timestamp.timeIntervalSinceNow
-    guard newLocation.horizontalAccuracy < 10 && abs(howRecent) < 5 else { continue }
+    /*func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      for newLocation in locations {
+        let howRecent = newLocation.timestamp.timeIntervalSinceNow
+        guard newLocation.horizontalAccuracy < 10 && abs(howRecent) < 5 else { continue }
 
-    locationList = newLocation
-  }
+        locationList = newLocation
+      }
+    }*/
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
     
 }
