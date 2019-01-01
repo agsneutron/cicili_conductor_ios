@@ -44,6 +44,8 @@ enum Router: URLRequestConvertible {
     case setUpdateCoordinate(autorizathionToken: String , parametersSet: Parameters)
     case acceptOrder(autorizathionToken: String , parametersSet: Parameters)
     case changeStatusOrder(autorizathionToken: String , parametersSet: Parameters)
+    case getQualifications(autorizathionToken: String)
+    case getComments(autorizathionToken: String)
     
     
     // HTTP method
@@ -57,6 +59,8 @@ enum Router: URLRequestConvertible {
             .addressConsult,
             .mainSearch,
             .getOrder,
+            .getQualifications,
+            .getComments,
             .cancelReason:
             return .get
         case .registerClient,
@@ -133,6 +137,10 @@ enum Router: URLRequestConvertible {
             return "mv/conductor/aceptarpedido"
         case .changeStatusOrder:
             return "mv/conductor/actualizarpedido"
+        case .getQualifications:
+            return "mv/conductor/porcentajes"
+        case .getComments:
+            return "mv/conductor/calificaciones"
             
         }
         
@@ -235,7 +243,14 @@ enum Router: URLRequestConvertible {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+
+        case .getQualifications(let autorizathionToken),
+             .getComments(let autorizathionToken):
         
+            urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: nil)
+            urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+            urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            
         //****** Conductor
         case.getOrder(let autorizathionToken, _):
             // Set encode to application/x-www-form-urlencoded
