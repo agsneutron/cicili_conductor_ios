@@ -1,0 +1,6 @@
+framework module Pods_cicili_cliente {
+  umbrella header "Pods-cicili_cliente-umbrella.h"
+
+  export *
+  module * { export * }
+}
