@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9BA23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld */; };
 		3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */; };
 		3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */; };
+		57B857EB23BDE90A0012BF94 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B857EA23BDE90A0012BF94 /* Router.swift */; };
+		57CD140923BE88AE0056913B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140823BE88AE0056913B /* RequestManager.swift */; };
+		57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140B23BEAD0C0056913B /* Cliente.swift */; };
+		57CD140E23BEB97C0056913B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140D23BEB97C0056913B /* Constants.swift */; };
+		57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0BEB423BAA32200F60209 /* WSKeys.swift */; };
 		6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +31,11 @@
 		3137F9C023A8BA5000D8D8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3137F9C223A8BA5000D8D8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
+		57B857EA23BDE90A0012BF94 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		57CD140823BE88AE0056913B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		57CD140B23BEAD0C0056913B /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
+		57CD140D23BEB97C0056913B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		57E0BEB423BAA32200F60209 /* WSKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSKeys.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_cliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,6 +81,9 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_cliente */ = {
 			isa = PBXGroup;
 			children = (
+				57CD140A23BEACD10056913B /* Models */,
+				57E0BEB623BAAD5200F60209 /* Domain */,
+				57BAF4A523AA089A00B3B4FC /* Services */,
 				3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */,
 				3137F9B523A8BA4800D8D8FF /* ViewController.swift */,
 				3137F9B723A8BA4800D8D8FF /* Main.storyboard */,
@@ -82,13 +95,38 @@
 			path = cicili_cliente;
 			sourceTree = "<group>";
 		};
+		57BAF4A523AA089A00B3B4FC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				57B857EA23BDE90A0012BF94 /* Router.swift */,
+				57CD140823BE88AE0056913B /* RequestManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		57CD140A23BEACD10056913B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57CD140B23BEAD0C0056913B /* Cliente.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57E0BEB623BAAD5200F60209 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				57E0BEB423BAA32200F60209 /* WSKeys.swift */,
+				57CD140D23BEB97C0056913B /* Constants.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		E5999ED992A7C891C58A05DC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */,
 				50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -126,6 +164,7 @@
 				TargetAttributes = {
 					3137F9AF23A8BA4700D8D8FF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -208,8 +247,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
+				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
+				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
+				57B857EB23BDE90A0012BF94 /* Router.swift in Sources */,
+				57CD140923BE88AE0056913B /* RequestManager.swift in Sources */,
 				3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */,
 				3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */,
+				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mx.cicili.cliente;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -388,7 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mx.cicili.cliente;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
