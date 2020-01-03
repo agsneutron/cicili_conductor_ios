@@ -17,6 +17,7 @@
 		57CD140923BE88AE0056913B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140823BE88AE0056913B /* RequestManager.swift */; };
 		57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140B23BEAD0C0056913B /* Cliente.swift */; };
 		57CD140E23BEB97C0056913B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140D23BEB97C0056913B /* Constants.swift */; };
+		57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1BAED23BF516E00551DA7 /* AlertManager.swift */; };
 		57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0BEB423BAA32200F60209 /* WSKeys.swift */; };
 		6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		57CD140823BE88AE0056913B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		57CD140B23BEAD0C0056913B /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
 		57CD140D23BEB97C0056913B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		57D1BAED23BF516E00551DA7 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		57E0BEB423BAA32200F60209 /* WSKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSKeys.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_cliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_cliente */ = {
 			isa = PBXGroup;
 			children = (
+				57D1BAEC23BF512400551DA7 /* UI */,
 				57CD140A23BEACD10056913B /* Models */,
 				57E0BEB623BAAD5200F60209 /* Domain */,
 				57BAF4A523AA089A00B3B4FC /* Services */,
@@ -110,6 +113,14 @@
 				57CD140B23BEAD0C0056913B /* Cliente.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		57D1BAEC23BF512400551DA7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				57D1BAED23BF516E00551DA7 /* AlertManager.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		57E0BEB623BAAD5200F60209 /* Domain */ = {
@@ -254,6 +265,7 @@
 				3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */,
 				3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */,
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
+				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

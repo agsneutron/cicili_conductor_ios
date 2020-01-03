@@ -26,14 +26,14 @@ class ViewController: UIViewController {
             // TODO: Refactor with MVVM
             
             if let username = user.text, !username.isEmpty, let password = password.text, !password.isEmpty {
-                RequestManager.fetchSigIn(parameters: ["username": username, "password": password], success: {
+                RequestManager.fetchSignIn(parameters: ["username": username, "password": password], success: {_ in
                     
-                    self.userTextField.text = ""
-                    self.passwordTextField.text = ""
+                    self.user.text = ""
+                    self.password.text = ""
                         self.performSegue(withIdentifier: Constants.Storyboard.homeSegueId, sender: self)
                     })
                  { error in
-                    sender.stopAnimation()
+                    
                     self.showAlert(message: error.localizedDescription)
                 }
             } else {

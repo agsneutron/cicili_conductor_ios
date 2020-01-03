@@ -15,19 +15,23 @@ class RequestManager: NSObject{
     
     // for signin
     
-    class func fetchSignIn(parameters: Parameters, success: @escaping(Cliente) -> Void, failure: @escaping (NSError ->Void){
+    class func fetchSignIn(parameters: Parameters, success: @escaping(Cliente) -> Void, failure: @escaping (NSError) ->Void){
         
-        //request
-        switch respose.reult {
-        case .success:
-            if let user = response.result.value, user.accessToken != nil{
-                success(user)
-            }else{
-                failure(NSError(domain: "com.cicili.signin", code: 100, userInfo: [NSLocalizedDescriptionKey: "El usuario no pudo ser "]))
+        // Fetch request
+        Alamofire.request(Router.signIn(with: parameters)).responseObject { (response: DataResponse<Cliente>) in
+            
+            // Evalute result
+            switch response.result {
+            case .success:
+                
+                if let user = response.result.value,  user.token != nil{
+                    success(user)
+                } else {
+                    failure(NSError(domain: "com.cicili.signin", code: 100, userInfo: [NSLocalizedDescriptionKey: "El usuario no pudo ser indentificado"]))
+                }
+            case .failure(let error):
+                failure(error as NSError)
             }
-        
-        case .failure(let error):
-            fsilure(error as NDError)
         }
     }
 }
