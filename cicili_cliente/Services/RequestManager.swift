@@ -10,28 +10,43 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
+import SwiftyJSON
 
 class RequestManager: NSObject{
     
     // for signin
     
-    class func fetchSignIn(parameters: Parameters, success: @escaping(Cliente) -> Void, failure: @escaping (NSError) ->Void){
+    class func fetchSignIn(parameters: Parameters, success: @escaping (Cliente) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-        Alamofire.request(Router.signIn(with: parameters)).responseObject { (response: DataResponse<Cliente>) in
+        Alamofire.request(Router.signIn(with: parameters)).responseJSON{
+       response in
+           // print("*********RESPONSE***************")
+           // debugPrint(response)
+           // print("**********RESULT**************")
+           // debugPrint(response.result)
+           // print("************RESULT value************")
+           // debugPrint(response.result.value)
             
-            // Evalute result
-            switch response.result {
-            case .success:
-                
-                if let user = response.result.value,  user.token != nil{
-                    success(user)
-                } else {
-                    failure(NSError(domain: "com.cicili.signin", code: 100, userInfo: [NSLocalizedDescriptionKey: "El usuario no pudo ser indentificado"]))
-                }
-            case .failure(let error):
-                failure(error as NSError)
+           switch response.result {
+           case .success:
+            let json = JSON(response.result.value!)
+                //print("JSON message: \(json[WSKeys.parameters.messageError])")
+                //print("JSON data: \(json[WSKeys.parameters.data])")
+                //print("JSON error: \(json[WSKeys.parameters.error])")
+            let errorcode: Int = json[WSKeys.parameters.error].intValue
+            let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
+            let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
+            
+            if errorcode == WSKeys.parameters.okresponse {
+                success(cliente!)
+            } else {
+                failure(NSError(domain: "com.puebla.signin", code: errorcode, userInfo: [NSLocalizedDescriptionKey: messagedescription]))
             }
+            
+           case .failure(let error):
+               failure(error as NSError)
+           }
         }
     }
 }

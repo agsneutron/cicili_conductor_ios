@@ -18,16 +18,18 @@ enum Router: URLRequestConvertible {
     case signIn(with: Parameters)
     case register
     case validate
+    case help
     
     
     // HTTP method
        
     var method: HTTPMethod {
         switch self {
-        case .signIn:
+        case .help:
             return .get
         case .register,
-             .validate:
+             .validate,
+             .signIn:
             return .post
         }
     }
@@ -42,6 +44,8 @@ enum Router: URLRequestConvertible {
             return "app/mv/cliente/registrar"
         case .validate:
             return "app/verifica/"
+        case .help:
+            return "app/catalogos/tiposaclaracion/1"
         }
         
     }
@@ -56,13 +60,17 @@ enum Router: URLRequestConvertible {
         
         // URLRequest
         var urlRequest = URLRequest(url: url.appendingPathComponent(endpoint))
+        
         // Set HTTP Method
         urlRequest.httpMethod = method.rawValue
         
+
+        //Set timeout
+        //urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         switch self {
         case .register,
-             .validate:
-            
+             .validate,
+             .help:
             // Set encode to application/x-www-form-urlencoded
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         

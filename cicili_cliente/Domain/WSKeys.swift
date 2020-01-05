@@ -28,6 +28,7 @@ struct WSKeys {
         
         static let PUSERNAME = "user"
         static let PPASSWORD = "password"
+        static let PTOKENDISPOSITIVO = "token_dispositivo"
         static let PEMAIL = "correo_electronico"
         static let PCELLPHONE = "telefono"
         static let tmppsw="tmp_password"

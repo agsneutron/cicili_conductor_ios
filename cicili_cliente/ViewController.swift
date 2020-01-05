@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var signIn: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -20,29 +20,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func signIn(_ sender: UIButton) {
+    
+    @IBAction func singIn(_ sender: UIButton) {
+    
         self.view.endEditing(true)
+        let userText: String = user.text ?? ""
+        let passwordText: String = password.text ?? ""
         
-            // TODO: Refactor with MVVM
-            
-            if let username = user.text, !username.isEmpty, let password = password.text, !password.isEmpty {
-                RequestManager.fetchSignIn(parameters: ["username": username, "password": password], success: {_ in
-                    
+        if !userText.isEmpty && !passwordText.isEmpty{
+            RequestManager.fetchSignIn(parameters: [WSKeys.parameters.PUSERNAME: userText, WSKeys.parameters.PPASSWORD: passwordText, WSKeys.parameters.PTOKENDISPOSITIVO: "1234"], success: { response in
+                
+                if response.access_token != nil{
+                    print("En success y token no nil \(response.access_token)")
                     self.user.text = ""
                     self.password.text = ""
-                        self.performSegue(withIdentifier: Constants.Storyboard.homeSegueId, sender: self)
-                    })
-                 { error in
+                    self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
+                    }
+                })
+                { error in
                     
                     self.showAlert(message: error.localizedDescription)
-                }
-            } else {
-                self.showAlert(message: "Por favor, complete todos los campos.")
-            }
-        
-    }
-    
-    
 
+                }
+        } else {
+            self.showAlert(message: "Por favor, ingresa usuario y contraseña.")
+        }
+    }
 }
 

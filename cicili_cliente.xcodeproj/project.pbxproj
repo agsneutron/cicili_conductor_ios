@@ -17,7 +17,12 @@
 		57CD140923BE88AE0056913B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140823BE88AE0056913B /* RequestManager.swift */; };
 		57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140B23BEAD0C0056913B /* Cliente.swift */; };
 		57CD140E23BEB97C0056913B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140D23BEB97C0056913B /* Constants.swift */; };
+		57CF14DA23C1C4D500389C06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF14D923C1C4D500389C06 /* MapKit.framework */; };
 		57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1BAED23BF516E00551DA7 /* AlertManager.swift */; };
+		57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1BAF123BFB01A00551DA7 /* RegisterViewController.swift */; };
+		57D1BAF423C0006100551DA7 /* FormaPago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1BAF323C0006000551DA7 /* FormaPago.swift */; };
+		57D1BAF623C001D200551DA7 /* Direcciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1BAF523C001D200551DA7 /* Direcciones.swift */; };
+		57D1BAF823C0028F00551DA7 /* Asentamiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1BAF723C0028F00551DA7 /* Asentamiento.swift */; };
 		57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0BEB423BAA32200F60209 /* WSKeys.swift */; };
 		6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */; };
 /* End PBXBuildFile section */
@@ -36,7 +41,12 @@
 		57CD140823BE88AE0056913B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		57CD140B23BEAD0C0056913B /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
 		57CD140D23BEB97C0056913B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		57CF14D923C1C4D500389C06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		57D1BAED23BF516E00551DA7 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		57D1BAF123BFB01A00551DA7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		57D1BAF323C0006000551DA7 /* FormaPago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormaPago.swift; sourceTree = "<group>"; };
+		57D1BAF523C001D200551DA7 /* Direcciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direcciones.swift; sourceTree = "<group>"; };
+		57D1BAF723C0028F00551DA7 /* Asentamiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asentamiento.swift; sourceTree = "<group>"; };
 		57E0BEB423BAA32200F60209 /* WSKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSKeys.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_cliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CF14DA23C1C4D500389C06 /* MapKit.framework in Frameworks */,
 				6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +68,7 @@
 		18E2FB1A513FCB3624476D58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57CF14D923C1C4D500389C06 /* MapKit.framework */,
 				EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */,
 			);
 			name = Frameworks;
@@ -83,6 +95,7 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_cliente */ = {
 			isa = PBXGroup;
 			children = (
+				57D1BAF023BFAF7900551DA7 /* Controllers */,
 				57D1BAEC23BF512400551DA7 /* UI */,
 				57CD140A23BEACD10056913B /* Models */,
 				57E0BEB623BAAD5200F60209 /* Domain */,
@@ -111,6 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				57CD140B23BEAD0C0056913B /* Cliente.swift */,
+				57D1BAF323C0006000551DA7 /* FormaPago.swift */,
+				57D1BAF523C001D200551DA7 /* Direcciones.swift */,
+				57D1BAF723C0028F00551DA7 /* Asentamiento.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,6 +137,14 @@
 				57D1BAED23BF516E00551DA7 /* AlertManager.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57D1BAF123BFB01A00551DA7 /* RegisterViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		57E0BEB623BAAD5200F60209 /* Domain */ = {
@@ -258,14 +282,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
+				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
+				57D1BAF623C001D200551DA7 /* Direcciones.swift in Sources */,
 				57B857EB23BDE90A0012BF94 /* Router.swift in Sources */,
+				57D1BAF823C0028F00551DA7 /* Asentamiento.swift in Sources */,
 				57CD140923BE88AE0056913B /* RequestManager.swift in Sources */,
 				3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */,
 				3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */,
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
+				57D1BAF423C0006100551DA7 /* FormaPago.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,10 +440,11 @@
 			baseConfigurationReference = 9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YG68F664Q5;
 				INFOPLIST_FILE = cicili_cliente/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,10 +462,11 @@
 			baseConfigurationReference = 50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YG68F664Q5;
 				INFOPLIST_FILE = cicili_cliente/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
