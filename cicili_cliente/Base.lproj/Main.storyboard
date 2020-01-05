@@ -48,7 +48,7 @@
                                         <state key="normal" title="INICIAR SESIÓN"/>
                                         <connections>
                                             <action selector="singIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gM0-gJ-SbI"/>
-                                            <segue destination="ds5-FK-eYt" kind="presentation" identifier="loginToMainSegue" modalTransitionStyle="crossDissolve" id="yZp-Ux-0TU"/>
+                                            <segue destination="ds5-FK-eYt" kind="presentation" identifier="loginToMainSegue" id="i7d-kc-Fyc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="-710" y="-522"/>
         </scene>
-        <!--View Controller-->
+        <!--Lost Password View Controller-->
         <scene sceneID="wP6-hX-zsS">
             <objects>
-                <viewController id="DRn-MM-hai" sceneMemberID="viewController">
+                <viewController id="DRn-MM-hai" customClass="LostPasswordViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kK2-KM-RWI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="481" y="-53"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="5Wo-nu-2mt">
             <objects>
-                <viewController id="UN1-en-w14" sceneMemberID="viewController">
+                <viewController id="UN1-en-w14" customClass="RegisterViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J6M-rs-aLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="481" y="899"/>
         </scene>
-        <!--View Controller-->
+        <!--Verify Code View Controller-->
         <scene sceneID="C9b-nX-7VP">
             <objects>
-                <viewController id="dZX-3a-wdA" sceneMemberID="viewController">
+                <viewController id="dZX-3a-wdA" customClass="VerifyCodeViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Igm-xz-gvy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="-1655" y="865"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="phr-dX-ozH">
             <objects>
-                <viewController id="ds5-FK-eYt" sceneMemberID="viewController">
+                <viewController id="ds5-FK-eYt" customClass="MainViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hdp-Qu-qwp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
