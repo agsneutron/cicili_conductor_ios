@@ -37,13 +37,85 @@ class RequestManager: NSObject{
             let errorcode: Int = json[WSKeys.parameters.error].intValue
             let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
             let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            
-            if errorcode == WSKeys.parameters.okresponse {
+            if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
                 success(cliente!)
             } else {
-                failure(NSError(domain: "com.puebla.signin", code: errorcode, userInfo: [NSLocalizedDescriptionKey: messagedescription]))
+                failure(NSError(domain: "com.cicili.signin", code: errorcode, userInfo: [NSLocalizedDescriptionKey: messagedescription]))
             }
             
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+    }
+    
+    //for request Password forgotten
+    class func fetchRequestPassword(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.requestPassword(with: parameters)).responseObject { (response: DataResponse<Response>) in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let objectResponse = response.result.value
+            
+            if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
+                
+                success(objectResponse!)
+            
+            //.responseJSON{
+       //response in
+         //  switch response.result {
+          // case .success:
+           // let json = JSON(response.result.value!)
+           // let errorcode: Int = json[WSKeys.parameters.error].intValue
+            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
+            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
+            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
+            //    success(cliente!)
+            } else {
+                failure(NSError(domain: "com.cicili.requestpassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+            }
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+    }
+    
+    
+    //for registes client
+    class func fetchRegisterClient(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.registerClient(with: parameters)).responseObject { (response: DataResponse<Response>) in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let objectResponse = response.result.value
+            
+            if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
+                
+                success(objectResponse!)
+            
+            //.responseJSON{
+       //response in
+         //  switch response.result {
+          // case .success:
+           // let json = JSON(response.result.value!)
+           // let errorcode: Int = json[WSKeys.parameters.error].intValue
+            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
+            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
+            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
+            //    success(cliente!)
+            } else {
+                failure(NSError(domain: "com.cicili.requestpassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+            }
            case .failure(let error):
                failure(error as NSError)
            }

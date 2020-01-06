@@ -10,13 +10,41 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var userTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func registerButton(_ sender: UIButton) {
+        
+        if let username = userTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty, let phone = phoneTextField.text, !phone.isEmpty, let confirmpassword = confirmPasswordTextField.text, !confirmpassword.isEmpty {
+            RequestManager.fetchRegisterClient(parameters: [WSKeys.parameters.PEMAIL: username, WSKeys.parameters.PPASSWORD: password, WSKeys.parameters.PCELLPHONE: phone], success: { response in
+                       
+                       if response != nil{
+                           print("En success y token no nil \(response)")
+                           self.userTextField.text = ""
+                           self.passwordTextField.text = ""
+                           //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
+                           let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
+                           self.present(vc!, animated: true, completion: nil)
+                           
+                           }
+                       })
+                       { error in
+                           self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                       }
+               } else {
+                   self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageDatosRequeridos)
+               }
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 

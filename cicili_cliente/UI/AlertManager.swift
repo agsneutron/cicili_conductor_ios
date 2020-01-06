@@ -42,4 +42,11 @@ extension UIViewController{
             // completion goes here
         }
     }
+    
+    func showAlertController(tittle_t: String, message_t:String){
+        let alertController = UIAlertController(title: tittle_t, message: message_t, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
