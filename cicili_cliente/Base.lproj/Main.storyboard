@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByU-uf-jBK">
-                                <rect key="frame" x="16" y="49" width="343" height="258"/>
+                                <rect key="frame" x="16" y="93" width="343" height="268"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="La manera más fácil de pedir el GAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-9I-Foh">
                                         <rect key="frame" x="33" y="124" width="276" height="21"/>
@@ -31,7 +31,7 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-H1-9JL">
-                                <rect key="frame" x="16" y="315" width="343" height="197"/>
+                                <rect key="frame" x="16" y="369" width="343" height="197"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-Ag-gun">
                                         <rect key="frame" x="123" y="32" width="97" height="34"/>
@@ -48,7 +48,6 @@
                                         <state key="normal" title="INICIAR SESIÓN"/>
                                         <connections>
                                             <action selector="singIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gM0-gJ-SbI"/>
-                                            <segue destination="ds5-FK-eYt" kind="presentation" identifier="loginToMainSegue" id="i7d-kc-Fyc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -69,7 +68,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3p9-h2-qoi">
-                                <rect key="frame" x="16" y="515" width="343" height="189"/>
+                                <rect key="frame" x="16" y="569" width="343" height="189"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿No tienes una cuenta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucq-kj-uzQ">
                                         <rect key="frame" x="82" y="100" width="179" height="21"/>
@@ -80,10 +79,18 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2L-Tf-ywz">
                                         <rect key="frame" x="122" y="129" width="99" height="30"/>
                                         <state key="normal" title="REGISTRARSE"/>
+                                        <connections>
+                                            <action selector="registerClient:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Odc-ds-DKI"/>
+                                            <segue destination="UN1-en-w14" kind="presentation" identifier="loginToRegisterSegue" id="uTv-D8-Lg1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5b-ib-GHV">
                                         <rect key="frame" x="60" y="29" width="222" height="30"/>
                                         <state key="normal" title="¿OLVIDASTE TU CONTRASEÑA?"/>
+                                        <connections>
+                                            <action selector="forgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHc-Pj-778"/>
+                                            <segue destination="DRn-MM-hai" kind="presentation" identifier="forgotPasswordSegue" id="yQP-77-1t8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,27 +127,29 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sLy-DQ-QrB"/>
                     <connections>
-                        <outlet property="password" destination="EHa-Os-hAv" id="AtY-Cd-FJ1"/>
-                        <outlet property="user" destination="9QN-Ag-gun" id="3ne-C6-YVn"/>
+                        <outlet property="passwordTextField" destination="EHa-Os-hAv" id="AtY-Cd-FJ1"/>
+                        <outlet property="userTextField" destination="9QN-Ag-gun" id="3ne-C6-YVn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-710" y="-522"/>
+            <point key="canvasLocation" x="-711.20000000000005" y="-522.41379310344826"/>
         </scene>
         <!--Lost Password View Controller-->
         <scene sceneID="wP6-hX-zsS">
             <objects>
                 <viewController id="DRn-MM-hai" customClass="LostPasswordViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kK2-KM-RWI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAZ-v4-Yw2">
                                 <rect key="frame" x="92" y="260" width="191" height="30"/>
                                 <state key="normal" title="RECUPERAR CONTRASEÑA"/>
+                                <connections>
+                                    <action selector="validateCode:" destination="DRn-MM-hai" eventType="touchUpInside" id="LbP-U2-UuL"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*****" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kuH-JM-Sre">
                                 <rect key="frame" x="139" y="199" width="97" height="30"/>
@@ -148,7 +157,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para recuperar tu contraseña, ingresa el correo electrónico que registraste en CICILI." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYt-sX-v4K">
-                                <rect key="frame" x="60" y="117" width="255" height="61"/>
+                                <rect key="frame" x="60" y="73" width="255" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -171,6 +180,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9SB-yU-NUQ"/>
                     </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="kuH-JM-Sre" id="naZ-8Q-FsE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7H-Vx-hPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +193,7 @@
             <objects>
                 <viewController id="UN1-en-w14" customClass="RegisterViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J6M-rs-aLa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Registrate como cliente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c06-vp-gI9">
@@ -260,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccr-Zq-8sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="899"/>
+            <point key="canvasLocation" x="481" y="698"/>
         </scene>
         <!--Verify Code View Controller-->
         <scene sceneID="C9b-nX-7VP">
@@ -292,9 +304,6 @@
                                 <rect key="frame" x="155" y="327" width="87" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="VERIFICAR"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="HW8-Gu-Hhe"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -304,6 +313,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ec6-yK-1Sd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="XbC-Hh-XgW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eco-r5-ySv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -312,9 +322,9 @@
         <!--Main View Controller-->
         <scene sceneID="phr-dX-ozH">
             <objects>
-                <viewController id="ds5-FK-eYt" customClass="MainViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainStoryboard" id="ds5-FK-eYt" customClass="MainViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hdp-Qu-qwp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iic-xe-hum">

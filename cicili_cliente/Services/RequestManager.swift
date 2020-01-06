@@ -37,8 +37,7 @@ class RequestManager: NSObject{
             let errorcode: Int = json[WSKeys.parameters.error].intValue
             let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
             let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            
-            if errorcode == WSKeys.parameters.okresponse {
+            if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
                 success(cliente!)
             } else {
                 failure(NSError(domain: "com.puebla.signin", code: errorcode, userInfo: [NSLocalizedDescriptionKey: messagedescription]))

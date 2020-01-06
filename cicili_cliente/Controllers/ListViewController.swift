@@ -1,5 +1,5 @@
 //
-//  LostPasswordViewController.swift
+//  ListViewController.swift
 //  cicili_cliente
 //
 //  Created by ARIANA SANCHEZ on 05/01/20.
@@ -8,11 +8,8 @@
 
 import UIKit
 
-class LostPasswordViewController: UIViewController {
+class ListViewController: UIViewController {
 
-    @IBOutlet weak var codeTextField: UITextField!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,15 +17,6 @@ class LostPasswordViewController: UIViewController {
     }
     
 
-    @IBAction func validateCode(_ sender: UIButton) {
-        
-        if let code = codeTextField.text, !code.isEmpty {
-            
-            self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageVerificaCodigo)
-        }
-        else {
-            self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messagRequeridoCodigo)
-        }
     /*
     // MARK: - Navigation
 
@@ -39,5 +27,4 @@ class LostPasswordViewController: UIViewController {
     }
     */
 
-    }
 }

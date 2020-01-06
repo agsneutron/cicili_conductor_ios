@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var user: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     
     
@@ -24,27 +24,39 @@ class ViewController: UIViewController {
     @IBAction func singIn(_ sender: UIButton) {
     
         self.view.endEditing(true)
-        let userText: String = user.text ?? ""
-        let passwordText: String = password.text ?? ""
         
-        if !userText.isEmpty && !passwordText.isEmpty{
-            RequestManager.fetchSignIn(parameters: [WSKeys.parameters.PUSERNAME: userText, WSKeys.parameters.PPASSWORD: passwordText, WSKeys.parameters.PTOKENDISPOSITIVO: "1234"], success: { response in
+        if let username = userTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty {
+            RequestManager.fetchSignIn(parameters: [WSKeys.parameters.PUSERNAME: username, WSKeys.parameters.PPASSWORD: password, WSKeys.parameters.PTOKENDISPOSITIVO: "1234"], success: { response in
                 
                 if response.access_token != nil{
                     print("En success y token no nil \(response.access_token)")
-                    self.user.text = ""
-                    self.password.text = ""
-                    self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
+                    self.userTextField.text = ""
+                    self.passwordTextField.text = ""
+                    //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
+                    self.present(vc!, animated: true, completion: nil)
+                    
                     }
                 })
                 { error in
-                    
-                    self.showAlert(message: error.localizedDescription)
-
+                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
                 }
         } else {
-            self.showAlert(message: "Por favor, ingresa usuario y contraseña.")
+            self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageRequeridoLogin)
         }
     }
+    
+    @IBAction func forgotPassword(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: Constants.Storyboard.passwordSegueId, sender: self)
+    
+    }
+    
+    @IBAction func registerClient(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: Constants.Storyboard.registerSegueId, sender: self)
+           
+    }
+    
 }
 
