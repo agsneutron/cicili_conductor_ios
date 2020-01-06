@@ -19,6 +19,7 @@
 		57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B34023C28A1E00731CE7 /* DIsmissSegue.swift */; };
 		57B7B34423C28C4000731CE7 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B34323C28C4000731CE7 /* List.storyboard */; };
 		57B7B34623C2A47000731CE7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B34523C2A47000731CE7 /* ListViewController.swift */; };
+		57B7B34823C2B4F000731CE7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B34723C2B4F000731CE7 /* Response.swift */; };
 		57B857EB23BDE90A0012BF94 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B857EA23BDE90A0012BF94 /* Router.swift */; };
 		57CD140923BE88AE0056913B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140823BE88AE0056913B /* RequestManager.swift */; };
 		57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140B23BEAD0C0056913B /* Cliente.swift */; };
@@ -49,6 +50,7 @@
 		57B7B34023C28A1E00731CE7 /* DIsmissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIsmissSegue.swift; sourceTree = "<group>"; };
 		57B7B34323C28C4000731CE7 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		57B7B34523C2A47000731CE7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		57B7B34723C2B4F000731CE7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		57B857EA23BDE90A0012BF94 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		57CD140823BE88AE0056913B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		57CD140B23BEAD0C0056913B /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				57D1BAF323C0006000551DA7 /* FormaPago.swift */,
 				57D1BAF523C001D200551DA7 /* Direcciones.swift */,
 				57D1BAF723C0028F00551DA7 /* Asentamiento.swift */,
+				57B7B34723C2B4F000731CE7 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
+				57B7B34823C2B4F000731CE7 /* Response.swift in Sources */,
 				57D1BAF623C001D200551DA7 /* Direcciones.swift in Sources */,
 				57B857EB23BDE90A0012BF94 /* Router.swift in Sources */,
 				57D1BAF823C0028F00551DA7 /* Asentamiento.swift in Sources */,

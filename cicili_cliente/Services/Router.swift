@@ -14,11 +14,13 @@ enum Router: URLRequestConvertible {
    
    // Base URL for OAuth2 authentication
     static let baseURLString = WSKeys.API.url
+    static var OAuthToken: String?
     
     case signIn(with: Parameters)
-    case register
+    case registerClient(with: Parameters)
     case validate
     case help
+    case requestPassword(with: Parameters)
     
     
     // HTTP method
@@ -27,8 +29,9 @@ enum Router: URLRequestConvertible {
         switch self {
         case .help:
             return .get
-        case .register,
+        case .registerClient,
              .validate,
+             .requestPassword,
              .signIn:
             return .post
         }
@@ -39,24 +42,29 @@ enum Router: URLRequestConvertible {
     var endpoint: String {
         switch self {
         case .signIn:
-            return "app/mv/cliente/login"
-        case .register:
-            return "app/mv/cliente/registrar"
+            return "mv/cliente/login"
+        case .registerClient:
+            return "mv/cliente/registrar"
         case .validate:
-            return "app/verifica/"
+            return "verifica/"
         case .help:
-            return "app/catalogos/tiposaclaracion/1"
+            return "catalogos/tiposaclaracion/1"
+        case .requestPassword:
+            return "mv/cliente/password/solicitar"
         }
         
     }
     
     
+    
     // URLRequestConvertible
+    
     
     func asURLRequest() throws -> URLRequest {
         
         // BaseURL string
         let url = try Router.baseURLString.asURL()
+        
         
         // URLRequest
         var urlRequest = URLRequest(url: url.appendingPathComponent(endpoint))
@@ -64,18 +72,22 @@ enum Router: URLRequestConvertible {
         // Set HTTP Method
         urlRequest.httpMethod = method.rawValue
         
-
+        
         //Set timeout
         //urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         switch self {
-        case .register,
-             .validate,
+        case.validate,
              .help:
             // Set encode to application/x-www-form-urlencoded
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         
-        case.signIn(let parameters):
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case.signIn(let parameters),
+            .registerClient(let parameters),
+            .requestPassword(let parameters):
+            urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
+            urlRequest.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            debugPrint("PARAMETERS__________-")
+            debugPrint(parameters)
         }
         
         return urlRequest

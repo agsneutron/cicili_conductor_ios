@@ -10,8 +10,8 @@ import UIKit
 
 class LostPasswordViewController: UIViewController {
 
-    @IBOutlet weak var codeTextField: UITextField!
-    
+   
+    @IBOutlet weak var userTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,23 @@ class LostPasswordViewController: UIViewController {
 
     @IBAction func validateCode(_ sender: UIButton) {
         
-        if let code = codeTextField.text, !code.isEmpty {
+        if let username = userTextField.text, !username.isEmpty {
+            debugPrint(username)
+            RequestManager.fetchRequestPassword(parameters: [WSKeys.parameters.PUSERNAME: username], success: { response in
             
-            self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageVerificaCodigo)
+                if response.data != nil{
+                print("En success y token no nil \(response)")
+                self.userTextField.text = ""
+                //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
+                self.present(vc!, animated: true, completion: nil)
+                
+                }
+            })
+            { error in
+                print("seccess but Error \(error)")
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+            }
         }
         else {
             self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messagRequeridoCodigo)
