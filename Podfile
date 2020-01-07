@@ -13,5 +13,7 @@ target 'cicili_cliente' do
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'ObjectMapper', '~> 3.4'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'MaterialComponents/BottomSheet'
+  pod 'MaterialComponents/BottomSheet+ShapeThemer'
   
 end

@@ -76,6 +76,38 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.4.0):
     - GoogleUtilities/Logger
+  - MaterialComponents/BottomSheet (100.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - "MaterialComponents/BottomSheet+ShapeThemer (100.0.0)":
+    - MaterialComponents/BottomSheet
+    - MaterialComponents/schemes/Shape
+  - MaterialComponents/Elevation (100.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (100.0.0)
+  - MaterialComponents/private/Color (100.0.0)
+  - MaterialComponents/private/KeyboardWatcher (100.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (100.0.0)
+  - MaterialComponents/schemes/Shape (100.0.0):
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - MaterialComponents/ShadowElevations (100.0.0)
+  - MaterialComponents/ShadowLayer (100.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/ShapeLibrary (100.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
+  - MaterialComponents/Shapes (100.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -90,6 +122,8 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.2)
   - Firebase/Analytics
   - Firebase/Messaging
+  - MaterialComponents/BottomSheet
+  - "MaterialComponents/BottomSheet+ShapeThemer"
   - ObjectMapper (~> 3.4)
   - SwiftyJSON (~> 4.0)
 
@@ -109,6 +143,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - MaterialComponents
     - nanopb
     - ObjectMapper
     - Protobuf
@@ -129,11 +164,12 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
   GoogleDataTransportCCTSupport: 202d7cdf9c4a7d81a2bb7f7e7e1ba6faa421b1f2
   GoogleUtilities: 29bd0d8f850efbd28cff6d99e8b7da1f8d236bcf
+  MaterialComponents: b4cc6c1649a566d70bd72096f3e1aae2c3701e4f
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 08a2c27d28bc383b8a97aa9e052f82b6cabc3db6
+PODFILE CHECKSUM: 15c019eda97b0111e43e5baab6bc688a061f017e
 
 COCOAPODS: 1.8.4

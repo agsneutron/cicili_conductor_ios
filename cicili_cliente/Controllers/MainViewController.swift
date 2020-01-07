@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialBottomSheet
 
 class MainViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let viewController: ViewController = ViewController()
+        let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: viewController)
+        present(bottomSheet, animated: true, completion: nil)
+        
         // Do any additional setup after loading the view.
     }
     
