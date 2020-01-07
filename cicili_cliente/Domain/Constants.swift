@@ -30,4 +30,18 @@ struct Constants{
          static let messagRequeridoCodigo = "Por favor, ingresa un código."
         static let messageVerificaCodigo = "Código incorrecto, favor de verificar."
     }
+    
+    struct AlertTittles{
+      static let tittleValidateCode = "Validar Código"
+    }
+    
+    struct AlertMessages{
+        static let messageValidateCode = "Ingresa el código de verificación que llegó a tu correo."
+        static let placeholderTextField = " * * * * * "
+    }
+    
+    struct textAction{
+        static let actionCancel = "Cancelar"
+        static let actionOK = "Aceptar"
+    }
 }

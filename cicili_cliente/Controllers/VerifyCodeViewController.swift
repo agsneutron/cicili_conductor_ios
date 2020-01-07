@@ -10,10 +10,14 @@ import UIKit
 
 class VerifyCodeViewController: UIViewController {
 
+    @IBOutlet weak var codeTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        codeTextField.becomeFirstResponder()
+        
     }
     
 
