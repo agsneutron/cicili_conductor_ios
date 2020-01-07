@@ -24,6 +24,7 @@ class Cliente: Mappable {
     var sexo: String?
     var formaPago: [FormaPago]?
     var direcciones: [Direcciones]?
+    var imagen: String?
     
     @objc dynamic var iddevice: String?
     @objc dynamic var device: String?
@@ -61,6 +62,7 @@ class Cliente: Mappable {
         sexo              <- map["sexo"]
         formaPago         <- map["formaPago"]
         direcciones       <- map["direcciones"]
+        imagen            <- map["imagen"]
           //<- map[""]
           //<- map[""]
           //<- map[""]

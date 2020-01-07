@@ -13,8 +13,8 @@ class Response: Mappable {
 
     var data: String?
     var messageError: String?
-    var codeError: String?
-    var response: String?
+    var codeError: Int = 0
+    var response: Int = 0
     var httpStatus: String?
    
    

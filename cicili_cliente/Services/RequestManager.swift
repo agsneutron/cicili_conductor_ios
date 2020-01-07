@@ -18,15 +18,24 @@ class RequestManager: NSObject{
     
     class func fetchSignIn(parameters: Parameters, success: @escaping (Cliente) -> Void, failure: @escaping (NSError) -> Void){
         
+        // Alamofire.request("http://34.66.139.244:8080/app/mv/cliente/login",
+        //       method: .post,
+        //       parameters: parameters,
+        //       encoding: URLEncoding(destination: .queryString)).responseJSON{
+        //      response in
+        //          print("*********RESPONSE***************")
+        //          debugPrint(response)
+                
+                
         // Fetch request
         Alamofire.request(Router.signIn(with: parameters)).responseJSON{
        response in
-           // print("*********RESPONSE***************")
-           // debugPrint(response)
-           // print("**********RESULT**************")
-           // debugPrint(response.result)
-           // print("************RESULT value************")
-           // debugPrint(response.result.value)
+        print("*********RESPONSE***************")
+        debugPrint(response)
+        print("**********RESULT**************")
+        debugPrint(response.result)
+        print("************RESULT value************")
+        debugPrint(response.result.value)
             
            switch response.result {
            case .success:
@@ -36,7 +45,9 @@ class RequestManager: NSObject{
                 //print("JSON error: \(json[WSKeys.parameters.error])")
             let errorcode: Int = json[WSKeys.parameters.error].intValue
             let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
+            let cliente = Mapper<Cliente>().map(JSONObject: json[WSKeys.parameters.data])
+            print("*********CLIENTE DATA***************")
+            debugPrint(cliente!)
             if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
                 success(cliente!)
             } else {
@@ -61,21 +72,18 @@ class RequestManager: NSObject{
         switch response.result {
         case .success:
             let objectResponse = response.result.value
-            
-            if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
-                
+            if objectResponse!.codeError == WSKeys.parameters.okresponse {
                 success(objectResponse!)
-            
-            //.responseJSON{
-       //response in
-         //  switch response.result {
-          // case .success:
-           // let json = JSON(response.result.value!)
-           // let errorcode: Int = json[WSKeys.parameters.error].intValue
-            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-            //    success(cliente!)
+                //.responseJSON{
+                //response in
+                //  switch response.result {
+                // case .success:
+                // let json = JSON(response.result.value!)
+                // let errorcode: Int = json[WSKeys.parameters.error].intValue
+                //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
+                //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
+                //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
+                //    success(cliente!)
             } else {
                 failure(NSError(domain: "com.cicili.requestpassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
