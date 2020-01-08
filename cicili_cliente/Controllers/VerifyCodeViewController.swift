@@ -11,16 +11,24 @@ import UIKit
 class VerifyCodeViewController: UIViewController {
 
     @IBOutlet weak var codeTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         codeTextField.becomeFirstResponder()
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+               view.addGestureRecognizer(gesture)
+    }
+    
+    
+    
+    @IBAction func verifyCodeButton(_ sender: UIButton) {
+        
         
     }
     
-
     /*
     // MARK: - Navigation
 

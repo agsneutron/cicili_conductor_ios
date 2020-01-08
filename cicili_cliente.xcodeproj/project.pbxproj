@@ -13,6 +13,10 @@
 		3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9BA23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld */; };
 		3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */; };
 		3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */; };
+		57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */; };
+		57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */; };
+		57B2057623C6645A005FF554 /* PersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B2057523C6645A005FF554 /* PersonalDataViewController.swift */; };
+		57B2057823C66BC2005FF554 /* Personal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B2057723C66BC2005FF554 /* Personal.swift */; };
 		57B7B33B23C26D4A00731CE7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B33A23C26D4A00731CE7 /* MainViewController.swift */; };
 		57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B33C23C26E4000731CE7 /* LostPasswordViewController.swift */; };
 		57B7B33F23C26E8500731CE7 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B33E23C26E8500731CE7 /* VerifyCodeViewController.swift */; };
@@ -21,6 +25,7 @@
 		57B7B34623C2A47000731CE7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B34523C2A47000731CE7 /* ListViewController.swift */; };
 		57B7B34823C2B4F000731CE7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B34723C2B4F000731CE7 /* Response.swift */; };
 		57B857EB23BDE90A0012BF94 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B857EA23BDE90A0012BF94 /* Router.swift */; };
+		57BB85D023C654AE0057EE45 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB85CF23C654AE0057EE45 /* ForgotPasswordViewController.swift */; };
 		57CD140923BE88AE0056913B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140823BE88AE0056913B /* RequestManager.swift */; };
 		57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140B23BEAD0C0056913B /* Cliente.swift */; };
 		57CD140E23BEB97C0056913B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140D23BEB97C0056913B /* Constants.swift */; };
@@ -44,6 +49,10 @@
 		3137F9C023A8BA5000D8D8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3137F9C223A8BA5000D8D8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
+		57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalData.storyboard; sourceTree = "<group>"; };
+		57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		57B2057523C6645A005FF554 /* PersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataViewController.swift; sourceTree = "<group>"; };
+		57B2057723C66BC2005FF554 /* Personal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personal.swift; sourceTree = "<group>"; };
 		57B7B33A23C26D4A00731CE7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57B7B33C23C26E4000731CE7 /* LostPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostPasswordViewController.swift; sourceTree = "<group>"; };
 		57B7B33E23C26E8500731CE7 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +61,7 @@
 		57B7B34523C2A47000731CE7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		57B7B34723C2B4F000731CE7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		57B857EA23BDE90A0012BF94 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		57BB85CF23C654AE0057EE45 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		57CD140823BE88AE0056913B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		57CD140B23BEAD0C0056913B /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
 		57CD140D23BEB97C0056913B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -130,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				57B7B34323C28C4000731CE7 /* List.storyboard */,
+				57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */,
+				57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -151,6 +163,7 @@
 				57D1BAF523C001D200551DA7 /* Direcciones.swift */,
 				57D1BAF723C0028F00551DA7 /* Asentamiento.swift */,
 				57B7B34723C2B4F000731CE7 /* Response.swift */,
+				57B2057723C66BC2005FF554 /* Personal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +185,8 @@
 				57B7B33C23C26E4000731CE7 /* LostPasswordViewController.swift */,
 				57B7B33E23C26E8500731CE7 /* VerifyCodeViewController.swift */,
 				57B7B34523C2A47000731CE7 /* ListViewController.swift */,
+				57BB85CF23C654AE0057EE45 /* ForgotPasswordViewController.swift */,
+				57B2057523C6645A005FF554 /* PersonalDataViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,9 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
+				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
 				3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */,
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
 				3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */,
+				57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +331,7 @@
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
 				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
+				57B2057823C66BC2005FF554 /* Personal.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
 				57B7B34823C2B4F000731CE7 /* Response.swift in Sources */,
@@ -325,8 +343,10 @@
 				57CD140923BE88AE0056913B /* RequestManager.swift in Sources */,
 				3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */,
 				57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */,
+				57B2057623C6645A005FF554 /* PersonalDataViewController.swift in Sources */,
 				3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */,
 				57B7B34623C2A47000731CE7 /* ListViewController.swift in Sources */,
+				57BB85D023C654AE0057EE45 /* ForgotPasswordViewController.swift in Sources */,
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
 				57D1BAF423C0006100551DA7 /* FormaPago.swift in Sources */,

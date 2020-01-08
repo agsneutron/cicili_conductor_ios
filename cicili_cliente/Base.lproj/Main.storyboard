@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginStoryboard" id="BYZ-38-t0r" customClass="ViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,7 +271,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hemos enviado un código de verificación a tu correo electrónico.  Ingresalo para terminar el proceso de registro " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ7-IX-FJ8">
-                                <rect key="frame" x="61" y="143" width="274" height="56"/>
+                                <rect key="frame" x="61" y="135" width="274" height="14.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -286,10 +286,14 @@
                                 <rect key="frame" x="155" y="327" width="87" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="VERIFICAR"/>
+                                <connections>
+                                    <action selector="verifyCodeButton:" destination="dZX-3a-wdA" eventType="touchUpInside" id="tUB-Tx-2AE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="v5B-LE-Dlb" firstAttribute="top" secondItem="ec6-yK-1Sd" secondAttribute="top" constant="103" id="5dD-r2-Vtc"/>
                             <constraint firstItem="NJ7-IX-FJ8" firstAttribute="top" secondItem="v5B-LE-Dlb" secondAttribute="bottom" constant="8" id="A6v-kx-Hnb"/>
                             <constraint firstItem="NJ7-IX-FJ8" firstAttribute="top" secondItem="v5B-LE-Dlb" secondAttribute="bottom" constant="8" id="Cxq-X5-OFO"/>
                         </constraints>
@@ -302,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eco-r5-ySv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-711" y="1187"/>
+            <point key="canvasLocation" x="-772" y="1183"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="phr-dX-ozH">

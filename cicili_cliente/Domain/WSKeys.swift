@@ -31,7 +31,7 @@ struct WSKeys {
         static let PTOKENDISPOSITIVO = "token_dispositivo"
         static let PEMAIL = "correo_electronico"
         static let PCELLPHONE = "telefono"
-        static let tmppsw="tmp_password"
+        static let PTMPPASSWORD="tmp_password"
         
         static let verifica_codigo = "VE"
         static let datos_personales = "PE"
