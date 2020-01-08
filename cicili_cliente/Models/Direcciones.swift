@@ -19,7 +19,7 @@ class Direcciones: Mappable {
     var alias: String?
     var favorito: Int = 0
     var status: Int = 0
-    var asentamiento: [Asentamiento]?
+    var asentamiento: Asentamiento?
 
     required convenience init?(map: Map) {
         self.init()

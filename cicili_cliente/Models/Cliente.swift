@@ -25,21 +25,7 @@ class Cliente: Mappable {
     var formaPago: [FormaPago]?
     var direcciones: [Direcciones]?
     var imagen: String?
-    
-    @objc dynamic var iddevice: String?
-    @objc dynamic var device: String?
-    @objc dynamic var name: String?
-    @objc dynamic var access_token: String?
-    @objc dynamic var usertype: String?
-    @objc dynamic var address: String?
-    
-    
-    @objc dynamic var photo: String?
-    
-    @objc dynamic var rfcdatasize: Int = 0
-    @objc dynamic var order_id: String?
-    @objc dynamic var comision: String?
-    @objc dynamic var total: String?
+
     
     // MARK: - Initialization
     

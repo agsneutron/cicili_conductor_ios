@@ -45,9 +45,12 @@ class RequestManager: NSObject{
                 //print("JSON error: \(json[WSKeys.parameters.error])")
             let errorcode: Int = json[WSKeys.parameters.error].intValue
             let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            let cliente = Mapper<Cliente>().map(JSONObject: json[WSKeys.parameters.data])
+            let cliente_data = json[WSKeys.parameters.data].dictionaryObject
             print("*********CLIENTE DATA***************")
-            debugPrint(cliente!)
+            debugPrint(cliente_data)
+            let cliente = Mapper<Cliente>().map( JSONObject: cliente_data)
+           print("*********CLIENTE RESULT***************")
+            debugPrint(cliente?.token! as Any)
             if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
                 success(cliente!)
             } else {
