@@ -73,6 +73,7 @@ enum Router: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         
+        
         //Set timeout
         //urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         switch self {
@@ -84,10 +85,13 @@ enum Router: URLRequestConvertible {
         case.signIn(let parameters),
             .registerClient(let parameters),
             .requestPassword(let parameters):
-            urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
+            urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
+            //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             debugPrint("PARAMETERS__________-")
             debugPrint(parameters)
+            
+        
         }
         
         return urlRequest

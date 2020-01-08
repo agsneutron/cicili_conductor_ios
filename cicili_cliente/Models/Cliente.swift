@@ -24,21 +24,8 @@ class Cliente: Mappable {
     var sexo: String?
     var formaPago: [FormaPago]?
     var direcciones: [Direcciones]?
-    
-    @objc dynamic var iddevice: String?
-    @objc dynamic var device: String?
-    @objc dynamic var name: String?
-    @objc dynamic var access_token: String?
-    @objc dynamic var usertype: String?
-    @objc dynamic var address: String?
-    
-    
-    @objc dynamic var photo: String?
-    
-    @objc dynamic var rfcdatasize: Int = 0
-    @objc dynamic var order_id: String?
-    @objc dynamic var comision: String?
-    @objc dynamic var total: String?
+    var imagen: String?
+
     
     // MARK: - Initialization
     
@@ -61,6 +48,7 @@ class Cliente: Mappable {
         sexo              <- map["sexo"]
         formaPago         <- map["formaPago"]
         direcciones       <- map["direcciones"]
+        imagen            <- map["imagen"]
           //<- map[""]
           //<- map[""]
           //<- map[""]

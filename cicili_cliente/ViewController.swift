@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        userTextField.becomeFirstResponder()
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(gesture)
     }
     
     
@@ -28,8 +32,8 @@ class ViewController: UIViewController {
         if let username = userTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty {
             RequestManager.fetchSignIn(parameters: [WSKeys.parameters.PUSERNAME: username, WSKeys.parameters.PPASSWORD: password, WSKeys.parameters.PTOKENDISPOSITIVO: "1234"], success: { response in
                 
-                if response.access_token != nil{
-                    print("En success y token no nil \(response.access_token)")
+                if response.token != nil{
+                    print("En success y token no nil \(response.token)")
                     self.userTextField.text = ""
                     self.passwordTextField.text = ""
                     //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)

@@ -15,7 +15,8 @@ class LostPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            
+        userTextField.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
     
@@ -27,12 +28,11 @@ class LostPasswordViewController: UIViewController {
             RequestManager.fetchRequestPassword(parameters: [WSKeys.parameters.PUSERNAME: username], success: { response in
             
                 if response.data != nil{
-                print("En success y token no nil \(response)")
-                self.userTextField.text = ""
-                //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
-                self.present(vc!, animated: true, completion: nil)
                 
+                    self.userTextField.text = ""
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifyStoryboard")
+                    self.present(vc!, animated: true, completion: nil)
                 }
             })
             { error in

@@ -11,7 +11,7 @@ import ObjectMapper
 class FormaPago: Mappable {
     
     var id: Int = 0
-    var status: String?
+    var status: Int = 0
     var tipoPago: Int = 0
     var numero: Int64 = 0
     var tipoTarjeta: String?

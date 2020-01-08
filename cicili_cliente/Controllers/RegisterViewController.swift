@@ -18,6 +18,10 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        userTextField.becomeFirstResponder()
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(gesture)
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
