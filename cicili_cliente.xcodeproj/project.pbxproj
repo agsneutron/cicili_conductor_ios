@@ -101,7 +101,6 @@
 		3137F9A723A8BA4700D8D8FF = {
 			isa = PBXGroup;
 			children = (
-				57B7B34223C28C0000731CE7 /* Storyboards */,
 				3137F9B223A8BA4800D8D8FF /* cicili_cliente */,
 				3137F9B123A8BA4800D8D8FF /* Products */,
 				E5999ED992A7C891C58A05DC /* Pods */,
@@ -120,6 +119,7 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_cliente */ = {
 			isa = PBXGroup;
 			children = (
+				57B7B34223C28C0000731CE7 /* Storyboards */,
 				57D1BAF023BFAF7900551DA7 /* Controllers */,
 				57D1BAEC23BF512400551DA7 /* UI */,
 				57CD140A23BEACD10056913B /* Models */,

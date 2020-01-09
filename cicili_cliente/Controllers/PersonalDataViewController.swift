@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class PersonalDataViewController: UIViewController {
 
@@ -44,17 +45,21 @@ class PersonalDataViewController: UIViewController {
         
         if let name = nameTextField.text, !name.isEmpty, let lastname = lastnameTextField.text, !lastname.isEmpty, let secondlastname = secondLastnameTextField.text, !secondlastname.isEmpty {
             
-            let personal = Personal()
+            var personal = Personal()
         
             personal.nombre = name
-            personal.
+            personal.apellidoPaterno = lastname
+            personal.apellidoMaterno = secondlastname
+        
             
-            RequestManager.setPersonalData(parameters: [WSKeys.parameters.: username, WSKeys.parameters.PPASSWORD: password, WSKeys.parameters.PTOKENDISPOSITIVO: "1234"], success: { response in
+            let JSONPersonal = Mapper().toJSON(personal)
+            let parameters: [String: AnyObject] = JSONPersonal as [String : AnyObject]
+            RequestManager.setPersonalData(parameters: JSONPersonal, success: { response in
                 
-                if response.token != nil{
-                    print("En success y token no nil \(response.token)")
-                    self.userTextField.text = ""
-                    self.passwordTextField.text = ""
+                if response != nil{
+                    print("En success \(response)")
+                    self.nameTextField.text = ""
+                    self.lastnameTextField.text = ""
                     //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
                     self.present(vc!, animated: true, completion: nil)

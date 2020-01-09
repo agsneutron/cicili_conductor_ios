@@ -8,8 +8,7 @@
 
 import ObjectMapper
 
-struct Personal: Mappable {
-    
+class Personal: Mappable {
 
     var user: String?
     var nombre: String?
@@ -18,14 +17,12 @@ struct Personal: Mappable {
     var nacimiento: String?
     var sexo: String?
     var imagen: String?
-   
-   
-    init?(map: Map) {
-       
+      
+    required convenience init?(map: Map) {
+        self.init()
     }
     
-    
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         // compromisos JSON
         user            <- map["user"]
         nombre          <- map["nombre"]

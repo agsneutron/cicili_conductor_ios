@@ -23,6 +23,7 @@ enum Router: URLRequestConvertible {
     case help
     case requestPassword(with: Parameters)
     case changuePassword(with: Parameters)
+    case personalData(with: Parameters)
     
     
     // HTTP method
@@ -36,6 +37,7 @@ enum Router: URLRequestConvertible {
              .validateCodePsw,
              .requestPassword,
              .changuePassword,
+             .personalData,
              .signIn:
             return .post
         }
@@ -59,6 +61,8 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/password/solicitar"
         case .changuePassword:
             return "mv/cliente/password/cambiar"
+        case .personalData:
+            return "mv/cliente/actualizar"
         }
         
     }
@@ -94,6 +98,7 @@ enum Router: URLRequestConvertible {
             .registerClient(let parameters),
             .requestPassword(let parameters),
             .validateCodePsw(let parameters),
+            .personalData(let parameters),
             .changuePassword(let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)

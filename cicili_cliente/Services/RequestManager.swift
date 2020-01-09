@@ -211,7 +211,7 @@ class RequestManager: NSObject{
     class func setPersonalData(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-     Alamofire.request(Router.changuePassword(with: parameters)).responseObject { (response: DataResponse<Response>) in
+     Alamofire.request(Router.personalData(with: parameters)).responseObject { (response: DataResponse<Response>) in
         
             debugPrint("*********RES*********")
             debugPrint(response)
