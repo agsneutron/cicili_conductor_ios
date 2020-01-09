@@ -18,20 +18,26 @@ enum Router: URLRequestConvertible {
     
     case signIn(with: Parameters)
     case registerClient(with: Parameters)
-    case validate
+    case validateCodePsw(with: Parameters)
+    case validateCode
     case help
     case requestPassword(with: Parameters)
+    case changuePassword(with: Parameters)
+    case personalData(with: Parameters)
     
     
     // HTTP method
        
     var method: HTTPMethod {
         switch self {
-        case .help:
+        case.help,
+            .validateCode:
             return .get
         case .registerClient,
-             .validate,
+             .validateCodePsw,
              .requestPassword,
+             .changuePassword,
+             .personalData,
              .signIn:
             return .post
         }
@@ -45,12 +51,18 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/login"
         case .registerClient:
             return "mv/cliente/registrar"
-        case .validate:
-            return "verifica/"
+        case .validateCode:
+            return "verifica"
+        case .validateCodePsw:
+            return "mv/cliente/password/validar/"
         case .help:
             return "catalogos/tiposaclaracion/1"
         case .requestPassword:
             return "mv/cliente/password/solicitar"
+        case .changuePassword:
+            return "mv/cliente/password/cambiar"
+        case .personalData:
+            return "mv/cliente/actualizar"
         }
         
     }
@@ -77,21 +89,23 @@ enum Router: URLRequestConvertible {
         //Set timeout
         //urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         switch self {
-        case.validate,
-             .help:
+        case.validateCode,
+            .help:
             // Set encode to application/x-www-form-urlencoded
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         
         case.signIn(let parameters),
             .registerClient(let parameters),
-            .requestPassword(let parameters):
+            .requestPassword(let parameters),
+            .validateCodePsw(let parameters),
+            .personalData(let parameters),
+            .changuePassword(let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
-            debugPrint("PARAMETERS__________-")
-            debugPrint(parameters)
-            
-        
+            //debugPrint("PARAMETERS__________-")
+            //debugPrint(parameters)
+    
         }
         
         return urlRequest

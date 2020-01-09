@@ -32,16 +32,21 @@ struct Constants{
     }
     
     struct AlertTittles{
-      static let tittleValidateCode = "Validar Código"
+        static let tittleValidateCode = "Validar Código"
+        static let tCodeVerificationSuccess = "Verificación exitosa"
     }
     
     struct AlertMessages{
         static let messageValidateCode = "Ingresa el código de verificación que llegó a tu correo."
         static let placeholderTextField = " * * * * * "
+        static let codeVerificationSuccess = "Has finalizado tu registro, ahora puedes iniciar sesión en Cicili."
+        static let codeVerificationSuccessPws = "Ahora puedes establecer tu nuevsa contraseña"
     }
     
     struct textAction{
         static let actionCancel = "Cancelar"
         static let actionOK = "Aceptar"
+        static let actionSignIn = "INICIAR SESIÓN"
+        
     }
 }
