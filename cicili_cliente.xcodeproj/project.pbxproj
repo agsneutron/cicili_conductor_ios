@@ -41,8 +41,8 @@
 		57D1BAF823C0028F00551DA7 /* Asentamiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1BAF723C0028F00551DA7 /* Asentamiento.swift */; };
 		57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0BEB423BAA32200F60209 /* WSKeys.swift */; };
 		6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */; };
-		90FB698923C7053D00A7072D /* roundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB698723C7053D00A7072D /* roundedBtn.swift */; };
-		90FB698A23C7053D00A7072D /* fieldUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB698823C7053D00A7072D /* fieldUnderline.swift */; };
+		90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9179923C7144C0017B615 /* fieldUnderline.swift */; };
+		90C9179C23C7144C0017B615 /* roundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9179A23C7144C0017B615 /* roundedBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +82,8 @@
 		57D1BAF523C001D200551DA7 /* Direcciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direcciones.swift; sourceTree = "<group>"; };
 		57D1BAF723C0028F00551DA7 /* Asentamiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asentamiento.swift; sourceTree = "<group>"; };
 		57E0BEB423BAA32200F60209 /* WSKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSKeys.swift; sourceTree = "<group>"; };
-		90FB698723C7053D00A7072D /* roundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = roundedBtn.swift; path = ../../../Desktop/cicili_cliente_ios/cicili_cliente/UI/roundedBtn.swift; sourceTree = "<group>"; };
-		90FB698823C7053D00A7072D /* fieldUnderline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = fieldUnderline.swift; path = ../../../Desktop/cicili_cliente_ios/cicili_cliente/UI/fieldUnderline.swift; sourceTree = "<group>"; };
+		90C9179923C7144C0017B615 /* fieldUnderline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fieldUnderline.swift; sourceTree = "<group>"; };
+		90C9179A23C7144C0017B615 /* roundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedBtn.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_cliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -184,8 +184,8 @@
 		57D1BAEC23BF512400551DA7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				90FB698823C7053D00A7072D /* fieldUnderline.swift */,
-				90FB698723C7053D00A7072D /* roundedBtn.swift */,
+				90C9179923C7144C0017B615 /* fieldUnderline.swift */,
+				90C9179A23C7144C0017B615 /* roundedBtn.swift */,
 				57D1BAED23BF516E00551DA7 /* AlertManager.swift */,
 				57B7B34023C28A1E00731CE7 /* DIsmissSegue.swift */,
 			);
@@ -350,8 +350,9 @@
 			files = (
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
 				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
+				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
-				90FB698923C7053D00A7072D /* roundedBtn.swift in Sources */,
+				90C9179C23C7144C0017B615 /* roundedBtn.swift in Sources */,
 				57B2057823C66BC2005FF554 /* Personal.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
@@ -369,7 +370,6 @@
 				3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */,
 				57B7B34623C2A47000731CE7 /* ListViewController.swift in Sources */,
 				57BB85D023C654AE0057EE45 /* ForgotPasswordViewController.swift in Sources */,
-				90FB698A23C7053D00A7072D /* fieldUnderline.swift in Sources */,
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
