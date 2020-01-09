@@ -51,10 +51,10 @@ class PersonalDataViewController: UIViewController {
             personal.apellidoPaterno = lastname
             personal.apellidoMaterno = secondlastname
         
-            
-            let JSONPersonal = Mapper().toJSON(personal)
-            let parameters: [String: AnyObject] = JSONPersonal as [String : AnyObject]
-            RequestManager.setPersonalData(parameters: JSONPersonal, success: { response in
+            let _:String = Mapper().toJSONString(personal, prettyPrint: true)!
+            let objectAsDict:[String : AnyObject] = Mapper<Personal>().toJSON(personal) as [String : AnyObject]
+
+            RequestManager.setPersonalData(parameters: objectAsDict, success: { response in
                 
                 if response != nil{
                     print("En success \(response)")
@@ -102,4 +102,5 @@ class PersonalDataViewController: UIViewController {
     }
     */
 
+   
 }
