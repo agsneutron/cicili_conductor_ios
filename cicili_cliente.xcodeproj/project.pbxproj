@@ -15,6 +15,8 @@
 		3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */; };
 		31B3586423C3F97600707C82 /* RequestOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586323C3F97600707C82 /* RequestOrder.storyboard */; };
 		31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586723C404CD00707C82 /* RequestOrderViewController.swift */; };
+		31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586923C6374B00707C82 /* CardMapViewController.swift */; };
+		31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586A23C6374B00707C82 /* CardMapViewController.xib */; };
 		31C05E0823C27ED300613A08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31C05E0723C27ED300613A08 /* GoogleService-Info.plist */; };
 		57B7B33B23C26D4A00731CE7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B33A23C26D4A00731CE7 /* MainViewController.swift */; };
 		57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B33C23C26E4000731CE7 /* LostPasswordViewController.swift */; };
@@ -48,6 +50,8 @@
 		3137F9C223A8BA5000D8D8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31B3586323C3F97600707C82 /* RequestOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RequestOrder.storyboard; sourceTree = "<group>"; };
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
+		31B3586923C6374B00707C82 /* CardMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMapViewController.swift; sourceTree = "<group>"; };
+		31B3586A23C6374B00707C82 /* CardMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMapViewController.xib; sourceTree = "<group>"; };
 		31C05E0723C27ED300613A08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
 		57B7B33A23C26D4A00731CE7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				57B7B33E23C26E8500731CE7 /* VerifyCodeViewController.swift */,
 				57B7B34523C2A47000731CE7 /* ListViewController.swift */,
 				31B3586723C404CD00707C82 /* RequestOrderViewController.swift */,
+				31B3586923C6374B00707C82 /* CardMapViewController.swift */,
+				31B3586A23C6374B00707C82 /* CardMapViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
+				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
 				3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */,
 				31C05E0823C27ED300613A08 /* GoogleService-Info.plist in Resources */,
 				31B3586423C3F97600707C82 /* RequestOrder.storyboard in Resources */,
@@ -341,6 +348,7 @@
 				57B7B34623C2A47000731CE7 /* ListViewController.swift in Sources */,
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
+				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
 				57D1BAF423C0006100551DA7 /* FormaPago.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
