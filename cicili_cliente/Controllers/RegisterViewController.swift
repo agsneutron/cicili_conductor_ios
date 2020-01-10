@@ -24,6 +24,9 @@ class RegisterViewController: UIViewController {
         view.addGestureRecognizer(gesture)
     }
     
+    @IBAction func closeBtn(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func registerButton(_ sender: UIButton) {
         
         if let username = userTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty, let phone = phoneTextField.text, !phone.isEmpty, let confirmpassword = confirmPasswordTextField.text, !confirmpassword.isEmpty {

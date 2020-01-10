@@ -52,9 +52,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func forgotPassword(_ sender: UIButton) {
-        
+       
+       
+       
         self.performSegue(withIdentifier: Constants.Storyboard.passwordSegueId, sender: self)
-    
+       
     }
     
     @IBAction func registerClient(_ sender: UIButton) {

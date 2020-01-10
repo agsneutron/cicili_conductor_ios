@@ -22,7 +22,18 @@ class LostPasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.setNeedsStatusBarAppearanceUpdate()
+//    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+    
+    @IBAction func closeBtn(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func validateCode(_ sender: UIButton) {
         
         if let username = userTextField.text, !username.isEmpty {
