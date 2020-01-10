@@ -37,9 +37,9 @@ class ViewController: UIViewController {
                     print("En success y token no nil \(response.token)")
                     self.userTextField.text = ""
                     self.passwordTextField.text = ""
-                    //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
-                    self.present(vc!, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
+                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
+                    //self.present(vc!, animated: true, completion: nil)
                     
                     }
                 })

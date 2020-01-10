@@ -12,7 +12,7 @@ struct Constants{
     
     struct Storyboard{
 
-        static let loginSegueId = "loginToMainSegue"
+        static let loginSegueId = "presentHome"
         static let passwordSegueId = "forgotPasswordSegue"
         static let registerSegueId = "loginToRegisterSegue"
 
