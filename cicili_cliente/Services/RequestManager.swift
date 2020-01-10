@@ -114,16 +114,6 @@ class RequestManager: NSObject{
                 
                 success(objectResponse!)
             
-            //.responseJSON{
-       //response in
-         //  switch response.result {
-          // case .success:
-           // let json = JSON(response.result.value!)
-           // let errorcode: Int = json[WSKeys.parameters.error].intValue
-            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-            //    success(cliente!)
             } else {
                 failure(NSError(domain: "com.cicili.requestpassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
@@ -150,16 +140,6 @@ class RequestManager: NSObject{
                    
                    success(objectResponse!)
                
-               //.responseJSON{
-          //response in
-            //  switch response.result {
-             // case .success:
-              // let json = JSON(response.result.value!)
-              // let errorcode: Int = json[WSKeys.parameters.error].intValue
-               //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-               //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-               //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-               //    success(cliente!)
                } else {
                    failure(NSError(domain: "com.cicili.validateCodePassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
                }
@@ -188,16 +168,6 @@ class RequestManager: NSObject{
                 
                 success(objectResponse!)
             
-            //.responseJSON{
-       //response in
-         //  switch response.result {
-          // case .success:
-           // let json = JSON(response.result.value!)
-           // let errorcode: Int = json[WSKeys.parameters.error].intValue
-            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-            //    success(cliente!)
             } else {
                 failure(NSError(domain: "com.cicili.changuePassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
@@ -224,16 +194,6 @@ class RequestManager: NSObject{
                 
                 success(objectResponse!)
             
-            //.responseJSON{
-       //response in
-         //  switch response.result {
-          // case .success:
-           // let json = JSON(response.result.value!)
-           // let errorcode: Int = json[WSKeys.parameters.error].intValue
-            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-            //    success(cliente!)
             } else {
                 failure(NSError(domain: "com.cicili.changuePassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }

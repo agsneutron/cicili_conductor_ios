@@ -30,21 +30,36 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
         
         if let username = userTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty {
+            
+           
             RequestManager.fetchSignIn(parameters: [WSKeys.parameters.PUSERNAME: username, WSKeys.parameters.PPASSWORD: password, WSKeys.parameters.PTOKENDISPOSITIVO: "1234"], success: { response in
                 
                 if response.token != nil{
-                    print("En success y token no nil \(response.token)")
+                    print("En success y token no nil \(response)")
                     self.userTextField.text = ""
                     self.passwordTextField.text = ""
-                    //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
-                    self.present(vc!, animated: true, completion: nil)
+                    
+                    switch response.status {
+                    case WSKeys.parameters.completo:
+                        self.performSegue(withIdentifier: Constants.Storyboard.homeSegueId, sender: self)
+                    case WSKeys.parameters.datos_personales:
+                        self.performSegue(withIdentifier: Constants.Storyboard.personalDataSegueId, sender: self)
+                    case WSKeys.parameters.datos_pago:
+                         self.performSegue(withIdentifier: Constants.Storyboard.paymentDataSegueId, sender: self)
+                    case WSKeys.parameters.datos_direccion:
+                        self.performSegue(withIdentifier: Constants.Storyboard.adressDataSegueId, sender: self)
+                    default:
+                        self.showAlertController(tittle_t: Constants.ErrorTittles.tittleStatus, message_t: Constants.ErrorMessages.messageStatus)
+                    }
+                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
+                    //self.present(vc!, animated: true, completion: nil)
                     
                     }
                 })
                 { error in
                     self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
                 }
+            
         } else {
             self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageRequeridoLogin)
         }
@@ -62,5 +77,17 @@ class ViewController: UIViewController {
            
     }
     
+    // navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    
+    
+   
+
+
+  
+
 }
 

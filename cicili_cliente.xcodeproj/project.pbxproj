@@ -26,6 +26,7 @@
 		57B7B34823C2B4F000731CE7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B34723C2B4F000731CE7 /* Response.swift */; };
 		57B857EB23BDE90A0012BF94 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B857EA23BDE90A0012BF94 /* Router.swift */; };
 		57BB85D023C654AE0057EE45 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB85CF23C654AE0057EE45 /* ForgotPasswordViewController.swift */; };
+		57C22D4723C7A61100835B8F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C22D4623C7A61100835B8F /* LoginModel.swift */; };
 		57CD140923BE88AE0056913B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140823BE88AE0056913B /* RequestManager.swift */; };
 		57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140B23BEAD0C0056913B /* Cliente.swift */; };
 		57CD140E23BEB97C0056913B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD140D23BEB97C0056913B /* Constants.swift */; };
@@ -62,6 +63,7 @@
 		57B7B34723C2B4F000731CE7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		57B857EA23BDE90A0012BF94 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		57BB85CF23C654AE0057EE45 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		57C22D4623C7A61100835B8F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		57CD140823BE88AE0056913B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		57CD140B23BEAD0C0056913B /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
 		57CD140D23BEB97C0056913B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_cliente */ = {
 			isa = PBXGroup;
 			children = (
+				57C22D4323C7A57800835B8F /* New GroupIO */,
 				57B7B34223C28C0000731CE7 /* Storyboards */,
 				57D1BAF023BFAF7900551DA7 /* Controllers */,
 				57D1BAEC23BF512400551DA7 /* UI */,
@@ -155,6 +158,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		57C22D4323C7A57800835B8F /* New GroupIO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New GroupIO";
+			sourceTree = "<group>";
+		};
 		57CD140A23BEACD10056913B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				57D1BAF723C0028F00551DA7 /* Asentamiento.swift */,
 				57B7B34723C2B4F000731CE7 /* Response.swift */,
 				57B2057723C66BC2005FF554 /* Personal.swift */,
+				57C22D4623C7A61100835B8F /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +351,7 @@
 				57D1BAF823C0028F00551DA7 /* Asentamiento.swift in Sources */,
 				57B7B33F23C26E8500731CE7 /* VerifyCodeViewController.swift in Sources */,
 				57B7B33B23C26D4A00731CE7 /* MainViewController.swift in Sources */,
+				57C22D4723C7A61100835B8F /* LoginModel.swift in Sources */,
 				57CD140923BE88AE0056913B /* RequestManager.swift in Sources */,
 				3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */,
 				57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */,

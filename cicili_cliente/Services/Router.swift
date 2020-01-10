@@ -77,7 +77,6 @@ enum Router: URLRequestConvertible {
         // BaseURL string
         let url = try Router.baseURLString.asURL()
         
-        
         // URLRequest
         var urlRequest = URLRequest(url: url.appendingPathComponent(endpoint))
         
@@ -103,9 +102,11 @@ enum Router: URLRequestConvertible {
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
-            //debugPrint("PARAMETERS__________-")
-            //debugPrint(parameters)
-    
+            debugPrint("PARAMETERS__________-")
+            debugPrint(parameters)
+            
+            
+        
         }
         
         return urlRequest
