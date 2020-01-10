@@ -43,7 +43,15 @@ class ViewController: UIViewController {
                     case WSKeys.parameters.completo:
                         self.performSegue(withIdentifier: Constants.Storyboard.homeSegueId, sender: self)
                     case WSKeys.parameters.datos_personales:
-                        self.performSegue(withIdentifier: Constants.Storyboard.personalDataSegueId, sender: self)
+                        guard let personalController = self.storyboard?.instantiateViewController(
+                            withIdentifier: "PersonalDataStoryboard") as? PersonalDataViewController else {
+                            fatalError("Unable to create PreviewController")
+                        }
+                        
+                        personalController.cliente = response
+                        self.present(personalController, animated: true, completion: nil)
+                       
+                       // self.performSegue(withIdentifier: Constants.Storyboard.personalDataSegueId, sender: self)
                     case WSKeys.parameters.datos_pago:
                          self.performSegue(withIdentifier: Constants.Storyboard.paymentDataSegueId, sender: self)
                     case WSKeys.parameters.datos_direccion:
@@ -51,7 +59,7 @@ class ViewController: UIViewController {
                     default:
                         self.showAlertController(tittle_t: Constants.ErrorTittles.tittleStatus, message_t: Constants.ErrorMessages.messageStatus)
                     }
-                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
+                    //let vc = self.storyboard?.    (withIdentifier: "MainStoryboard")
                     //self.present(vc!, animated: true, completion: nil)
                     
                     }
@@ -82,6 +90,7 @@ class ViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+    
     
     
    

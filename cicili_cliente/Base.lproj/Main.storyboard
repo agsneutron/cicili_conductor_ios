@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PersonalData-->
+        <!--PersonalDataStoryboard-->
         <scene sceneID="hyQ-46-vEH">
             <objects>
-                <viewControllerPlaceholder storyboardName="PersonalData" id="I8x-C4-dgS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="PersonalDataStoryboard" storyboardName="PersonalData" referencedIdentifier="PersonalDataStoryboard" id="I8x-C4-dgS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="MIQ-XI-9de"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VN-ts-CY2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,7 +58,6 @@
                                         <state key="normal" title="INICIAR SESIÓN"/>
                                         <connections>
                                             <action selector="singIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gM0-gJ-SbI"/>
-                                            <segue destination="I8x-C4-dgS" kind="show" identifier="toPersonalDataSegue" id="yXk-cf-8jP"/>
                                         </connections>
                                     </button>
                                 </subviews>
