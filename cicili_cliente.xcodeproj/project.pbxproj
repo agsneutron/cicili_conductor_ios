@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3105B11F23C94522004EA64A /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B11E23C94522004EA64A /* AddressTableViewController.swift */; };
 		3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12023C94729004EA64A /* AddressTableViewCell.swift */; };
-		3105B12523CA4266004EA64A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12423CA4266004EA64A /* Address.swift */; };
+		3105B12523CA4266004EA64A /* AddressTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12423CA4266004EA64A /* AddressTable.swift */; };
 		3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */; };
 		3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B523A8BA4800D8D8FF /* ViewController.swift */; };
 		3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9B723A8BA4800D8D8FF /* Main.storyboard */; };
@@ -52,7 +52,7 @@
 /* Begin PBXFileReference section */
 		3105B11E23C94522004EA64A /* AddressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		3105B12023C94729004EA64A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
-		3105B12423CA4266004EA64A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		3105B12423CA4266004EA64A /* AddressTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTable.swift; sourceTree = "<group>"; };
 		3137F9B023A8BA4800D8D8FF /* cicili_cliente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cicili_cliente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3137F9B523A8BA4800D8D8FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			children = (
 				3105B11E23C94522004EA64A /* AddressTableViewController.swift */,
 				3105B12023C94729004EA64A /* AddressTableViewCell.swift */,
-				3105B12423CA4266004EA64A /* Address.swift */,
+				3105B12423CA4266004EA64A /* AddressTable.swift */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 				57B2057823C66BC2005FF554 /* Personal.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
-				3105B12523CA4266004EA64A /* Address.swift in Sources */,
+				3105B12523CA4266004EA64A /* AddressTable.swift in Sources */,
 				57B7B34823C2B4F000731CE7 /* Response.swift in Sources */,
 				3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */,
 				31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */,

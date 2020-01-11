@@ -9,7 +9,7 @@
 import UIKit
 
 
-class Address {
+class AddressTable {
     
     //MARK: Properties
     
