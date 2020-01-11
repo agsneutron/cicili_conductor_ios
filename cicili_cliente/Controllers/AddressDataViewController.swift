@@ -19,11 +19,18 @@ class AddressDataViewController: UIViewController {
     @IBOutlet weak var zipcodeTextField: UITextField!
     @IBOutlet weak var AliasTextField: UITextField!
     
-    var cliente = Cliente?
+    var cliente: Cliente?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+    AliasTextField.becomeFirstResponder()
+    let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+                      view.addGestureRecognizer(gesture)
+               
     }
     
 
@@ -35,14 +42,23 @@ class AddressDataViewController: UIViewController {
             let internalInputInput = intNumberTextField.text, !internalInputInput.isEmpty,
             let townInputInput = townTextField.text, !townInputInput.isEmpty {
         
-            let adsress =  Address()
+            let address = Address()
+            let asentamiento = Asentamiento()
             
-            adsress.alias = aliasInput
-            adsress.cp = zipcodeInput
-            adsress.calle = streetInputInput
-            adsress.interior = externalInputInput
-            adsress.exterior = internalInputInput
-            adsress.asentamiento = townInputInput
+            asentamiento.cp = 52172
+            asentamiento.estado = "Mexico"
+            asentamiento.municipio = "Metepec"
+            asentamiento.nombre = "La asunción"
+            
+            address.alias = aliasInput
+            address.cp = zipcodeInput
+            address.calle = streetInputInput
+            address.interior = externalInputInput
+            address.exterior = internalInputInput
+            address.latitud = 0
+            address.longitud = 0
+            address.asentamiento = asentamiento
+            //address.asentamiento = townInputInput
             
             let objectAsDict:[String : AnyObject] = Mapper<Address>().toJSON(address) as [String : AnyObject]
             

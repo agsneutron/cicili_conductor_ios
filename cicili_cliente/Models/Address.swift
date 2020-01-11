@@ -9,33 +9,28 @@
 import ObjectMapper
 
 class Address: Mappable {
+    
     var id: Int=0
     var calle: String?
     var exterior: String?
     var interior: String?
-    var town: String?
-    var district: String?
-    var state: String?
     var latitud: Double = 0
     var longitud: Double = 0
     var cp: String?
     var alias: String?
     var favorito: Int=0
-    var asentamiento: Asentamiento
+    var asentamiento: Asentamiento?
 
     required convenience init?(map: Map) {
         self.init()
     }
-
-    func mapping(map: Map) {
+    
+        func mapping(map: Map) {
         // compromisos JSON
         id          <- map["id"]
         calle       <- map["calle"]
         exterior    <- map["exterior"]
         interior    <- map["interior"]
-        town        <- map["town"]
-        district    <- map["district"]
-        state       <- map["state"]
         latitud     <- map["latitud"]
         longitud    <- map["longitud"]
         cp          <- map["cp"]
