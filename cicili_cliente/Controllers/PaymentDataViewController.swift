@@ -53,9 +53,9 @@ class PaymentDataViewController: UIViewController {
             let payment = Payment()
             
             payment.tipoPago = selectedPaymentType
-            payment.numero = cardInput
+            payment.numero = Int64(cardInput)!
             payment.vencimiento = dateInput
-            payment.cvv = cvvInput
+            payment.cvv = Int(cvvInput)!
             payment.banco = cvvInput
             payment.tipoTarjeta = dateInput
             

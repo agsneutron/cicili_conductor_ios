@@ -22,7 +22,7 @@ class Cliente: Mappable {
     var nacimiento: String?
     var telefono: String?
     var sexo: String?
-    var formaPago: [FormaPago]?
+    var formaPago: [Payment]?
     var direcciones: [Direcciones]?
     var imagen: String?
 

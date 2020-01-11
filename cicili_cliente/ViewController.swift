@@ -53,7 +53,14 @@ class ViewController: UIViewController {
                        
                        // self.performSegue(withIdentifier: Constants.Storyboard.personalDataSegueId, sender: self)
                     case WSKeys.parameters.datos_pago:
-                         self.performSegue(withIdentifier: Constants.Storyboard.paymentDataSegueId, sender: self)
+                        guard let paymentController = self.storyboard?.instantiateViewController(
+                             withIdentifier: "PaymentDataStoryboard") as? PaymentDataViewController else {
+                             fatalError("Unable to create PaymentDataController")
+                         }
+                         paymentController.cliente = response
+                         self.present(paymentController, animated: true, completion: nil)
+                        
+                        // self.performSegue(withIdentifier: Constants.Storyboard.paymentDataSegueId, sender: self)
                     case WSKeys.parameters.datos_direccion:
                         self.performSegue(withIdentifier: Constants.Storyboard.adressDataSegueId, sender: self)
                     default:

@@ -66,7 +66,7 @@ enum Router: URLRequestConvertible {
         case .personalData:
             return "mv/cliente/actualizar"
         case .paymentData:
-            return "/mv/cliente/formapago/registrar"
+            return "mv/cliente/formapago/registrar"
         }
         
     }
