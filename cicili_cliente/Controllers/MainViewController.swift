@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
     func setupCard() {
         visualEffectView = UIVisualEffectView()
         visualEffectView.frame = self.view.frame
-        self.view.addSubview(visualEffectView)
+        //self.view.addSubview(visualEffectView)
         
         cardViewController = CardMapViewController(nibName:"CardMapViewController", bundle:nil)
         self.addChild(cardViewController)
@@ -140,8 +140,8 @@ class MainViewController: UIViewController {
                 }
             }
             
-            blurAnimator.startAnimation()
-            runningAnimations.append(blurAnimator)
+            //blurAnimator.startAnimation()
+            //runningAnimations.append(blurAnimator)
             
         }
     }

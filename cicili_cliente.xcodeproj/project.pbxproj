@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3105B11F23C94522004EA64A /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B11E23C94522004EA64A /* AddressTableViewController.swift */; };
+		3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12023C94729004EA64A /* AddressTableViewCell.swift */; };
+		3105B12523CA4266004EA64A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12423CA4266004EA64A /* Address.swift */; };
 		3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */; };
 		3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B523A8BA4800D8D8FF /* ViewController.swift */; };
 		3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9B723A8BA4800D8D8FF /* Main.storyboard */; };
 		3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9BA23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld */; };
 		3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */; };
 		3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */; };
+		3164A80C23C915B600A8ED71 /* AddressTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3164A80B23C915B500A8ED71 /* AddressTable.storyboard */; };
 		31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586723C404CD00707C82 /* RequestOrderViewController.swift */; };
 		31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586923C6374B00707C82 /* CardMapViewController.swift */; };
 		31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586A23C6374B00707C82 /* CardMapViewController.xib */; };
@@ -46,6 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3105B11E23C94522004EA64A /* AddressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
+		3105B12023C94729004EA64A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		3105B12423CA4266004EA64A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3137F9B023A8BA4800D8D8FF /* cicili_cliente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cicili_cliente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3137F9B523A8BA4800D8D8FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +61,7 @@
 		3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3137F9C023A8BA5000D8D8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3137F9C223A8BA5000D8D8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3164A80B23C915B500A8ED71 /* AddressTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressTable.storyboard; sourceTree = "<group>"; };
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
 		31B3586923C6374B00707C82 /* CardMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMapViewController.swift; sourceTree = "<group>"; };
 		31B3586A23C6374B00707C82 /* CardMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMapViewController.xib; sourceTree = "<group>"; };
@@ -110,6 +118,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3105B11D23C94433004EA64A /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				3105B11E23C94522004EA64A /* AddressTableViewController.swift */,
+				3105B12023C94729004EA64A /* AddressTableViewCell.swift */,
+				3105B12423CA4266004EA64A /* Address.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
 		3137F9A723A8BA4700D8D8FF = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +173,7 @@
 				57B7B34323C28C4000731CE7 /* List.storyboard */,
 				57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */,
 				57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */,
+				3164A80B23C915B500A8ED71 /* AddressTable.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -195,6 +214,7 @@
 		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3105B11D23C94433004EA64A /* Address */,
 				57D1BAF123BFB01A00551DA7 /* RegisterViewController.swift */,
 				57B7B33A23C26D4A00731CE7 /* MainViewController.swift */,
 				57B7B33C23C26E4000731CE7 /* LostPasswordViewController.swift */,
@@ -288,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3164A80C23C915B600A8ED71 /* AddressTable.storyboard in Resources */,
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
 				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
 				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
@@ -349,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
+				3105B11F23C94522004EA64A /* AddressTableViewController.swift in Sources */,
 				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
 				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
@@ -356,7 +378,9 @@
 				57B2057823C66BC2005FF554 /* Personal.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
+				3105B12523CA4266004EA64A /* Address.swift in Sources */,
 				57B7B34823C2B4F000731CE7 /* Response.swift in Sources */,
+				3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */,
 				31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */,
 				57D1BAF623C001D200551DA7 /* Direcciones.swift in Sources */,
 				57B857EB23BDE90A0012BF94 /* Router.swift in Sources */,

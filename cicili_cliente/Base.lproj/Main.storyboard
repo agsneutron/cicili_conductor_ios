@@ -444,15 +444,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iic-xe-hum">
-                                <rect key="frame" x="0.0" y="64" width="414" height="473"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iic-xe-hum">
+                                <rect key="frame" x="0.0" y="64" width="414" height="722"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Iic-xe-hum" firstAttribute="top" secondItem="64w-pm-9WK" secondAttribute="top" constant="-24" id="9Xy-KM-DT7"/>
                             <constraint firstItem="Iic-xe-hum" firstAttribute="leading" secondItem="64w-pm-9WK" secondAttribute="leading" id="CT6-aM-nRl"/>
-                            <constraint firstItem="64w-pm-9WK" firstAttribute="bottom" secondItem="Iic-xe-hum" secondAttribute="bottom" constant="325" id="Cql-oN-FVo"/>
+                            <constraint firstItem="64w-pm-9WK" firstAttribute="bottom" secondItem="Iic-xe-hum" secondAttribute="bottom" constant="76" id="Cql-oN-FVo"/>
                             <constraint firstItem="64w-pm-9WK" firstAttribute="trailing" secondItem="Iic-xe-hum" secondAttribute="trailing" id="Hcs-yo-3Dd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="64w-pm-9WK"/>
@@ -461,7 +461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUL-vv-qK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165.59999999999999" y="-1100.2463054187192"/>
+            <point key="canvasLocation" x="165.21739130434784" y="-1100.8928571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r4Q-fU-tUg">
