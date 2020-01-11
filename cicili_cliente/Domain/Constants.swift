@@ -15,20 +15,26 @@ struct Constants{
         static let loginSegueId = "presentHome"
         static let passwordSegueId = "forgotPasswordSegue"
         static let registerSegueId = "loginToRegisterSegue"
+        static let homeSegueId = "toMainSegue"
+        static let personalDataSegueId = "toPersonalDataSegue"
+        static let paymentDataSegueId = "toPaymentDataSegue"
+        static let adressDataSegueId = "toAdressDataSegue"
 
     }
     
     struct ErrorTittles{
         static let titleRequerido = "Datos Obligatorios"
         static let titleVerifica = "Verifica los datos"
+        static let tittleStatus = "Error en tu cuenta"
     }
     
     struct ErrorMessages{
         static let messageDatosRequeridos = "Por favor, ingresa los datos solicitados."
         static let messageRequeridoLogin = "Por favor, ingresa usuario y contraseña."
         static let messageVerificaLogin = "Datos de acceso incorrectos, favor de verificar"
-         static let messagRequeridoCodigo = "Por favor, ingresa un código."
+        static let messagRequeridoCodigo = "Por favor, ingresa un código."
         static let messageVerificaCodigo = "Código incorrecto, favor de verificar."
+        static let messageStatus = "Ha ocurrido un error con tu cuenta, ponte en contacto con Cicili."
     }
     
     struct AlertTittles{

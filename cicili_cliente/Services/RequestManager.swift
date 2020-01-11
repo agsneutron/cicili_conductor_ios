@@ -114,16 +114,6 @@ class RequestManager: NSObject{
                 
                 success(objectResponse!)
             
-            //.responseJSON{
-       //response in
-         //  switch response.result {
-          // case .success:
-           // let json = JSON(response.result.value!)
-           // let errorcode: Int = json[WSKeys.parameters.error].intValue
-            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-            //    success(cliente!)
             } else {
                 failure(NSError(domain: "com.cicili.requestpassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
@@ -150,16 +140,6 @@ class RequestManager: NSObject{
                    
                    success(objectResponse!)
                
-               //.responseJSON{
-          //response in
-            //  switch response.result {
-             // case .success:
-              // let json = JSON(response.result.value!)
-              // let errorcode: Int = json[WSKeys.parameters.error].intValue
-               //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-               //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-               //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-               //    success(cliente!)
                } else {
                    failure(NSError(domain: "com.cicili.validateCodePassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
                }
@@ -188,16 +168,6 @@ class RequestManager: NSObject{
                 
                 success(objectResponse!)
             
-            //.responseJSON{
-       //response in
-         //  switch response.result {
-          // case .success:
-           // let json = JSON(response.result.value!)
-           // let errorcode: Int = json[WSKeys.parameters.error].intValue
-            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-            //    success(cliente!)
             } else {
                 failure(NSError(domain: "com.cicili.changuePassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
@@ -208,10 +178,10 @@ class RequestManager: NSObject{
     }
     
     //to save PersonalData
-    class func setPersonalData(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+    class func setPersonalData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-     Alamofire.request(Router.personalData(with: parameters)).responseObject { (response: DataResponse<Response>) in
+        Alamofire.request(Router.personalData(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
         
             debugPrint("*********RES*********")
             debugPrint(response)
@@ -224,18 +194,74 @@ class RequestManager: NSObject{
                 
                 success(objectResponse!)
             
-            //.responseJSON{
-       //response in
-         //  switch response.result {
-          // case .success:
-           // let json = JSON(response.result.value!)
-           // let errorcode: Int = json[WSKeys.parameters.error].intValue
-            //let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            //let cliente = Mapper<Cliente>().map(JSONString: json[WSKeys.parameters.data].stringValue)
-            //if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
-            //    success(cliente!)
             } else {
-                failure(NSError(domain: "com.cicili.changuePassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+                failure(NSError(domain: "com.cicili.PersonalData", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+            }
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+    }
+    
+    //to paymentdata
+    class func setPaymentData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.paymentData(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let objectResponse = response.result.value
+            
+            debugPrint("*********RES VALUE*********")
+            debugPrint(objectResponse)
+            
+            debugPrint("*********RES VALUE*********")
+            debugPrint(response.data)
+            
+            if objectResponse!.codeError == WSKeys.parameters.okresponse {
+                
+                success(objectResponse!)
+            
+            } else {
+                failure(NSError(domain: "com.cicili.PaymentData", code: (objectResponse?.codeError)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+            }
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+    }
+    
+    
+    //let address data
+    
+    class func setAddressData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.addressData(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let objectResponse = response.result.value
+            
+            debugPrint("*********RES VALUE*********")
+            debugPrint(objectResponse)
+            
+            debugPrint("*********RES VALUE*********")
+            debugPrint(response.data)
+            
+            if objectResponse!.codeError == WSKeys.parameters.okresponse {
+                
+                success(objectResponse!)
+            
+            } else {
+                failure(NSError(domain: "com.cicili.AddressData", code: (objectResponse?.codeError)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
            case .failure(let error):
                failure(error as NSError)
