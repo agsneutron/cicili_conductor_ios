@@ -10,7 +10,7 @@ import UIKit
 
 class AddressTableViewController: UITableViewController {
 
-    var addresses = [Address]()
+    var addresses = [AddressTable]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,15 +102,15 @@ class AddressTableViewController: UITableViewController {
     
     private func loadAddress() {
         
-        guard let address1 = Address(name: "Casa") else {
+        guard let address1 = AddressTable(name: "Casa") else {
             fatalError("Unable to instantiate meal1")
         }
 
-        guard let address2 = Address(name: "Trabajo") else {
+        guard let address2 = AddressTable(name: "Trabajo") else {
             fatalError("Unable to instantiate meal2")
         }
 
-        guard let address3 = Address(name: "Casa papás") else {
+        guard let address3 = AddressTable(name: "Casa papás") else {
             fatalError("Unable to instantiate meal2")
         }
 
