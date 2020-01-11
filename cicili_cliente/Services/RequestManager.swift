@@ -234,4 +234,38 @@ class RequestManager: NSObject{
            }
         }
     }
+    
+    
+    //let address data
+    
+    class func setAddressData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.addressData(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let objectResponse = response.result.value
+            
+            debugPrint("*********RES VALUE*********")
+            debugPrint(objectResponse)
+            
+            debugPrint("*********RES VALUE*********")
+            debugPrint(response.data)
+            
+            if objectResponse!.codeError == WSKeys.parameters.okresponse {
+                
+                success(objectResponse!)
+            
+            } else {
+                failure(NSError(domain: "com.cicili.AddressData", code: (objectResponse?.codeError)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+            }
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+    }
 }

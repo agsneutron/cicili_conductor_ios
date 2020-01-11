@@ -25,6 +25,7 @@ enum Router: URLRequestConvertible {
     case changuePassword(with: Parameters)
     case personalData(autorizathionToken:String , parametersSet: Parameters)
     case paymentData(autorizathionToken:String , parametersSet: Parameters)
+    case addressData(autorizathionToken:String , parametersSet: Parameters)
     
     
     // HTTP method
@@ -40,6 +41,7 @@ enum Router: URLRequestConvertible {
              .changuePassword,
              .personalData,
              .paymentData,
+             .addressData,
              .signIn:
             return .post
         }
@@ -66,6 +68,8 @@ enum Router: URLRequestConvertible {
         case .personalData:
             return "mv/cliente/actualizar"
         case .paymentData:
+            return "mv/cliente/formapago/registrar"
+        case .addressData:
             return "mv/cliente/formapago/registrar"
         }
         
@@ -109,6 +113,7 @@ enum Router: URLRequestConvertible {
             debugPrint(parameters)
             
         case.personalData(let autorizathionToken, let parametersSet),
+            .addressData(let autorizathionToken, let parametersSet),
             .paymentData(let autorizathionToken, let parametersSet):
             //request post JSON
             
