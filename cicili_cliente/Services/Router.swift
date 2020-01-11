@@ -23,7 +23,8 @@ enum Router: URLRequestConvertible {
     case help
     case requestPassword(with: Parameters)
     case changuePassword(with: Parameters)
-    case personalData(with: Parameters)
+    case personalData(autorizathionToken:String , parametersSet: Parameters)
+    case paymentData(autorizathionToken:String , parametersSet: Parameters)
     
     
     // HTTP method
@@ -38,6 +39,7 @@ enum Router: URLRequestConvertible {
              .requestPassword,
              .changuePassword,
              .personalData,
+             .paymentData,
              .signIn:
             return .post
         }
@@ -63,6 +65,8 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/password/cambiar"
         case .personalData:
             return "mv/cliente/actualizar"
+        case .paymentData:
+            return "/mv/cliente/formapago/registrar"
         }
         
     }
@@ -97,7 +101,6 @@ enum Router: URLRequestConvertible {
             .registerClient(let parameters),
             .requestPassword(let parameters),
             .validateCodePsw(let parameters),
-            .personalData(let parameters),
             .changuePassword(let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
@@ -105,6 +108,24 @@ enum Router: URLRequestConvertible {
             debugPrint("PARAMETERS__________-")
             debugPrint(parameters)
             
+        case.personalData(let autorizathionToken, let parametersSet),
+            .paymentData(let autorizathionToken, let parametersSet):
+            //request post JSON
+            
+            let data = try! JSONSerialization.data(withJSONObject: parametersSet, options: JSONSerialization.WritingOptions.prettyPrinted)
+            
+            let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+                       if let json = json {
+                           print(json)
+                       }
+           
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: [:])
+            urlRequest.httpBody = json!.data(using: String.Encoding.utf8.rawValue);
+            urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+            urlRequest.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            
+            debugPrint("PARAMETERS__________-")
+            debugPrint(parametersSet)
             
         
         }

@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-class FormaPago: Mappable {
+class Payment: Mappable {
     
     var id: Int = 0
     var status: Int = 0
@@ -25,7 +25,6 @@ class FormaPago: Mappable {
     }
     
     func mapping(map: Map) {
-        
         // compromisos JSON
         id          <- map["id"]
         status      <- map["status"]
@@ -35,6 +34,5 @@ class FormaPago: Mappable {
         vencimiento <- map["vencimiento"]
         banco       <- map["banco"]
         cvv         <- map["cvv"]
-       
     }
 }

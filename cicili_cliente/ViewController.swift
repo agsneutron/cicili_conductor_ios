@@ -45,7 +45,7 @@ class ViewController: UIViewController {
                     case WSKeys.parameters.datos_personales:
                         guard let personalController = self.storyboard?.instantiateViewController(
                             withIdentifier: "PersonalDataStoryboard") as? PersonalDataViewController else {
-                            fatalError("Unable to create PreviewController")
+                            fatalError("Unable to create PersonalDataController")
                         }
                         
                         personalController.cliente = response

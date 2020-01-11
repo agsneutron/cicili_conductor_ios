@@ -9,26 +9,23 @@
 import UIKit
 import ObjectMapper
 
-class PersonalDataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+class PersonalDataViewController: UIViewController {
+    //, UIPickerViewDelegate, UIPickerViewDataSource
+    
+    @IBOutlet weak var genderSegment: UISegmentedControl!
     @IBOutlet weak var perfilImage: UIImageView!
-    @IBOutlet weak var sexPicker: UIPickerView!
+    //@IBOutlet weak var sexPicker: UIPickerView!
     @IBOutlet weak var bornDatePicker: UIDatePicker!
     @IBOutlet weak var secondLastnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     
-    var pickerData: [String] = [String]()
-    var selectedSexPicker :String = ""
+    //var pickerData: [String] = [String]()
+    var selectedGenderPicker :String = ""
    
     var cliente: Cliente?
-    
-    
     let dateFormatter = DateFormatter()
 
-    var dateString = dateFormatter.stringFromDate(bornDatePicker)
-   
-    let strDate = dateFormatter.string(from: bornDatePicker.date)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,37 +36,53 @@ class PersonalDataViewController: UIViewController, UIPickerViewDelegate, UIPick
                view.addGestureRecognizer(gesture)
         
         // Connect data:
-        self.sexPicker.dataSource = self
-        self.sexPicker.delegate = self
-        //sexPicker.delegate = (self as! UIPickerViewDelegate)
-        //sexPicker.dataSource = (self as! UIPickerViewDataSource)
-        
         //set data to sex picker
-        	pickerData = ["Selecciona una opción", "Hombre","Mujer","No indicar"]
-        debugPrint("ON PERSONALDATA......")
-        debugPrint(cliente?.correoElectronico)
+        //pickerData = ["Selecciona una opción", "Hombre","Mujer","No indicar"]
+        //self.sexPicker.dataSource = self
+        //self.sexPicker.delegate = self
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        //debugPrint("ON PERSONALDATA......")
+        //debugPrint(cliente?.correoElectronico)
     }
     
     @IBAction func personalDataRegisterButton(_ sender: UIButton) {
         
         self.view.endEditing(true)
         
-        if let nameInput = nameTextField.text, !nameInput.isEmpty, let sexInput = selectedSexPicker, !sexInput.isEmty, let lastnameInput = lastnameTextField.text, !lastnameInput.isEmpty, let secondlastnameInput = secondLastnameTextField.text, !secondlastnameInput.isEmpty {
+        let imageSelected = perfilImage.image
+        let imageEncoded = imageSelected!.jpegData(compressionQuality: 1)!.base64EncodedString()
+        
+        switch genderSegment.selectedSegmentIndex
+           {
+           case 0:
+            selectedGenderPicker = WSKeys.parameters.hombre
+           case 1:
+               selectedGenderPicker = WSKeys.parameters.mujer
+            case 2:
+            selectedGenderPicker = WSKeys.parameters.noindicar
+           default:
+               break
+           }
+        
+        if let nameInput = nameTextField.text, !nameInput.isEmpty, !selectedGenderPicker.isEmpty, let lastnameInput = lastnameTextField.text, !lastnameInput.isEmpty, let secondlastnameInput = secondLastnameTextField.text, !secondlastnameInput.isEmpty, !imageEncoded.isEmpty {
             
-            var personal = Personal()
+            let personal = Personal()
         
             personal.nombre = nameInput
             personal.apellidoPaterno = lastnameInput
             personal.apellidoMaterno = secondlastnameInput
-            personal.sexo = sexInput
-            personal.imagen = ""
+            personal.sexo = selectedGenderPicker
+            personal.nacimiento = dateFormatter.string(from: bornDatePicker.date)
+            personal.imagen = imageEncoded
+            personal.user = cliente?.correoElectronico
         
             let _:String = Mapper().toJSONString(personal, prettyPrint: true)!
             let objectAsDict:[String : AnyObject] = Mapper<Personal>().toJSON(personal) as [String : AnyObject]
 
-            RequestManager.setPersonalData(parameters: objectAsDict, success: { response in
+            RequestManager.setPersonalData(oauthToken: cliente!.token!, parameters: objectAsDict, success: { response in
                 
-                if response != nil{
+                if response.codeError == WSKeys.parameters.okresponse{
                     print("En success \(response)")
                     self.nameTextField.text = ""
                     self.lastnameTextField.text = ""
@@ -87,6 +100,7 @@ class PersonalDataViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
     }
     
+    /*
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -102,8 +116,11 @@ class PersonalDataViewController: UIViewController, UIPickerViewDelegate, UIPick
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
-        selectedSexPicker = pickerData[row]
+        
+        //selectedGenderPicker = pickerData[row]
     }
+ 
+ */
     
     /*
     // MARK: - Navigation

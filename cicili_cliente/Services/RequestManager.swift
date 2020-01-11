@@ -178,10 +178,10 @@ class RequestManager: NSObject{
     }
     
     //to save PersonalData
-    class func setPersonalData(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+    class func setPersonalData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-     Alamofire.request(Router.personalData(with: parameters)).responseObject { (response: DataResponse<Response>) in
+        Alamofire.request(Router.personalData(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
         
             debugPrint("*********RES*********")
             debugPrint(response)
@@ -195,7 +195,33 @@ class RequestManager: NSObject{
                 success(objectResponse!)
             
             } else {
-                failure(NSError(domain: "com.cicili.changuePassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+                failure(NSError(domain: "com.cicili.PersonalData", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+            }
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+    }
+    
+    //to paymentdata
+    class func setPaymentData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.paymentData(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let objectResponse = response.result.value
+            
+            if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
+                
+                success(objectResponse!)
+            
+            } else {
+                failure(NSError(domain: "com.cicili.PaymentData", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
            case .failure(let error):
                failure(error as NSError)
