@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D9G-k3-8Yt">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,80 +13,149 @@
             <objects>
                 <viewController storyboardIdentifier="AddressDataStoryboard" id="D9G-k3-8Yt" customClass="AddressDataViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ul-IE-UjX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Direcciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayb-ou-rkQ">
-                                <rect key="frame" x="136" y="75" width="142" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-0t-Xx1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direcciones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayb-ou-rkQ">
+                                <rect key="frame" x="94" y="40" width="132" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.53333333329999999" green="0.81568627449999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agrega una nueva dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nf-fQ-b5X">
+                                <rect key="frame" x="65" y="71.5" width="190" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agrega una nueva dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nf-fQ-b5X">
-                                <rect key="frame" x="101" y="111" width="212" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Corto (Casa, Negocio, Oficina)" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0Yd-TN-k2E">
-                                <rect key="frame" x="20" y="193" width="178" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Corto (Casa, Negocio, Oficina)" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0Yd-TN-k2E">
+                                <rect key="frame" x="40" y="129.5" width="240" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OX4-aZ-rIT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Exterior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-7h-Iyq">
-                                <rect key="frame" x="20" y="310" width="178" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Colonia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCA-lw-H6v">
-                                <rect key="frame" x="20" y="369" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Interior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nDX-US-yqT">
-                                <rect key="frame" x="216" y="310" width="178" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calle" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-6f-kfq">
-                                <rect key="frame" x="20" y="244" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calle" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-6f-kfq">
+                                <rect key="frame" x="40" y="183.5" width="240" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cOs-m6-S1f"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next" textContentType="street-address"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código Postal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dro-IW-96e">
-                                <rect key="frame" x="216" y="193" width="178" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="BDj-V7-sBR">
+                                <rect key="frame" x="40" y="237.5" width="240" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Exterior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-7h-Iyq">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Interior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nDX-US-yqT">
+                                        <rect key="frame" x="129" y="0.0" width="111" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Br3-Uq-eWf"/>
+                                </constraints>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Colonia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCA-lw-H6v">
+                                <rect key="frame" x="40" y="291.5" width="240" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Vsm-3j-Ou3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código Postal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dro-IW-96e">
+                                <rect key="frame" x="40" y="345.5" width="240" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LnI-ya-jEA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¿ Es tu dirección predeterminada ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-el-ghH">
-                                <rect key="frame" x="20" y="438" width="276" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-Xb-jAv">
-                                <rect key="frame" x="172" y="508" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GUARDAR"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="UGl-Fd-5DY">
+                                <rect key="frame" x="20" y="399.5" width="280" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Es tu dirección predeterminada?" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-el-ghH">
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="31"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-3Z-rnv">
+                                        <rect key="frame" x="241" y="0.0" width="41" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-Xb-jAv" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
+                                <rect key="frame" x="50" y="460.5" width="220" height="44"/>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gEe-80-zLZ"/>
+                                </constraints>
+                                <state key="normal" title="GUARDAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="saveAddressButton:" destination="D9G-k3-8Yt" eventType="touchUpInside" id="EOw-kG-RP5"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-3Z-rnv">
-                                <rect key="frame" x="326" y="428" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FVi-0t-Xx1" firstAttribute="centerY" secondItem="7Ul-IE-UjX" secondAttribute="centerY" id="1dG-Ok-kP7"/>
+                            <constraint firstItem="sOT-EY-SQg" firstAttribute="trailing" secondItem="BDj-V7-sBR" secondAttribute="trailing" constant="40" id="2rs-tx-PBZ"/>
+                            <constraint firstItem="FVi-0t-Xx1" firstAttribute="leading" secondItem="7Ul-IE-UjX" secondAttribute="leading" id="3Gs-8U-pE3"/>
+                            <constraint firstItem="Dro-IW-96e" firstAttribute="leading" secondItem="sOT-EY-SQg" secondAttribute="leading" constant="40" id="5EB-oN-lm4"/>
+                            <constraint firstItem="BDj-V7-sBR" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="8Kq-JH-K0y"/>
+                            <constraint firstAttribute="bottom" secondItem="FVi-0t-Xx1" secondAttribute="bottom" id="B3C-la-0yD"/>
+                            <constraint firstItem="sOT-EY-SQg" firstAttribute="trailing" secondItem="Dro-IW-96e" secondAttribute="trailing" constant="40" id="Dos-uq-13w"/>
+                            <constraint firstItem="0Yd-TN-k2E" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="Dw8-oK-Twq"/>
+                            <constraint firstItem="UGl-Fd-5DY" firstAttribute="top" secondItem="Dro-IW-96e" secondAttribute="bottom" constant="10" id="E17-cJ-9VL"/>
+                            <constraint firstItem="iVm-6f-kfq" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="Ig8-na-dUs"/>
+                            <constraint firstItem="7nf-fQ-b5X" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="Jce-rR-t5x"/>
+                            <constraint firstItem="Dro-IW-96e" firstAttribute="top" secondItem="WCA-lw-H6v" secondAttribute="bottom" constant="10" id="Kfv-hl-X8r"/>
+                            <constraint firstItem="sOT-EY-SQg" firstAttribute="trailing" secondItem="WCA-lw-H6v" secondAttribute="trailing" constant="40" id="KgZ-ZJ-UAW"/>
+                            <constraint firstItem="BDj-V7-sBR" firstAttribute="leading" secondItem="sOT-EY-SQg" secondAttribute="leading" constant="40" id="L2m-IP-zeg"/>
+                            <constraint firstItem="Mtq-Xb-jAv" firstAttribute="top" secondItem="UGl-Fd-5DY" secondAttribute="bottom" constant="30" id="Mv1-8w-Sgq"/>
+                            <constraint firstItem="iVm-6f-kfq" firstAttribute="leading" secondItem="sOT-EY-SQg" secondAttribute="leading" constant="40" id="P19-h8-lsH"/>
+                            <constraint firstItem="WCA-lw-H6v" firstAttribute="leading" secondItem="sOT-EY-SQg" secondAttribute="leading" constant="40" id="P8n-Be-NX4"/>
+                            <constraint firstItem="Dro-IW-96e" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="Teq-N4-Xyq"/>
+                            <constraint firstItem="Ayb-ou-rkQ" firstAttribute="top" secondItem="sOT-EY-SQg" secondAttribute="top" constant="40" id="Vab-q8-BhP"/>
+                            <constraint firstItem="FVi-0t-Xx1" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="Vpw-E3-e8n"/>
+                            <constraint firstItem="Ayb-ou-rkQ" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="WKK-jr-nhy"/>
+                            <constraint firstItem="sOT-EY-SQg" firstAttribute="trailing" secondItem="Mtq-Xb-jAv" secondAttribute="trailing" constant="50" id="XRv-mG-jVi"/>
+                            <constraint firstItem="BDj-V7-sBR" firstAttribute="top" secondItem="iVm-6f-kfq" secondAttribute="bottom" constant="10" id="XWq-n5-NC8"/>
+                            <constraint firstItem="iVm-6f-kfq" firstAttribute="top" secondItem="0Yd-TN-k2E" secondAttribute="bottom" constant="10" id="YBX-FS-xct"/>
+                            <constraint firstItem="Mtq-Xb-jAv" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="Z85-XI-3Xq"/>
+                            <constraint firstItem="sOT-EY-SQg" firstAttribute="trailing" secondItem="0Yd-TN-k2E" secondAttribute="trailing" constant="40" id="bSt-wn-dvr"/>
+                            <constraint firstItem="WCA-lw-H6v" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="cas-BR-1vc"/>
+                            <constraint firstItem="UGl-Fd-5DY" firstAttribute="centerX" secondItem="7Ul-IE-UjX" secondAttribute="centerX" id="daf-kV-VqO"/>
+                            <constraint firstItem="FVi-0t-Xx1" firstAttribute="top" secondItem="7Ul-IE-UjX" secondAttribute="top" id="dfI-j4-4HS"/>
+                            <constraint firstItem="WCA-lw-H6v" firstAttribute="top" secondItem="BDj-V7-sBR" secondAttribute="bottom" constant="10" id="jA0-jp-0Md"/>
+                            <constraint firstItem="sOT-EY-SQg" firstAttribute="trailing" secondItem="iVm-6f-kfq" secondAttribute="trailing" constant="40" id="mgp-vd-d8W"/>
+                            <constraint firstItem="0Yd-TN-k2E" firstAttribute="leading" secondItem="sOT-EY-SQg" secondAttribute="leading" constant="40" id="oK0-5g-MSu"/>
+                            <constraint firstAttribute="trailing" secondItem="FVi-0t-Xx1" secondAttribute="trailing" id="oeP-zA-e2V"/>
+                            <constraint firstItem="7nf-fQ-b5X" firstAttribute="top" secondItem="Ayb-ou-rkQ" secondAttribute="bottom" id="qyN-iP-0rQ"/>
+                            <constraint firstItem="0Yd-TN-k2E" firstAttribute="top" secondItem="7nf-fQ-b5X" secondAttribute="bottom" constant="40" id="wDF-lA-6NM"/>
+                            <constraint firstItem="Mtq-Xb-jAv" firstAttribute="leading" secondItem="sOT-EY-SQg" secondAttribute="leading" constant="50" id="wKs-kl-6WG"/>
+                            <constraint firstItem="sOT-EY-SQg" firstAttribute="trailing" secondItem="UGl-Fd-5DY" secondAttribute="trailing" constant="20" id="wdX-XI-C2Y"/>
+                            <constraint firstItem="UGl-Fd-5DY" firstAttribute="leading" secondItem="sOT-EY-SQg" secondAttribute="leading" constant="20" id="z3d-T8-NWr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sOT-EY-SQg"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZxH-og-Ont"/>
@@ -105,4 +174,7 @@
             <point key="canvasLocation" x="1050.7246376811595" y="63.616071428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_1" width="414" height="896"/>
+    </resources>
 </document>
