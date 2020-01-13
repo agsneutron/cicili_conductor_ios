@@ -19,6 +19,9 @@ struct Constants{
         static let personalDataSegueId = "toPersonalDataSegue"
         static let paymentDataSegueId = "toPaymentDataSegue"
         static let adressDataSegueId = "toAdressDataSegue"
+        static let adressTableSegueId = "toAdressTableSegue"
+        
+        static let presentAddress = "presentAddress"
 
     }
     

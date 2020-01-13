@@ -10,7 +10,12 @@ import UIKit
 
 
 class MainViewController: UIViewController {
+    
+    var addresRequest: AddressTable?
+    
 
+    @IBOutlet weak var TxtAddress: UITextField!
+    
     enum CardState {
         case expanded
         case collapsed
@@ -20,7 +25,7 @@ class MainViewController: UIViewController {
     var visualEffectView:UIVisualEffectView!
     
     let cardHeight:CGFloat = 600
-    let cardHandleAreaHeight:CGFloat = 65
+    let cardHandleAreaHeight:CGFloat = 0
     
     var cardVisible = false
     var nextState:CardState {
@@ -33,6 +38,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCard()
+        TxtAddress.text = addresRequest?.name
        
         
         // Do any additional setup after loading the view.
@@ -168,6 +174,12 @@ class MainViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func showAddressTable(_ sender: UIButton) {
+        animateTransitionIfNeeded(state: nextState, duration: 0.9)
+    }
+    
+    
     /*@IBAction func showBSheet(_ sender: UIButton) {
         let viewController: MainViewController = MainViewController()
         let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: viewController)
