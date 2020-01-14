@@ -56,7 +56,8 @@ class CardMapViewController: UIViewController, UITableViewDataSource, UITableVie
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showdetail", sender: self)
+        //performSegue(withIdentifier: "presentHome", sender: self)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

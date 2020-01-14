@@ -124,7 +124,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="forgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHc-Pj-778"/>
-                                                                    <segue destination="DRn-MM-hai" kind="presentation" identifier="forgotPasswordSegue" id="yQP-77-1t8"/>
+                                                                    <segue destination="DRn-MM-hai" kind="show" identifier="forgotPasswordSegue" id="yQP-77-1t8"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -146,7 +146,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="registerClient:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Odc-ds-DKI"/>
-                                                                    <segue destination="UN1-en-w14" kind="presentation" identifier="loginToRegisterSegue" id="uTv-D8-Lg1"/>
+                                                                    <segue destination="UN1-en-w14" kind="show" identifier="loginToRegisterSegue" id="uTv-D8-Lg1"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -179,6 +179,7 @@
                         <outlet property="passwordTextField" destination="EHa-Os-hAv" id="AtY-Cd-FJ1"/>
                         <outlet property="userTextField" destination="9QN-Ag-gun" id="3ne-C6-YVn"/>
                         <segue destination="If7-ek-Atp" kind="show" identifier="presentHome" id="XJX-Lm-1WA"/>
+                        <segue destination="0hB-X8-YYi" kind="show" identifier="presentPersonalData" id="DqG-cU-MYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -191,15 +192,17 @@
                 <viewControllerPlaceholder storyboardIdentifier="AddressDataStoryboard" storyboardName="AddressData" id="1l0-uh-iAS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzn-q2-FNB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="121"/>
+            <point key="canvasLocation" x="287" y="11"/>
         </scene>
         <!--PersonalData-->
         <scene sceneID="UuM-pH-SxH">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PersonalDataStoryboard" storyboardName="PersonalData" id="0hB-X8-YYi" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="PersonalDataStoryboard" storyboardName="PersonalData" id="0hB-X8-YYi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SZL-if-8gi"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Jj-RW-h4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59" y="153"/>
+            <point key="canvasLocation" x="646" y="-192"/>
         </scene>
         <!--PaymentDataStoryboard-->
         <scene sceneID="JGb-SH-vbo">
@@ -214,14 +217,14 @@
             <objects>
                 <viewController id="DRn-MM-hai" customClass="LostPasswordViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="kK2-KM-RWI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="4ZO-qM-IU6">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHx-Hc-vPa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="bY2-lV-ei9"/>
@@ -242,7 +245,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electrónico" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5pv-kk-YCU">
-                                <rect key="frame" x="40" y="149" width="334" height="44"/>
+                                <rect key="frame" x="40" y="237" width="334" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="geu-5p-GbG"/>
                                 </constraints>
@@ -250,7 +253,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAZ-v4-Yw2" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
-                                <rect key="frame" x="50" y="223" width="314" height="44"/>
+                                <rect key="frame" x="50" y="311" width="314" height="44"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="wpx-xs-xU2"/>
@@ -270,7 +273,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para recuperar tu contraseña, ingresa el correo electrónico que registraste en CICILI." lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYt-sX-v4K">
-                                <rect key="frame" x="35" y="96" width="344" height="38"/>
+                                <rect key="frame" x="35" y="184" width="344" height="38"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -313,14 +316,14 @@
             <objects>
                 <viewController id="UN1-en-w14" customClass="RegisterViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J6M-rs-aLa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="xVL-wF-DtU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8i3-3H-p5D">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="us3-Vh-8cX"/>
@@ -341,13 +344,13 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa los datos para tu registro" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B1-yp-NSU">
-                                <rect key="frame" x="94.333333333333329" y="134.66666666666666" width="225.66666666666669" height="18"/>
+                                <rect key="frame" x="94.333333333333329" y="222.66666666666666" width="225.66666666666669" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="uhuhu@ou8h.com" borderStyle="roundedRect" placeholder="Correo Electrónico" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tM3-Ff-Lm5">
-                                <rect key="frame" x="40" y="177.66666666666666" width="334" height="44"/>
+                                <rect key="frame" x="40" y="265.66666666666669" width="334" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="N1s-nt-hRo"/>
                                 </constraints>
@@ -355,7 +358,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6669996668" borderStyle="roundedRect" placeholder="Teléfono Celular" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yKI-X3-TVM">
-                                <rect key="frame" x="40" y="236.66666666666663" width="334" height="44"/>
+                                <rect key="frame" x="40" y="324.66666666666669" width="334" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ILm-Or-wUP"/>
                                 </constraints>
@@ -363,7 +366,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" textContentType="tel"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="kkkkkk" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="y2f-4s-gMr">
-                                <rect key="frame" x="40" y="295.66666666666669" width="334" height="44"/>
+                                <rect key="frame" x="40" y="383.66666666666669" width="334" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4Ei-sj-ifE"/>
                                 </constraints>
@@ -371,7 +374,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="mmmmmm" borderStyle="roundedRect" placeholder="Confirma Contraseña" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-8z-mNP">
-                                <rect key="frame" x="40" y="354.66666666666669" width="334" height="44"/>
+                                <rect key="frame" x="40" y="442.66666666666669" width="334" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="A0u-VZ-lz9"/>
                                 </constraints>
@@ -379,7 +382,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aqs-5m-9Wa" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
-                                <rect key="frame" x="50" y="428.66666666666669" width="314" height="44"/>
+                                <rect key="frame" x="50" y="516.66666666666663" width="314" height="44"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Y3R-0t-q3b"/>
@@ -398,7 +401,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registrate como cliente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c06-vp-gI9">
-                                <rect key="frame" x="66.333333333333343" y="96" width="281.33333333333326" height="33.666666666666657"/>
+                                <rect key="frame" x="66.333333333333343" y="184" width="281.33333333333326" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.53333333329999999" green="0.81568627449999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -435,6 +438,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iRb-vy-0VV"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8dU-ZZ-MwC"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="VdW-8z-mNP" id="O7G-JX-0s5"/>
                         <outlet property="passwordTextField" destination="y2f-4s-gMr" id="ecE-qf-XMt"/>
