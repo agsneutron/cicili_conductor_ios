@@ -14,6 +14,7 @@ class AddressTable {
     //MARK: Properties
     
     var name: String
+   
     
     //MARK: Initialization
     

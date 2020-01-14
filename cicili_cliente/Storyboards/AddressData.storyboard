@@ -158,6 +158,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sOT-EY-SQg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZxH-og-Ont"/>
                     <connections>
                         <outlet property="AliasTextField" destination="0Yd-TN-k2E" id="8RZ-n5-Df1"/>
                         <outlet property="extNumberTextField" destination="Mg2-7h-Iyq" id="psM-ML-xnQ"/>
@@ -170,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMA-aA-GuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="63.616071428571423"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="63.616071428571423"/>
         </scene>
     </scenes>
     <resources>
