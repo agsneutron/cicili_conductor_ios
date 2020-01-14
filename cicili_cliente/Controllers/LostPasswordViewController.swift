@@ -49,12 +49,18 @@ class LostPasswordViewController: UIViewController {
                             if !code.isEmpty{
                                 RequestManager.fetchValidateCodePassword(parameters: [WSKeys.parameters.PUSERNAME: username, WSKeys.parameters.PTMPPASSWORD: code], success: { response in
                                     
-                                    if response != nil{
-                                        print("En success \(response)")
+                                    if response.data == WSKeys.parameters.okVerification{
+                                        print("En success validated code \(response)")
                                         
                                         //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ForgotPasswordStoryboard")
-                                        self.present(vc!, animated: true, completion: nil)
+                                         guard let forgotPasswordController = self.storyboard?.instantiateViewController(
+                            withIdentifier: "ForgotPasswordStoryboard") as? ForgotPasswordViewController else {
+                            fatalError("Unable to create ForgotPasswordController")
+                        }
+                                        forgotPasswordController.userInput = username
+
+                                       
+                                        self.present(forgotPasswordController, animated: true, completion: nil)
                                         
                                         }
                                     })

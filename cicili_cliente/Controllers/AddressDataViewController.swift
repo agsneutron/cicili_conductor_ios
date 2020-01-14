@@ -22,16 +22,34 @@ class AddressDataViewController: UIViewController {
     var cliente: Cliente?
     
     
+    @IBAction func zipCodeEditingEnd(_ sender: UITextField) {
+        if let zipCodeInput = zipcodeTextField.text, !zipCodeInput.isEmpty{
+            if zipCodeInput.count > 4{
+                
+            }
+            else{
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageDatosRequeridos)
+            }
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-    AliasTextField.becomeFirstResponder()
-    let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        AliasTextField.becomeFirstResponder()
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
                       view.addGestureRecognizer(gesture)
+        
+        
+       
+        
                
     }
+    
+ 
     
 
     @IBAction func saveAddressButton(_ sender: UIButton) {

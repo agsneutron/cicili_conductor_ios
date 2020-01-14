@@ -98,24 +98,34 @@ class RequestManager: NSObject{
     
     
     //for registes client
-    class func fetchRegisterClient(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+    class func fetchRegisterClient(parameters: Parameters, success: @escaping (Cliente) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-        Alamofire.request(Router.registerClient(with: parameters)).responseObject { (response: DataResponse<Response>) in
+        Alamofire.request(Router.registerClient(with: parameters)).responseObject { (response: DataResponse<Cliente>) in
         
             debugPrint("*********RES*********")
             debugPrint(response)
         // Evalute result
         switch response.result {
         case .success:
-            let objectResponse = response.result.value
-            
-            if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
-                
-                success(objectResponse!)
+            let json = JSON(response.result.value!)
+                //print("JSON message: \(json[WSKeys.parameters.messageError])")
+                //print("JSON data: \(json[WSKeys.parameters.data])")
+                //print("JSON error: \(json[WSKeys.parameters.error])")
+            let errorcode: Int = json[WSKeys.parameters.error].intValue
+            let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
+            let cliente_data = json[WSKeys.parameters.data].dictionaryObject
+            //print("*********CLIENTE DATA***************")
+            //debugPrint(cliente_data)
+            let cliente = Mapper<Cliente>().map( JSONObject: cliente_data)
+            //print("*********CLIENTE RESULT***************")
+            //debugPrint(cliente?.token! as Any)
+            if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
+             
+                success(cliente!)
             
             } else {
-                failure(NSError(domain: "com.cicili.requestpassword", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+                failure(NSError(domain: "com.cicili.RegisterClient", code: (errorcode), userInfo: [NSLocalizedDescriptionKey: messagedescription ]))
             }
            case .failure(let error):
                failure(error as NSError)
@@ -136,7 +146,7 @@ class RequestManager: NSObject{
            case .success:
                let objectResponse = response.result.value
                
-               if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
+               if objectResponse!.codeError == WSKeys.parameters.okresponse {
                    
                    success(objectResponse!)
                
@@ -164,7 +174,7 @@ class RequestManager: NSObject{
         case .success:
             let objectResponse = response.result.value
             
-            if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
+            if objectResponse!.codeError == WSKeys.parameters.okresponse {
                 
                 success(objectResponse!)
             
@@ -241,7 +251,8 @@ class RequestManager: NSObject{
     class func setAddressData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-        Alamofire.request(Router.addressData(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
+        Alamofire.request(Router.addressData(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
+        response in
         
             debugPrint("*********RES*********")
             debugPrint(response)
@@ -249,23 +260,55 @@ class RequestManager: NSObject{
         switch response.result {
         case .success:
             let objectResponse = response.result.value
-            
+            let json = JSON(response.result.value!)
             debugPrint("*********RES VALUE*********")
             debugPrint(objectResponse)
-            
-            debugPrint("*********RES VALUE*********")
-            debugPrint(response.data)
-            
-            if objectResponse!.codeError == WSKeys.parameters.okresponse {
-                
-                success(objectResponse!)
-            
+            debugPrint("*********RES json*********")
+            debugPrint(json)
+           
+            if response.response?.statusCode == WSKeys.parameters.statuscode {
+                let addressResponse = Mapper<Response>().map( JSONObject: json["data"])
+                success(addressResponse!)
             } else {
-                failure(NSError(domain: "com.cicili.AddressData", code: (objectResponse?.codeError)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+                failure(NSError(domain: "com.cicili.AddressData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))
             }
            case .failure(let error):
                failure(error as NSError)
            }
         }
     }
+    
+    //to validatecoderegister
+    
+    class func fetchValidateCodeRegister(oauthToken: String, codeToVerify: String, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+           
+           // Fetch request
+        Alamofire.request(Router.validateCodeRegister(autorizathionToken: oauthToken , code:codeToVerify)).responseJSON{
+           response in
+           
+               debugPrint("*********RES*********")
+               debugPrint(response)
+           // Evalute result
+           switch response.result {
+           case .success:
+               let objectResponse = response.result.value
+               let json = JSON(response.result.value!)
+               debugPrint("*********RES VALUE*********")
+               debugPrint(objectResponse)
+               debugPrint("*********RES json*********")
+               debugPrint(json)
+              
+               if response.response?.statusCode == WSKeys.parameters.statuscode {
+                   let addressResponse = Mapper<Response>().map( JSONObject: json["data"])
+                   success(addressResponse!)
+               } else {
+                   failure(NSError(domain: "com.cicili.AddressData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))
+               }
+              case .failure(let error):
+                  failure(error as NSError)
+              }
+           }
+       }
 }
+
+

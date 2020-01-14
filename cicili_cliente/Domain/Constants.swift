@@ -12,7 +12,7 @@ struct Constants{
     
     struct Storyboard{
 
-        static let loginSegueId = "loginToMainSegue"
+        static let loginSegueId = "presentHome"
         static let passwordSegueId = "forgotPasswordSegue"
         static let registerSegueId = "loginToRegisterSegue"
         static let homeSegueId = "toMainSegue"
@@ -40,13 +40,15 @@ struct Constants{
     struct AlertTittles{
         static let tittleValidateCode = "Validar Código"
         static let tCodeVerificationSuccess = "Verificación exitosa"
+        static let tChangeSuccess = "Cambio exitoso"
     }
     
     struct AlertMessages{
         static let messageValidateCode = "Ingresa el código de verificación que llegó a tu correo."
         static let placeholderTextField = " * * * * * "
         static let codeVerificationSuccess = "Has finalizado tu registro, ahora puedes iniciar sesión en Cicili."
-        static let codeVerificationSuccessPws = "Ahora puedes establecer tu nuevsa contraseña"
+        static let changeSuccess = "Has finalizado tu cambio de contraseña, ahora puedes iniciar sesión en Cicili."
+        static let codeVerificationSuccessPws = "Ahora puedes establecer tu nueva contraseña"
     }
     
     struct textAction{
