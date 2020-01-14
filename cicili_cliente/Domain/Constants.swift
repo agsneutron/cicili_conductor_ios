@@ -15,7 +15,8 @@ struct Constants{
         static let loginSegueId = "presentHome"
         static let passwordSegueId = "forgotPasswordSegue"
         static let registerSegueId = "loginToRegisterSegue"
-        static let homeSegueId = "toMainSegue"
+        
+        static let homeSegueId = "presentHome"
         static let personalDataSegueId = "toPersonalDataSegue"
         static let paymentDataSegueId = "toPaymentDataSegue"
         static let adressDataSegueId = "toAdressDataSegue"
