@@ -11,7 +11,11 @@ import UIKit
 class AddressTableViewCell: UITableViewCell {
     
     
+    //@IBOutlet weak var nameLabel: UILabel!
+    //@IBOutlet weak var photoImageView: UIImageView!
+    
     @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func awakeFromNib() {

@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,14 +22,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cS-oy-kCq">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="W9s-GL-iSg">
-                                                <rect key="frame" x="50" y="10" width="275" height="0.0"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="W9s-GL-iSg">
+                                                <rect key="frame" x="50" y="10" width="275" height="197.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CiciliTagline-(3)" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lmj-nm-gBP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="192"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La manera más fácil de pedir el GAS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aL-u2-ZXD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="192" width="275" height="5.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -525,6 +525,74 @@
             </objects>
             <point key="canvasLocation" x="-772" y="1183"/>
         </scene>
+        <!--Address Table View Controller-->
+        <scene sceneID="JXg-Cf-ki6">
+            <objects>
+                <viewController storyboardIdentifier="AddressTableID" id="ntb-7n-ewA" customClass="AddressTableViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ntQ-Vt-FDA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-yZ-Fkh">
+                                <rect key="frame" x="0.0" y="42" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="OOo-Sk-kvq"/>
+                                    <constraint firstAttribute="height" constant="44" id="ROv-j6-jM1"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-vo-LG9">
+                                <rect key="frame" x="0.0" y="81" width="375" height="561"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressTableViewCell" id="Egg-jW-2Oz" customClass="AddressTableViewCell" customModule="cicili_cliente" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Egg-jW-2Oz" id="8jj-Sa-ESQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flama_media-1" translatesAutoresizingMaskIntoConstraints="NO" id="w3E-wM-tnN">
+                                                    <rect key="frame" x="4" y="3" width="36" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFu-I9-WSN">
+                                                    <rect key="frame" x="41" y="11" width="325" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="CFu-I9-WSN" id="lxm-qh-AsA"/>
+                                            <outlet property="photoImageView" destination="w3E-wM-tnN" id="tWP-7e-9TL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pdZ-yZ-Fkh" firstAttribute="top" secondItem="UgE-S5-TpD" secondAttribute="top" constant="42" id="Jzx-ru-kVc"/>
+                            <constraint firstItem="eOr-vo-LG9" firstAttribute="leading" secondItem="UgE-S5-TpD" secondAttribute="leading" id="MUE-FG-jtO"/>
+                            <constraint firstItem="eOr-vo-LG9" firstAttribute="top" secondItem="pdZ-yZ-Fkh" secondAttribute="bottom" id="fZb-wC-sU0"/>
+                            <constraint firstItem="UgE-S5-TpD" firstAttribute="bottom" secondItem="eOr-vo-LG9" secondAttribute="bottom" id="qTX-CQ-muL"/>
+                            <constraint firstItem="UgE-S5-TpD" firstAttribute="trailing" secondItem="eOr-vo-LG9" secondAttribute="trailing" id="szV-Wp-fv5"/>
+                            <constraint firstItem="pdZ-yZ-Fkh" firstAttribute="leading" secondItem="eOr-vo-LG9" secondAttribute="leading" id="vVN-bs-1Iz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UgE-S5-TpD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IJk-Ad-d6Y"/>
+                    <connections>
+                        <outlet property="tblAddressView" destination="eOr-vo-LG9" id="Pk5-ue-8wR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsw-x2-kyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576.79999999999995" y="-1914.6926536731635"/>
+        </scene>
         <!--Inicio-->
         <scene sceneID="phr-dX-ozH">
             <objects>
@@ -568,7 +636,7 @@
                                                             <color key="titleShadowColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="showAddressTableXib:" destination="ds5-FK-eYt" eventType="touchUpInside" id="inM-Hz-dxS"/>
+                                                            <action selector="showPipasTable:" destination="ds5-FK-eYt" eventType="touchUpInside" id="dJF-5o-PnF"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -593,7 +661,7 @@
                                                             <color key="titleShadowColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="showAddressTableXib:" destination="ds5-FK-eYt" eventType="touchUpInside" id="apf-fa-boN"/>
+                                                            <action selector="showAddressTable:" destination="ds5-FK-eYt" eventType="touchUpInside" id="RqC-Se-nm1"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -660,9 +728,10 @@
                         <viewLayoutGuide key="safeArea" id="64w-pm-9WK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Inicio" image="house.fill" catalog="system" id="ah3-H6-KRI"/>
+                    <navigationItem key="navigationItem" id="i76-Jm-fzY"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="TxtAddress" destination="iWZ-sv-NW9" id="UT8-AB-c1l"/>
+                        <outlet property="TxtAddress" destination="iWZ-sv-NW9" id="t5D-6o-Ggs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUL-vv-qK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -783,6 +852,7 @@
         <image name="bg_1" width="414" height="896"/>
         <image name="chevron.down" catalog="system" width="64" height="36"/>
         <image name="dollarsign.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="flama_media-1" width="434" height="598"/>
         <image name="flame.fill" catalog="system" width="54" height="64"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
