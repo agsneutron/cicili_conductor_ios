@@ -1,22 +1,19 @@
 //
-//  AddressTableViewCell.swift
+//  AvailableDriversTableViewCell.swift
 //  cicili_cliente
 //
-//  Created by ARIANA SANCHEZ on 10/01/20.
+//  Created by ARIANA SANCHEZ on 16/01/20.
 //  Copyright © 2020 CICILI. All rights reserved.
 //
 
 import UIKit
 
-class AddressTableViewCell: UITableViewCell {
-    
-    
-    //@IBOutlet weak var nameLabel: UILabel!
-    //@IBOutlet weak var photoImageView: UIImageView!
+class AvailableDriversTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
