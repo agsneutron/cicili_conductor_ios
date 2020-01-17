@@ -9,9 +9,44 @@
 import UIKit
 import ObjectMapper
 
+extension UITextField{
+
+    func setLeftImage(imageName:String) {
+
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
+        imageView.image = UIImage(named: imageName)
+        self.rightView = imageView;
+        self.rightViewMode = .always
+    }
+}
+    //este date picker es para cuando abre abajo
+extension UITextField {
+    
+    func setInputViewDatePicker(target: Any, selector: Selector) {
+        // Create a UIDatePicker object and assign to inputView
+        let screenWidth = UIScreen.main.bounds.width
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))//1
+        datePicker.datePickerMode = .date //2
+        self.inputView = datePicker //3
+        
+        // Create a toolbar and assign it to inputAccessoryView
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 44.0)) //4
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) //5
+        let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel)) // 6
+        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector) //7
+        toolBar.setItems([cancel, flexible, barButton], animated: false) //8
+        self.inputAccessoryView = toolBar //9
+    }
+    
+    @objc func tapCancel() {
+        self.resignFirstResponder()
+    }
+    
+}
 class PersonalDataViewController: UIViewController {
     //, UIPickerViewDelegate, UIPickerViewDataSource
     
+    @IBOutlet weak var fechaNacimientoPop: UITextField!
     @IBOutlet weak var genderSegment: UISegmentedControl!
     @IBOutlet weak var perfilImage: UIImageView!
     //@IBOutlet weak var sexPicker: UIPickerView!
@@ -44,6 +79,20 @@ class PersonalDataViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         //debugPrint("ON PERSONALDATA......")
         //debugPrint(cliente?.correoElectronico)
+        
+        //este date picker es para cuando abre abajo
+        fechaNacimientoPop.setLeftImage(imageName: "icon_calendar")
+         self.fechaNacimientoPop.setInputViewDatePicker(target: self, selector: #selector(tapDone)) //1
+    }
+    
+    //este date picker es para cuando abre abajo
+    @objc func tapDone() {
+        if let datePicker = self.fechaNacimientoPop.inputView as? UIDatePicker { // 2-1
+            let dateformatter = DateFormatter() // 2-2
+            dateformatter.dateStyle = .medium // 2-3
+            self.fechaNacimientoPop.text = dateformatter.string(from: datePicker.date) //2-4
+        }
+        self.fechaNacimientoPop.resignFirstResponder() // 2-5
     }
     
     @IBAction func personalDataRegisterButton(_ sender: UIButton) {
