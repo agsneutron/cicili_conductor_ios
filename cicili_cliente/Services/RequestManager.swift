@@ -343,36 +343,68 @@ class RequestManager: NSObject{
     
     
     //get client status
-       class func fetchClientStatus(oauthToken: String, success: @escaping (Status) -> Void, failure: @escaping (NSError) -> Void){
-           
+    class func fetchClientStatus(oauthToken: String, success: @escaping (Status) -> Void, failure: @escaping (NSError) -> Void){
            // Fetch request
         Alamofire.request(Router.clientStatus(autorizathionToken: oauthToken)).responseJSON{
            response in
            
-               debugPrint("*********RES*********")
-               debugPrint(response)
-           // Evalute result
-           switch response.result {
-           case .success:
-               let json = JSON(response.result.value!)
-               debugPrint("*********RES json*********")
-               debugPrint(json)
-               
-               let errorcode: Int = json[WSKeys.parameters.error].intValue
-             
-              
-               if errorcode == WSKeys.parameters.okresponse {
-                    let responseData = json[WSKeys.parameters.data].dictionaryObject
-                    let statusObject = Mapper<Status>().map( JSONObject: responseData)
-                    success(statusObject!)
-               } else {
-                   failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
-               }
-              case .failure(let error):
-                  failure(error as NSError)
-              }
-           }
-       }
+            debugPrint("*********RES*********")
+            debugPrint(response)
+            // Evalute result
+            switch response.result {
+                case .success:
+                    let json = JSON(response.result.value!)
+                    debugPrint("*********RES json*********")
+                    debugPrint(json)
+                   
+                    let errorcode: Int = json[WSKeys.parameters.error].intValue
+                 
+                    if errorcode == WSKeys.parameters.okresponse {
+                        let responseData = json[WSKeys.parameters.data].dictionaryObject
+                        let statusObject = Mapper<Status>().map( JSONObject: responseData)
+                        success(statusObject!)
+                   } else {
+                       failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                   }
+                case .failure(let error):
+                    failure(error as NSError)
+            }
+        }
+    }
+    
+    
+    //search zipCode
+    class func fetchZipCode(oauthToken: String, codeToVerify: String, success: @escaping (DataByZipCode) -> Void, failure: @escaping (NSError) -> Void){
+           
+           // Fetch request
+        Alamofire.request(Router.searchZC(autorizathionToken: oauthToken , code:codeToVerify)).responseJSON{
+        response in
+        
+             debugPrint("*********RES*********")
+             debugPrint(response)
+             // Evalute result
+             switch response.result {
+                 case .success:
+                     let json = JSON(response.result.value!)
+                     debugPrint("*********RES json*********")
+                     debugPrint(json)
+                    
+                     let errorcode: Int = json[WSKeys.parameters.error].intValue
+                     if errorcode == WSKeys.parameters.okresponse {
+                         let responseData = json[WSKeys.parameters.data].dictionaryObject
+                         let statusObject = Mapper<DataByZipCode>().map( JSONObject: responseData)
+                        debugPrint("*********RES statusObject*********")
+                        debugPrint(statusObject)
+                         success(statusObject!)
+                    } else {
+                        failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                    }
+                 case .failure(let error):
+                     failure(error as NSError)
+             }
+        }
+    }
+    
 }
 
 
