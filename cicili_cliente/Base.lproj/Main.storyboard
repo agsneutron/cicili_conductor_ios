@@ -206,6 +206,14 @@
             </objects>
             <point key="canvasLocation" x="-108" y="191"/>
         </scene>
+        <!--ForgotPassword-->
+        <scene sceneID="cDY-zh-V1G">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ForgotPasswordStoryboard" storyboardName="ForgotPassword" id="7cv-vA-WOg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="je9-6H-nWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="241"/>
+        </scene>
         <!--Lost Password View Controller-->
         <scene sceneID="wP6-hX-zsS">
             <objects>
@@ -880,7 +888,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="fNr-c5-pQA">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="If7-ek-Atp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabHomeStoryboard" automaticallyAdjustsScrollViewInsets="NO" id="If7-ek-Atp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Y01-xt-HQQ"/>
                     <nil key="simulatedTopBarMetrics"/>
