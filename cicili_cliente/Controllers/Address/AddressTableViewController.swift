@@ -16,8 +16,11 @@ protocol AddressTableDelegate {
 
 class AddressTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    //@IBOutlet weak var tblAddressView: UITableView!
+    var searchAddress = [String]()
+    
     var delegate: AddressTableDelegate?
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tblAddressView: UITableView!
     var addressArray = [AddressTable]()
@@ -63,9 +66,9 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "productstable")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "AddressTableViewCell")
         if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "productstable")
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "AddressTableViewCell")
         }
         
         cell?.textLabel?.text = addressArray[indexPath.row].name
@@ -113,4 +116,10 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         navigationController?.popViewController(animated: true)
     }
 
+}
+
+extension AddressTableViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //searchAddress = addressArray.filter({$0.prefix})
+    }
 }

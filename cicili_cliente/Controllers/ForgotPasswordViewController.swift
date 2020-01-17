@@ -40,9 +40,7 @@ class ForgotPasswordViewController: UIViewController {
                            //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
                            // self.showAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess)
                         
-                            
-                           let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginStoryboard")
-                           self.present(vc!, animated: true, completion: nil)
+                           self.customAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.goLogin)
                            
                            }
                        })
@@ -53,6 +51,16 @@ class ForgotPasswordViewController: UIViewController {
                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageRequeridoLogin)
                }
     }
+    
+    func goLogin(action: UIAlertAction){
+               let storyboardLogin = UIStoryboard(name: "Main", bundle: nil)
+               guard let loginController = storyboardLogin.instantiateViewController(
+                   withIdentifier: "LoginStoryboard") as? ViewController else {
+                   fatalError("Unable to create LoginViewController")
+               }
+               
+               self.present(loginController, animated: true, completion: nil)
+           }
     /*
     // MARK: - Navigation
 
