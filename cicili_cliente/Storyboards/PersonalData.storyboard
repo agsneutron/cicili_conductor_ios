@@ -110,6 +110,14 @@
                                     <action selector="personalDataRegisterButton:" destination="5lu-A0-ybm" eventType="touchUpInside" id="Zbh-eb-d4L"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQt-4l-Zf4">
+                                <rect key="frame" x="275" y="267" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Editar"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="5lu-A0-ybm" eventType="touchUpInside" id="XUo-gS-CSf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>

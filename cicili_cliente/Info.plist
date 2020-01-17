@@ -36,10 +36,15 @@
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
+		<string>Privacy - Camera Usage Description</string>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>La aplicación requiere acceso a tus imágenes para  establecer foto de perfil.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>La aplicación requiere acceso a tu camara para establecer foto de perfil.</string>
 </dict>
 </plist>

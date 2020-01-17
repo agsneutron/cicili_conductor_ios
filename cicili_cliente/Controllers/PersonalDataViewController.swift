@@ -12,13 +12,13 @@ import ObjectMapper
 class PersonalDataViewController: UIViewController {
     //, UIPickerViewDelegate, UIPickerViewDataSource
     
-    @IBOutlet weak var genderSegment: UISegmentedControl!
-    @IBOutlet weak var perfilImage: UIImageView!
+    @IBOutlet var genderSegment: UISegmentedControl!
+    @IBOutlet var perfilImage: UIImageView!
     //@IBOutlet weak var sexPicker: UIPickerView!
-    @IBOutlet weak var bornDatePicker: UIDatePicker!
-    @IBOutlet weak var secondLastnameTextField: UITextField!
-    @IBOutlet weak var lastnameTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet var bornDatePicker: UIDatePicker!
+    @IBOutlet var secondLastnameTextField: UITextField!
+    @IBOutlet var lastnameTextField: UITextField!
+    @IBOutlet var nameTextField: UITextField!
     
     //var pickerData: [String] = [String]()
     var selectedGenderPicker :String = ""
@@ -26,6 +26,7 @@ class PersonalDataViewController: UIViewController {
     var cliente: Cliente?
     let dateFormatter = DateFormatter()
 
+    var imagePicker: ImagePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class PersonalDataViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
                view.addGestureRecognizer(gesture)
         
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         // Connect data:
         //set data to sex picker
         //pickerData = ["Selecciona una opción", "Hombre","Mujer","No indicar"]
@@ -44,6 +46,10 @@ class PersonalDataViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         //debugPrint("ON PERSONALDATA......")
         //debugPrint(cliente?.correoElectronico)
+    }
+    
+    @IBAction func selectImage(_ sender: UIButton) {
+          self.imagePicker.present(from: sender)
     }
     
     @IBAction func personalDataRegisterButton(_ sender: UIButton) {
@@ -134,4 +140,11 @@ class PersonalDataViewController: UIViewController {
     */
 
    
+}
+
+extension PersonalDataViewController: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        self.perfilImage.image = image
+    }
 }

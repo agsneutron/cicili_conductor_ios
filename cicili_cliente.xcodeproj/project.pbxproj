@@ -22,6 +22,7 @@
 		31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586A23C6374B00707C82 /* CardMapViewController.xib */; };
 		31C05E0823C27ED300613A08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31C05E0723C27ED300613A08 /* GoogleService-Info.plist */; };
 		5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */; };
+		5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CA9123D14957007284F2 /* ImagePicker.swift */; };
 		57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */; };
 		57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */; };
 		57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ACFB5B23C9969F00357C85 /* ImageConverter.swift */; };
@@ -77,6 +78,7 @@
 		31C05E0723C27ED300613A08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
 		5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyStatus.swift; sourceTree = "<group>"; };
+		5712CA9123D14957007284F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalData.storyboard; sourceTree = "<group>"; };
 		57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		57ACFB5B23C9969F00357C85 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				90C9179A23C7144C0017B615 /* roundedBtn.swift */,
 				57D1BAED23BF516E00551DA7 /* AlertManager.swift */,
 				57B7B34023C28A1E00731CE7 /* DIsmissSegue.swift */,
+				5712CA9123D14957007284F2 /* ImagePicker.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				57ACFB6623C9E68400357C85 /* AddressDataViewController.swift in Sources */,
 				57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
+				5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */,
 				90C9179C23C7144C0017B615 /* roundedBtn.swift in Sources */,
 				57B2057823C66BC2005FF554 /* Personal.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
