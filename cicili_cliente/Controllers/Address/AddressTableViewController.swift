@@ -16,7 +16,8 @@ protocol AddressTableDelegate {
 
 class AddressTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var searchAddress = [String]()
+    var searchAddress = [AddressTable]()
+    var searching = false
     
     var delegate: AddressTableDelegate?
     
@@ -62,7 +63,12 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     //MARK:- UITableView methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return addressArray.count
+        if searching {
+            return searchAddress.count
+        }else {
+            return addressArray.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +77,11 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "AddressTableViewCell")
         }
         
-        cell?.textLabel?.text = addressArray[indexPath.row].name
+        if searching {
+            cell?.textLabel?.text = searchAddress[indexPath.row].name
+        }else {
+            cell?.textLabel?.text = addressArray[indexPath.row].name
+        }
         return cell!
     }
 
@@ -120,6 +130,8 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
 
 extension AddressTableViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //searchAddress = addressArray.filter({$0.prefix})
+        searchAddress = addressArray.filter({$0.name.prefix(searchText.count) == searchText})
+        searching = true
+        tblAddressView.reloadData()
     }
 }
