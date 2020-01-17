@@ -49,4 +49,23 @@ extension UIViewController{
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    
+    func customAlertController(tittle_t: String, message_t:String, buttonAction: String, doHandler: @escaping ((_: UIAlertAction) -> Void)){
+        let alertController = UIAlertController(title: tittle_t, message: message_t, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: buttonAction, style: .default, handler: doHandler)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func inputAlertController(tittle_t: String, message_t:String, buttonAction: String, doHandler: @escaping ((_: UIAlertAction) -> Void)){
+        
+        let alertController = UIAlertController(title: tittle_t, message: message_t, preferredStyle: .alert)
+        
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder = Constants.AlertMessages.placeholderTextField})
+        let defaultAction = UIAlertAction(title: buttonAction, style: .default, handler: doHandler)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }

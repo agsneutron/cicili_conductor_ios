@@ -31,27 +31,39 @@ class VerifyCodeViewController: UIViewController {
         if let userTokenInput = token, !userTokenInput.isEmpty, let codeInput = codeTextField.text, !codeInput.isEmpty {
             RequestManager.fetchValidateCodeRegister(oauthToken: userTokenInput, codeToVerify:codeInput, success: { response in
                                   
-                       if response.data == WSKeys.parameters.okVerification {
-                                  print("En success y token no nil \(response)")
-                                  self.codeTextField.text = ""
-                                  //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                                  let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
-                                  self.present(vc!, animated: true, completion: nil)
-                                  
-                                  }
-                              })
-                              { error in
-                                  self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
-                              }
-                      } else {
-                          self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageDatosRequeridos)
-                      }
-               
-               
-           }
+                    if response.data == WSKeys.parameters.okVerification {
+                        print("En success y token no nil \(response)")
+                        self.codeTextField.text = ""
+                        //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId,sender: self)
+                        /*guard let loginController = self.storyboard?.instantiateViewController(
+                            withIdentifier: "LoginStoryboard") as? ViewController else {
+                            fatalError("Unable to create LoginViewController")
+                        }
+                        self.present(loginController, animated: true, completion: nil)
+                         */
+                        self.customAlertController(tittle_t: Constants.AlertTittles.tCodeVerificationSuccess, message_t: Constants.AlertMessages.codeVerificationSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.goLogin)
+                    }
+                    else{
+                        self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageVerificaCodigo )
+                    }
+                })
+                { error in
+                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                }
+        } else {
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageDatosRequeridos)
+                }
+        }
            
         
-        
+        func goLogin(action: UIAlertAction){
+            guard let loginController = self.storyboard?.instantiateViewController(
+                withIdentifier: "LoginStoryboard") as? ViewController else {
+                fatalError("Unable to create LoginViewController")
+            }
+            
+            self.present(loginController, animated: true, completion: nil)
+        }
     
     
     /*

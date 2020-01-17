@@ -86,6 +86,7 @@ class PersonalDataViewController: UIViewController {
                     print("En success \(response)")
                     self.nameTextField.text = ""
                     self.lastnameTextField.text = ""
+                    
                     //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
                     self.present(vc!, animated: true, completion: nil)

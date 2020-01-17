@@ -15,6 +15,7 @@ enum Router: URLRequestConvertible {
    // Base URL for OAuth2 authentication
     static let baseURLString = WSKeys.API.url
     static var OAuthToken: String?
+    static var codeValue: String?
     
     case signIn(with: Parameters)
     case registerClient(with: Parameters)
@@ -26,13 +27,17 @@ enum Router: URLRequestConvertible {
     case personalData(autorizathionToken:String , parametersSet: Parameters)
     case paymentData(autorizathionToken:String , parametersSet: Parameters)
     case addressData(autorizathionToken:String , parametersSet: Parameters)
+    case bankData(autorizathionToken: String , bin: String)
+    case clientStatus(autorizathionToken: String)
     
     
     // HTTP method
        
     var method: HTTPMethod {
         switch self {
-        case.help:
+        case.help,
+            .clientStatus,
+            .bankData:
             return .get
         case .registerClient,
              .validateCodePsw,
@@ -56,7 +61,8 @@ enum Router: URLRequestConvertible {
         case .registerClient:
             return "mv/cliente/registrar"
         case .validateCodeRegister(let code):
-            return "verifica/\(code)"
+            Router.codeValue = code.code
+            return "verifica/\(Router.codeValue ?? "")"
         case .validateCodePsw:
             return "mv/cliente/password/validar"
         case .help:
@@ -71,6 +77,10 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/formapago/registrar"
         case .addressData:
             return "mv/cliente/direccion/agregar"
+        case .bankData(let bin):
+            return "mv/cliente/banco/\(bin)"
+        case .clientStatus:
+            return "mv/cliente/status"
         }
         
     }
@@ -97,9 +107,9 @@ enum Router: URLRequestConvertible {
         //urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         switch self {
         case.help:
-            // Set encode to application/x-www-form-urlencoded
+            
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-        
+             
         case.signIn(let parameters),
             .registerClient(let parameters),
             .requestPassword(let parameters),
@@ -142,7 +152,18 @@ enum Router: URLRequestConvertible {
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
-    
+            
+        case.bankData(let autorizathionToken, _):
+                   // Set encode to application/x-www-form-urlencoded
+                   urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
+                   urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+                   urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+        case.clientStatus(let autorizathionToken):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
+            urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+        
+            
         }
         
         return urlRequest

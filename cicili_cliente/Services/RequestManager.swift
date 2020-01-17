@@ -101,7 +101,8 @@ class RequestManager: NSObject{
     class func fetchRegisterClient(parameters: Parameters, success: @escaping (Cliente) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-        Alamofire.request(Router.registerClient(with: parameters)).responseObject { (response: DataResponse<Cliente>) in
+        Alamofire.request(Router.registerClient(with: parameters)).responseJSON{
+        response in
         
             debugPrint("*********RES*********")
             debugPrint(response)
@@ -112,7 +113,8 @@ class RequestManager: NSObject{
                 //print("JSON message: \(json[WSKeys.parameters.messageError])")
                 //print("JSON data: \(json[WSKeys.parameters.data])")
                 //print("JSON error: \(json[WSKeys.parameters.error])")
-            let errorcode: Int = json[WSKeys.parameters.error].intValue
+            let errorcode =  json[WSKeys.parameters.error].intValue
+                
             let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
             let cliente_data = json[WSKeys.parameters.data].dictionaryObject
             //print("*********CLIENTE DATA***************")
@@ -120,7 +122,7 @@ class RequestManager: NSObject{
             let cliente = Mapper<Cliente>().map( JSONObject: cliente_data)
             //print("*********CLIENTE RESULT***************")
             //debugPrint(cliente?.token! as Any)
-            if errorcode == WSKeys.parameters.okresponse, cliente?.token != nil{
+            if errorcode == WSKeys.parameters.okresponse{
              
                 success(cliente!)
             
@@ -283,7 +285,68 @@ class RequestManager: NSObject{
     class func fetchValidateCodeRegister(oauthToken: String, codeToVerify: String, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
            
            // Fetch request
-        Alamofire.request(Router.validateCodeRegister(autorizathionToken: oauthToken , code:codeToVerify)).responseJSON{
+        Alamofire.request(Router.validateCodeRegister(autorizathionToken: oauthToken , code:codeToVerify)).responseObject { (response: DataResponse<Response>) in
+           
+               debugPrint("*********RES*********")
+               debugPrint(response)
+           // Evalute result
+           switch response.result {
+           case .success:
+                let objectResponse = response.result.value
+                debugPrint("*********RES VALUE*********")
+                debugPrint(objectResponse?.codeError as Any)
+            
+                if objectResponse?.codeError == WSKeys.parameters.okresponse {
+                    debugPrint("okresponse")
+                    success(objectResponse!)
+                    
+                } else {
+                    failure(NSError(domain: "com.cicili.VerifyCodeData", code: objectResponse!.codeError, userInfo: [NSLocalizedDescriptionKey: objectResponse!.messageError ?? ""]))
+               }
+        case .failure(let error):
+            failure(error as NSError)
+            }
+        }
+    }
+    
+    //get bank data
+    
+    
+    class func fetchBankData(oauthToken: String, binToVerify: String, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+     Alamofire.request(Router.bankData(autorizathionToken: oauthToken , bin: binToVerify)).responseJSON{
+        response in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let objectResponse = response.result.value
+            let json = JSON(response.result.value!)
+            debugPrint("*********RES VALUE*********")
+            debugPrint(objectResponse)
+            debugPrint("*********RES json*********")
+            debugPrint(json)
+           
+            if response.response?.statusCode == WSKeys.parameters.statuscode {
+                success(objectResponse as! Response)
+            } else {
+                failure(NSError(domain: "com.cicili.BankData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))
+            }
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+    }
+    
+    
+    //get client status
+       class func fetchClientStatus(oauthToken: String, success: @escaping (Status) -> Void, failure: @escaping (NSError) -> Void){
+           
+           // Fetch request
+        Alamofire.request(Router.clientStatus(autorizathionToken: oauthToken)).responseJSON{
            response in
            
                debugPrint("*********RES*********")
@@ -291,18 +354,19 @@ class RequestManager: NSObject{
            // Evalute result
            switch response.result {
            case .success:
-               let objectResponse = response.result.value
                let json = JSON(response.result.value!)
-               debugPrint("*********RES VALUE*********")
-               debugPrint(objectResponse)
                debugPrint("*********RES json*********")
                debugPrint(json)
+               
+               let errorcode: Int = json[WSKeys.parameters.error].intValue
+             
               
-               if response.response?.statusCode == WSKeys.parameters.statuscode {
-                   let addressResponse = Mapper<Response>().map( JSONObject: json["data"])
-                   success(addressResponse!)
+               if errorcode == WSKeys.parameters.okresponse {
+                    let responseData = json[WSKeys.parameters.data].dictionaryObject
+                    let statusObject = Mapper<Status>().map( JSONObject: responseData)
+                    success(statusObject!)
                } else {
-                   failure(NSError(domain: "com.cicili.AddressData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))
+                   failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
                }
               case .failure(let error):
                   failure(error as NSError)

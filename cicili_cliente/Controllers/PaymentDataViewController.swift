@@ -32,7 +32,36 @@ class PaymentDataViewController: UIViewController {
         
     }
     
-
+    @IBAction func cardEditingEnd(_ sender: UITextField) {
+        
+       if let cardInput = cardTextField.text, !cardInput.isEmpty{
+            if cardInput.count > 4{
+                let binInput = cardInput.index(cardInput.endIndex, offsetBy:4)
+                RequestManager.fetchBankData(oauthToken: cliente!.token!, binToVerify: String(cardInput[..<binInput]), success: { response in
+                            
+                            if response.codeError == WSKeys.parameters.okresponse{
+                                print("En success get bank data \(response)")
+                                
+                               // self.bankTextField.text = response
+                               // self.brandTextField.text = response
+                    
+                                }
+                            })
+                            { error in
+                                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                            }
+                    } else {
+                        self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageCardRequired)
+                
+                    }
+            }
+            else{
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageDatosRequeridos)
+            }
+            
+    }
+        
+    
     @IBAction func savePAymentDataButton(_ sender: Any) {
         
         self.view.endEditing(true)
