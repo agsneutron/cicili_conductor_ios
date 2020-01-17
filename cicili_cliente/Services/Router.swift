@@ -29,6 +29,7 @@ enum Router: URLRequestConvertible {
     case addressData(autorizathionToken:String , parametersSet: Parameters)
     case bankData(autorizathionToken: String , bin: String)
     case clientStatus(autorizathionToken: String)
+    case searchZC(autorizathionToken: String , code: String)
     
     
     // HTTP method
@@ -37,6 +38,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case.help,
             .clientStatus,
+            .searchZC,
             .bankData:
             return .get
         case .registerClient,
@@ -81,6 +83,9 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/banco/\(bin)"
         case .clientStatus:
             return "mv/cliente/status"
+        case .searchZC(let code):
+            Router.codeValue = code.code
+            return "mv/cliente/asentamientos/\(Router.codeValue ?? "")"
         }
         
     }
@@ -147,7 +152,8 @@ enum Router: URLRequestConvertible {
             debugPrint(parametersSet)
             
             
-        case.validateCodeRegister(let autorizathionToken, _):
+        case.validateCodeRegister(let autorizathionToken, _),
+            .searchZC(let autorizathionToken, _):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with:nil)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")

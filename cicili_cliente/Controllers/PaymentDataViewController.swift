@@ -33,7 +33,7 @@ class PaymentDataViewController: UIViewController {
     }
     
     @IBAction func cardEditingEnd(_ sender: UITextField) {
-        
+        //403703 403707 404903
        if let cardInput = cardTextField.text, !cardInput.isEmpty{
             if cardInput.count > 4{
                 let binInput = cardInput.index(cardInput.endIndex, offsetBy:4)

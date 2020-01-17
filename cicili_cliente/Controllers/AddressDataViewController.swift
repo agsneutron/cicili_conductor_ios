@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class AddressDataViewController: UIViewController {
+class AddressDataViewController:  UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var preselectedSwitch: UISwitch!
     @IBOutlet weak var townTextField: UITextField!
@@ -21,19 +21,6 @@ class AddressDataViewController: UIViewController {
     
     var cliente: Cliente?
     
-    
-    @IBAction func zipCodeEditingEnd(_ sender: UITextField) {
-        if let zipCodeInput = zipcodeTextField.text, !zipCodeInput.isEmpty{
-            if zipCodeInput.count > 4{
-                
-            }
-            else{
-                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageDatosRequeridos)
-            }
-            
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,13 +30,20 @@ class AddressDataViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
                       view.addGestureRecognizer(gesture)
         
-        
+        intNumberTextField.delegate = self
+        extNumberTextField.delegate = self
+        streetTextField.delegate = self
+        AliasTextField.delegate = self
+        zipcodeTextField.delegate = self
        
-        
+        AliasTextField.tag = 1
+        zipcodeTextField.tag = 2
+        streetTextField.tag = 3
+        extNumberTextField.tag = 4
+        intNumberTextField.tag = 5
                
     }
     
- 
     
 
     @IBAction func saveAddressButton(_ sender: UIButton) {
@@ -63,10 +57,10 @@ class AddressDataViewController: UIViewController {
             let address = Address()
             let asentamiento = Asentamiento()
             
-            asentamiento.cp = 52172
-            asentamiento.estado = "Mexico"
-            asentamiento.municipio = "Metepec"
-            asentamiento.nombre = "La asunción"
+            asentamiento.cp = Int(zipcodeInput)!
+            asentamiento.estado = ""
+            asentamiento.municipio = ""
+            asentamiento.nombre = ""
             
             address.alias = aliasInput
             address.cp = zipcodeInput
@@ -111,5 +105,26 @@ class AddressDataViewController: UIViewController {
     }
     */
 
+    @IBAction func hasChangued(_ sender: UITextField) {
+        debugPrint("Has CHANGED")
+        debugPrint(sender)
+        if let zipCodeInput = sender.text, !zipCodeInput.isEmpty{
+            debugPrint("Has CHANGED NO EMPTY")
+            debugPrint(zipCodeInput)
+            if zipCodeInput.count > 4{
+                debugPrint("Has CHANGED BIGTHAN4")
+                debugPrint(zipCodeInput.count)
+                RequestManager.fetchZipCode(oauthToken: cliente!.token!, codeToVerify: zipCodeInput, success: { response in
+                    if response.id != 0 {
+                        print("En success get zipcode  data \(response.toJSONString(prettyPrint: true))")
+
+                    }
+                    })
+                    { error in
+                        self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                    }
+            }
+        }
+    }
 }
 
