@@ -3,7 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -139,7 +139,7 @@
                         <viewLayoutGuide key="safeArea" id="Dme-sz-pDu"/>
                     </view>
                     <connections>
-                        <outlet property="fechaNacimientoPop" destination="kLP-sI-ocb" id="cvL-cv-BYS"/>
+                        <outlet property="fechaNacimientoPop" destination="kLP-sI-ocb" id="6gg-oC-5vM"/>
                         <outlet property="genderSegment" destination="lmc-EK-UDC" id="Cea-an-eY3"/>
                         <outlet property="lastnameTextField" destination="kym-PT-kf8" id="y0T-uf-dAQ"/>
                         <outlet property="nameTextField" destination="guC-F7-s9R" id="XaG-0a-IpO"/>
