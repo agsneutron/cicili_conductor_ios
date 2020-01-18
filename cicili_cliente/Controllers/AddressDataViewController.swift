@@ -9,6 +9,15 @@
 import UIKit
 import ObjectMapper
 
+extension UITextField {
+    func callAddressTable(selfV : AddressDataViewController, selector: Selector) {
+        
+        let townView = selfV.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+        townView.delegate=selfV
+        selfV.navigationController?.pushViewController(townView, animated: true)
+    }
+}
+
 class AddressDataViewController:  UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var preselectedSwitch: UISwitch!
@@ -18,6 +27,7 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     @IBOutlet weak var streetTextField: UITextField!
     @IBOutlet weak var zipcodeTextField: UITextField!
     @IBOutlet weak var AliasTextField: UITextField!
+    
     
     var cliente: Cliente?
     
@@ -41,10 +51,17 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
         streetTextField.tag = 3
         extNumberTextField.tag = 4
         intNumberTextField.tag = 5
+        
+        //self.townTextField.callAddressTable(selfV: self, selector: #selector(tapDone))
                
     }
     
-    
+
+    @objc func tapDone() {
+        
+        self.townTextField.text=""
+        self.townTextField.resignFirstResponder()
+    }
 
     @IBAction func saveAddressButton(_ sender: UIButton) {
         
@@ -126,5 +143,22 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+
+    
+    
+    @IBAction func showTableSubirb(_ sender: Any) {
+        
+        let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+        townView.delegate=self
+        self.navigationController?.pushViewController(townView, animated: true)
+    }
 }
 
+extension AddressDataViewController : SuburbsTableDelegate {
+    func addSuburb(suburb: SuburbsTable) {
+        self.townTextField.text = suburb.name
+        self.townTextField.tag = suburb.id
+    }
+    
+}

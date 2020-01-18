@@ -76,13 +76,13 @@ class ViewController: UIViewController {
                                         // self.performSegue(withIdentifier: Constants.Storyboard.paymentDataSegueId, sender: self)
                                     case WSKeys.parameters.datos_direccion:
                                         
-                                        guard let addressController = self.storyboard?.instantiateViewController(
+                                        /*guard let addressController = self.storyboard?.instantiateViewController(
                                             withIdentifier: "AddressDataStoryboard") as? AddressDataViewController else {
-                                            fatalError("Unable to create PaymentDataController")
+                                            fatalError("Unable to create PaymentDataViewController")
                                         }
                                         addressController.cliente = response
-                                        self.present(addressController, animated: true, completion: nil)
-                                        //self.performSegue(withIdentifier: Constants.Storyboard.adressDataSegueId, sender: self)
+                                        self.present(addressController, animated: true, completion: nil)*/
+                                        self.performSegue(withIdentifier: Constants.Storyboard.adressDataSegueId, sender: self)
                                     case WSKeys.parameters.verifica_codigo:
                                     
                                         guard let verifyCodeController = self.storyboard?.instantiateViewController(

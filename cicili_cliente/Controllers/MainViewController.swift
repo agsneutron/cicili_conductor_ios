@@ -58,15 +58,15 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
                                 self.setupCard()
                                   
                               case WSKeys.parameters.datos_personales:
-                                  guard let personalController = self.storyboard?.instantiateViewController(
+                                 /* guard let personalController = self.storyboard?.instantiateViewController(
                                   withIdentifier: "PersonalDataStoryboard") as? PersonalDataViewController else {
                                           fatalError("Unable to create PersonalDataController")
                                       }
                                               
                                     personalController.cliente = self.self.cliente
-                                  self.present(personalController, animated: true, completion: nil)
+                                  self.present(personalController, animated: true, completion: nil)*/
                                              
-                                  // self.performSegue(withIdentifier: Constants.Storyboard.personalDataSegueId, sender: self)
+                                  self.performSegue(withIdentifier: Constants.Storyboard.personalDataSegueId, sender: self)
                               case WSKeys.parameters.datos_pago:
                                   guard let paymentController = self.storyboard?.instantiateViewController(
                                   withIdentifier: "PaymentDataStoryboard") as? PaymentDataViewController else {
