@@ -62,6 +62,7 @@
 		90C9179C23C7144C0017B615 /* roundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9179A23C7144C0017B615 /* roundedBtn.swift */; };
 		90E29AED23D24F5E00677E48 /* usuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */; };
 		90E29AEF23D25BF300677E48 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AEE23D25BF300677E48 /* MainTabController.swift */; };
+		90E29AF723D7B93E00677E48 /* perfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AF623D7B93E00677E48 /* perfilViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		90C9179A23C7144C0017B615 /* roundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedBtn.swift; sourceTree = "<group>"; };
 		90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usuarioViewController.swift; sourceTree = "<group>"; };
 		90E29AEE23D25BF300677E48 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		90E29AF623D7B93E00677E48 /* perfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfilViewController.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_cliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -286,6 +288,7 @@
 				57ACFB6523C9E68400357C85 /* AddressDataViewController.swift */,
 				90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */,
 				90E29AEE23D25BF300677E48 /* MainTabController.swift */,
+				90E29AF623D7B93E00677E48 /* perfilViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				57C22D4723C7A61100835B8F /* LoginModel.swift in Sources */,
 				57CD140923BE88AE0056913B /* RequestManager.swift in Sources */,
 				57F80F3723D0DBC600913033 /* Status.swift in Sources */,
+				90E29AF723D7B93E00677E48 /* perfilViewController.swift in Sources */,
 				3137F9BC23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld in Sources */,
 				57ACFB6823CA26EB00357C85 /* Address.swift in Sources */,
 				90E29AEF23D25BF300677E48 /* MainTabController.swift in Sources */,
