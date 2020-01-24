@@ -12,12 +12,13 @@ import ObjectMapper
 class Asentamiento: Mappable {
     
     var id: Int = 0
-    var nombre: String?
+    var text: String?
+    /*var nombre: String?
     var cp: Int = 0
     var municipio: String?
     var estado: String?
     var pais: String?
-   
+   */
     required convenience init?(map: Map) {
         self.init()
     }
@@ -26,11 +27,12 @@ class Asentamiento: Mappable {
         
         // compromisos JSON
         id          <- map["id"]
-        nombre      <- map["nombre"]
+        text        <- map["text"]
+       /* nombre      <- map["nombre"]
         cp          <- map["cp"]
         municipio   <- map["municipio"]
         estado      <- map["estado"]
-        pais        <- map["pais"]
+        pais        <- map["pais"]*/
     }
 }
 
