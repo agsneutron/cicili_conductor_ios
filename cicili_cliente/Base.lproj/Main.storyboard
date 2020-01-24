@@ -628,6 +628,9 @@
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="spatial" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iic-xe-hum">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="428"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ds5-FK-eYt" id="CBf-Gf-clN"/>
+                                        </connections>
                                     </mapView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjB-jP-S0P">
                                         <rect key="frame" x="0.0" y="428" width="375" height="170"/>
@@ -664,6 +667,9 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="UUx-Ow-IF3"/>
+                                                    <constraint firstItem="QJg-o9-F3O" firstAttribute="top" secondItem="E59-cb-Z9M" secondAttribute="top" constant="12" id="gIG-Ow-vzf"/>
+                                                    <constraint firstItem="QJg-o9-F3O" firstAttribute="leading" secondItem="E59-cb-Z9M" secondAttribute="leading" id="iTI-FU-5tb"/>
+                                                    <constraint firstItem="gYE-jB-2wv" firstAttribute="leading" secondItem="QJg-o9-F3O" secondAttribute="trailing" id="md1-ZC-RaR"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="zfJ-Ux-rH0">
@@ -688,7 +694,10 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="R91-4K-kYq" firstAttribute="leading" secondItem="iWZ-sv-NW9" secondAttribute="trailing" id="Dqs-fa-opJ"/>
                                                     <constraint firstAttribute="height" constant="40" id="KaS-Sg-NI4"/>
+                                                    <constraint firstItem="iWZ-sv-NW9" firstAttribute="leading" secondItem="zfJ-Ux-rH0" secondAttribute="leading" id="M8Y-bc-XSZ"/>
+                                                    <constraint firstItem="iWZ-sv-NW9" firstAttribute="top" secondItem="zfJ-Ux-rH0" secondAttribute="top" constant="22" id="aua-f2-mmL"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="JSp-1c-h39">
@@ -753,6 +762,7 @@
                     <navigationItem key="navigationItem" id="i76-Jm-fzY"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="MapView" destination="Iic-xe-hum" id="Dnk-KA-NyX"/>
                         <outlet property="TxtAddress" destination="iWZ-sv-NW9" id="t5D-6o-Ggs"/>
                         <outlet property="TxtDriver" destination="QJg-o9-F3O" id="Wa4-MH-ke4"/>
                     </connections>

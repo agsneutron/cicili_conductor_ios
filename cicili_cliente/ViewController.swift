@@ -135,6 +135,17 @@ class ViewController: UIViewController {
 
             //let displayVC = segue.destination as! MainViewController
             mainVC.cliente = self.responseCliente
+        }else{
+            if segue.identifier == Constants.Storyboard.adressDataSegueId{
+            
+                
+                let vc = segue.destination as? AddressDataViewController
+                vc?.cliente = self.responseCliente
+                
+            }
+            
         }
+        
+        
     }
 }

@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import MapKit
 
 
 class MainViewController: UIViewController, AddressTableDelegate, AvailableDriversDelegate {
     
     var addresRequest: AddressTable?
     
+    @IBOutlet weak var MapView: MKMapView!
     
     var cliente: Cliente?
 
     @IBOutlet weak var TxtAddress: UILabel!
     @IBOutlet weak var TxtDriver: UILabel!
+    
     
     enum CardState {
         case expanded
@@ -45,6 +48,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         super.viewDidLoad()
         setupCard()
        
+        
         
         // Do any additional setup after loading the view.
     
