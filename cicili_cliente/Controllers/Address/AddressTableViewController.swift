@@ -120,6 +120,8 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         let contact = Contact(fullname: fullname)
         
         delegate?.addContact(contact: contact)*/
+        
+        self.performSegue(withIdentifier: Constants.Storyboard.addAddressSegue, sender: self)
     }
     
     @objc func handleCancel() {
