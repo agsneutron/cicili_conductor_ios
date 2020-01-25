@@ -36,6 +36,10 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //view.backgroundColor = .white
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
+        
         // Do any additional setup after loading the view.
         
         AliasTextField.becomeFirstResponder()
@@ -169,6 +173,12 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
         }else{
             self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
         }
+    }
+    
+    @objc func handleCancel() {
+        //self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 

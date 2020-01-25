@@ -31,10 +31,9 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         //view.backgroundColor = .white
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDone))
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
         
         
         loadSuburbs()
@@ -115,7 +114,7 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
     
    // MARK: - Selectors
     
-    @objc func handleDone() {
+    @objc func handleAdd() {
         
         /*guard let fullname = textField.text, textField.hasText else {
             print("Handle error here..")
@@ -130,6 +129,7 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
     @objc func handleCancel() {
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
 }

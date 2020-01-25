@@ -16,6 +16,9 @@ class LostPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
+        
         userTextField.becomeFirstResponder()
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
                view.addGestureRecognizer(gesture)
@@ -96,6 +99,12 @@ class LostPasswordViewController: UIViewController {
             }))
             
         self.present(alert, animated: true)
+    }
+    
+    @objc func handleCancel() {
+        //self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 

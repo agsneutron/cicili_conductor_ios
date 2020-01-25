@@ -17,6 +17,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
+        
         // Do any additional setup after loading the view.
         
         userTextField.becomeFirstResponder()
@@ -52,7 +55,11 @@ class RegisterViewController: UIViewController {
         
         
     }
-    
+    @objc func handleCancel() {
+        //self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     /*
     // MARK: - Navigation
 
