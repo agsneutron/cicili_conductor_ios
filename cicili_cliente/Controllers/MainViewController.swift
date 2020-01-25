@@ -86,6 +86,8 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
                                   withIdentifier: "AddressDataStoryboard") as? AddressDataViewController else {
                                           fatalError("Unable to create PaymentDataController")
                                       }
+                                  debugPrint("frommaintodir")
+                                  debugPrint(self.cliente?.token)
                                   addressController.cliente = self.cliente
                                   self.present(addressController, animated: true, completion: nil)
                                   //self.performSegue(withIdentifier: Constants.Storyboard.adressDataSegueId, sender: self)

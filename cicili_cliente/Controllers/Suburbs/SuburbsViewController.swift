@@ -17,6 +17,8 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
     var searchSuburb = [SuburbsTable]()
     var searching = false
     
+    var suburbsJSON : DataByZipCode?
+    
     var delegate: SuburbsTableDelegate?
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -47,7 +49,7 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func loadSuburbs(){
         // Do any additional setup after loading the view, typically from a nib.
-        guard let suburb1 = SuburbsTable(id: 1, name: "José Maria Morelos") else {
+        /*guard let suburb1 = SuburbsTable(id: 1, name: "José Maria Morelos") else {
             fatalError("Unable to instantiate meal1")
         }
 
@@ -60,6 +62,11 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         suburbsArray += [suburb1, suburb2, suburb3]
+        */
+        for suburbItem in suburbsJSON!.asentamientos!{
+            
+                suburbsArray.append(SuburbsTable(id: suburbItem.id, name: suburbItem.text!)!)
+        }
     }
     //MARK:- UITableView methods
     

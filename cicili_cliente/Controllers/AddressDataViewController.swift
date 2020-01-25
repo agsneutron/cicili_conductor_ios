@@ -13,6 +13,7 @@ extension UITextField {
     func callAddressTable(selfV : AddressDataViewController, selector: Selector) {
         
         let townView = selfV.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+        
         townView.delegate=selfV
         selfV.navigationController?.pushViewController(townView, animated: true)
     }
@@ -30,6 +31,7 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     
     
     var cliente: Cliente?
+    var suburbsObj: DataByZipCode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,10 +76,12 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
             let address = Address()
             let asentamiento = Asentamiento()
             
-            asentamiento.cp = Int(zipcodeInput)!
-            asentamiento.estado = ""
-            asentamiento.municipio = ""
-            asentamiento.nombre = ""
+            //asentamiento.cp = Int(zipcodeInput)!
+            //asentamiento.estado = ""
+            //asentamiento.municipio = ""
+            //asentamiento.nombre = ""
+            asentamiento.id = townTextField.tag
+            asentamiento.text = townTextField.text
             
             address.alias = aliasInput
             address.cp = zipcodeInput
@@ -132,14 +136,18 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
                 debugPrint("Has CHANGED BIGTHAN4")
                 debugPrint(zipCodeInput.count)
                 RequestManager.fetchZipCode(oauthToken: cliente!.token!, codeToVerify: zipCodeInput, success: { response in
-                    if response.id != 0 {
-                        print("En success get zipcode  data \(response.toJSONString(prettyPrint: true))")
-
+                    print("En success get zipcode  data \(response.toJSONString(prettyPrint: true))")
+                    if response.asentamientos!.count > 0 {
+                        self.suburbsObj = response
                     }
-                    })
-                    { error in
-                        self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                    else{
+                        self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
                     }
+                    
+                })
+                { error in
+                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                }
             }
         }
     }
@@ -148,10 +156,15 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     
     
     @IBAction func showTableSubirb(_ sender: Any) {
-        
-        let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
-        townView.delegate=self
-        self.navigationController?.pushViewController(townView, animated: true)
+        if self.suburbsObj!.asentamientos!.count > 0 {
+            let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+            townView.delegate=self
+            townView.suburbsJSON = self.suburbsObj
+            self.navigationController?.pushViewController(townView, animated: true)
+        }
+        else{
+            self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
+        }
     }
 }
 
