@@ -97,7 +97,11 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //performSegue(withIdentifier: "presentMainFromAddress", sender: self)
         //closeAddressTable()
-        delegate?.addSuburb(suburb: suburbsArray[(tblSuburbView.indexPathForSelectedRow?.row)!])
+        if searching {
+            delegate?.addSuburb(suburb: searchSuburb[(tblSuburbView.indexPathForSelectedRow?.row)!])
+        }else {
+            delegate?.addSuburb(suburb: suburbsArray[(tblSuburbView.indexPathForSelectedRow?.row)!])
+        }
         tblSuburbView.deselectRow(at: tblSuburbView.indexPathForSelectedRow!, animated: true)
         handleCancel()
         

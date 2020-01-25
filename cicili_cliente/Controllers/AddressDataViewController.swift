@@ -156,13 +156,17 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     
     
     @IBAction func showTableSubirb(_ sender: Any) {
-        if self.suburbsObj!.asentamientos!.count > 0 {
-            let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
-            townView.delegate=self
-            townView.suburbsJSON = self.suburbsObj
-            self.navigationController?.pushViewController(townView, animated: true)
-        }
-        else{
+        if self.suburbsObj != nil {
+            if self.suburbsObj!.asentamientos!.count > 0 {
+                let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+                townView.delegate=self
+                townView.suburbsJSON = self.suburbsObj
+                self.navigationController?.pushViewController(townView, animated: true)
+            }
+            else{
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
+            }
+        }else{
             self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
         }
     }
