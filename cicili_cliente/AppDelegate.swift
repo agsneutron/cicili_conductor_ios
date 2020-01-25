@@ -47,6 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // [END register_for_notifications]
         
+        //Location auth
+        let locationManager = LocationManager.shared
+        locationManager.requestWhenInUseAuthorization()
+        
+        //END location
+        
+        
         return true
     }
     

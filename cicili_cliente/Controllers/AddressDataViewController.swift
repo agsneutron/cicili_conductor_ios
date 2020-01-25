@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ObjectMapper
+
 
 extension UITextField {
     func callAddressTable(selfV : AddressDataViewController, selector: Selector) {
@@ -28,6 +28,8 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     @IBOutlet weak var streetTextField: UITextField!
     @IBOutlet weak var zipcodeTextField: UITextField!
     @IBOutlet weak var AliasTextField: UITextField!
+    let address = Address()
+    
     
     
     var cliente: Cliente?
@@ -55,6 +57,7 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
         intNumberTextField.tag = 5
         
         //self.townTextField.callAddressTable(selfV: self, selector: #selector(tapDone))
+        
                
     }
     
@@ -73,7 +76,7 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
             let internalInputInput = intNumberTextField.text, !internalInputInput.isEmpty,
             let townInputInput = townTextField.text, !townInputInput.isEmpty {
         
-            let address = Address()
+            
             let asentamiento = Asentamiento()
             
             //asentamiento.cp = Int(zipcodeInput)!
@@ -93,24 +96,14 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
             address.asentamiento = asentamiento
             //address.asentamiento = townInputInput
             
-            let objectAsDict:[String : AnyObject] = Mapper<Address>().toJSON(address) as [String : AnyObject]
+            self.AliasTextField.text = ""
+            self.zipcodeTextField.text = ""
+            self.streetTextField.text = ""
             
-            RequestManager.setAddressData(oauthToken: cliente!.token!, parameters: objectAsDict, success: { response in
-                
-                if response.codeError == WSKeys.parameters.okresponse{
-                    print("En success \(response)")
-                    self.AliasTextField.text = ""
-                    self.zipcodeTextField.text = ""
-                    self.streetTextField.text = ""
-                    //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
-                    self.present(vc!, animated: true, completion: nil)
-                    
-                    }
-                })
-                { error in
-                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
-                }
+            self.performSegue(withIdentifier: Constants.Storyboard.addressLocationSegueId, sender: self)
+            
+           
+            
         } else {
             self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageRequeridoLogin)
         }
@@ -152,21 +145,39 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
         }
     }
     
-
-    
     
     @IBAction func showTableSubirb(_ sender: Any) {
-        if self.suburbsObj!.asentamientos!.count > 0 {
-            let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
-            townView.delegate=self
-            townView.suburbsJSON = self.suburbsObj
-            self.navigationController?.pushViewController(townView, animated: true)
-        }
-        else{
+        if (self.suburbsObj != nil){
+            if self.suburbsObj!.asentamientos!.count > 0 {
+                let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+                townView.delegate=self
+                townView.suburbsJSON = self.suburbsObj
+                self.navigationController?.pushViewController(townView, animated: true)
+            }
+            else{
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
+            }
+        }else{
             self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
         }
     }
+    
+   
+     // navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+   
+        if segue.identifier ==  Constants.Storyboard.addressLocationSegueId{
+            let addressLocationController = segue.destination as! AddressLocationViewController
+            addressLocationController.addressObject = self.address
+            addressLocationController.token = self.cliente?.token
+        }
+    }
+    
 }
+
+
 
 extension AddressDataViewController : SuburbsTableDelegate {
     func addSuburb(suburb: SuburbsTable) {
