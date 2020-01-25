@@ -47,7 +47,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCard()
-       
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
         
         // Do any additional setup after loading the view.

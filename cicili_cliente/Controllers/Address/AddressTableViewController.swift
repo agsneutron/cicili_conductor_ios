@@ -31,7 +31,7 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         
         
         //view.backgroundColor = .white
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDone))
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
@@ -124,6 +124,7 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     @objc func handleCancel() {
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
 }

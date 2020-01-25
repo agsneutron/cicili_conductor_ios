@@ -24,7 +24,7 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
          
          
          //view.backgroundColor = .white
-         
+         navigationController?.setNavigationBarHidden(false, animated: true)
          self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDone))
          
          self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
@@ -101,6 +101,7 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
      @objc func handleCancel() {
          //self.dismiss(animated: true, completion: nil)
          navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
      }
 
 }
