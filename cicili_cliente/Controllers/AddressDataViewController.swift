@@ -9,7 +9,17 @@
 import UIKit
 import ObjectMapper
 
-class AddressDataViewController: UIViewController {
+extension UITextField {
+    func callAddressTable(selfV : AddressDataViewController, selector: Selector) {
+        
+        let townView = selfV.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+        
+        townView.delegate=selfV
+        selfV.navigationController?.pushViewController(townView, animated: true)
+    }
+}
+
+class AddressDataViewController:  UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var preselectedSwitch: UISwitch!
     @IBOutlet weak var townTextField: UITextField!
@@ -19,38 +29,45 @@ class AddressDataViewController: UIViewController {
     @IBOutlet weak var zipcodeTextField: UITextField!
     @IBOutlet weak var AliasTextField: UITextField!
     
+    
     var cliente: Cliente?
-    
-    
-    @IBAction func zipCodeEditingEnd(_ sender: UITextField) {
-        if let zipCodeInput = zipcodeTextField.text, !zipCodeInput.isEmpty{
-            if zipCodeInput.count > 4{
-                
-            }
-            else{
-                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageDatosRequeridos)
-            }
-            
-        }
-    }
+    var suburbsObj: DataByZipCode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //view.backgroundColor = .white
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
+        
         // Do any additional setup after loading the view.
         
         AliasTextField.becomeFirstResponder()
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
                       view.addGestureRecognizer(gesture)
         
-        
+        intNumberTextField.delegate = self
+        extNumberTextField.delegate = self
+        streetTextField.delegate = self
+        AliasTextField.delegate = self
+        zipcodeTextField.delegate = self
        
+        AliasTextField.tag = 1
+        zipcodeTextField.tag = 2
+        streetTextField.tag = 3
+        extNumberTextField.tag = 4
+        intNumberTextField.tag = 5
         
+        //self.townTextField.callAddressTable(selfV: self, selector: #selector(tapDone))
                
     }
     
- 
-    
+
+    @objc func tapDone() {
+        
+        self.townTextField.text=""
+        self.townTextField.resignFirstResponder()
+    }
 
     @IBAction func saveAddressButton(_ sender: UIButton) {
         
@@ -63,10 +80,12 @@ class AddressDataViewController: UIViewController {
             let address = Address()
             let asentamiento = Asentamiento()
             
-            asentamiento.cp = 52172
-            asentamiento.estado = "Mexico"
-            asentamiento.municipio = "Metepec"
-            asentamiento.nombre = "La asunción"
+            //asentamiento.cp = Int(zipcodeInput)!
+            //asentamiento.estado = ""
+            //asentamiento.municipio = ""
+            //asentamiento.nombre = ""
+            asentamiento.id = townTextField.tag
+            asentamiento.text = townTextField.text
             
             address.alias = aliasInput
             address.cp = zipcodeInput
@@ -111,5 +130,62 @@ class AddressDataViewController: UIViewController {
     }
     */
 
+    @IBAction func hasChangued(_ sender: UITextField) {
+        debugPrint("Has CHANGED")
+        debugPrint(sender)
+        if let zipCodeInput = sender.text, !zipCodeInput.isEmpty{
+            debugPrint("Has CHANGED NO EMPTY")
+            debugPrint(zipCodeInput)
+            if zipCodeInput.count > 4{
+                debugPrint("Has CHANGED BIGTHAN4")
+                debugPrint(zipCodeInput.count)
+                RequestManager.fetchZipCode(oauthToken: cliente!.token!, codeToVerify: zipCodeInput, success: { response in
+                    print("En success get zipcode  data \(response.toJSONString(prettyPrint: true))")
+                    if response.asentamientos!.count > 0 {
+                        self.suburbsObj = response
+                    }
+                    else{
+                        self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
+                    }
+                    
+                })
+                { error in
+                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+
+    
+    
+    @IBAction func showTableSubirb(_ sender: Any) {
+        if self.suburbsObj != nil {
+            if self.suburbsObj!.asentamientos!.count > 0 {
+                let townView = self.storyboard?.instantiateViewController(withIdentifier: "SuburbsViewControllerID") as! SuburbsViewController
+                townView.delegate=self
+                townView.suburbsJSON = self.suburbsObj
+                self.navigationController?.pushViewController(townView, animated: true)
+            }
+            else{
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
+            }
+        }else{
+            self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerificaCP, message_t: Constants.ErrorMessages.messageVerificaCP)
+        }
+    }
+    
+    @objc func handleCancel() {
+        //self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 }
 
+extension AddressDataViewController : SuburbsTableDelegate {
+    func addSuburb(suburb: SuburbsTable) {
+        self.townTextField.text = suburb.name
+        self.townTextField.tag = suburb.id
+    }
+    
+}

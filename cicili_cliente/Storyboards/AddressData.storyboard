@@ -3,7 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Corto (Casa, Negocio, Oficina)" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0Yd-TN-k2E">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Corto (Casa, Negocio, Oficina)" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0Yd-TN-k2E">
                                 <rect key="frame" x="40" y="129.5" width="240" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="OX4-aZ-rIT"/>
@@ -39,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calle" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-6f-kfq">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calle" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-6f-kfq">
                                 <rect key="frame" x="40" y="183.5" width="240" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="cOs-m6-S1f"/>
@@ -50,12 +50,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="BDj-V7-sBR">
                                 <rect key="frame" x="40" y="237.5" width="240" height="44"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Exterior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-7h-Iyq">
+                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Exterior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-7h-Iyq">
                                         <rect key="frame" x="0.0" y="0.0" width="111" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Interior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nDX-US-yqT">
+                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número Interior" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nDX-US-yqT">
                                         <rect key="frame" x="129" y="0.0" width="111" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -65,21 +65,27 @@
                                     <constraint firstAttribute="height" constant="44" id="Br3-Uq-eWf"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Colonia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCA-lw-H6v">
+                            <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Colonia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCA-lw-H6v">
                                 <rect key="frame" x="40" y="291.5" width="240" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Vsm-3j-Ou3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <action selector="showTableSubirb:" destination="D9G-k3-8Yt" eventType="touchDown" id="X7o-P3-4PK"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código Postal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dro-IW-96e">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código Postal" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dro-IW-96e">
                                 <rect key="frame" x="40" y="345.5" width="240" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="LnI-ya-jEA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
+                                <connections>
+                                    <action selector="hasChangued:" destination="D9G-k3-8Yt" eventType="editingChanged" id="3Je-oH-Twv"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="UGl-Fd-5DY">
                                 <rect key="frame" x="20" y="399.5" width="280" height="31"/>
@@ -90,12 +96,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-3Z-rnv">
+                                    <switch opaque="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-3Z-rnv">
                                         <rect key="frame" x="241" y="0.0" width="41" height="31"/>
                                     </switch>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-Xb-jAv" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-Xb-jAv" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
                                 <rect key="frame" x="50" y="460.5" width="220" height="44"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -171,7 +177,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMA-aA-GuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="63.616071428571423"/>
+            <point key="canvasLocation" x="2047.5" y="63.380281690140848"/>
+        </scene>
+        <!--Suburbs View Controller-->
+        <scene sceneID="mn8-OH-JNF">
+            <objects>
+                <viewController storyboardIdentifier="SuburbsViewControllerID" id="iMz-ma-5y2" customClass="SuburbsViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cv7-Dl-hWO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Uan-Nb-xoQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MUI-MI-YLV"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="iMz-ma-5y2" id="Zfq-rX-QvM"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-P1-Sw5">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BVd-DU-QrH" customClass="SuburbsTableViewCell" customModule="cicili_cliente" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BVd-DU-QrH" id="AUG-v6-8bP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iMz-ma-5y2" id="gTc-G3-TQa"/>
+                                    <outlet property="delegate" destination="iMz-ma-5y2" id="RIV-Vn-hlo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Uan-Nb-xoQ" firstAttribute="leading" secondItem="BLA-Gu-dws" secondAttribute="leading" id="5f3-1K-PVA"/>
+                            <constraint firstItem="Uan-Nb-xoQ" firstAttribute="trailing" secondItem="BLA-Gu-dws" secondAttribute="trailing" id="93J-96-HzX"/>
+                            <constraint firstItem="ksh-P1-Sw5" firstAttribute="trailing" secondItem="BLA-Gu-dws" secondAttribute="trailing" id="JAs-o1-UNa"/>
+                            <constraint firstItem="ksh-P1-Sw5" firstAttribute="leading" secondItem="BLA-Gu-dws" secondAttribute="leading" id="Pez-aW-oNF"/>
+                            <constraint firstItem="ksh-P1-Sw5" firstAttribute="bottom" secondItem="BLA-Gu-dws" secondAttribute="bottom" id="hDD-WI-Lvc"/>
+                            <constraint firstItem="Uan-Nb-xoQ" firstAttribute="top" secondItem="BLA-Gu-dws" secondAttribute="top" id="kv8-JF-amj"/>
+                            <constraint firstItem="ksh-P1-Sw5" firstAttribute="top" secondItem="Uan-Nb-xoQ" secondAttribute="bottom" id="otf-c9-Vge"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BLA-Gu-dws"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Uan-Nb-xoQ" id="xNi-QL-Nkr"/>
+                        <outlet property="tblSuburbView" destination="ksh-P1-Sw5" id="Zm2-5G-1ze"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhW-UA-zXO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2821.875" y="59.154929577464792"/>
         </scene>
     </scenes>
     <resources>

@@ -1,30 +1,30 @@
 //
-//  AddressTableViewController.swift
+//  SuburbsViewController.swift
 //  cicili_cliente
 //
-//  Created by ARIANA SANCHEZ on 15/01/20.
+//  Created by ARIANA SANCHEZ on 17/01/20.
 //  Copyright © 2020 CICILI. All rights reserved.
 //
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-protocol AddressTableDelegate {
-    func addAddress(address: AddressTable)
+protocol SuburbsTableDelegate {
+    func addSuburb(suburb: SuburbsTable)
 }
 
-class AddressTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SuburbsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var searchAddress = [AddressTable]()
+    var searchSuburb = [SuburbsTable]()
     var searching = false
     
-    var delegate: AddressTableDelegate?
+    var suburbsJSON : DataByZipCode?
+    
+    var delegate: SuburbsTableDelegate?
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var tblAddressView: UITableView!
-    var addressArray = [AddressTable]()
+    @IBOutlet weak var tblSuburbView: UITableView!
+    var suburbsArray = [SuburbsTable]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,55 +33,61 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         //view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Agregar", style: .plain, target: self, action: #selector(handleAdd))
         
         
         
+        loadSuburbs()
         
-        // Do any additional setup after loading the view, typically from a nib.
-        guard let address1 = AddressTable(name: "Casa") else {
-            fatalError("Unable to instantiate meal1")
-        }
-
-        guard let address2 = AddressTable(name: "Trabajo") else {
-            fatalError("Unable to instantiate meal2")
-        }
-
-        guard let address3 = AddressTable(name: "Casa papás") else {
-            fatalError("Unable to instantiate meal2")
-        }
         
-        addressArray += [address1, address2, address3]
-        
-        tblAddressView.dataSource = self
-        tblAddressView.delegate = self
+        tblSuburbView.dataSource = self
+        tblSuburbView.delegate = self
         
         
 
     }
     
-    
+    func loadSuburbs(){
+        // Do any additional setup after loading the view, typically from a nib.
+        /*guard let suburb1 = SuburbsTable(id: 1, name: "José Maria Morelos") else {
+            fatalError("Unable to instantiate meal1")
+        }
+
+        guard let suburb2 = SuburbsTable(id: 2, name: "Juan FErnandez Albarran") else {
+            fatalError("Unable to instantiate meal2")
+        }
+
+        guard let suburb3 = SuburbsTable(id: 3, name: "La pilita") else {
+            fatalError("Unable to instantiate meal2")
+        }
+        
+        suburbsArray += [suburb1, suburb2, suburb3]
+        */
+        for suburbItem in suburbsJSON!.asentamientos!{
+            
+                suburbsArray.append(SuburbsTable(id: suburbItem.id, name: suburbItem.text!)!)
+        }
+    }
     //MARK:- UITableView methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
-            return searchAddress.count
+            return searchSuburb.count
         }else {
-            return addressArray.count
+            return suburbsArray.count
         }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "AddressTableViewCell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "SuburbsTableViewCell")
         if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "AddressTableViewCell")
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "SuburbsTableViewCell")
         }
         
         if searching {
-            cell?.textLabel?.text = searchAddress[indexPath.row].name
+            cell?.textLabel?.text = searchSuburb[indexPath.row].name
         }else {
-            cell?.textLabel?.text = addressArray[indexPath.row].name
+            cell?.textLabel?.text = suburbsArray[indexPath.row].name
         }
         return cell!
     }
@@ -90,19 +96,17 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //performSegue(withIdentifier: "presentMainFromAddress", sender: self)
         //closeAddressTable()
-        delegate?.addAddress(address: addressArray[(tblAddressView.indexPathForSelectedRow?.row)!])
-        tblAddressView.deselectRow(at: tblAddressView.indexPathForSelectedRow!, animated: true)
+        if searching {
+            delegate?.addSuburb(suburb: searchSuburb[(tblSuburbView.indexPathForSelectedRow?.row)!])
+        }else {
+            delegate?.addSuburb(suburb: suburbsArray[(tblSuburbView.indexPathForSelectedRow?.row)!])
+        }
+        tblSuburbView.deselectRow(at: tblSuburbView.indexPathForSelectedRow!, animated: true)
         handleCancel()
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? MainViewController {
-            destination.addresRequest = addressArray[(tblAddressView.indexPathForSelectedRow?.row)!]
-            tblAddressView.deselectRow(at: tblAddressView.indexPathForSelectedRow!, animated: true)
-
-        }
-    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -130,10 +134,10 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
 
 }
 
-extension AddressTableViewController: UISearchBarDelegate{
+extension SuburbsViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchAddress = addressArray.filter({$0.name.prefix(searchText.count) == searchText})
+        searchSuburb = suburbsArray.filter({$0.name.prefix(searchText.count) == searchText})
         searching = true
-        tblAddressView.reloadData()
+        tblSuburbView.reloadData()
     }
 }

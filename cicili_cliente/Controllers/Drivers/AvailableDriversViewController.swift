@@ -24,10 +24,9 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
          
          
          //view.backgroundColor = .white
+         navigationController?.setNavigationBarHidden(false, animated: true)
+         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
          
-         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDone))
-         
-         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
          
          
          // Do any additional setup after loading the view, typically from a nib.
@@ -86,7 +85,7 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
      
     // MARK: - Selectors
      
-     @objc func handleDone() {
+     @objc func handleAdd() {
          
          /*guard let fullname = textField.text, textField.hasText else {
              print("Handle error here..")
@@ -101,6 +100,7 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
      @objc func handleCancel() {
          //self.dismiss(animated: true, completion: nil)
          navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
      }
 
 }

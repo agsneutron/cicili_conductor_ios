@@ -182,6 +182,7 @@
                         <segue destination="If7-ek-Atp" kind="show" identifier="presentHome" id="XJX-Lm-1WA"/>
                         <segue destination="DRn-MM-hai" kind="show" identifier="forgotPasswordSegue" id="hE0-NF-rZC"/>
                         <segue destination="UN1-en-w14" kind="show" identifier="loginToRegisterSegue" id="s0C-cQ-gWe"/>
+                        <segue destination="1l0-uh-iAS" kind="show" identifier="toAdressDataSegue" id="8g6-zE-4t5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -191,10 +192,12 @@
         <!--AddressData-->
         <scene sceneID="PCL-5W-zlo">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AddressDataStoryboard" storyboardName="AddressData" id="1l0-uh-iAS" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="AddressDataStoryboard" storyboardName="AddressData" id="1l0-uh-iAS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="00b-vK-bEk"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzn-q2-FNB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="121"/>
+            <point key="canvasLocation" x="656" y="-204"/>
         </scene>
         <!--PersonalData-->
         <scene sceneID="UuM-pH-SxH">
@@ -202,7 +205,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="PersonalDataStoryboard" storyboardName="PersonalData" id="0hB-X8-YYi" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Jj-RW-h4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59" y="153"/>
+            <point key="canvasLocation" x="-105" y="130"/>
         </scene>
         <!--PaymentDataStoryboard-->
         <scene sceneID="JGb-SH-vbo">
@@ -631,6 +634,9 @@
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="spatial" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iic-xe-hum">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="428"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ds5-FK-eYt" id="CBf-Gf-clN"/>
+                                        </connections>
                                     </mapView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjB-jP-S0P">
                                         <rect key="frame" x="0.0" y="428" width="375" height="170"/>
@@ -667,6 +673,9 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="UUx-Ow-IF3"/>
+                                                    <constraint firstItem="QJg-o9-F3O" firstAttribute="top" secondItem="E59-cb-Z9M" secondAttribute="top" constant="12" id="gIG-Ow-vzf"/>
+                                                    <constraint firstItem="QJg-o9-F3O" firstAttribute="leading" secondItem="E59-cb-Z9M" secondAttribute="leading" id="iTI-FU-5tb"/>
+                                                    <constraint firstItem="gYE-jB-2wv" firstAttribute="leading" secondItem="QJg-o9-F3O" secondAttribute="trailing" id="md1-ZC-RaR"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="zfJ-Ux-rH0">
@@ -691,7 +700,10 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="R91-4K-kYq" firstAttribute="leading" secondItem="iWZ-sv-NW9" secondAttribute="trailing" id="Dqs-fa-opJ"/>
                                                     <constraint firstAttribute="height" constant="40" id="KaS-Sg-NI4"/>
+                                                    <constraint firstItem="iWZ-sv-NW9" firstAttribute="leading" secondItem="zfJ-Ux-rH0" secondAttribute="leading" id="M8Y-bc-XSZ"/>
+                                                    <constraint firstItem="iWZ-sv-NW9" firstAttribute="top" secondItem="zfJ-Ux-rH0" secondAttribute="top" constant="22" id="aua-f2-mmL"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="JSp-1c-h39">
@@ -758,6 +770,7 @@
                     <navigationItem key="navigationItem" id="i76-Jm-fzY"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="MapView" destination="Iic-xe-hum" id="Dnk-KA-NyX"/>
                         <outlet property="TxtAddress" destination="iWZ-sv-NW9" id="t5D-6o-Ggs"/>
                         <outlet property="TxtDriver" destination="QJg-o9-F3O" id="Wa4-MH-ke4"/>
                     </connections>
