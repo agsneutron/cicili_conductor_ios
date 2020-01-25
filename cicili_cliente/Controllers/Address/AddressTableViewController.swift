@@ -102,6 +102,10 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
             tblAddressView.deselectRow(at: tblAddressView.indexPathForSelectedRow!, animated: true)
 
         }
+        
+        if let destination = segue.destination as? AddressDataViewController{
+            destination.predecessor = "tableview"
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -120,6 +124,8 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         let contact = Contact(fullname: fullname)
         
         delegate?.addContact(contact: contact)*/
+        
+        self.performSegue(withIdentifier: Constants.Storyboard.addAddressSegue, sender: self)
     }
     
     @objc func handleCancel() {
@@ -127,7 +133,8 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         navigationController?.popViewController(animated: true)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
+    
 }
 
 extension AddressTableViewController: UISearchBarDelegate{

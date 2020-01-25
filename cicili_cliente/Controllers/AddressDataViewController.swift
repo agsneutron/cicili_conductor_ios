@@ -32,6 +32,7 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     
     var cliente: Cliente?
     var suburbsObj: DataByZipCode?
+    var predecessor: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,7 +179,11 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     @objc func handleCancel() {
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        if predecessor == "tableview" {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+        }else{
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        }
     }
 }
 

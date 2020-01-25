@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -497,6 +497,16 @@
             </objects>
             <point key="canvasLocation" x="-772" y="1183"/>
         </scene>
+        <!--AddressData-->
+        <scene sceneID="f3L-2O-hK2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddressData" id="hiu-a9-LnH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Tfg-sa-aFb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4K-W0-k9O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="-2179"/>
+        </scene>
         <!--Address Table View Controller-->
         <scene sceneID="JXg-Cf-ki6">
             <objects>
@@ -558,6 +568,7 @@
                     <connections>
                         <outlet property="searchBar" destination="pdZ-yZ-Fkh" id="ge1-GQ-6wk"/>
                         <outlet property="tblAddressView" destination="eOr-vo-LG9" id="Pk5-ue-8wR"/>
+                        <segue destination="hiu-a9-LnH" kind="show" identifier="AddAddressSegue" id="h7u-U8-lkn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsw-x2-kyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
