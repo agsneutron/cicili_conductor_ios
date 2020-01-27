@@ -34,6 +34,7 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     
     var cliente: Cliente?
     var suburbsObj: DataByZipCode?
+    var addressForLocation: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +96,8 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
             address.longitud = 0
             address.asentamiento = asentamiento
             //address.asentamiento = townInputInput
+            addressForLocation = "\(suburbsObj?.municipio?.text), \(suburbsObj?.estado?.text), \(suburbsObj?.pais?.text)"
+            
             
             self.AliasTextField.text = ""
             self.zipcodeTextField.text = ""
@@ -172,6 +175,7 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
             let addressLocationController = segue.destination as! AddressLocationViewController
             addressLocationController.addressObject = self.address
             addressLocationController.token = self.cliente?.token
+            addressLocationController.dataForLocation = self.addressForLocation
         }
     }
     

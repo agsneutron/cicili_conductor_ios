@@ -14,8 +14,10 @@ import CoreLocation
 class AddressLocationViewController: UIViewController {
     
     var addressObject: Address?
-    var token:String?
+    var token: String?
+    var dataForLocation: String?
     
+    @IBOutlet weak var aliasLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
     //let locationManager = CLLocationManager()
@@ -33,20 +35,49 @@ class AddressLocationViewController: UIViewController {
         //map
         startLocationUpdates()
         centerMapOnLocation(location: locationManager.location!)
-        //mapView.register(MapPinView.self,
-        //forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-        addPin(location: locationManager.location!)
-         //checkLocationAuthorizationStatus()
+        //mapView.register(MapPinView.self,forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        let address = "\(addressObject!.calle!) \(addressObject!.exterior ?? "")  \(addressObject!.asentamiento!.text!), \(addressObject!.cp ?? "")"
+        debugPrint("____addrress for location")
+        debugPrint(address)
+        getLocation(from: address)
+        //addPin(location: locationManager.location!)
+        //checkLocationAuthorizationStatus()
         
         let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
         mapView.addGestureRecognizer(longTapGesture)
         
-        
+        aliasLabel.text = "Ubicación de: \(addressObject!.alias!)"
+    }
+    
+    func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
+
+        let location = gestureRecognizer.location(in: mapView)
+        let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
+
+        // Add annotation:
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        mapView.addAnnotation(annotation)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
       locationManager.stopUpdatingLocation()
+    }
+    
+    func getLocation(from: String) {
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(from) { placemarks, error in
+            let placemark = placemarks?.first
+            let lat = placemark?.location?.coordinate.latitude
+            let lon = placemark?.location?.coordinate.longitude
+            print("Lat: \(lat ?? 0.0), Lon: \(lon ?? 0.0)")
+            self.centerMapOnLocation(location: CLLocation(latitude: lat!, longitude: lon!))
+            self.addPin(location: CLLocation(latitude: lat!, longitude: lon!))
+            self.addressObject?.latitud = lat!
+            self.addressObject?.longitud = lon!
+        }
     }
     
 
@@ -103,34 +134,28 @@ class AddressLocationViewController: UIViewController {
         mapView.addAnnotation(mapPin)
     }
     
-    func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
-
-        let location = gestureRecognizer.location(in: mapView)
-        let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
-
-        // Add annotation:
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        mapView.addAnnotation(annotation)
-    }
     
     @objc func longTap(sender: UIGestureRecognizer){
         print("long tap")
         
-        mapView.removeAnnotations(mapView.annotations)
+       
         
         if sender.state == .began {
             let locationInView = sender.location(in: mapView)
             let locationOnMap = mapView.convert(locationInView, toCoordinateFrom: mapView)
+            addressObject?.latitud = locationOnMap.latitude
+            addressObject?.longitud = locationOnMap.longitude
             addAnnotation(location: locationOnMap)
         }
     }
     
     func addAnnotation(location: CLLocationCoordinate2D){
+         mapView.removeAnnotations(mapView.annotations)
+        
             let annotation = MKPointAnnotation()
             annotation.coordinate = location
             annotation.title = "Cicili llegará a este punto"
-            annotation.subtitle = ""
+            annotation.subtitle = addressObject!.alias!
             self.mapView.addAnnotation(annotation)
     }
 

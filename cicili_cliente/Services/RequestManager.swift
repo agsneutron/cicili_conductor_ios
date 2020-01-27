@@ -269,7 +269,7 @@ class RequestManager: NSObject{
             debugPrint(json)
            
             if response.response?.statusCode == WSKeys.parameters.statuscode {
-                let addressResponse = Mapper<Response>().map( JSONObject: json["data"])
+                let addressResponse = Mapper<Response>().map( JSONObject: json["data"].dictionaryObject)
                 success(addressResponse!)
             } else {
                 failure(NSError(domain: "com.cicili.AddressData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))
