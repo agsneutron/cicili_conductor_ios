@@ -102,15 +102,15 @@ class AddressTableCardViewController: UITableViewController {
     
     private func loadAddress() {
         
-        guard let address1 = AddressTable(name: "Casa") else {
+        guard let address1 = AddressTable(id: 1, name: "Casa") else {
             fatalError("Unable to instantiate meal1")
         }
 
-        guard let address2 = AddressTable(name: "Trabajo") else {
+        guard let address2 = AddressTable(id: 2, name: "Trabajo") else {
             fatalError("Unable to instantiate meal2")
         }
 
-        guard let address3 = AddressTable(name: "Casa papás") else {
+        guard let address3 = AddressTable(id: 3, name: "Casa papás") else {
             fatalError("Unable to instantiate meal2")
         }
 

@@ -19,7 +19,7 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     var searchAddress = [AddressTable]()
     var searching = false
     
-    var childFrom: String?
+    
     
     var delegate: AddressTableDelegate?
     
