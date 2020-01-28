@@ -12,13 +12,13 @@ import UIKit
 class AddressTable {
     
     //MARK: Properties
-    
+    var id: Int=0
     var name: String
    
     
     //MARK: Initialization
     
-    init?(name: String) {
+    init?(id: Int,name: String) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -28,6 +28,6 @@ class AddressTable {
         
         // Initialize stored properties.
         self.name = name
-        
+        self.id = id
     }
 }

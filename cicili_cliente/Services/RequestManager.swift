@@ -256,20 +256,20 @@ class RequestManager: NSObject{
         Alamofire.request(Router.addressData(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
         response in
         
-            debugPrint("*********RES*********")
-            debugPrint(response)
+            //debugPrint("*********RES*********")
+            //debugPrint(response)
         // Evalute result
         switch response.result {
         case .success:
             let objectResponse = response.result.value
             let json = JSON(response.result.value!)
-            debugPrint("*********RES VALUE*********")
-            debugPrint(objectResponse)
-            debugPrint("*********RES json*********")
-            debugPrint(json)
+            //debugPrint("*********RES VALUE*********")
+            //debugPrint(objectResponse)
+            //debugPrint("*********RES json*********")
+            //debugPrint(json)
            
             if response.response?.statusCode == WSKeys.parameters.statuscode {
-                let addressResponse = Mapper<Response>().map( JSONObject: json["data"])
+                let addressResponse = Mapper<Response>().map( JSONObject: json["data"].dictionaryObject)
                 success(addressResponse!)
             } else {
                 failure(NSError(domain: "com.cicili.AddressData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))
@@ -402,6 +402,37 @@ class RequestManager: NSObject{
                  case .failure(let error):
                      failure(error as NSError)
              }
+        }
+    }
+    
+    //get address consult
+    class func fetchAddressConsult(oauthToken: String, success: @escaping ([Address]) -> Void, failure: @escaping (NSError) -> Void){
+           // Fetch request
+        Alamofire.request(Router.addressConsult(autorizathionToken: oauthToken)).responseJSON{
+           response in
+           
+            debugPrint("*********RES*********")
+            debugPrint(response)
+            // Evalute result
+            switch response.result {
+                case .success:
+                   
+                    let json = JSON(response.result.value!)
+                    debugPrint("*********RES json*********")
+                    debugPrint(json)
+                    
+                    let errorcode: Int = json[WSKeys.parameters.error].intValue
+                 
+                    if errorcode == WSKeys.parameters.okresponse {
+                        let responseData = json[WSKeys.parameters.data].arrayObject
+                        let statusObject = Mapper<Address>().mapArray(JSONArray: responseData as! [[String : Any]])
+                        success(statusObject)
+                   } else {
+                       failure(NSError(domain: "com.cicili.AddressConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                   }
+                case .failure(let error):
+                    failure(error as NSError)
+            }
         }
     }
     
