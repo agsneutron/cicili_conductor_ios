@@ -120,7 +120,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
            debugPrint("---ERROR---")
         }
         
-        TxtBienvenida.text = cliente!.nombre!
+        TxtBienvenida.text = " ¡ Hola \(cliente!.nombre!) ! "
               
     
     }
@@ -284,6 +284,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     @IBAction func showAddressTable(_ sender: UIButton) {
         let addressView = self.storyboard?.instantiateViewController(withIdentifier: "AddressTableID") as! AddressTableViewController
         addressView.delegate=self
+        addressView.cliente = self.cliente
         self.navigationController?.pushViewController(addressView, animated: true)
     }
     /*@IBAction func showAddressTableXib(_ sender: Any) {

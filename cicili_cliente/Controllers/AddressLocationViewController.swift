@@ -14,7 +14,7 @@ import CoreLocation
 class AddressLocationViewController: UIViewController {
     
     var addressObject: Address?
-    var token: String?
+    var cliente: Cliente?
     var dataForLocation: String?
     
     @IBOutlet weak var aliasLabel: UILabel!
@@ -95,13 +95,15 @@ class AddressLocationViewController: UIViewController {
        @IBAction func saveAddressAndLocation(_ sender: UIButton) {
         let objectAsDict:[String : AnyObject] = Mapper<Address>().toJSON(addressObject!) as [String : AnyObject]
            
-        RequestManager.setAddressData(oauthToken: token!, parameters: objectAsDict, success: { response in
+        RequestManager.setAddressData(oauthToken: cliente!.token!, parameters: objectAsDict, success: { response in
                
                if response.codeError == WSKeys.parameters.okresponse{
                    print("En success \(response)")
                    //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                   let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
-                   self.present(vc!, animated: true, completion: nil)
+                 self.performSegue(withIdentifier: Constants.Storyboard.homeSegueId, sender: self)
+    
+                   //let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
+                   //self.present(vc!, animated: true, completion: nil)
                    
                    }
                })
@@ -157,6 +159,21 @@ class AddressLocationViewController: UIViewController {
             annotation.title = "Cicili llegará a este punto"
             annotation.subtitle = addressObject!.alias!
             self.mapView.addAnnotation(annotation)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+   
+        if segue.identifier == Constants.Storyboard.homeSegueId{
+    
+            let mainTab = segue.destination as! UITabBarController
+            let mainVC = mainTab.viewControllers!.first as! MainViewController
+
+            //let displayVC = segue.destination as! MainViewController
+            mainVC.cliente = self.cliente
+        }
+        
     }
 
 }

@@ -21,6 +21,8 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     
     var delegate: AddressTableDelegate?
     
+    var cliente: Cliente?
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tblAddressView: UITableView!
@@ -36,10 +38,9 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Agregar", style: .plain, target: self, action: #selector(handleAdd))
         
         
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
-        guard let address1 = AddressTable(name: "Casa") else {
+        
+        /*guard let address1 = AddressTable(name: "Casa") else {
             fatalError("Unable to instantiate meal1")
         }
 
@@ -52,6 +53,23 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         }
         
         addressArray += [address1, address2, address3]
+        */
+        RequestManager.fetchAddressConsult(oauthToken: self.cliente!.token! , success: { response in
+            
+            print("En success status updated \(response)")
+            for address in response{
+                 print("address \(address.alias!)")
+                self.addressArray.append(AddressTable(name: address.alias!)!)
+            }
+            
+            
+        })
+        { error in
+           debugPrint("---ERROR---")
+        }
+        
+        
+        
         
         tblAddressView.dataSource = self
         tblAddressView.delegate = self
@@ -105,7 +123,9 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         
         if let destination = segue.destination as? AddressDataViewController{
             destination.predecessor = "tableview"
+            destination.cliente = self.cliente
         }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -134,7 +154,6 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    
 }
 
 extension AddressTableViewController: UISearchBarDelegate{
@@ -143,4 +162,6 @@ extension AddressTableViewController: UISearchBarDelegate{
         searching = true
         tblAddressView.reloadData()
     }
+    
+    
 }

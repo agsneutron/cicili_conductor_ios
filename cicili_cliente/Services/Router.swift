@@ -27,6 +27,7 @@ enum Router: URLRequestConvertible {
     case personalData(autorizathionToken:String , parametersSet: Parameters)
     case paymentData(autorizathionToken:String , parametersSet: Parameters)
     case addressData(autorizathionToken:String , parametersSet: Parameters)
+    case addressConsult(autorizathionToken: String)
     case bankData(autorizathionToken: String , bin: String)
     case clientStatus(autorizathionToken: String)
     case searchZC(autorizathionToken: String , code: String)
@@ -39,7 +40,8 @@ enum Router: URLRequestConvertible {
         case.help,
             .clientStatus,
             .searchZC,
-            .bankData:
+            .bankData,
+            .addressConsult:
             return .get
         case .registerClient,
              .validateCodePsw,
@@ -86,6 +88,8 @@ enum Router: URLRequestConvertible {
         case .searchZC(let code):
             Router.codeValue = code.code
             return "mv/cliente/asentamientos/\(Router.codeValue ?? "")"
+        case .addressConsult:
+            return "mv/cliente/direcciones"
         }
         
     }
@@ -164,7 +168,8 @@ enum Router: URLRequestConvertible {
                    urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
                    urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
                    urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
-        case.clientStatus(let autorizathionToken):
+        case.clientStatus(let autorizathionToken),
+            .addressConsult(let autorizathionToken):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
