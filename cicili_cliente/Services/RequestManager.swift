@@ -256,20 +256,20 @@ class RequestManager: NSObject{
         Alamofire.request(Router.addressData(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
         response in
         
-            debugPrint("*********RES*********")
-            debugPrint(response)
+            //debugPrint("*********RES*********")
+            //debugPrint(response)
         // Evalute result
         switch response.result {
         case .success:
             let objectResponse = response.result.value
             let json = JSON(response.result.value!)
-            debugPrint("*********RES VALUE*********")
-            debugPrint(objectResponse)
-            debugPrint("*********RES json*********")
-            debugPrint(json)
+            //debugPrint("*********RES VALUE*********")
+            //debugPrint(objectResponse)
+            //debugPrint("*********RES json*********")
+            //debugPrint(json)
            
             if response.response?.statusCode == WSKeys.parameters.statuscode {
-                let addressResponse = Mapper<Response>().map( JSONObject: json["data"])
+                let addressResponse = Mapper<Response>().map( JSONObject: json["data"].dictionaryObject)
                 success(addressResponse!)
             } else {
                 failure(NSError(domain: "com.cicili.AddressData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))

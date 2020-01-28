@@ -46,5 +46,9 @@
 	<string>La aplicación requiere acceso a tus imágenes para  establecer foto de perfil.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>La aplicación requiere acceso a tu camara para establecer foto de perfil.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>La aplicación requiere acceso a tu ubicación para identificar el punto de encuentro del pedido</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>La aplicación requiere acceso a tu ubicación para identificar el punto de encuentro del pedido</string>
 </dict>
 </plist>
