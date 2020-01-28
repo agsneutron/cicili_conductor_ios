@@ -32,6 +32,8 @@ class AddressDataViewController:  UIViewController, UITextFieldDelegate {
     
     var cliente: Cliente?
     var suburbsObj: DataByZipCode?
+    // variable que me indica que view controller es el que precede al actual, para saber si se
+    // muestra o no la navigation bar al dar clic en regresar
     var predecessor: String?
     
     override func viewDidLoad() {
