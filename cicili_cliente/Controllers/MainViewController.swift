@@ -21,6 +21,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     @IBOutlet weak var TxtAddress: UILabel!
     @IBOutlet weak var TxtDriver: UILabel!
     
+    @IBOutlet weak var TxtBienvenida: UILabel!
     
     enum CardState {
         case expanded
@@ -52,7 +53,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         
         // Do any additional setup after loading the view.
     
-    RequestManager.fetchClientStatus(oauthToken: self.cliente!.token! , success: { response in
+        RequestManager.fetchClientStatus(oauthToken: self.cliente!.token! , success: { response in
             if let statusUpdated = response.status, !statusUpdated.isEmpty{
                 print("En success status updated \(statusUpdated)")
                 switch statusUpdated {
@@ -118,6 +119,8 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         { error in
            debugPrint("---ERROR---")
         }
+        
+        TxtBienvenida.text = cliente!.nombre!
               
     
     }

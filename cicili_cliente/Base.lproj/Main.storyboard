@@ -772,6 +772,7 @@
                     <connections>
                         <outlet property="MapView" destination="Iic-xe-hum" id="Dnk-KA-NyX"/>
                         <outlet property="TxtAddress" destination="iWZ-sv-NW9" id="t5D-6o-Ggs"/>
+                        <outlet property="TxtBienvenida" destination="l6W-V7-reC" id="5x2-DH-7eP"/>
                         <outlet property="TxtDriver" destination="QJg-o9-F3O" id="Wa4-MH-ke4"/>
                     </connections>
                 </viewController>
