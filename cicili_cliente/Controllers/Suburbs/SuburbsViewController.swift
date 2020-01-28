@@ -18,6 +18,7 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
     var searching = false
     
     var suburbsJSON : DataByZipCode?
+    var originFrom : String?
     
     var delegate: SuburbsTableDelegate?
     
@@ -135,7 +136,7 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
     @objc func handleCancel() {
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        //navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
 }
