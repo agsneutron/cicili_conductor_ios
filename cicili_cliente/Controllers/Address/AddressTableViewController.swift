@@ -22,6 +22,7 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     var delegate: AddressTableDelegate?
     
     var cliente: Cliente?
+    var addressObject : [Address]?
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -54,20 +55,12 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
         
         addressArray += [address1, address2, address3]
         */
-        RequestManager.fetchAddressConsult(oauthToken: self.cliente!.token! , success: { response in
-            
-            print("En success status updated \(response)")
-            for address in response{
+       
+        for address in addressObject!{
                  print("address \(address.alias!)")
                 self.addressArray.append(AddressTable(name: address.alias!)!)
-            }
-            
-            
-        })
-        { error in
-           debugPrint("---ERROR---")
         }
-        
+      
         
         
         

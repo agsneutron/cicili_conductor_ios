@@ -416,6 +416,7 @@ class RequestManager: NSObject{
             // Evalute result
             switch response.result {
                 case .success:
+                   
                     let json = JSON(response.result.value!)
                     debugPrint("*********RES json*********")
                     debugPrint(json)

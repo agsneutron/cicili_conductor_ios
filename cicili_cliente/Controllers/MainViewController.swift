@@ -282,10 +282,22 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     
     
     @IBAction func showAddressTable(_ sender: UIButton) {
-        let addressView = self.storyboard?.instantiateViewController(withIdentifier: "AddressTableID") as! AddressTableViewController
-        addressView.delegate=self
-        addressView.cliente = self.cliente
-        self.navigationController?.pushViewController(addressView, animated: true)
+        
+        RequestManager.fetchAddressConsult(oauthToken: self.cliente!.token! , success: { response in
+            
+            print("En success status updated \(response)")
+            let addressView = self.storyboard?.instantiateViewController(withIdentifier: "AddressTableID") as! AddressTableViewController
+            addressView.delegate=self
+            addressView.cliente = self.cliente
+            addressView.addressObject = response
+            self.navigationController?.pushViewController(addressView, animated: true)
+            
+            
+        })
+        { error in
+           debugPrint("---ERROR---")
+        }
+        
     }
     /*@IBAction func showAddressTableXib(_ sender: Any) {
     
