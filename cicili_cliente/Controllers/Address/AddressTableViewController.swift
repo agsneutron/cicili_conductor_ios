@@ -19,6 +19,8 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
     var searchAddress = [AddressTable]()
     var searching = false
     
+    var childFrom: String?
+    
     var delegate: AddressTableDelegate?
     
     var cliente: Cliente?
@@ -58,7 +60,7 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
        
         for address in addressObject!{
                  print("address \(address.alias!)")
-                self.addressArray.append(AddressTable(name: address.alias!)!)
+            self.addressArray.append(AddressTable(id: address.id,name: address.alias!)!)
         }
       
         

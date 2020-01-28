@@ -106,6 +106,12 @@ class SuburbsViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AddressDataViewController{
+            destination.predecessor = "tableview"
+        }
+        
+    }
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
