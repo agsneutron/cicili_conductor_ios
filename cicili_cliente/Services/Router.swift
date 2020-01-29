@@ -16,6 +16,8 @@ enum Router: URLRequestConvertible {
     static let baseURLString = WSKeys.API.url
     static var OAuthToken: String?
     static var codeValue: String?
+    static var latValue: String?
+    static var lonValue: String?
     
     case signIn(with: Parameters)
     case registerClient(with: Parameters)
@@ -31,6 +33,7 @@ enum Router: URLRequestConvertible {
     case bankData(autorizathionToken: String , bin: String)
     case clientStatus(autorizathionToken: String)
     case searchZC(autorizathionToken: String , code: String)
+    case mainSearch(autorizathionToken: String , parametersSet: Parameters)
     
     
     // HTTP method
@@ -41,7 +44,8 @@ enum Router: URLRequestConvertible {
             .clientStatus,
             .searchZC,
             .bankData,
-            .addressConsult:
+            .addressConsult,
+            .mainSearch:
             return .get
         case .registerClient,
              .validateCodePsw,
@@ -90,6 +94,11 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/asentamientos/\(Router.codeValue ?? "")"
         case .addressConsult:
             return "mv/cliente/direcciones"
+        //case .mainSearch(let values):
+        //    return "mv/cliente/autotanques/disponibles?latitud=\(values.lat)&longitud=\(values.lon)"
+        case .mainSearch:
+            return "mv/cliente/autotanques/disponibles"
+
         }
         
     }
@@ -135,6 +144,14 @@ enum Router: URLRequestConvertible {
                        urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
                        debugPrint("PARAMETERS__________-")
                        debugPrint(parameters)
+            
+        case.mainSearch(let autorizathionToken, let parameters):
+            urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
+            //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
+            urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+            urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            debugPrint("PARAMETERS__________-")
+            debugPrint(parameters)
             
         case.personalData(let autorizathionToken, let parametersSet),
             .addressData(let autorizathionToken, let parametersSet),
