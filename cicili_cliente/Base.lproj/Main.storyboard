@@ -661,60 +661,33 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="E59-cb-Z9M">
                                                 <rect key="frame" x="20" y="85" width="335" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué pipa enviamos?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJg-o9-F3O">
-                                                        <rect key="frame" x="0.0" y="12" width="314" height="18"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYE-jB-2wv">
-                                                        <rect key="frame" x="314" y="8" width="21" height="22"/>
-                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="21" id="nny-dy-LaR"/>
-                                                        </constraints>
-                                                        <state key="normal" image="chevron.down" catalog="system">
-                                                            <color key="titleShadowColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
+                                                    <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="¿Qué pipa enviamos?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiT-hf-HEY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="showPipasTable:" destination="ds5-FK-eYt" eventType="touchUpInside" id="dJF-5o-PnF"/>
+                                                            <action selector="showPipasTable:" destination="ds5-FK-eYt" eventType="touchDown" id="Axr-le-v9D"/>
                                                         </connections>
-                                                    </button>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="UUx-Ow-IF3"/>
-                                                    <constraint firstItem="QJg-o9-F3O" firstAttribute="top" secondItem="E59-cb-Z9M" secondAttribute="top" constant="12" id="gIG-Ow-vzf"/>
-                                                    <constraint firstItem="QJg-o9-F3O" firstAttribute="leading" secondItem="E59-cb-Z9M" secondAttribute="leading" id="iTI-FU-5tb"/>
-                                                    <constraint firstItem="gYE-jB-2wv" firstAttribute="leading" secondItem="QJg-o9-F3O" secondAttribute="trailing" id="md1-ZC-RaR"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="zfJ-Ux-rH0">
                                                 <rect key="frame" x="20" y="40" width="335" height="40"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿ A qué dirección enviaremos tu pedido?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWZ-sv-NW9">
-                                                        <rect key="frame" x="0.0" y="22" width="314" height="18"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R91-4K-kYq">
-                                                        <rect key="frame" x="314" y="18" width="21" height="22"/>
-                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="chevron.down" catalog="system">
-                                                            <color key="titleShadowColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
+                                                    <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="¿A dónde enviamos tu pedido?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztR-tJ-xCl">
+                                                        <rect key="frame" x="0.0" y="6" width="335" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="showAddressTable:" destination="ds5-FK-eYt" eventType="touchUpInside" id="UdC-aZ-4md"/>
+                                                            <action selector="showAddressTable:" destination="ds5-FK-eYt" eventType="touchDown" id="QFn-0z-N7a"/>
                                                         </connections>
-                                                    </button>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="R91-4K-kYq" firstAttribute="leading" secondItem="iWZ-sv-NW9" secondAttribute="trailing" id="Dqs-fa-opJ"/>
                                                     <constraint firstAttribute="height" constant="40" id="KaS-Sg-NI4"/>
-                                                    <constraint firstItem="iWZ-sv-NW9" firstAttribute="leading" secondItem="zfJ-Ux-rH0" secondAttribute="leading" id="M8Y-bc-XSZ"/>
-                                                    <constraint firstItem="iWZ-sv-NW9" firstAttribute="top" secondItem="zfJ-Ux-rH0" secondAttribute="top" constant="22" id="aua-f2-mmL"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="JSp-1c-h39">
@@ -782,9 +755,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="MapView" destination="Iic-xe-hum" id="Dnk-KA-NyX"/>
-                        <outlet property="TxtAddress" destination="iWZ-sv-NW9" id="t5D-6o-Ggs"/>
+                        <outlet property="TxtAddress" destination="ztR-tJ-xCl" id="rXz-Nu-xhT"/>
                         <outlet property="TxtBienvenida" destination="l6W-V7-reC" id="5x2-DH-7eP"/>
-                        <outlet property="TxtDriver" destination="QJg-o9-F3O" id="Wa4-MH-ke4"/>
+                        <outlet property="TxtDriver" destination="CiT-hf-HEY" id="NDN-mp-6Nh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUL-vv-qK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1255,7 +1228,6 @@
         <image name="CiciliTagline-(3)" width="1004.5" height="476"/>
         <image name="WhatsApp Image 2019-11-19 at 8.27.59 PM (1)" width="960" height="1280"/>
         <image name="bg_1" width="414" height="896"/>
-        <image name="chevron.down" catalog="system" width="64" height="36"/>
         <image name="dollarsign.circle.fill" catalog="system" width="64" height="60"/>
         <image name="flame.fill" catalog="system" width="54" height="64"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
