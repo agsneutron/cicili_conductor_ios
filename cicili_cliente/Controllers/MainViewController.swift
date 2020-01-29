@@ -14,7 +14,10 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     
     var addresRequest: AddressTable?
     
-    @IBOutlet weak var MapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
+    private let locationManager = LocationManager.shared
+    private var locationList: CLLocation?
+    let regionRadius: CLLocationDistance = 1000
     
     var cliente: Cliente?
 
@@ -61,6 +64,24 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
                                 debugPrint("STATUS IN C SWITCH")
                                 debugPrint(statusUpdated)
                                 self.setupCard()
+                                
+                                self.startLocationUpdates()
+                                self.centerMapOnLocation(location: self.locationManager.location!)
+
+                                let currentLat = "\(self.locationManager.location!.coordinate.latitude)"
+                                let currentLon = "\(self.locationManager.location!.coordinate.longitude)"
+                                RequestManager.fetchMainSearch(oauthToken: self.cliente!.token!,parameters: [WSKeys.parameters.PLATITUD: currentLat, WSKeys.parameters.PLONGITUD: currentLon] , success: { response in
+                                    
+                                    print("En success status updated \(response)")
+                                    for neardriver in response{
+                                        self.addPin(driverData: neardriver)
+                                    }
+                                    
+                                    
+                                })
+                                { error in
+                                   debugPrint("---ERROR---")
+                                }
                                   
                               case WSKeys.parameters.datos_personales:
                                  /* guard let personalController = self.storyboard?.instantiateViewController(
@@ -125,9 +146,13 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     
     }
     
+   
 
      func addAddress(address: AddressTable) {
-         self.TxtAddress.text=address.name
+        self.TxtAddress.text=address.name
+        self.TxtAddress.tag = address.id
+        
+        debugPrint("selected address \(self.TxtAddress.tag) \(self.TxtAddress.text ?? "")")
      }
     
     func addAvailableDrivers(drivers: AvailableDrivers) {
@@ -142,6 +167,20 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func startLocationUpdates() {
+         locationManager.delegate = self
+         locationManager.distanceFilter = 2
+         locationManager.startUpdatingLocation()
+         
+       }
+       
+       func centerMapOnLocation(location: CLLocation) {
+         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+         mapView.setRegion(coordinateRegion, animated: true)
+         mapView.showsUserLocation = true;
+       }
     
     func setupCard() {
         visualEffectView = UIVisualEffectView()
@@ -309,6 +348,28 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: viewController)
         present(bottomSheet, animated: true, completion: nil)
     }*/
+    
+    func addPin(driverData: NearDrivers){
+             // show pin on map
+        let mapPin = MapPin(title: "\(driverData.concesionario!)",
+            locationName: "\(driverData.precio)",
+                            discipline: "\(driverData.tiempoLlegada!)",
+                            coordinate: CLLocationCoordinate2D(latitude: driverData.latitud, longitude: driverData.longitud))
+             mapView.addAnnotation(mapPin)
+         }
+}
+
+extension MainViewController: CLLocationManagerDelegate {
+
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+  for newLocation in locations {
+    let howRecent = newLocation.timestamp.timeIntervalSinceNow
+    guard newLocation.horizontalAccuracy < 10 && abs(howRecent) < 5 else { continue }
+
+    locationList = newLocation
+  }
+    }
+    
 }
 
 
