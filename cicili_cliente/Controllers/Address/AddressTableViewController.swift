@@ -73,7 +73,10 @@ class AddressTableViewController: UIViewController, UITableViewDataSource, UITab
 
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.3333333333, green: 0.3921568627, blue: 0.5215686275, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
     //MARK:- UITableView methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

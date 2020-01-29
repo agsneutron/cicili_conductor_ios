@@ -10,6 +10,18 @@ import Foundation
 import UIKit
 
 class direccionDetalleViewController: UIViewController {
-    
+    override func viewDidLoad() {
+    super.viewDidLoad()
+            
+      let backButton = UIBarButtonItem()
+      backButton.title = "Regresar"
+      self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+       
+         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        
+    }
+ 
+   
     
 }
