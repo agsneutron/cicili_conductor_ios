@@ -18,8 +18,11 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     
     var cliente: Cliente?
 
-    @IBOutlet weak var TxtAddress: UILabel!
-    @IBOutlet weak var TxtDriver: UILabel!
+    //@IBOutlet weak var TxtAddress: UILabel!
+    //@IBOutlet weak var TxtDriver: UILabel!
+    
+    @IBOutlet weak var TxtAddress: UITextField!
+    @IBOutlet weak var TxtDriver: UITextField!
     
     @IBOutlet weak var TxtBienvenida: UILabel!
     
@@ -50,7 +53,9 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         setupCard()
         navigationController?.setNavigationBarHidden(true, animated: true)
         
+        TxtAddress.setLeftImage(imageName: "icon_calendar")
         
+        TxtDriver.setLeftImage(imageName: "icon_calendar")
         // Do any additional setup after loading the view.
     
         RequestManager.fetchClientStatus(oauthToken: self.cliente!.token! , success: { response in
@@ -263,26 +268,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }
     }
-
-    
-    @IBAction func showPipasTable(_ sender: UIButton) {
-        //self.performSegue(withIdentifier: Constants.Storyboard.presentAddresTable, sender: self)
-    
-        /*let controller = AddressTableViewController()
-        controller.delegate = self
-    
-        
-        self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)*/
-    let driversView = self.storyboard?.instantiateViewController(withIdentifier: "AvailableDriversID") as! AvailableDriversViewController
-    driversView.delegate=self
-    self.navigationController?.pushViewController(driversView, animated: true)
-        
-    }
-    
-    
-    
-    @IBAction func showAddressTable(_ sender: UIButton) {
-        
+    @IBAction func showAddressTable(_ sender: UITextField) {
         RequestManager.fetchAddressConsult(oauthToken: self.cliente!.token! , success: { response in
             
             print("En success status updated \(response)")
@@ -297,8 +283,21 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         { error in
            debugPrint("---ERROR---")
         }
+    }
+    
+    
+    
+    
+    @IBAction func showPipasTable(_ sender: UITextField) {
+        
+        let driversView = self.storyboard?.instantiateViewController(withIdentifier: "AvailableDriversID") as! AvailableDriversViewController
+        driversView.delegate=self
+        self.navigationController?.pushViewController(driversView, animated: true)
+            
         
     }
+
+   
     /*@IBAction func showAddressTableXib(_ sender: Any) {
     
     animateTransitionIfNeeded(state: nextState, duration: 0.9)
