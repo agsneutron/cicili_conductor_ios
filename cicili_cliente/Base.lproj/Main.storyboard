@@ -758,6 +758,7 @@
                         <outlet property="TxtAddress" destination="ztR-tJ-xCl" id="rXz-Nu-xhT"/>
                         <outlet property="TxtBienvenida" destination="l6W-V7-reC" id="5x2-DH-7eP"/>
                         <outlet property="TxtDriver" destination="CiT-hf-HEY" id="NDN-mp-6Nh"/>
+                        <outlet property="btnProgramaPedido" destination="soN-GM-KeF" id="6MU-xn-E7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUL-vv-qK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
