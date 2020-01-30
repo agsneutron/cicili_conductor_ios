@@ -70,6 +70,10 @@
 		6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */; };
 		900741D623DFA40B00B1B29D /* direccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D523DFA40B00B1B29D /* direccionesViewController.swift */; };
 		900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */; };
+		9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */; };
+		9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F15123E2959A00F60A40 /* DetallePedidosViewController.swift */; };
+		9065F15423E295C000F60A40 /* DetalleProgramarPedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F15323E295C000F60A40 /* DetalleProgramarPedidoViewController.swift */; };
+		9065F15623E34AD900F60A40 /* PedidoHistoricoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F15523E34AD800F60A40 /* PedidoHistoricoTableViewCell.swift */; };
 		90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9179923C7144C0017B615 /* fieldUnderline.swift */; };
 		90C9179C23C7144C0017B615 /* roundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C9179A23C7144C0017B615 /* roundedBtn.swift */; };
 		90E29AED23D24F5E00677E48 /* usuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */; };
@@ -143,6 +147,10 @@
 		57F80F3623D0DBC600913033 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		900741D523DFA40B00B1B29D /* direccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionesViewController.swift; sourceTree = "<group>"; };
 		900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionDetalleViewController.swift; sourceTree = "<group>"; };
+		9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
+		9065F15123E2959A00F60A40 /* DetallePedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallePedidosViewController.swift; sourceTree = "<group>"; };
+		9065F15323E295C000F60A40 /* DetalleProgramarPedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleProgramarPedidoViewController.swift; sourceTree = "<group>"; };
+		9065F15523E34AD800F60A40 /* PedidoHistoricoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoHistoricoTableViewCell.swift; sourceTree = "<group>"; };
 		90C9179923C7144C0017B615 /* fieldUnderline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fieldUnderline.swift; sourceTree = "<group>"; };
 		90C9179A23C7144C0017B615 /* roundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedBtn.swift; sourceTree = "<group>"; };
 		90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usuarioViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +349,10 @@
 				900741D523DFA40B00B1B29D /* direccionesViewController.swift */,
 				900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */,
 				57F0183823DC2BFE00213DFC /* AddressLocationViewController.swift */,
+				9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */,
+				9065F15123E2959A00F60A40 /* DetallePedidosViewController.swift */,
+				9065F15323E295C000F60A40 /* DetalleProgramarPedidoViewController.swift */,
+				9065F15523E34AD800F60A40 /* PedidoHistoricoTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -488,11 +500,14 @@
 			files = (
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
 				3105B11F23C94522004EA64A /* AddressTableCardViewController.swift in Sources */,
+				9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */,
 				57ACFB6023C9C8DC00357C85 /* PaymentDataViewController.swift in Sources */,
 				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
 				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57ACFB6623C9E68400357C85 /* AddressDataViewController.swift in Sources */,
+				9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */,
 				57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */,
+				9065F15623E34AD900F60A40 /* PedidoHistoricoTableViewCell.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
 				57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */,
 				5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */,
@@ -541,6 +556,7 @@
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
 				900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */,
 				5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */,
+				9065F15423E295C000F60A40 /* DetalleProgramarPedidoViewController.swift in Sources */,
 				311DB69423D2417600C8A989 /* SuburbsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

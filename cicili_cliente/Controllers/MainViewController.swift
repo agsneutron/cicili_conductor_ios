@@ -53,9 +53,9 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
         setupCard()
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        TxtAddress.setLeftImage(imageName: "icon_calendar")
+        TxtAddress.setLeftImage(imageName: "icon_right")
         
-        TxtDriver.setLeftImage(imageName: "icon_calendar")
+        TxtDriver.setLeftImage(imageName: "icon_right")
         // Do any additional setup after loading the view.
     
         RequestManager.fetchClientStatus(oauthToken: self.cliente!.token! , success: { response in
