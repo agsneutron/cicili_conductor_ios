@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-class MainViewController: UIViewController, AddressTableDelegate, AvailableDriversDelegate {
+class MainViewController: UIViewController, AddressTableDelegate, AvailableDriversDelegate,MKMapViewDelegate {
     
     var addresRequest: AddressTable?
     
@@ -18,6 +18,7 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     private let locationManager = LocationManager.shared
     private var locationList: CLLocation?
     let regionRadius: CLLocationDistance = 1000
+    var myLocation:CLLocationCoordinate2D?
     
     var cliente: Cliente?
 
@@ -174,18 +175,58 @@ class MainViewController: UIViewController, AddressTableDelegate, AvailableDrive
     */
     
     private func startLocationUpdates() {
-         locationManager.delegate = self
-         locationManager.distanceFilter = 2
-         locationManager.startUpdatingLocation()
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.distanceFilter = kCLDistanceFilterNone
+            locationManager.desiredAccuracy =  kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        
+        mapView.delegate = self
+        mapView.mapType = .standard
+        mapView.isZoomEnabled = true
+        mapView.isScrollEnabled = true
+        
+        if let currentCoordinate = mapView.userLocation.location{
+            centerMapOnLocation(location: currentCoordinate)
+            debugPrint("MAP CENTER")
+        }
          
        }
        
-       func centerMapOnLocation(location: CLLocation) {
-         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+    /*private func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        let userLocation:CLLocation = locations[0] as CLLocation
+        //locationManager.stopUpdatingLocation()
+
+        //let location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        //let userLocation:CLLocationCoordinate2D = manager.location!.coordinate
+               
+        centerMapOnLocation(location: userLocation)
+
+    }*/
+    
+    func saveCurrentLocation(_ center:CLLocationCoordinate2D){
+        let message = "\(center.latitude) , \(center.longitude)"
+        print(message)
+        //self.label.text = message
+        myLocation = center
+    }
+       
+    func centerMapOnLocation(location: CLLocation) {
+        
+        self.saveCurrentLocation(location.coordinate)
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                    latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-         mapView.setRegion(coordinateRegion, animated: true)
-         mapView.showsUserLocation = true;
-       }
+       
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.showsUserLocation = true;
+    }
+    
     
     func setupCard() {
         visualEffectView = UIVisualEffectView()
