@@ -50,5 +50,7 @@
 	<string>La aplicación requiere acceso a tu ubicación para identificar el punto de encuentro del pedido</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>La aplicación requiere acceso a tu ubicación para identificar el punto de encuentro del pedido</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Cicili requiere acceso s tu ubicación para identificar el punto de encuentro de tu pedido</string>
 </dict>
 </plist>
