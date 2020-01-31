@@ -583,35 +583,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="163-IS-6Ml">
-                                <rect key="frame" x="0.0" y="38" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JX0-3b-yuo">
-                                <rect key="frame" x="0.0" y="82" width="375" height="585"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JX0-3b-yuo">
+                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0Wp-sQ-Qbg" customClass="AvailableDriversTableViewCell" customModule="cicili_cliente" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Wp-sQ-Qbg" id="jda-Vn-DYR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sfv-8S-mYo">
-                                                    <rect key="frame" x="7" y="5" width="39" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sfv-8S-mYo">
+                                                    <rect key="frame" x="7" y="5" width="39" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="39" id="egi-5W-bIW"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhO-LQ-Xsp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhO-LQ-Xsp">
                                                     <rect key="frame" x="54" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sfv-8S-mYo" firstAttribute="top" secondItem="jda-Vn-DYR" secondAttribute="topMargin" constant="-6.5" id="72o-mE-4eJ"/>
+                                                <constraint firstItem="sfv-8S-mYo" firstAttribute="centerY" secondItem="IhO-LQ-Xsp" secondAttribute="centerY" id="9IC-Xq-Sra"/>
+                                                <constraint firstItem="sfv-8S-mYo" firstAttribute="centerY" secondItem="jda-Vn-DYR" secondAttribute="centerY" id="F4P-JU-OIV"/>
+                                                <constraint firstItem="IhO-LQ-Xsp" firstAttribute="leading" secondItem="sfv-8S-mYo" secondAttribute="trailing" constant="8" id="OOq-oy-UGV"/>
+                                                <constraint firstItem="IhO-LQ-Xsp" firstAttribute="top" secondItem="jda-Vn-DYR" secondAttribute="topMargin" id="gaC-as-JcT"/>
+                                                <constraint firstItem="sfv-8S-mYo" firstAttribute="leading" secondItem="jda-Vn-DYR" secondAttribute="leadingMargin" constant="-8" id="hxV-dP-qrX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="IhO-LQ-Xsp" id="1E4-ID-VY9"/>
@@ -620,8 +623,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" placeholder="Busca un conductor" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="163-IS-6Ml">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EWe-Mi-TGP"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="163-IS-6Ml" firstAttribute="leading" secondItem="JX0-3b-yuo" secondAttribute="leading" id="3RO-ba-WA1"/>
+                            <constraint firstItem="JX0-3b-yuo" firstAttribute="bottom" secondItem="O2F-2a-kkw" secondAttribute="bottom" id="ArZ-bR-bOL"/>
+                            <constraint firstItem="163-IS-6Ml" firstAttribute="leading" secondItem="O2F-2a-kkw" secondAttribute="leading" id="T1d-hM-ADS"/>
+                            <constraint firstItem="JX0-3b-yuo" firstAttribute="top" secondItem="163-IS-6Ml" secondAttribute="bottom" constant="12" id="fKL-0P-KvR"/>
+                            <constraint firstItem="163-IS-6Ml" firstAttribute="trailing" secondItem="JX0-3b-yuo" secondAttribute="trailing" id="qix-vp-qUC"/>
+                            <constraint firstItem="163-IS-6Ml" firstAttribute="centerX" secondItem="l3A-b3-PRl" secondAttribute="centerX" id="sNH-fK-HQg"/>
+                            <constraint firstItem="163-IS-6Ml" firstAttribute="top" secondItem="O2F-2a-kkw" secondAttribute="top" id="v1U-QB-aEb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O2F-2a-kkw"/>
                     </view>
                     <connections>
