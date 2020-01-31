@@ -13,8 +13,13 @@ protocol AvailableDriversDelegate {
 }
 
 class AvailableDriversViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-
+    
+    var searchDrivers = [AvailableDrivers]()
     var delegate: AvailableDriversDelegate?
+    var searching = false
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
      
      @IBOutlet weak var tblAvailableDriversView: UITableView!
      var driversArray = [AvailableDrivers]()
@@ -55,7 +60,11 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
      //MARK:- UITableView methods
      
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return driversArray.count
+        if searching {
+            return searchDrivers.count
+        }else {
+            return driversArray.count
+        }
      }
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +73,11 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
              cell = UITableViewCell(style: .subtitle, reuseIdentifier: "productstable")
          }
          
-         cell?.textLabel?.text = driversArray[indexPath.row].name
+        if searching {
+            cell?.textLabel?.text = searchDrivers[indexPath.row].name
+        }else {
+            cell?.textLabel?.text = driversArray[indexPath.row].name
+        }
          return cell!
      }
 
@@ -72,7 +85,11 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          //performSegue(withIdentifier: "presentMainFromAddress", sender: self)
          //closeAddressTable()
-         delegate?.addAvailableDrivers(drivers: driversArray[(tblAvailableDriversView.indexPathForSelectedRow?.row)!])
+        if searching {
+            delegate?.addAvailableDrivers(drivers: searchDrivers[(tblAvailableDriversView.indexPathForSelectedRow?.row)!])
+        }else {
+            delegate?.addAvailableDrivers(drivers: driversArray[(tblAvailableDriversView.indexPathForSelectedRow?.row)!])
+        }
          tblAvailableDriversView.deselectRow(at: tblAvailableDriversView.indexPathForSelectedRow!, animated: true)
          handleCancel()
          
@@ -103,4 +120,12 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
         navigationController?.setNavigationBarHidden(true, animated: true)
      }
 
+}
+
+extension AvailableDriversViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchDrivers = driversArray.filter({$0.name.prefix(searchText.count) == searchText})
+        searching = true
+        tblAvailableDriversView.reloadData()
+    }
 }

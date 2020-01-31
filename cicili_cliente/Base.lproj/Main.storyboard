@@ -543,7 +543,7 @@
                                     <outlet property="delegate" destination="ntb-7n-ewA" id="ZN9-Lr-kaA"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="busca tu dirección" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-yZ-Fkh">
+                            <searchBar contentMode="redraw" placeholder="busca tu dirección" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-yZ-Fkh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -622,13 +622,24 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0w2-vW-aKw" id="uyn-Ew-cSa"/>
+                                    <outlet property="delegate" destination="0w2-vW-aKw" id="JYj-0m-QKW"/>
+                                </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" placeholder="Busca un conductor" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="163-IS-6Ml">
+                            <searchBar contentMode="redraw" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" placeholder="Busca un conductor" showsSearchResultsButton="YES" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="163-IS-6Ml">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EWe-Mi-TGP"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="0w2-vW-aKw" id="mrH-H9-sYy"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -644,6 +655,7 @@
                         <viewLayoutGuide key="safeArea" id="O2F-2a-kkw"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="163-IS-6Ml" id="hFb-yb-XwT"/>
                         <outlet property="tblAvailableDriversView" destination="JX0-3b-yuo" id="eKA-oo-IK3"/>
                     </connections>
                 </viewController>
