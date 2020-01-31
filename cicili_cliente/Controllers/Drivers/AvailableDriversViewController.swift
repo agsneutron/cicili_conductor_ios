@@ -15,7 +15,7 @@ protocol AvailableDriversDelegate {
 class AvailableDriversViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
 
     var delegate: AvailableDriversDelegate?
-     
+    var nearDrivers : [NearDrivers]?
      @IBOutlet weak var tblAvailableDriversView: UITableView!
      var driversArray = [AvailableDrivers]()
      
@@ -30,7 +30,7 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
          
          
          // Do any additional setup after loading the view, typically from a nib.
-        guard let driver1 = AvailableDrivers(id: 1,name: "Armando Contreras Vargas - Zgas") else {
+        /*guard let driver1 = AvailableDrivers(id: 1,name: "Armando Contreras Vargas - Zgas") else {
              fatalError("Unable to instantiate meal1")
          }
 
@@ -42,7 +42,13 @@ class AvailableDriversViewController: UIViewController , UITableViewDataSource, 
              fatalError("Unable to instantiate meal2")
          }
          
-         driversArray += [driver1, driver2, driver3]
+         driversArray += [driver1, driver2, driver3]*/
+        for driver in nearDrivers!{
+                   print("address \(driver.concesionario!)")
+            self.driversArray.append(AvailableDrivers(id: driver.id,name: driver.concesionario!)!)
+            
+          }
+        
          
          tblAvailableDriversView.dataSource = self
          tblAvailableDriversView.delegate = self
