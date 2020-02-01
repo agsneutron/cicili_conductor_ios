@@ -34,6 +34,7 @@ enum Router: URLRequestConvertible {
     case clientStatus(autorizathionToken: String)
     case searchZC(autorizathionToken: String , code: String)
     case mainSearch(autorizathionToken: String , parametersSet: Parameters)
+    case order(autorizathionToken: String , parametersSet: Parameters)
     
     
     // HTTP method
@@ -55,7 +56,8 @@ enum Router: URLRequestConvertible {
              .paymentData,
              .addressData,
              .validateCodeRegister,
-             .signIn:
+             .signIn,
+             .order:
             return .post
         }
     }
@@ -98,7 +100,8 @@ enum Router: URLRequestConvertible {
         //    return "mv/cliente/autotanques/disponibles?latitud=\(values.lat)&longitud=\(values.lon)"
         case .mainSearch:
             return "mv/cliente/autotanques/disponibles"
-
+        case .order:
+            return "mv/cliente/pedido/solicitar"
         }
         
     }
@@ -155,7 +158,8 @@ enum Router: URLRequestConvertible {
             
         case.personalData(let autorizathionToken, let parametersSet),
             .addressData(let autorizathionToken, let parametersSet),
-            .paymentData(let autorizathionToken, let parametersSet):
+            .paymentData(let autorizathionToken, let parametersSet),
+            .order(let autorizathionToken, let parametersSet):
             //request post JSON
             
             let data = try! JSONSerialization.data(withJSONObject: parametersSet, options: JSONSerialization.WritingOptions.prettyPrinted)

@@ -130,7 +130,8 @@ class AddressLocationViewController: UIViewController {
         let mapPin = MapPin(title: "Ubicación de:" + addressObject!.alias!,
                             locationName: addressObject!.calle! + " " + addressObject!.exterior!,
                             discipline: (addressObject?.asentamiento!.text)!,
-          coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+                            coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude),
+                            id: addressObject!.id)
   
         
         mapView.addAnnotation(mapPin)
