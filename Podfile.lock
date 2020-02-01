@@ -121,6 +121,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.2)
   - Firebase/Analytics
+  - Firebase/Core
   - Firebase/Messaging
   - MaterialComponents/BottomSheet
   - "MaterialComponents/BottomSheet+ShapeThemer"
@@ -170,6 +171,6 @@ SPEC CHECKSUMS:
   Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 15c019eda97b0111e43e5baab6bc688a061f017e
+PODFILE CHECKSUM: 2677949c7f9f908af327b2cb0d4837246e810c40
 
 COCOAPODS: 1.8.4
