@@ -28,7 +28,8 @@
 		31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586723C404CD00707C82 /* RequestOrderViewController.swift */; };
 		31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586923C6374B00707C82 /* CardMapViewController.swift */; };
 		31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586A23C6374B00707C82 /* CardMapViewController.xib */; };
-		31C05E0823C27ED300613A08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31C05E0723C27ED300613A08 /* GoogleService-Info.plist */; };
+		31F55EA923E4BECE0017DA8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31F55EA823E4BECD0017DA8A /* GoogleService-Info.plist */; };
+		31F55EAC23E4EDF80017DA8A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F55EAB23E4EDF80017DA8A /* HealthKit.framework */; };
 		5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */; };
 		5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CA9123D14957007284F2 /* ImagePicker.swift */; };
 		57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */; };
@@ -106,7 +107,10 @@
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
 		31B3586923C6374B00707C82 /* CardMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMapViewController.swift; sourceTree = "<group>"; };
 		31B3586A23C6374B00707C82 /* CardMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMapViewController.xib; sourceTree = "<group>"; };
-		31C05E0723C27ED300613A08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31F55EA723E4AB5B0017DA8A /* cicili_cliente.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cicili_cliente.entitlements; sourceTree = "<group>"; };
+		31F55EA823E4BECD0017DA8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31F55EAA23E4EDF80017DA8A /* cicili_clienteDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cicili_clienteDebug.entitlements; sourceTree = "<group>"; };
+		31F55EAB23E4EDF80017DA8A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
 		5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyStatus.swift; sourceTree = "<group>"; };
 		5712CA9123D14957007284F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F55EAC23E4EDF80017DA8A /* HealthKit.framework in Frameworks */,
 				57CF14DA23C1C4D500389C06 /* MapKit.framework in Frameworks */,
 				6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */,
 			);
@@ -178,6 +183,7 @@
 		18E2FB1A513FCB3624476D58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31F55EAB23E4EDF80017DA8A /* HealthKit.framework */,
 				57CF14D923C1C4D500389C06 /* MapKit.framework */,
 				EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */,
 			);
@@ -236,6 +242,8 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_cliente */ = {
 			isa = PBXGroup;
 			children = (
+				31F55EAA23E4EDF80017DA8A /* cicili_clienteDebug.entitlements */,
+				31F55EA723E4AB5B0017DA8A /* cicili_cliente.entitlements */,
 				57C22D4323C7A57800835B8F /* ControllerModel */,
 				57B7B34223C28C0000731CE7 /* Storyboards */,
 				57D1BAF023BFAF7900551DA7 /* Controllers */,
@@ -248,8 +256,8 @@
 				3137F9B723A8BA4800D8D8FF /* Main.storyboard */,
 				3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */,
 				3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */,
-				31C05E0723C27ED300613A08 /* GoogleService-Info.plist */,
 				3137F9C223A8BA5000D8D8FF /* Info.plist */,
+				31F55EA823E4BECD0017DA8A /* GoogleService-Info.plist */,
 				3137F9BA23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld */,
 			);
 			path = cicili_cliente;
@@ -444,9 +452,9 @@
 				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
 				57ACFB5E23C9C64F00357C85 /* PaymentDataStoryboard.storyboard in Resources */,
 				3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */,
-				31C05E0823C27ED300613A08 /* GoogleService-Info.plist in Resources */,
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
+				31F55EA923E4BECE0017DA8A /* GoogleService-Info.plist in Resources */,
 				3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */,
 				57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */,
 			);
@@ -708,18 +716,23 @@
 			baseConfigurationReference = 9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cicili_cliente/cicili_clienteDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YG68F664Q5;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = P39Q564ZNQ;
 				INFOPLIST_FILE = cicili_cliente/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mx.cicili.cliente;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cicili.clienteios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -730,18 +743,21 @@
 			baseConfigurationReference = 50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cicili_cliente/cicili_cliente.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YG68F664Q5;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = P39Q564ZNQ;
 				INFOPLIST_FILE = cicili_cliente/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mx.cicili.cliente;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cicili.clienteios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
