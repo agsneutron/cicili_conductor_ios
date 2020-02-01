@@ -17,6 +17,7 @@
 		311DB69423D2417600C8A989 /* SuburbsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB69323D2417500C8A989 /* SuburbsViewController.swift */; };
 		311DB69623D241A200C8A989 /* SuburbsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB69523D241A200C8A989 /* SuburbsTableViewCell.swift */; };
 		311DB69823D241DE00C8A989 /* SuburbsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB69723D241DE00C8A989 /* SuburbsTable.swift */; };
+		31357FFA23E51AA30037A4D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31357FF923E51AA30037A4D9 /* GoogleService-Info.plist */; };
 		3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */; };
 		3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B523A8BA4800D8D8FF /* ViewController.swift */; };
 		3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9B723A8BA4800D8D8FF /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		311DB69323D2417500C8A989 /* SuburbsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuburbsViewController.swift; sourceTree = "<group>"; };
 		311DB69523D241A200C8A989 /* SuburbsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuburbsTableViewCell.swift; sourceTree = "<group>"; };
 		311DB69723D241DE00C8A989 /* SuburbsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuburbsTable.swift; sourceTree = "<group>"; };
+		31357FF923E51AA30037A4D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3137F9B023A8BA4800D8D8FF /* cicili_cliente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cicili_cliente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3137F9B523A8BA4800D8D8FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				3137F9B723A8BA4800D8D8FF /* Main.storyboard */,
 				3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */,
 				3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */,
+				31357FF923E51AA30037A4D9 /* GoogleService-Info.plist */,
 				3137F9C223A8BA5000D8D8FF /* Info.plist */,
 				3137F9BA23A8BA4800D8D8FF /* cicili_cliente.xcdatamodeld */,
 			);
@@ -451,6 +454,7 @@
 				3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */,
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
+				31357FFA23E51AA30037A4D9 /* GoogleService-Info.plist in Resources */,
 				3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */,
 				57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */,
 			);
