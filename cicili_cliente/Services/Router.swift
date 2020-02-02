@@ -35,6 +35,7 @@ enum Router: URLRequestConvertible {
     case searchZC(autorizathionToken: String , code: String)
     case mainSearch(autorizathionToken: String , parametersSet: Parameters)
     case order(autorizathionToken: String , parametersSet: Parameters)
+    case cancelReason(autorizathionToken: String)
     
     
     // HTTP method
@@ -46,7 +47,8 @@ enum Router: URLRequestConvertible {
             .searchZC,
             .bankData,
             .addressConsult,
-            .mainSearch:
+            .mainSearch,
+            .cancelReason:
             return .get
         case .registerClient,
              .validateCodePsw,
@@ -102,6 +104,8 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/autotanques/disponibles"
         case .order:
             return "mv/cliente/pedido/solicitar"
+        case .cancelReason:
+            return "catalogos/motivoscancelacion/1"
         }
         
     }
@@ -190,7 +194,8 @@ enum Router: URLRequestConvertible {
                    urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
                    urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
         case.clientStatus(let autorizathionToken),
-            .addressConsult(let autorizathionToken):
+            .addressConsult(let autorizathionToken),
+            .cancelReason(let autorizathionToken):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")

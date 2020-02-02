@@ -11,15 +11,17 @@ import ObjectMapper
 
 class CardMapViewController: UIViewController{
     
+    var cliente : Cliente?
+    var orderResponse = Response()
     var selectedAddress : Int = 0
     var selectedLatitud : Double = 0.0
     var selectedLongitud : Double = 0.0
     var selectedDriver : Int = 0
     var selectedOrderIn : String = ""
     var selectedPayForm : String = ""
-    var token : String?
     
     
+    @IBOutlet weak var lblMontoLitro: UILabel!
     @IBOutlet weak var handleArea: UIView!
     
     @IBOutlet weak var segmentOrderIn: UISegmentedControl!
@@ -29,6 +31,10 @@ class CardMapViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+               view.addGestureRecognizer(gesture)
+        
         
 
     }
@@ -40,9 +46,11 @@ class CardMapViewController: UIViewController{
                    case 0:
                        selectedOrderIn = WSKeys.parameters.monto
                        textFieldAmmount.placeholder = Constants.textAction.orderInMonto
+                       lblMontoLitro.text = Constants.textAction.orderInMonto
                    case 1:
                        selectedOrderIn = WSKeys.parameters.cantidad
                        textFieldAmmount.placeholder  = Constants.textAction.orderInLitros
+                        lblMontoLitro.text = Constants.textAction.orderInLitros
                    default:
                        selectedOrderIn = ""
                       break
@@ -95,9 +103,11 @@ class CardMapViewController: UIViewController{
         
             
             let objectAsDict:[String : AnyObject] = Mapper<Order>().toJSON(order) as [String : AnyObject]
-             RequestManager.setOrderData(oauthToken: token!, parameters: objectAsDict , success: { response in
+            RequestManager.setOrderData(oauthToken: cliente!.token!, parameters: objectAsDict , success: { response in
             
                 debugPrint("En success maisearch \(response)")
+                self.orderResponse = response
+                self.performSegue(withIdentifier: Constants.Storyboard.newOrderSegueId, sender: self)
         })
         { error in
            debugPrint("---ERROR---")
@@ -107,6 +117,20 @@ class CardMapViewController: UIViewController{
         else{
             showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido,
                                 message_t: Constants.ErrorMessages.messageCantidad)
+        }
+    }
+    
+     // navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+   
+        if segue.identifier ==  Constants.Storyboard.newOrderSegueId{
+            let newOrderController = segue.destination as! NewOrderViewController
+            newOrderController.cliente = self.cliente
+            newOrderController.order = self.orderResponse
+            
+            
         }
     }
     

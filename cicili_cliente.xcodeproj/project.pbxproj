@@ -63,6 +63,11 @@
 		57D35CCD23E4CFFD00DE251C /* SendNearDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D35CCB23E4CFFD00DE251C /* SendNearDriverViewController.swift */; };
 		57D35CCE23E4CFFD00DE251C /* SendNearDriverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D35CCC23E4CFFD00DE251C /* SendNearDriverViewController.xib */; };
 		57D35CD023E5161100DE251C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D35CCF23E5161100DE251C /* Order.swift */; };
+		57D5DAF223E61E0E0019392D /* NewOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D5DAF123E61E0E0019392D /* NewOrder.storyboard */; };
+		57D5DAF523E65A210019392D /* CancelOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D5DAF323E65A210019392D /* CancelOrderViewController.swift */; };
+		57D5DAF623E65A210019392D /* CancelOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D5DAF423E65A210019392D /* CancelOrderViewController.xib */; };
+		57D5DAF823E668630019392D /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D5DAF723E668630019392D /* NewOrderViewController.swift */; };
+		57D5DAFA23E7185A0019392D /* ReusableIdText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D5DAF923E7185A0019392D /* ReusableIdText.swift */; };
 		57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0BEB423BAA32200F60209 /* WSKeys.swift */; };
 		57E3620123D21469003931AD /* DataByZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3620023D21469003931AD /* DataByZipCode.swift */; };
 		57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3620223D214EF003931AD /* KeysDatailZC.swift */; };
@@ -145,6 +150,11 @@
 		57D35CCB23E4CFFD00DE251C /* SendNearDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNearDriverViewController.swift; sourceTree = "<group>"; };
 		57D35CCC23E4CFFD00DE251C /* SendNearDriverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendNearDriverViewController.xib; sourceTree = "<group>"; };
 		57D35CCF23E5161100DE251C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		57D5DAF123E61E0E0019392D /* NewOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewOrder.storyboard; sourceTree = "<group>"; };
+		57D5DAF323E65A210019392D /* CancelOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderViewController.swift; sourceTree = "<group>"; };
+		57D5DAF423E65A210019392D /* CancelOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelOrderViewController.xib; sourceTree = "<group>"; };
+		57D5DAF723E668630019392D /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
+		57D5DAF923E7185A0019392D /* ReusableIdText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdText.swift; sourceTree = "<group>"; };
 		57E0BEB423BAA32200F60209 /* WSKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSKeys.swift; sourceTree = "<group>"; };
 		57E3620023D21469003931AD /* DataByZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataByZipCode.swift; sourceTree = "<group>"; };
 		57E3620223D214EF003931AD /* KeysDatailZC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysDatailZC.swift; sourceTree = "<group>"; };
@@ -277,6 +287,7 @@
 				57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */,
 				57ACFB5D23C9C64F00357C85 /* PaymentDataStoryboard.storyboard */,
 				57ACFB6323C9E65000357C85 /* AddressData.storyboard */,
+				57D5DAF123E61E0E0019392D /* NewOrder.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -318,6 +329,7 @@
 				57E3620223D214EF003931AD /* KeysDatailZC.swift */,
 				310DB09223E3D2FE0068F72C /* NearDrivers.swift */,
 				57D35CCF23E5161100DE251C /* Order.swift */,
+				57D5DAF923E7185A0019392D /* ReusableIdText.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,6 +377,9 @@
 				9065F15523E34AD800F60A40 /* PedidoHistoricoTableViewCell.swift */,
 				57D35CCB23E4CFFD00DE251C /* SendNearDriverViewController.swift */,
 				57D35CCC23E4CFFD00DE251C /* SendNearDriverViewController.xib */,
+				57D5DAF323E65A210019392D /* CancelOrderViewController.swift */,
+				57D5DAF423E65A210019392D /* CancelOrderViewController.xib */,
+				57D5DAF723E668630019392D /* NewOrderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -451,12 +466,14 @@
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
 				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
 				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
+				57D5DAF223E61E0E0019392D /* NewOrder.storyboard in Resources */,
 				57ACFB5E23C9C64F00357C85 /* PaymentDataStoryboard.storyboard in Resources */,
 				3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */,
 				31C05E0823C27ED300613A08 /* GoogleService-Info.plist in Resources */,
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
 				57D35CCE23E4CFFD00DE251C /* SendNearDriverViewController.xib in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
+				57D5DAF623E65A210019392D /* CancelOrderViewController.xib in Resources */,
 				3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */,
 				57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */,
 			);
@@ -511,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D5DAFA23E7185A0019392D /* ReusableIdText.swift in Sources */,
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
 				3105B11F23C94522004EA64A /* AddressTableCardViewController.swift in Sources */,
 				9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */,
@@ -555,6 +573,7 @@
 				57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */,
 				57F0183B23DC41DA00213DFC /* LocationManager.swift in Sources */,
 				311DB68B23D0E15900C8A989 /* AvailableDriversViewController.swift in Sources */,
+				57D5DAF823E668630019392D /* NewOrderViewController.swift in Sources */,
 				900741D623DFA40B00B1B29D /* direccionesViewController.swift in Sources */,
 				311DB69623D241A200C8A989 /* SuburbsTableViewCell.swift in Sources */,
 				31936E9023D00DF300D49CDB /* AddressTableViewController.swift in Sources */,
@@ -570,6 +589,7 @@
 				311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
+				57D5DAF523E65A210019392D /* CancelOrderViewController.swift in Sources */,
 				900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */,
 				5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */,
 				9065F15423E295C000F60A40 /* DetalleProgramarPedidoViewController.swift in Sources */,

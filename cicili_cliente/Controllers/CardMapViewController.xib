@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardMapViewController" customModule="cicili_cliente" customModuleProvider="target">
             <connections>
                 <outlet property="handleArea" destination="EZC-yL-hfv" id="zaQ-rg-Iah"/>
+                <outlet property="lblMontoLitro" destination="Sa2-Bb-L12" id="pWQ-Zh-yHw"/>
                 <outlet property="segmentOrderIn" destination="J5K-Z2-soO" id="R2J-Qi-qfN"/>
                 <outlet property="segmentPayForm" destination="95S-oV-bNF" id="WCu-dY-rNM"/>
                 <outlet property="textFieldAmmount" destination="lVP-NT-3Gj" id="fz5-gB-2qh"/>

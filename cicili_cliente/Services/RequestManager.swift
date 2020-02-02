@@ -468,7 +468,7 @@ class RequestManager: NSObject{
     }
     
     //to order
-    //to paymentdata
+    //
     class func setOrderData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
@@ -499,6 +499,36 @@ class RequestManager: NSObject{
            }
         }
     }
+    
+    //get cancel reason
+       class func fetchCancelReason(oauthToken: String, success: @escaping (ReusableIdText) -> Void, failure: @escaping (NSError) -> Void){
+              // Fetch request
+           Alamofire.request(Router.cancelReason(autorizathionToken: oauthToken)).responseJSON{
+              response in
+              
+               debugPrint("*********RES*********")
+               debugPrint(response)
+               // Evalute result
+               switch response.result {
+                   case .success:
+                       let json = JSON(response.result.value!)
+                       debugPrint("*********RES json*********")
+                       debugPrint(json)
+                      
+                       let errorcode: Int = json[WSKeys.parameters.error].intValue
+                    
+                       if errorcode == WSKeys.parameters.okresponse {
+                           let responseData = json[WSKeys.parameters.data].dictionaryObject
+                           let statusObject = Mapper<ReusableIdText>().map( JSONObject: responseData)
+                           success(statusObject!)
+                      } else {
+                          failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                      }
+                   case .failure(let error):
+                       failure(error as NSError)
+               }
+           }
+       }
     
 }
 
