@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import ObjectMapper
+
 class ReusableIdText: Mappable {
     
     var id: Int = 0

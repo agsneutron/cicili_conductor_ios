@@ -9,35 +9,51 @@
 import UIKit
 import ObjectMapper
 
+protocol DataDelegate {
+    func sendData(data : String)
+}
+
 class CardMapViewController: UIViewController{
     
     var cliente : Cliente?
-    var orderResponse = Response()
+    var orderResponse = NewOrder()
     var selectedAddress : Int = 0
     var selectedLatitud : Double = 0.0
     var selectedLongitud : Double = 0.0
     var selectedDriver : Int = 0
     var selectedOrderIn : String = ""
     var selectedPayForm : String = ""
-    
+    var messageerror : String = ""
+    var delegate : DataDelegate?
     
     @IBOutlet weak var lblMontoLitro: UILabel!
     @IBOutlet weak var handleArea: UIView!
     
+    @IBOutlet weak var buttonConfirmOrder: RoundButton!
     @IBOutlet weak var segmentOrderIn: UISegmentedControl!
     @IBOutlet weak var segmentPayForm: UISegmentedControl!
     
     @IBOutlet weak var textFieldAmmount: UITextField!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
                view.addGestureRecognizer(gesture)
         
-        
 
     }
+    
+   
+
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+           return true
+       }
     
     @IBAction func segmentOrderInChanged(_ sender: UISegmentedControl) {
         
@@ -64,6 +80,7 @@ class CardMapViewController: UIViewController{
         
         if let ammount =  Double(textFieldAmmount.text!), ammount > 0.0 {
             
+            textFieldAmmount.text=""
             switch segmentOrderIn.selectedSegmentIndex
             {
              case 0:
@@ -105,13 +122,28 @@ class CardMapViewController: UIViewController{
             let objectAsDict:[String : AnyObject] = Mapper<Order>().toJSON(order) as [String : AnyObject]
             RequestManager.setOrderData(oauthToken: cliente!.token!, parameters: objectAsDict , success: { response in
             
-                debugPrint("En success maisearch \(response)")
+                debugPrint("En success requestorder \(response)")
                 self.orderResponse = response
-                self.performSegue(withIdentifier: Constants.Storyboard.newOrderSegueId, sender: self)
-        })
-        { error in
-           debugPrint("---ERROR---")
-        }
+                self.messageerror = ""
+                self.delegate?.sendData(data:self.messageerror)
+                
+                
+            })
+            { error in
+                debugPrint("---ERROR setOrderData---")
+                //self.showAlertController(tittle_t: Constants.ErrorTittles.titleErrorOrder, message_t: error.localizedDescription)
+                self.messageerror = error.localizedDescription
+                
+                self.delegate?.sendData(data:self.messageerror)
+                
+                //self.dismiss(animated: true, completion: nil)
+                
+                /*self.performSegue(withIdentifier: Constants.Storyboard.newOrderSegueId, sender: self)*/
+                 let panGestureCOBtn = UIPanGestureRecognizer(target: self, action: #selector(MainViewController.handleCardPan(recognizer:)))
+        
+                self.buttonConfirmOrder.addGestureRecognizer(panGestureCOBtn)
+
+            }
             
         }
         else{
@@ -120,19 +152,8 @@ class CardMapViewController: UIViewController{
         }
     }
     
-     // navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-   
-        if segue.identifier ==  Constants.Storyboard.newOrderSegueId{
-            let newOrderController = segue.destination as! NewOrderViewController
-            newOrderController.cliente = self.cliente
-            newOrderController.order = self.orderResponse
-            
-            
-        }
-    }
+     
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -141,3 +162,5 @@ class CardMapViewController: UIViewController{
         
     }
 }
+
+

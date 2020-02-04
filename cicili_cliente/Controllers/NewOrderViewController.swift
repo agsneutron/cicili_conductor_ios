@@ -7,23 +7,44 @@
 //
 
 import UIKit
+import Foundation
 
 class NewOrderViewController: UIViewController {
 
     @IBOutlet weak var lblStatusOrder: UILabel!
     @IBOutlet weak var lblOrderNumber: UILabel!
-    
+    @IBOutlet weak var btnCancel: RoundButton!
+
+    @IBOutlet weak var lblHeaderOrderStatus: UILabel!
+    @IBOutlet weak var lblHeaderOrderNumber: UILabel!
     var cliente: Cliente?
-    var order: Response?
+    var order: NewOrder?
+    var message: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        debugPrint("inNewOrder")
         debugPrint(order!)
+        debugPrint(message!)
         // Do any additional setup after loading the view.
         
         lblStatusOrder.text = ""
         lblOrderNumber.text = ""
+        if message != "" {
+            btnCancel.isHidden = true
+            lblHeaderOrderNumber.text = ""
+            lblHeaderOrderStatus.text = ""
+            lblStatusOrder.text = Constants.ErrorMessages.messageNewOrderError
+            lblOrderNumber.text = message!
+            
+        }
+        else{
+            lblHeaderOrderNumber.text = Constants.textAction.lblHeaderOrderNumber
+            lblHeaderOrderStatus.text = Constants.textAction.lblHeaderOrderStatus
+            lblStatusOrder.text = order?.nombreStatus
+            lblOrderNumber.text = "\(order?.id ?? 0)"
+        }
         
         
        
@@ -31,15 +52,16 @@ class NewOrderViewController: UIViewController {
     
 
     @IBAction func btnOrder(_ sender: RoundButton) {
+         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnCancel(_ sender: RoundButton) {
         
-        RequestManager.fetchClientStatus(oauthToken: self.cliente!.token! , success: { response in
-                   if let statusUpdated = response.status, !statusUpdated.isEmpty{
-                       print("En success get cancel reason \(statusUpdated)")
+        RequestManager.fetchCancelReason(oauthToken: self.cliente!.token! , success: { response in
+           
+                       print("En success get cancel reason \(response)")
                        
-            }
+            
                })
                { error in
                   debugPrint("---ERROR---")

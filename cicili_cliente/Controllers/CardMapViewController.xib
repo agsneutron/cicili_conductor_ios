@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardMapViewController" customModule="cicili_cliente" customModuleProvider="target">
             <connections>
+                <outlet property="buttonConfirmOrder" destination="iFd-hD-STh" id="eTg-cu-Hsi"/>
                 <outlet property="handleArea" destination="EZC-yL-hfv" id="zaQ-rg-Iah"/>
                 <outlet property="lblMontoLitro" destination="Sa2-Bb-L12" id="pWQ-Zh-yHw"/>
                 <outlet property="segmentOrderIn" destination="J5K-Z2-soO" id="R2J-Qi-qfN"/>
@@ -63,11 +64,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Monto" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-NT-3Gj">
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Monto" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-NT-3Gj">
                             <rect key="frame" x="70" y="272" width="265" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                         </textField>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="95S-oV-bNF">
                             <rect key="frame" x="142" y="113" width="131" height="32"/>

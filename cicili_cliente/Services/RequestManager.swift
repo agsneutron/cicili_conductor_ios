@@ -469,35 +469,38 @@ class RequestManager: NSObject{
     
     //to order
     //
-    class func setOrderData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+    class func setOrderData(oauthToken: String, parameters: Parameters, success: @escaping (NewOrder) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
-        Alamofire.request(Router.order(autorizathionToken: oauthToken , parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
+        Alamofire.request(Router.order(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
+        response in
         
             debugPrint("*********RES*********")
             debugPrint(response)
         // Evalute result
         switch response.result {
         case .success:
-            let objectResponse = response.result.value
+           let json = JSON(response.result.value!)
             
-            debugPrint("*********RES VALUE*********")
-            debugPrint(objectResponse)
+            debugPrint("*********JSON RES VALUE*********")
+            debugPrint(json)
             
-            debugPrint("*********RES VALUE*********")
-            debugPrint(response.data)
-            
-            if objectResponse!.codeError == WSKeys.parameters.okresponse {
-                
-                success(objectResponse!)
-            
+            debugPrint("*********RES DATA VALUE*********")
+            debugPrint(json["data"])
+            let errorcode: Int = json[WSKeys.parameters.error].intValue
+                               
+            if errorcode == WSKeys.parameters.okresponse {
+                let responseData = json[WSKeys.parameters.data].dictionaryObject
+                let statusObject = Mapper<NewOrder>().map( JSONObject: responseData)
+                success(statusObject!)
             } else {
-                failure(NSError(domain: "com.cicili.OrderData", code: (objectResponse?.codeError)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+                failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
             }
-           case .failure(let error):
-               failure(error as NSError)
-           }
+           
+        case .failure(let error):
+            failure(error as NSError)
         }
+    }
     }
     
     //get cancel reason

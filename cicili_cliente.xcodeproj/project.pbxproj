@@ -71,6 +71,7 @@
 		57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0BEB423BAA32200F60209 /* WSKeys.swift */; };
 		57E3620123D21469003931AD /* DataByZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3620023D21469003931AD /* DataByZipCode.swift */; };
 		57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3620223D214EF003931AD /* KeysDatailZC.swift */; };
+		57E7C08823E9D8B000D51FE7 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7C08723E9D8B000D51FE7 /* NewOrder.swift */; };
 		57F0183923DC2BFE00213DFC /* AddressLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183823DC2BFE00213DFC /* AddressLocationViewController.swift */; };
 		57F0183B23DC41DA00213DFC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183A23DC41DA00213DFC /* LocationManager.swift */; };
 		57F0183D23DC563E00213DFC /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183C23DC563E00213DFC /* MapPin.swift */; };
@@ -158,6 +159,7 @@
 		57E0BEB423BAA32200F60209 /* WSKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSKeys.swift; sourceTree = "<group>"; };
 		57E3620023D21469003931AD /* DataByZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataByZipCode.swift; sourceTree = "<group>"; };
 		57E3620223D214EF003931AD /* KeysDatailZC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysDatailZC.swift; sourceTree = "<group>"; };
+		57E7C08723E9D8B000D51FE7 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		57F0183823DC2BFE00213DFC /* AddressLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressLocationViewController.swift; sourceTree = "<group>"; };
 		57F0183A23DC41DA00213DFC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		57F0183C23DC563E00213DFC /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				310DB09223E3D2FE0068F72C /* NearDrivers.swift */,
 				57D35CCF23E5161100DE251C /* Order.swift */,
 				57D5DAF923E7185A0019392D /* ReusableIdText.swift */,
+				57E7C08723E9D8B000D51FE7 /* NewOrder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				31936E9023D00DF300D49CDB /* AddressTableViewController.swift in Sources */,
 				57B2057623C6645A005FF554 /* PersonalDataViewController.swift in Sources */,
 				57D35CD023E5161100DE251C /* Order.swift in Sources */,
+				57E7C08823E9D8B000D51FE7 /* NewOrder.swift in Sources */,
 				31AC78AA23E10971003230C0 /* HideCursor.swift in Sources */,
 				311DB69123D0E39100C8A989 /* AvailableDrivers.swift in Sources */,
 				57ACFB6223C9DA2700357C85 /* Payment.swift in Sources */,
