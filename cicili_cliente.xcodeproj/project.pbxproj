@@ -75,6 +75,7 @@
 		6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */; };
 		900741D623DFA40B00B1B29D /* direccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D523DFA40B00B1B29D /* direccionesViewController.swift */; };
 		900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */; };
+		9055278823E67E540088FCB0 /* aclaracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055278723E67E540088FCB0 /* aclaracionViewController.swift */; };
 		9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */; };
 		9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F15123E2959A00F60A40 /* DetallePedidosViewController.swift */; };
 		9065F15423E295C000F60A40 /* DetalleProgramarPedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F15323E295C000F60A40 /* DetalleProgramarPedidoViewController.swift */; };
@@ -159,6 +160,7 @@
 		57F80F3623D0DBC600913033 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		900741D523DFA40B00B1B29D /* direccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionesViewController.swift; sourceTree = "<group>"; };
 		900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionDetalleViewController.swift; sourceTree = "<group>"; };
+		9055278723E67E540088FCB0 /* aclaracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aclaracionViewController.swift; sourceTree = "<group>"; };
 		9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
 		9065F15123E2959A00F60A40 /* DetallePedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallePedidosViewController.swift; sourceTree = "<group>"; };
 		9065F15323E295C000F60A40 /* DetalleProgramarPedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleProgramarPedidoViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				9065F15523E34AD800F60A40 /* PedidoHistoricoTableViewCell.swift */,
 				57D35CCB23E4CFFD00DE251C /* SendNearDriverViewController.swift */,
 				57D35CCC23E4CFFD00DE251C /* SendNearDriverViewController.xib */,
+				9055278723E67E540088FCB0 /* aclaracionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */,
 				57ACFB6023C9C8DC00357C85 /* PaymentDataViewController.swift in Sources */,
 				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
+				9055278823E67E540088FCB0 /* aclaracionViewController.swift in Sources */,
 				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57ACFB6623C9E68400357C85 /* AddressDataViewController.swift in Sources */,
 				9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */,
