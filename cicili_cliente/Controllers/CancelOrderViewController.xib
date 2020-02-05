@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CancelOrderViewController" customModule="cicili_cliente" customModuleProvider="target">
             <connections>
+                <outlet property="handleArea" destination="SXa-Hs-a7G" id="Lxw-FJ-GpP"/>
                 <outlet property="pickerCancel" destination="b9p-rY-gcH" id="lb1-pu-Vr5"/>
             </connections>
         </placeholder>

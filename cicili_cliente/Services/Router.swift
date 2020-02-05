@@ -36,6 +36,7 @@ enum Router: URLRequestConvertible {
     case mainSearch(autorizathionToken: String , parametersSet: Parameters)
     case order(autorizathionToken: String , parametersSet: Parameters)
     case cancelReason(autorizathionToken: String)
+    case cancelOrder(autorizathionToken: String, parametersSet: Parameters)
     
     
     // HTTP method
@@ -59,7 +60,8 @@ enum Router: URLRequestConvertible {
              .addressData,
              .validateCodeRegister,
              .signIn,
-             .order:
+             .order,
+             .cancelOrder:
             return .post
         }
     }
@@ -106,6 +108,8 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/pedido/solicitar"
         case .cancelReason:
             return "catalogos/motivoscancelacion/1"
+        case .cancelOrder:
+            return "mv/cliente/pedido/cancelar"
         }
         
     }
@@ -152,7 +156,8 @@ enum Router: URLRequestConvertible {
                        debugPrint("PARAMETERS__________-")
                        debugPrint(parameters)
             
-        case.mainSearch(let autorizathionToken, let parameters):
+        case.mainSearch(let autorizathionToken, let parameters),
+            .cancelOrder(let autorizathionToken, let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")

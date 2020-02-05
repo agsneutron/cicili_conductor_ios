@@ -533,6 +533,38 @@ class RequestManager: NSObject{
            }
        }
     
+    
+    //get cancel order
+    class func setCancelOrder(oauthToken: String,  parameters: Parameters, success: @escaping ([Response]) -> Void, failure: @escaping (NSError) -> Void){
+           // Fetch request
+        Alamofire.request(Router.cancelOrder(autorizathionToken: oauthToken, parametersSet: parameters)).responseJSON{
+           response in
+           
+            debugPrint("*********RES*********")
+            debugPrint(response)
+            // Evalute result
+            switch response.result {
+                case .success:
+                   
+                    let json = JSON(response.result.value!)
+                    debugPrint("*********RES json*********")
+                    debugPrint(json)
+                    
+                    let errorcode: Int = json[WSKeys.parameters.error].intValue
+                 
+                    if errorcode == WSKeys.parameters.okresponse {
+                        let responseData = json[WSKeys.parameters.data].arrayObject
+                        let statusObject = Mapper<Response>().mapArray(JSONArray: responseData as! [[String : Any]])
+                        success(statusObject)
+                   } else {
+                       failure(NSError(domain: "com.cicili.MainSearchData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                   }
+                case .failure(let error):
+                    failure(error as NSError)
+            }
+        }
+    }
+    
 }
 
 
