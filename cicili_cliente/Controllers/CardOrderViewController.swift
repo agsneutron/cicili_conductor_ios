@@ -1,19 +1,15 @@
 //
-//  CardMapViewController.swift
+//  CardOrderViewController.swift
 //  cicili_cliente
 //
-//  Created by ARIANA SANCHEZ on 08/01/20.
+//  Created by ARIANA SANCHEZ on 05/02/20.
 //  Copyright © 2020 CICILI. All rights reserved.
 //
 
 import UIKit
 import ObjectMapper
 
-protocol DataDelegate {
-    func sendData(data : String)
-}
-
-class CardMapViewController: UIViewController{
+class CardOrderViewController: UIViewController {
     
     var cliente : Cliente?
     var orderResponse = NewOrder()
@@ -25,65 +21,63 @@ class CardMapViewController: UIViewController{
     var selectedPayForm : String = ""
     var messageerror : String = ""
     var delegate : DataDelegate?
-    
-    @IBOutlet weak var lblMontoLitro: UILabel!
-    @IBOutlet weak var handleArea: UIView!
-    
-    @IBOutlet weak var buttonConfirmOrder: RoundButton!
-    @IBOutlet weak var segmentOrderIn: UISegmentedControl!
-    @IBOutlet weak var segmentPayForm: UISegmentedControl!
-    
-    @IBOutlet weak var textFieldAmmount: UITextField!
+    var driverObject = NearDrivers()
     
     
-
+    @IBOutlet weak var lblLiter: UILabel!
+    @IBOutlet weak var lblAmmount: UILabel!
+    @IBOutlet weak var textfieldPrice: UITextField!
+    @IBOutlet weak var textfieldAmmount: UITextField!
+    @IBOutlet weak var segmentedPaymentType: UISegmentedControl!
+    @IBOutlet weak var segmentedOrderType: UISegmentedControl!
+    @IBOutlet weak var lblCoName: UILabel!
+    
+    @IBOutlet weak var lblArriveTime: UILabel!
+    @IBOutlet weak var lblLtPrice: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
-               view.addGestureRecognizer(gesture)
-        
 
+        // Do any additional setup after loading the view.
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+                      view.addGestureRecognizer(gesture)
+               
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-           textField.resignFirstResponder()
-           return true
-       }
-    
+
     @IBAction func segmentOrderInChanged(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex
-                  {
-                   case 0:
-                       selectedOrderIn = WSKeys.parameters.monto
-                       textFieldAmmount.placeholder = Constants.textAction.orderInMonto
-                       lblMontoLitro.text = Constants.textAction.orderInMonto
-                   case 1:
-                       selectedOrderIn = WSKeys.parameters.cantidad
-                       textFieldAmmount.placeholder  = Constants.textAction.orderInLitros
-                        lblMontoLitro.text = Constants.textAction.orderInLitros
-                   default:
-                       selectedOrderIn = ""
-                      break
-                  }
+        {
+            case 0:
+                selectedOrderIn = WSKeys.parameters.monto
+                textfieldAmmount.placeholder = Constants.textAction.orderInMonto
+                textfieldPrice.placeholder = Constants.textAction.orderInLitros
+                lblAmmount.text = Constants.textAction.orderInMonto
+                lblLiter.text = Constants.textAction.orderInLitros
+            case 1:
+                selectedOrderIn = WSKeys.parameters.cantidad
+                textfieldAmmount.placeholder = Constants.textAction.orderInLitros
+                textfieldPrice.placeholder = Constants.textAction.orderInMonto
+                lblAmmount.text = Constants.textAction.orderInLitros
+                lblLiter.text = Constants.textAction.orderInMonto
+            default:
+                selectedOrderIn = ""
+            break
+        }
     }
     
-    
-    @IBAction func buttonConfirmOrder(_ sender: RoundButton) {
+    @IBAction func btnOrder(_ sender: RoundButton) {
         var monto : Double = 0.0
         var litros : Double = 0.0
         
-        if let ammount =  Double(textFieldAmmount.text!), ammount > 0.0 {
+        if let ammount =  Double(textfieldAmmount.text!), ammount > 0.0, let price =  Double(textfieldPrice.text!), price > 0.0 {
             
-            textFieldAmmount.text=""
-            switch segmentOrderIn.selectedSegmentIndex
+            switch segmentedOrderType.selectedSegmentIndex
             {
              case 0:
                  selectedOrderIn = WSKeys.parameters.monto
                  monto = ammount
-                 litros = 0.0
+                 litros = ammount / driverObject.precio
              case 1:
                  selectedOrderIn = WSKeys.parameters.cantidad
                  litros = ammount
@@ -93,7 +87,7 @@ class CardMapViewController: UIViewController{
                 break
             }
             
-            switch segmentPayForm.selectedSegmentIndex
+            switch segmentedPaymentType.selectedSegmentIndex
             {
              case 0:
                  selectedPayForm = WSKeys.parameters.defectivo
@@ -148,16 +142,14 @@ class CardMapViewController: UIViewController{
                                 message_t: Constants.ErrorMessages.messageCantidad)
         }
     }
-    
-     
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }
-
-

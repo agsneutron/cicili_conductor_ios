@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jq3-3z-lX6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Order View Controller-->
+        <scene sceneID="z4g-jc-FNU">
+            <objects>
+                <viewController id="Jq3-3z-lX6" customClass="NewOrderViewController" customModule="cicili_cliente" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NDX-qg-7Um">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvJ-yR-eU2" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
+                                <rect key="frame" x="94" y="655" width="220" height="44"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KGb-NT-ChZ"/>
+                                </constraints>
+                                <state key="normal" title="CANCELAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnCancel:" destination="Jq3-3z-lX6" eventType="touchUpInside" id="41z-XT-nPc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH6-EC-A8U" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
+                                <rect key="frame" x="94" y="577" width="220" height="44"/>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ho0-PL-Lfb"/>
+                                </constraints>
+                                <state key="normal" title="NUEVO PEDIDO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnOrder:" destination="Jq3-3z-lX6" eventType="touchUpInside" id="xVX-7N-nnI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Estatus de Pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LD-M4-xT7">
+                                <rect key="frame" x="53" y="202" width="309" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xS-wA-L6g">
+                                <rect key="frame" x="20" y="244" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="udP-dd-WK1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E9-lA-Wb6">
+                                <rect key="frame" x="20" y="358" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FaD-BV-mTF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de Orden" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuW-ee-uPZ">
+                                <rect key="frame" x="20" y="298" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ck5-xH-zbv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wLz-s8-6DM" firstAttribute="trailing" secondItem="JH6-EC-A8U" secondAttribute="trailing" constant="100" id="0ob-k9-X3b"/>
+                            <constraint firstItem="1xS-wA-L6g" firstAttribute="top" secondItem="3LD-M4-xT7" secondAttribute="bottom" constant="21" id="6Wl-ki-XO8"/>
+                            <constraint firstItem="OvJ-yR-eU2" firstAttribute="top" secondItem="JH6-EC-A8U" secondAttribute="bottom" constant="34" id="9zn-lp-AKj"/>
+                            <constraint firstItem="1xS-wA-L6g" firstAttribute="leading" secondItem="ZuW-ee-uPZ" secondAttribute="leading" id="Az2-JZ-KR4"/>
+                            <constraint firstItem="JH6-EC-A8U" firstAttribute="leading" secondItem="OvJ-yR-eU2" secondAttribute="leading" id="Cr6-Xr-n1Z"/>
+                            <constraint firstItem="3LD-M4-xT7" firstAttribute="leading" secondItem="wLz-s8-6DM" secondAttribute="leading" constant="53" id="EI7-gL-tSt"/>
+                            <constraint firstItem="3LD-M4-xT7" firstAttribute="top" secondItem="wLz-s8-6DM" secondAttribute="top" constant="158" id="GHQ-Ae-4M5"/>
+                            <constraint firstItem="wLz-s8-6DM" firstAttribute="bottom" secondItem="OvJ-yR-eU2" secondAttribute="bottom" constant="163" id="IAj-XV-W3S"/>
+                            <constraint firstItem="ZuW-ee-uPZ" firstAttribute="trailing" secondItem="7E9-lA-Wb6" secondAttribute="trailing" id="MrY-Qx-cmd"/>
+                            <constraint firstItem="1xS-wA-L6g" firstAttribute="leading" secondItem="NDX-qg-7Um" secondAttribute="leadingMargin" id="NSR-jX-k7b"/>
+                            <constraint firstItem="ZuW-ee-uPZ" firstAttribute="top" secondItem="1xS-wA-L6g" secondAttribute="bottom" constant="33" id="PVm-SG-QBN"/>
+                            <constraint firstItem="JH6-EC-A8U" firstAttribute="trailing" secondItem="OvJ-yR-eU2" secondAttribute="trailing" id="RPa-eK-4L6"/>
+                            <constraint firstItem="JH6-EC-A8U" firstAttribute="leading" secondItem="wLz-s8-6DM" secondAttribute="leading" constant="94" id="V8p-4V-NPI"/>
+                            <constraint firstItem="1xS-wA-L6g" firstAttribute="trailing" secondItem="NDX-qg-7Um" secondAttribute="trailingMargin" id="fLt-iS-5vQ"/>
+                            <constraint firstItem="3LD-M4-xT7" firstAttribute="centerX" secondItem="1xS-wA-L6g" secondAttribute="centerX" id="nsy-4B-J3r"/>
+                            <constraint firstItem="ZuW-ee-uPZ" firstAttribute="leading" secondItem="7E9-lA-Wb6" secondAttribute="leading" id="t3H-Ci-ING"/>
+                            <constraint firstItem="1xS-wA-L6g" firstAttribute="trailing" secondItem="ZuW-ee-uPZ" secondAttribute="trailing" id="uZt-1F-Wrh"/>
+                            <constraint firstItem="7E9-lA-Wb6" firstAttribute="top" secondItem="ZuW-ee-uPZ" secondAttribute="bottom" constant="39" id="xqv-PB-TyU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wLz-s8-6DM"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnCancel" destination="OvJ-yR-eU2" id="9uO-DR-q8d"/>
+                        <outlet property="lblHeaderOrderNumber" destination="ZuW-ee-uPZ" id="nYo-R6-65b"/>
+                        <outlet property="lblHeaderOrderStatus" destination="3LD-M4-xT7" id="OHw-un-5fj"/>
+                        <outlet property="lblOrderNumber" destination="7E9-lA-Wb6" id="Fma-Z5-HVj"/>
+                        <outlet property="lblStatusOrder" destination="1xS-wA-L6g" id="Aav-dT-UWH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SgV-Ii-ZUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="66.964285714285708"/>
+        </scene>
+    </scenes>
+</document>

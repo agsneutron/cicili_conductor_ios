@@ -812,6 +812,7 @@
                         <outlet property="TxtDriver" destination="CiT-hf-HEY" id="NDN-mp-6Nh"/>
                         <outlet property="btnMasCercano" destination="hKX-1e-P2M" id="PBb-kQ-aYX"/>
                         <outlet property="btnProgramaPedido" destination="soN-GM-KeF" id="6MU-xn-E7i"/>
+                        <segue destination="HBq-Jd-eJs" kind="show" identifier="toNewOrderSegue" id="Ajz-FU-w62"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUL-vv-qK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1193,6 +1194,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLy-ou-qLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3118" y="-491"/>
+        </scene>
+        <!--NewOrder-->
+        <scene sceneID="exL-I4-bsy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewOrder" id="HBq-Jd-eJs" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lZr-fF-Js9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c34-gm-ofn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="-593"/>
         </scene>
         <!--Direcciones View Controller-->
         <scene sceneID="tcE-wM-7mx">

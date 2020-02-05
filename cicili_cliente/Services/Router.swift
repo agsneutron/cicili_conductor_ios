@@ -35,6 +35,8 @@ enum Router: URLRequestConvertible {
     case searchZC(autorizathionToken: String , code: String)
     case mainSearch(autorizathionToken: String , parametersSet: Parameters)
     case order(autorizathionToken: String , parametersSet: Parameters)
+    case cancelReason(autorizathionToken: String)
+    case cancelOrder(autorizathionToken: String, parametersSet: Parameters)
     
     
     // HTTP method
@@ -46,7 +48,8 @@ enum Router: URLRequestConvertible {
             .searchZC,
             .bankData,
             .addressConsult,
-            .mainSearch:
+            .mainSearch,
+            .cancelReason:
             return .get
         case .registerClient,
              .validateCodePsw,
@@ -57,7 +60,8 @@ enum Router: URLRequestConvertible {
              .addressData,
              .validateCodeRegister,
              .signIn,
-             .order:
+             .order,
+             .cancelOrder:
             return .post
         }
     }
@@ -102,6 +106,10 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/autotanques/disponibles"
         case .order:
             return "mv/cliente/pedido/solicitar"
+        case .cancelReason:
+            return "catalogos/motivoscancelacion/1"
+        case .cancelOrder:
+            return "mv/cliente/pedido/cancelar"
         }
         
     }
@@ -148,7 +156,8 @@ enum Router: URLRequestConvertible {
                        debugPrint("PARAMETERS__________-")
                        debugPrint(parameters)
             
-        case.mainSearch(let autorizathionToken, let parameters):
+        case.mainSearch(let autorizathionToken, let parameters),
+            .cancelOrder(let autorizathionToken, let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
@@ -190,7 +199,8 @@ enum Router: URLRequestConvertible {
                    urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
                    urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
         case.clientStatus(let autorizathionToken),
-            .addressConsult(let autorizathionToken):
+            .addressConsult(let autorizathionToken),
+            .cancelReason(let autorizathionToken):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
