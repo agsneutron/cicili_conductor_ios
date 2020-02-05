@@ -11,13 +11,37 @@ import CoreData
 import UserNotifications
 import Firebase
 
+protocol RemoteNotificationDelegate {
+    func getRemoteNotiication(remoteNotification: RemoteNotification)
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    let idPedido = "idPedido"
+    var delegate: RemoteNotificationDelegate?
+    var responseNotification : [AnyHashable: Any]?
+    
 
+    func showAcceptOrder(userInfo : [AnyHashable: Any]){
+        let navigationController = self.window?.rootViewController as? UINavigationController?
+        
+        let currentView = navigationController!?.visibleViewController
+        print(currentView)
+        if (currentView is AcceptOrderViewController){
+            //let viewOrder = AcceptOrderViewController()
+            //let pIdPedido: String = (userInfo[idPedido] as? String)!
+            //viewOrder.txtTitle!.text = "Pedido Solicitado: " + pIdPedido
+            //viewOrder.sendDataNotification()
+            NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
+        } else {
+            currentView?.performSegue(withIdentifier: Constants.Storyboard.segueToAcceptOrder, sender: self)
+            NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
+        }
+
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -83,12 +107,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        /*self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = MainNavigationController()
+        let navigationController = self.window?.rootViewController!
+        let acceptOrderController = AcceptOrderViewController()
+        
+        navigationController?.present(acceptOrderController, animated: true, completion:  {
+            // some code
+        })*/
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    
     }
 
     // MARK: - Core Data stack
@@ -164,7 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-          print("Message ID: \(messageID)")
+          print("Message ID1: \(messageID)")
         }
 
         // Print full message.
@@ -202,14 +235,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-          print("Message ID: \(messageID)")
+          print("Message ID2: \(messageID)")
+
         }
 
         // Print full message.
         print(userInfo)
-
-        // Change this to your preferred presentation option
         completionHandler([])
+        
+        //let remoteNotification = RemoteNotification(id:1,body: "hola",title: "titulo")!
+        //delegate?.getRemoteNotiication(remoteNotification: remoteNotification)
+        responseNotification = userInfo
+        self.showAcceptOrder(userInfo: userInfo)
+        
+       /* self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = MainNavigationController()
+        let navigationController = self.window?.rootViewController!
+        let acceptOrderController = AcceptOrderViewController()
+        
+        navigationController?.present(acceptOrderController, animated: true, completion:  {
+            // some code
+        })*/
+        
+        // Change this to your preferred presentation option
+        //let viewController = self.window?.rootViewController as! MainViewController
+        //viewController.activeAcceptOrder()
+       
+        
+        //self.window = UIWindow(frame: UIScreen.main.bounds)
+        //self.window?.rootViewController = initialViewController
+        //self.window?.makeKeyAndVisible()
+        //let navigationController = self.window?.rootViewController!
+
+        //navigationController.showDetailViewController(initialViewController, sender: Any?.self)
+    
       }
 
       func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -218,7 +277,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userInfo = response.notification.request.content.userInfo
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-          print("Message ID: \(messageID)")
+          print("Message ID3: \(messageID)")
+            
         }
 
         // Print full message.
@@ -226,7 +286,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         completionHandler()
       }
+        
+        
+        
+        
+        
     }
+
     // [END ios_10_message_handling]
 
     extension AppDelegate : MessagingDelegate {
@@ -249,6 +315,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // [END ios_10_data_message]
     
     //*****************************************************************************************
+        
+        
 
 }
-

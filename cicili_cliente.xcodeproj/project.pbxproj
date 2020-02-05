@@ -11,6 +11,9 @@
 		3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12023C94729004EA64A /* AddressTableViewCell.swift */; };
 		3105B12523CA4266004EA64A /* AddressTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12423CA4266004EA64A /* AddressTable.swift */; };
 		310DB09323E3D2FE0068F72C /* NearDrivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DB09223E3D2FE0068F72C /* NearDrivers.swift */; };
+		311B1EC523EB8B3500F6A982 /* AcceptOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B1EC323EB8B3500F6A982 /* AcceptOrderViewController.swift */; };
+		311B1EC623EB8B3500F6A982 /* RemoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B1EC423EB8B3500F6A982 /* RemoteNotification.swift */; };
+		311B1EC823EB8B5B00F6A982 /* AcceptOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311B1EC723EB8B5B00F6A982 /* AcceptOrder.storyboard */; };
 		311DB68B23D0E15900C8A989 /* AvailableDriversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB68A23D0E15900C8A989 /* AvailableDriversViewController.swift */; };
 		311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB68E23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift */; };
 		311DB69123D0E39100C8A989 /* AvailableDrivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB69023D0E39100C8A989 /* AvailableDrivers.swift */; };
@@ -91,6 +94,9 @@
 		3105B12023C94729004EA64A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		3105B12423CA4266004EA64A /* AddressTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTable.swift; sourceTree = "<group>"; };
 		310DB09223E3D2FE0068F72C /* NearDrivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearDrivers.swift; sourceTree = "<group>"; };
+		311B1EC323EB8B3500F6A982 /* AcceptOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcceptOrderViewController.swift; path = ../../../cicili_cliente_ios_alex/cicili_cliente/Controllers/AcceptOrder/AcceptOrderViewController.swift; sourceTree = "<group>"; };
+		311B1EC423EB8B3500F6A982 /* RemoteNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteNotification.swift; path = ../../../cicili_cliente_ios_alex/cicili_cliente/Controllers/AcceptOrder/RemoteNotification.swift; sourceTree = "<group>"; };
+		311B1EC723EB8B5B00F6A982 /* AcceptOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AcceptOrder.storyboard; path = ../../../cicili_cliente_ios_alex/cicili_cliente/Storyboards/AcceptOrder.storyboard; sourceTree = "<group>"; };
 		311DB68A23D0E15900C8A989 /* AvailableDriversViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversViewController.swift; sourceTree = "<group>"; };
 		311DB68E23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversTableViewCell.swift; sourceTree = "<group>"; };
 		311DB69023D0E39100C8A989 /* AvailableDrivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDrivers.swift; sourceTree = "<group>"; };
@@ -207,6 +213,15 @@
 			path = Address;
 			sourceTree = "<group>";
 		};
+		311B1EC223EB8AF900F6A982 /* AcceptOrder */ = {
+			isa = PBXGroup;
+			children = (
+				311B1EC323EB8B3500F6A982 /* AcceptOrderViewController.swift */,
+				311B1EC423EB8B3500F6A982 /* RemoteNotification.swift */,
+			);
+			name = AcceptOrder;
+			sourceTree = "<group>";
+		};
 		311DB68923D0E0FE00C8A989 /* Drivers */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +295,7 @@
 		57B7B34223C28C0000731CE7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				311B1EC723EB8B5B00F6A982 /* AcceptOrder.storyboard */,
 				57B7B34323C28C4000731CE7 /* List.storyboard */,
 				57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */,
 				57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */,
@@ -345,6 +361,7 @@
 		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				311B1EC223EB8AF900F6A982 /* AcceptOrder */,
 				31AC78A823E10929003230C0 /* TextFieldControllers */,
 				311DB69223D240E100C8A989 /* Suburbs */,
 				311DB68923D0E0FE00C8A989 /* Drivers */,
@@ -465,6 +482,7 @@
 				57D35CCE23E4CFFD00DE251C /* SendNearDriverViewController.xib in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
 				31357FFA23E51AA30037A4D9 /* GoogleService-Info.plist in Resources */,
+				311B1EC823EB8B5B00F6A982 /* AcceptOrder.storyboard in Resources */,
 				3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */,
 				57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */,
 			);
@@ -524,6 +542,7 @@
 				9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */,
 				57ACFB6023C9C8DC00357C85 /* PaymentDataViewController.swift in Sources */,
 				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
+				311B1EC523EB8B3500F6A982 /* AcceptOrderViewController.swift in Sources */,
 				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57ACFB6623C9E68400357C85 /* AddressDataViewController.swift in Sources */,
 				9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */,
@@ -577,6 +596,7 @@
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
 				311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
+				311B1EC623EB8B3500F6A982 /* RemoteNotification.swift in Sources */,
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
 				900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */,
 				5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */,
