@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardOrderViewController" customModule="cicili_cliente" customModuleProvider="target">
             <connections>
+                <outlet property="btnOrder" destination="6XQ-eW-lfR" id="VvW-db-y0H"/>
+                <outlet property="handleArea" destination="BkC-14-OYp" id="IpP-PE-nN6"/>
                 <outlet property="lblAmmount" destination="5PE-wQ-y76" id="QeS-sg-KNb"/>
                 <outlet property="lblArriveTime" destination="Hx4-kQ-r0P" id="ePs-7M-REM"/>
                 <outlet property="lblCoName" destination="H9g-X0-eFv" id="CSp-6j-FcQ"/>
@@ -71,8 +73,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                            <connections>
+                                <action selector="changueOrderIn:" destination="-1" eventType="editingChanged" id="ZQF-Xh-cRd"/>
+                            </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Litros" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZNg-DF-u5y">
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Litros" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZNg-DF-u5y">
                             <rect key="frame" x="214" y="277" width="191" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

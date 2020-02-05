@@ -23,7 +23,9 @@ class CardOrderViewController: UIViewController {
     var delegate : DataDelegate?
     var driverObject = NearDrivers()
     
+    @IBOutlet weak var handleArea: UIView!
     
+    @IBOutlet weak var btnOrder: RoundButton!
     @IBOutlet weak var lblLiter: UILabel!
     @IBOutlet weak var lblAmmount: UILabel!
     @IBOutlet weak var textfieldPrice: UITextField!
@@ -66,6 +68,48 @@ class CardOrderViewController: UIViewController {
         }
     }
     
+    @IBAction func changueOrderIn(_ sender: UITextField) {
+        if let newValue = Double(sender.text!), newValue > 0.0{
+            debugPrint("Has CHANGED NO EMPTY")
+            debugPrint(newValue)
+            switch segmentedOrderType.selectedSegmentIndex
+            {
+             case 0:
+                selectedOrderIn = WSKeys.parameters.monto
+                let ammount = Double(textfieldAmmount.text!)
+                let calc = ammount! / driverObject.precio
+                 textfieldPrice.text = "\(calc)"
+                
+                if ammount! < 200.00{
+                    showAlertController(tittle_t: Constants.ErrorTittles.titleRequeridoMin,
+                                                             message_t: Constants.ErrorMessages.messageCantidadMin)
+                    textfieldAmmount.text = ""
+                    textfieldPrice.text = ""
+                }
+             case 1:
+                 selectedOrderIn = WSKeys.parameters.cantidad
+                 let ammount = Double(textfieldAmmount.text!)
+                 let calc = ammount! * driverObject.precio
+                textfieldPrice.text = "\(calc)"
+                
+                 if calc < 200.00{
+                                   showAlertController(tittle_t: Constants.ErrorTittles.titleRequeridoMin,
+                                                                            message_t: Constants.ErrorMessages.messageCantidadMin)
+                                   textfieldAmmount.text = ""
+                                    textfieldPrice.text = ""
+                               }
+             default:
+                 selectedOrderIn = ""
+                break
+            }
+        }
+        else {
+            showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido,
+                                          message_t: Constants.ErrorMessages.messageCantidad)
+        }
+        
+        
+    }
     @IBAction func btnOrder(_ sender: RoundButton) {
         var monto : Double = 0.0
         var litros : Double = 0.0
@@ -76,15 +120,18 @@ class CardOrderViewController: UIViewController {
             {
              case 0:
                  selectedOrderIn = WSKeys.parameters.monto
-                 monto = ammount
-                 litros = ammount / driverObject.precio
+                 monto = Double(textfieldAmmount.text!)!
+                 litros = Double(textfieldPrice.text!)!
+               
              case 1:
                  selectedOrderIn = WSKeys.parameters.cantidad
-                 litros = ammount
-                 monto = 0.0
-             default:
-                 selectedOrderIn = ""
+                  monto = Double(textfieldPrice.text!)!
+                  litros = Double(textfieldAmmount.text!)!
                 break
+            default:
+                selectedOrderIn = ""
+                textfieldAmmount.text = ""
+                textfieldPrice.text = ""
             }
             
             switch segmentedPaymentType.selectedSegmentIndex
@@ -132,7 +179,7 @@ class CardOrderViewController: UIViewController {
                 /*self.performSegue(withIdentifier: Constants.Storyboard.newOrderSegueId, sender: self)*/
                  let panGestureCOBtn = UIPanGestureRecognizer(target: self, action: #selector(MainViewController.handleCardPan(recognizer:)))
         
-                self.buttonConfirmOrder.addGestureRecognizer(panGestureCOBtn)
+                self.btnOrder.addGestureRecognizer(panGestureCOBtn)
 
             }
             
