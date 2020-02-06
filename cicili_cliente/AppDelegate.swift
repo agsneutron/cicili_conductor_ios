@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var delegate: RemoteNotificationDelegate?
     var responseNotification : [AnyHashable: Any]?
     var responseToken : [AnyHashable: Any]?
+    var FBToken: String?
     
 
     func showAcceptOrder(userInfo : [AnyHashable: Any]){
@@ -44,7 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
     
-    func sendToken(userInfo : [AnyHashable: Any]){
+    func sendToken(userInfo : [AnyHashable: Any], token: String){
+        self.FBToken = token
         self.responseToken = userInfo
         NotificationCenter.default.post(name: Notification.Name("sendToken"), object: nil, userInfo: userInfo)
        
@@ -309,10 +311,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Firebase registration token: \(fcmToken)")
         
         let dataDict:[String: String] = ["token": fcmToken]
-        
+        print("dataDict:  \(dataDict)")
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
     
-        self.sendToken(userInfo: dataDict)
+        self.sendToken(userInfo: dataDict, token: fcmToken)
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
       }
