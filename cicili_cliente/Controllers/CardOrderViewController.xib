@@ -21,6 +21,7 @@
                 <outlet property="segmentedPaymentType" destination="n9q-Ib-vWx" id="WGl-9b-Nhn"/>
                 <outlet property="textfieldAmmount" destination="ZNg-DF-u5y" id="b2g-E6-9We"/>
                 <outlet property="textfieldPrice" destination="wtU-Vz-uuA" id="Etb-Dz-3yQ"/>
+                <outlet property="view" destination="G83-0g-jZN" id="nXa-ix-axm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
