@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let idPedido = "idPedido"
     var delegate: RemoteNotificationDelegate?
     var responseNotification : [AnyHashable: Any]?
+    var responseToken : [AnyHashable: Any]?
     
 
     func showAcceptOrder(userInfo : [AnyHashable: Any]){
@@ -44,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func sendToken(userInfo : [AnyHashable: Any]){
-
+        self.responseToken = userInfo
         NotificationCenter.default.post(name: Notification.Name("sendToken"), object: nil, userInfo: userInfo)
        
 
