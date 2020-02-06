@@ -24,6 +24,8 @@ class CardOrderViewController: UIViewController {
     var driverObject = NearDrivers()
     
     
+    @IBOutlet weak var buttonConfirmOrder: RoundButton!
+    
     @IBOutlet weak var lblLiter: UILabel!
     @IBOutlet weak var lblAmmount: UILabel!
     @IBOutlet weak var textfieldPrice: UITextField!

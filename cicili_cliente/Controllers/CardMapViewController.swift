@@ -25,6 +25,8 @@ class CardMapViewController: UIViewController{
     var selectedPayForm : String = ""
     var messageerror : String = ""
     var delegate : DataDelegate?
+    var driverObject: AvailableDrivers?
+
     
     @IBOutlet weak var lblMontoLitro: UILabel!
     @IBOutlet weak var handleArea: UIView!
