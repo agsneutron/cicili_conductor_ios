@@ -12,6 +12,9 @@ class ForgotPasswordViewController: UIViewController {
 
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var userInput : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,19 +29,18 @@ class ForgotPasswordViewController: UIViewController {
     @IBAction func changuePasswordButton(_ sender: UIButton) {
         
         self.view.endEditing(true)
-        let username = "ariaocho@gmail.com"
-               
-               if let password = passwordTextField.text, !password.isEmpty, let passwordConfirm = confirmPasswordTextField.text, !passwordConfirm.isEmpty {
-                   RequestManager.fetchChanguePassword(parameters: [WSKeys.parameters.PUSERNAME: username, WSKeys.parameters.PPASSWORD: password], success: { response in
+       
+        if let password = passwordTextField.text, !password.isEmpty, let passwordConfirm = confirmPasswordTextField.text, !passwordConfirm.isEmpty, let userName = userInput, !userName.isEmpty {
+                RequestManager.fetchChanguePassword(parameters: [WSKeys.parameters.PUSERNAME: userName, WSKeys.parameters.PPASSWORD: password], success: { response in
                        
-                       if response != nil{
-                           print("En success  \(response)")
+                    if !response.data!.isEmpty{
+                           print("En success changued password  \(response)")
                            self.confirmPasswordTextField.text = ""
                            self.passwordTextField.text = ""
                            //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                            
-                           let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginStoryboard")
-                           self.present(vc!, animated: true, completion: nil)
+                           // self.showAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess)
+                        
+                           self.customAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.goLogin)
                            
                            }
                        })
@@ -49,6 +51,16 @@ class ForgotPasswordViewController: UIViewController {
                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageRequeridoLogin)
                }
     }
+    
+    func goLogin(action: UIAlertAction){
+               let storyboardLogin = UIStoryboard(name: "Main", bundle: nil)
+               guard let loginController = storyboardLogin.instantiateViewController(
+                   withIdentifier: "LoginStoryboard") as? ViewController else {
+                   fatalError("Unable to create LoginViewController")
+               }
+               
+               self.present(loginController, animated: true, completion: nil)
+           }
     /*
     // MARK: - Navigation
 

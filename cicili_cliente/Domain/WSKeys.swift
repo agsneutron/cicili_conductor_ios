@@ -25,13 +25,18 @@ struct WSKeys {
         static let response = "response"
         static let httpStatus = "httpStatus"
         static let data = "data"
+        static let statuscode = 200
+        static let okVerification = "true"
+        
         
         static let PUSERNAME = "user"
         static let PPASSWORD = "password"
         static let PTOKENDISPOSITIVO = "token_dispositivo"
         static let PEMAIL = "correo_electronico"
         static let PCELLPHONE = "telefono"
-        static let PTMPPASSWORD="tmp_password"
+        static let PTMPPASSWORD = "tmp_password"
+        static let PLATITUD = "latitud"
+        static let PLONGITUD = "longitud"
         
         static let verifica_codigo = "VE"
         static let datos_personales = "PE"
@@ -75,5 +80,8 @@ struct WSKeys {
         
         static let cantidad = "cantidad"
         static let monto = "monto"
+        
+
     }
 }
+

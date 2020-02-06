@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qc3-ho-W3f">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -16,68 +16,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forma de Pago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGI-MR-j15">
-                                <rect key="frame" x="117" y="77" width="180" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-wR-vKk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forma de Pago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGI-MR-j15">
+                                <rect key="frame" x="117.33333333333333" y="84" width="179.66666666666669" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.53333333329999999" green="0.81568627449999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa los datos de tu tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uZ-I3-tzB">
+                                <rect key="frame" x="105.33333333333333" y="117.66666666666667" width="203.66666666666669" height="18.000000000000014"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingresa los datos de tu tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uZ-I3-tzB">
-                                <rect key="frame" x="94" y="119" width="227" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Lw-qz-MHy">
-                                <rect key="frame" x="20" y="193" width="374" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Lw-qz-MHy">
+                                <rect key="frame" x="40" y="175.66666666666666" width="334" height="32"/>
                                 <segments>
                                     <segment title="Tarjeta Débito"/>
                                     <segment title="Tarjeta Crédito"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número de Tarjeta" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="o31-ZD-bQk">
-                                <rect key="frame" x="20" y="255" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número de Tarjeta" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="o31-ZD-bQk">
+                                <rect key="frame" x="40" y="216.66666666666666" width="334" height="43.999999999999972"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gUM-Dh-xES"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="cc-number"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tipo de Cuenta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1m-Nu-7QV">
-                                <rect key="frame" x="20" y="373" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tipo de Cuenta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1m-Nu-7QV">
+                                <rect key="frame" x="40" y="324.66666666666669" width="334" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ThO-S7-iE2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Banco" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjN-gU-bPQ">
-                                <rect key="frame" x="20" y="431" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Banco" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjN-gU-bPQ">
+                                <rect key="frame" x="40" y="378.66666666666669" width="334" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9Ha-yL-AdC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="F. Vencimiento" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6rQ-nF-X3a">
-                                <rect key="frame" x="20" y="318" width="202" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="To2-Fs-yA3">
-                                <rect key="frame" x="238" y="318" width="156" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bl1-rU-mxf">
-                                <rect key="frame" x="172" y="501" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GUARDAR"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Rf0-W8-MaD">
+                                <rect key="frame" x="40" y="270.66666666666669" width="334" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="F. Vencimiento" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6rQ-nF-X3a">
+                                        <rect key="frame" x="0.0" y="0.0" width="200.33333333333334" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="To2-Fs-yA3">
+                                        <rect key="frame" x="216.33333333333329" y="0.0" width="117.66666666666666" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pRO-3b-yfM"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bl1-rU-mxf" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
+                                <rect key="frame" x="50" y="452.66666666666669" width="314" height="44"/>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3cj-NY-iOC"/>
+                                </constraints>
+                                <state key="normal" title="GUARDAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="savePAymentDataButton:" destination="qc3-ho-W3f" eventType="touchUpInside" id="exl-Do-hTC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Rf0-W8-MaD" firstAttribute="leading" secondItem="LQT-Z3-Myw" secondAttribute="leading" constant="40" id="22O-Rj-4Zd"/>
+                            <constraint firstItem="LQT-Z3-Myw" firstAttribute="trailing" secondItem="Rf0-W8-MaD" secondAttribute="trailing" constant="40" id="3uL-jZ-o5K"/>
+                            <constraint firstItem="g1m-Nu-7QV" firstAttribute="top" secondItem="Rf0-W8-MaD" secondAttribute="bottom" constant="10" id="6Mh-NU-KTG"/>
+                            <constraint firstItem="o31-ZD-bQk" firstAttribute="leading" secondItem="LQT-Z3-Myw" secondAttribute="leading" constant="40" id="9Xs-5g-TmX"/>
+                            <constraint firstAttribute="trailing" secondItem="o31-ZD-bQk" secondAttribute="trailing" constant="40" id="A8t-ZG-vEs"/>
+                            <constraint firstItem="o31-ZD-bQk" firstAttribute="top" secondItem="3Lw-qz-MHy" secondAttribute="bottom" constant="10" id="E9f-SE-xyk"/>
+                            <constraint firstItem="cGI-MR-j15" firstAttribute="top" secondItem="LQT-Z3-Myw" secondAttribute="top" constant="40" id="GXo-8y-23J"/>
+                            <constraint firstItem="2uZ-I3-tzB" firstAttribute="centerX" secondItem="jrN-FB-Pac" secondAttribute="centerX" id="I3u-dm-DPE"/>
+                            <constraint firstItem="LQT-Z3-Myw" firstAttribute="trailing" secondItem="3Lw-qz-MHy" secondAttribute="trailing" constant="40" id="IWc-Y0-ftm"/>
+                            <constraint firstItem="bl1-rU-mxf" firstAttribute="leading" secondItem="LQT-Z3-Myw" secondAttribute="leading" constant="50" id="K2w-7K-soo"/>
+                            <constraint firstItem="5Se-wR-vKk" firstAttribute="top" secondItem="jrN-FB-Pac" secondAttribute="top" id="KGP-xw-Tzs"/>
+                            <constraint firstAttribute="trailing" secondItem="g1m-Nu-7QV" secondAttribute="trailing" constant="40" id="Lcr-dh-SAv"/>
+                            <constraint firstItem="Rf0-W8-MaD" firstAttribute="top" secondItem="o31-ZD-bQk" secondAttribute="bottom" constant="10" id="NaV-om-bs5"/>
+                            <constraint firstItem="5Se-wR-vKk" firstAttribute="leading" secondItem="jrN-FB-Pac" secondAttribute="leading" id="Vma-a5-Vwf"/>
+                            <constraint firstItem="g1m-Nu-7QV" firstAttribute="leading" secondItem="LQT-Z3-Myw" secondAttribute="leading" constant="40" id="Wpl-sf-4zv"/>
+                            <constraint firstItem="bl1-rU-mxf" firstAttribute="top" secondItem="JjN-gU-bPQ" secondAttribute="bottom" constant="30" id="a7i-DT-rAr"/>
+                            <constraint firstAttribute="bottom" secondItem="5Se-wR-vKk" secondAttribute="bottom" id="fnQ-iP-bJf"/>
+                            <constraint firstItem="3Lw-qz-MHy" firstAttribute="top" secondItem="2uZ-I3-tzB" secondAttribute="bottom" constant="40" id="gix-bT-Tya"/>
+                            <constraint firstAttribute="trailing" secondItem="5Se-wR-vKk" secondAttribute="trailing" id="hC4-z5-qVd"/>
+                            <constraint firstAttribute="trailing" secondItem="JjN-gU-bPQ" secondAttribute="trailing" constant="40" id="mkl-MU-cro"/>
+                            <constraint firstItem="3Lw-qz-MHy" firstAttribute="centerX" secondItem="jrN-FB-Pac" secondAttribute="centerX" id="oUZ-GY-H1y"/>
+                            <constraint firstItem="3Lw-qz-MHy" firstAttribute="leading" secondItem="LQT-Z3-Myw" secondAttribute="leading" constant="40" id="qaR-71-CGo"/>
+                            <constraint firstItem="JjN-gU-bPQ" firstAttribute="top" secondItem="g1m-Nu-7QV" secondAttribute="bottom" constant="10" id="qgu-Wj-7JL"/>
+                            <constraint firstItem="cGI-MR-j15" firstAttribute="centerX" secondItem="jrN-FB-Pac" secondAttribute="centerX" id="rSw-iQ-vYZ"/>
+                            <constraint firstItem="JjN-gU-bPQ" firstAttribute="leading" secondItem="LQT-Z3-Myw" secondAttribute="leading" constant="40" id="rsJ-OG-kDZ"/>
+                            <constraint firstItem="LQT-Z3-Myw" firstAttribute="trailing" secondItem="bl1-rU-mxf" secondAttribute="trailing" constant="50" id="u7Y-Nf-udy"/>
+                            <constraint firstItem="2uZ-I3-tzB" firstAttribute="top" secondItem="cGI-MR-j15" secondAttribute="bottom" id="wG3-Lm-IRZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LQT-Z3-Myw"/>
                     </view>
                     <connections>
@@ -94,4 +145,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="63.616071428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_1" width="414" height="896"/>
+    </resources>
 </document>

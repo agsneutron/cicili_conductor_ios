@@ -17,6 +17,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
+        
         // Do any additional setup after loading the view.
         
         userTextField.becomeFirstResponder()
@@ -28,14 +31,18 @@ class RegisterViewController: UIViewController {
         
         if let username = userTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty, let phone = phoneTextField.text, !phone.isEmpty, let confirmpassword = confirmPasswordTextField.text, !confirmpassword.isEmpty {
             RequestManager.fetchRegisterClient(parameters: [WSKeys.parameters.PEMAIL: username, WSKeys.parameters.PPASSWORD: password, WSKeys.parameters.PCELLPHONE: phone], success: { response in
-                       
-                       if response != nil{
+                      
+                if !response.token!.isEmpty {
                            print("En success y token no nil \(response)")
                            self.userTextField.text = ""
                            self.passwordTextField.text = ""
                            //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                           let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainStoryboard")
-                           self.present(vc!, animated: true, completion: nil)
+                            guard let verifyCodeController = self.storyboard?.instantiateViewController(
+                        withIdentifier: "VerifyStoryboard") as? VerifyCodeViewController else {
+                        fatalError("Unable to create VerifyCodeController")
+                        }
+                        verifyCodeController.token = response.token
+                        self.present(verifyCodeController, animated: true, completion: nil)
                            
                            }
                        })
@@ -48,7 +55,11 @@ class RegisterViewController: UIViewController {
         
         
     }
-    
+    @objc func handleCancel() {
+        //self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     /*
     // MARK: - Navigation
 
