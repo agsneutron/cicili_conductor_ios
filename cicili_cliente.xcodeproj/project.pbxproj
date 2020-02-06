@@ -78,6 +78,7 @@
 		57E7C08823E9D8B000D51FE7 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7C08723E9D8B000D51FE7 /* NewOrder.swift */; };
 		57E7C08B23EAEAE000D51FE7 /* CardOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7C08923EAEAE000D51FE7 /* CardOrderViewController.swift */; };
 		57E7C08C23EAEAE000D51FE7 /* CardOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E7C08A23EAEAE000D51FE7 /* CardOrderViewController.xib */; };
+		57E7C08E23EBA35C00D51FE7 /* ConfirmCancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7C08D23EBA35C00D51FE7 /* ConfirmCancelViewController.swift */; };
 		57F0183923DC2BFE00213DFC /* AddressLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183823DC2BFE00213DFC /* AddressLocationViewController.swift */; };
 		57F0183B23DC41DA00213DFC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183A23DC41DA00213DFC /* LocationManager.swift */; };
 		57F0183D23DC563E00213DFC /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183C23DC563E00213DFC /* MapPin.swift */; };
@@ -174,6 +175,7 @@
 		57E7C08723E9D8B000D51FE7 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		57E7C08923EAEAE000D51FE7 /* CardOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOrderViewController.swift; sourceTree = "<group>"; };
 		57E7C08A23EAEAE000D51FE7 /* CardOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardOrderViewController.xib; sourceTree = "<group>"; };
+		57E7C08D23EBA35C00D51FE7 /* ConfirmCancelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCancelViewController.swift; sourceTree = "<group>"; };
 		57F0183823DC2BFE00213DFC /* AddressLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressLocationViewController.swift; sourceTree = "<group>"; };
 		57F0183A23DC41DA00213DFC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		57F0183C23DC563E00213DFC /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				57D5DAF723E668630019392D /* NewOrderViewController.swift */,
 				57E7C08923EAEAE000D51FE7 /* CardOrderViewController.swift */,
 				57E7C08A23EAEAE000D51FE7 /* CardOrderViewController.xib */,
+				57E7C08D23EBA35C00D51FE7 /* ConfirmCancelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				57E3620123D21469003931AD /* DataByZipCode.swift in Sources */,
 				3105B12523CA4266004EA64A /* AddressTable.swift in Sources */,
 				57B7B34823C2B4F000731CE7 /* Response.swift in Sources */,
+				57E7C08E23EBA35C00D51FE7 /* ConfirmCancelViewController.swift in Sources */,
 				3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */,
 				31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */,
 				57D1BAF623C001D200551DA7 /* Direcciones.swift in Sources */,
