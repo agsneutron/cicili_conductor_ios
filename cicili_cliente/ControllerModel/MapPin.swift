@@ -29,4 +29,6 @@ class MapPin: NSObject, MKAnnotation {
   var subtitle: String? {
     return locationName
   }
+    
+    
 }
