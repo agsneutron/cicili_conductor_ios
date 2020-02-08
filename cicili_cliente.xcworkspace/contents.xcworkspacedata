@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:cicili_cliente.xcodeproj">
+      location = "group:/Users/bamaa/Documents/cicili_conductor_ios/cicili_conductor.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEDC67E22F905668EA34C10A52E2D66C"
-               BuildableName = "libFirebaseMessaging-library.a"
-               BlueprintName = "FirebaseMessaging-library"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "3137F9AF23A8BA4700D8D8FF"
+               BuildableName = "cicili_conductor.app"
+               BlueprintName = "cicili_conductor"
+               ReferencedContainer = "container:cicili_conductor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3137F9AF23A8BA4700D8D8FF"
+            BuildableName = "cicili_conductor.app"
+            BlueprintName = "cicili_conductor"
+            ReferencedContainer = "container:cicili_conductor.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3137F9AF23A8BA4700D8D8FF"
+            BuildableName = "cicili_conductor.app"
+            BlueprintName = "cicili_conductor"
+            ReferencedContainer = "container:cicili_conductor.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
