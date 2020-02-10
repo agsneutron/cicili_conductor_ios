@@ -56,7 +56,7 @@
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-H1-9JL">
                                         <rect key="frame" x="0.0" y="207.5" width="375" height="208"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1qa2ws3edZ," borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-Os-hAv">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cicili_01" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-Os-hAv">
                                                 <rect key="frame" x="40" y="79" width="295" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="13I-4z-TPO"/>
@@ -81,7 +81,7 @@
                                                     <action selector="singIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gM0-gJ-SbI"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="ariaocho@gmail.com" borderStyle="roundedRect" placeholder="Usuario" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-Ag-gun">
+                                            <textField opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="migtoacosta@gmail.com" borderStyle="roundedRect" placeholder="Usuario" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-Ag-gun">
                                                 <rect key="frame" x="40" y="15" width="295" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="Sa9-nc-Ju9"/>
@@ -703,6 +703,9 @@
                                                             <segment title="Desconectar"/>
                                                             <segment title="Conectar"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="eventConectDisconect:" destination="ds5-FK-eYt" eventType="valueChanged" id="oYy-cb-5XM"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                                 <constraints>
@@ -749,6 +752,7 @@
                     <connections>
                         <outlet property="MapView" destination="Iic-xe-hum" id="Dnk-KA-NyX"/>
                         <outlet property="TxtBienvenida" destination="l6W-V7-reC" id="5x2-DH-7eP"/>
+                        <outlet property="segmentConectDisconect" destination="spc-KQ-y6g" id="liU-W7-Qq5"/>
                         <segue destination="HBq-Jd-eJs" kind="show" identifier="toNewOrderSegue" id="Ajz-FU-w62"/>
                     </connections>
                 </viewController>

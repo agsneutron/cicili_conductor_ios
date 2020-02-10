@@ -81,6 +81,8 @@ struct WSKeys {
         static let cantidad = "cantidad"
         static let monto = "monto"
         
+        static let status = "status"
+        
 
     }
 }

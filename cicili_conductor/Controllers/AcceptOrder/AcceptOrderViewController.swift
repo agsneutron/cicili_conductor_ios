@@ -9,6 +9,10 @@ import UIKit
 
 class AcceptOrderViewController: UIViewController {
 
+    var cliente: Cliente?
+
+    
+    
     @IBOutlet var txtTitle: UILabel!
     @IBOutlet  var txtDriver: UILabel!
     @IBOutlet  var txtStatus: UILabel!
@@ -19,9 +23,12 @@ class AcceptOrderViewController: UIViewController {
     @IBOutlet var txtDate: UILabel!
     @IBOutlet var txtAmount: UILabel!
     
+    @IBOutlet weak var requestedOrder: UIView!
+    
+   
+    
     let idPedido = "idPedido"
     let pstatus = "status"
-    let pdriver = "driver"
     let pQuantity = "quantity"
     let pPayment = "payment"
     let pHour = "hour"
@@ -33,41 +40,23 @@ class AcceptOrderViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.cliente = appDelegate.responseCliente
+        
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
 
         // Do any additional setup after loading the view.
         let notif = appDelegate.responseNotification
         var varPedido: String? = nil
-        var varStatus: String? = nil
-        var varDriver: String? = nil
-        var varQuantity: String? = nil
-        var varPayment: String? = nil
-        var varHour: String? = nil
-        var varDate: String? = nil
-        var varAmount: String? = nil
+        varPedido = notif?[idPedido] as? String
         
-        if varPedido == nil {
-            varPedido = notif?[idPedido] as? String
-            varStatus = notif?[pstatus] as? String
-            varDriver = notif?[pdriver] as? String
-            varQuantity = notif?[pQuantity] as? String
-            varPayment = notif?[pPayment] as? String
-            varHour = notif?[pHour] as? String
-            varDate = notif?[pDate] as? String
-            varAmount = notif?[pAmount] as? String
-            
-            self.txtTitle.text = "Pedido: \(varPedido!)"
-            self.txtStatus.text = "\(varStatus!) "
-            self.txtDriver.text = "Conductor: \(varDriver!) "
-            self.txtDate.text = "\(varDate!)"
-            self.txtHour.text = "\(varHour!) "
-            self.txtPayment.text = "\(varPayment!) "
-            self.txtQuantity.text = "\(varQuantity!)"
-            self.txtAmount.text = "\(varAmount!) "
+        if varPedido != nil {
+
+            self.getPedido(pidPedido: varPedido!)
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationResponse(notification:)), name: Notification.Name("NotificationResponse"), object: nil)
+        
     }
     
     @objc func handleCancel() {
@@ -76,37 +65,32 @@ class AcceptOrderViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-    @objc func NotificationResponse(notification: Notification){
-        print("Leego notificacion")
-        let notif = appDelegate.responseNotification
-        var varPedido: String? = nil
-        var varStatus: String? = nil
-        var varDriver: String? = nil
-        var varQuantity: String? = nil
-        var varPayment: String? = nil
-        var varHour: String? = nil
-        var varDate: String? = nil
-        var varAmount: String? = nil
+    
+    
+    func getPedido(pidPedido: String) {
+    
         
-        if varPedido == nil {
-            varPedido = notif?[idPedido] as? String
-            varStatus = notif?[pstatus] as? String
-            varDriver = notif?[pdriver] as? String
-            varQuantity = notif?[pQuantity] as? String
-            varPayment = notif?[pPayment] as? String
-            varHour = notif?[pHour] as? String
-            varDate = notif?[pDate] as? String
-            varAmount = notif?[pAmount] as? String
+        let fbToken = appDelegate.FBToken
+        print("Token FB : \(fbToken)")
+           
+        RequestManager.getOrderData(oauthToken: cliente!.token!, idPedido: pidPedido, success: { response in
+                        
+            debugPrint("En success requestorder \(response.direccion!)")
             
-            self.txtTitle.text = "Pedido: \(varPedido!)"
-            self.txtStatus.text = "\(varStatus!) "
-            self.txtDriver.text = "Conductor: \(varDriver!) "
-            self.txtDate.text = "\(varDate!)"
-            self.txtHour.text = "\(varHour!) "
-            self.txtPayment.text = "\(varPayment!) "
-            self.txtQuantity.text = "\(varQuantity!)"
-            self.txtAmount.text = "\(varAmount!) "
+            self.txtTitle.text = "Pedido: \(response.id)"
+            self.txtStatus.text = "\(response.nombreStatus!) "
+            self.txtDate.text = "Fecha: \(response.fechaSolicitada!)"
+            self.txtHour.text = "Hora: \(response.horaSolicitada!) "
+            self.txtPayment.text = "Forma de Pago: \(response.formaPago!) "
+            self.txtQuantity.text = "Cantidad: \(response.cantidad)"
+            self.txtAmount.text = "Precio: \(response.precio) "
+            
+            
+        })
+        { error in
+            self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
         }
+                
     }
     
     func sendDataNotification(){
@@ -117,6 +101,11 @@ class AcceptOrderViewController: UIViewController {
             pedido = notif?[idPedido] as? String
             self.txtTitle.text = " ¡ Hola \(pedido!) ! "
         }
+    }
+    
+    
+    @IBAction func sendAcceptOrder(_ sender: Any) {
+        self.performSegue(withIdentifier: Constants.Storyboard.segueAcceptOrder, sender: self)
     }
     /*
     // MARK: - Navigation

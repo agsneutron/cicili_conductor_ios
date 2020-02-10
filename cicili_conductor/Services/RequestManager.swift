@@ -534,6 +534,78 @@ class RequestManager: NSObject{
        }
     
     
+    //*********************************************************************************
+    
+    class func getOrderData(oauthToken: String, idPedido: String, success: @escaping (ResponseOrder) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.getOrder(autorizathionToken: oauthToken, idPedido: idPedido)).responseJSON{
+        response in
+        
+            debugPrint("*********Pedido*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let json = JSON(response.result.value!)
+            
+            debugPrint("*********JSON RES VALUE*********")
+            debugPrint(json)
+            
+            debugPrint("*********RES DATA VALUE*********")
+            debugPrint(json["data"])
+            let errorcode: Int = json[WSKeys.parameters.error].intValue
+                               
+            if errorcode == WSKeys.parameters.okresponse {
+                let responseData = json[WSKeys.parameters.data].dictionaryObject
+                let statusObject = Mapper<ResponseOrder>().map( JSONObject: responseData)
+                success(statusObject!)
+            } else {
+                failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+            }
+        case .failure(let error):
+               failure(error as NSError)
+           }
+            
+            
+        }
+    }
+    class func setConectDisconect(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.setConectDisconect(autorizathionToken: oauthToken, parametersSet: parameters)).responseJSON{
+        response in
+        
+            debugPrint("*********Pedido*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let json = JSON(response.result.value!)
+            
+            debugPrint("*********JSON RES VALUE*********")
+            debugPrint(json)
+            
+            debugPrint("*********RES DATA VALUE*********")
+            debugPrint(json["data"])
+            let errorcode: Int = json[WSKeys.parameters.error].intValue
+                               
+            if errorcode == WSKeys.parameters.okresponse {
+                let responseData = json.dictionaryObject
+                let statusObject = Mapper<Response>().map( JSONObject: responseData)
+                success(statusObject!)
+            } else {
+                failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+            }
+        case .failure(let error):
+               failure(error as NSError)
+           }
+            
+            
+        }
+    }
+    //*********************************************************************************
+    
     //get cancel order
     class func setCancelOrder(oauthToken: String,  parameters: Parameters, success: @escaping ([Response]) -> Void, failure: @escaping (NSError) -> Void){
            // Fetch request

@@ -25,14 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var responseNotification : [AnyHashable: Any]?
     var responseToken : [AnyHashable: Any]?
     var FBToken: String?
-    
+    var responseCliente: Cliente?
 
     func showAcceptOrder(userInfo : [AnyHashable: Any]){
         let navigationController = self.window?.rootViewController as? UINavigationController?
         
         let currentView = navigationController!?.visibleViewController
         print(currentView)
-        if (currentView is AcceptOrderViewController){
+        if (currentView is RequestedOrderViewController){
             //let viewOrder = AcceptOrderViewController()
             //let pIdPedido: String = (userInfo[idPedido] as? String)!
             //viewOrder.txtTitle!.text = "Pedido Solicitado: " + pIdPedido
@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
         } else {
             currentView?.performSegue(withIdentifier: Constants.Storyboard.segueToAcceptOrder, sender: self)
-            NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
+            //NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
         }
 
     }

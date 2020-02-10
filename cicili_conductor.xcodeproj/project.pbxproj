@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E75940BC197856D40BBBBAB /* Pods_cicili_conductor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82163BCB08987EE848432F40 /* Pods_cicili_conductor.framework */; };
 		3105B11F23C94522004EA64A /* AddressTableCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B11E23C94522004EA64A /* AddressTableCardViewController.swift */; };
 		3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12023C94729004EA64A /* AddressTableViewCell.swift */; };
 		3105B12523CA4266004EA64A /* AddressTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12423CA4266004EA64A /* AddressTable.swift */; };
 		310DB09323E3D2FE0068F72C /* NearDrivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DB09223E3D2FE0068F72C /* NearDrivers.swift */; };
+		311CE12223EE852B00A160DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 311CE12123EE852A00A160DF /* GoogleService-Info.plist */; };
 		311DB68B23D0E15900C8A989 /* AvailableDriversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB68A23D0E15900C8A989 /* AvailableDriversViewController.swift */; };
 		311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB68E23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift */; };
 		311DB69123D0E39100C8A989 /* AvailableDrivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB69023D0E39100C8A989 /* AvailableDrivers.swift */; };
@@ -18,7 +20,6 @@
 		311DB69623D241A200C8A989 /* SuburbsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB69523D241A200C8A989 /* SuburbsTableViewCell.swift */; };
 		311DB69823D241DE00C8A989 /* SuburbsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB69723D241DE00C8A989 /* SuburbsTable.swift */; };
 		312CE81923EBCDB900655B00 /* AcceptOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312CE81823EBCDB900655B00 /* AcceptOrder.storyboard */; };
-		31357FFA23E51AA30037A4D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31357FF923E51AA30037A4D9 /* GoogleService-Info.plist */; };
 		3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */; };
 		3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9B523A8BA4800D8D8FF /* ViewController.swift */; };
 		3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9B723A8BA4800D8D8FF /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 		31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2EBF723EBB5BE00F2323C /* AcceptOrderViewController.swift */; };
 		31C2EBFA23EBB5F700F2323C /* RemoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2EBF923EBB5F700F2323C /* RemoteNotification.swift */; };
 		31F55EAC23E4EDF80017DA8A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F55EAB23E4EDF80017DA8A /* HealthKit.framework */; };
+		31F9E7A423F0741A00403DC6 /* ResponseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */; };
+		31F9E7A823F0DCF600403DC6 /* RequestedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */; };
 		5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */; };
 		5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CA9123D14957007284F2 /* ImagePicker.swift */; };
 		57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */; };
@@ -84,7 +87,6 @@
 		57F0183D23DC563E00213DFC /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183C23DC563E00213DFC /* MapPin.swift */; };
 		57F0183F23DC824600213DFC /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183E23DC824600213DFC /* MapPinView.swift */; };
 		57F80F3723D0DBC600913033 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F80F3623D0DBC600913033 /* Status.swift */; };
-		6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */; };
 		900741D623DFA40B00B1B29D /* direccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D523DFA40B00B1B29D /* direccionesViewController.swift */; };
 		900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */; };
 		9055278823E67E540088FCB0 /* aclaracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055278723E67E540088FCB0 /* aclaracionViewController.swift */; };
@@ -104,6 +106,7 @@
 		3105B12023C94729004EA64A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		3105B12423CA4266004EA64A /* AddressTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTable.swift; sourceTree = "<group>"; };
 		310DB09223E3D2FE0068F72C /* NearDrivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearDrivers.swift; sourceTree = "<group>"; };
+		311CE12123EE852A00A160DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		311DB68A23D0E15900C8A989 /* AvailableDriversViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversViewController.swift; sourceTree = "<group>"; };
 		311DB68E23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversTableViewCell.swift; sourceTree = "<group>"; };
 		311DB69023D0E39100C8A989 /* AvailableDrivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDrivers.swift; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 		311DB69523D241A200C8A989 /* SuburbsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuburbsTableViewCell.swift; sourceTree = "<group>"; };
 		311DB69723D241DE00C8A989 /* SuburbsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuburbsTable.swift; sourceTree = "<group>"; };
 		312CE81823EBCDB900655B00 /* AcceptOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AcceptOrder.storyboard; sourceTree = "<group>"; };
-		31357FF923E51AA30037A4D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3137F9B023A8BA4800D8D8FF /* cicili_conductor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cicili_conductor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3137F9B323A8BA4800D8D8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3137F9B523A8BA4800D8D8FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,11 +127,14 @@
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
 		31B3586923C6374B00707C82 /* CardMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMapViewController.swift; sourceTree = "<group>"; };
 		31B3586A23C6374B00707C82 /* CardMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMapViewController.xib; sourceTree = "<group>"; };
-		31C2EBF723EBB5BE00F2323C /* AcceptOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptOrderViewController.swift; sourceTree = "<group>"; };
+		31C2EBF723EBB5BE00F2323C /* AcceptOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptOrderViewController.swift; sourceTree = "<group>"; tabWidth = 1; };
 		31C2EBF923EBB5F700F2323C /* RemoteNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotification.swift; sourceTree = "<group>"; };
 		31F55EA723E4AB5B0017DA8A /* cicili_cliente.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cicili_cliente.entitlements; sourceTree = "<group>"; };
 		31F55EAA23E4EDF80017DA8A /* cicili_clienteDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cicili_clienteDebug.entitlements; sourceTree = "<group>"; };
 		31F55EAB23E4EDF80017DA8A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseOrder.swift; sourceTree = "<group>"; };
+		31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestedOrderViewController.swift; sourceTree = "<group>"; };
+		3A07504309748D5FBE418727 /* Pods-cicili_conductor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_conductor.debug.xcconfig"; path = "Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor.debug.xcconfig"; sourceTree = "<group>"; };
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
 		5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyStatus.swift; sourceTree = "<group>"; };
 		5712CA9123D14957007284F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -182,6 +187,8 @@
 		57F0183C23DC563E00213DFC /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		57F0183E23DC824600213DFC /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
 		57F80F3623D0DBC600913033 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		645FEFE2CBDEE004E0539239 /* Pods-cicili_conductor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_conductor.release.xcconfig"; path = "Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor.release.xcconfig"; sourceTree = "<group>"; };
+		82163BCB08987EE848432F40 /* Pods_cicili_conductor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_conductor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		900741D523DFA40B00B1B29D /* direccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionesViewController.swift; sourceTree = "<group>"; };
 		900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionDetalleViewController.swift; sourceTree = "<group>"; };
 		9055278723E67E540088FCB0 /* aclaracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aclaracionViewController.swift; sourceTree = "<group>"; };
@@ -195,7 +202,6 @@
 		90E29AEE23D25BF300677E48 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		90E29AF623D7B93E00677E48 /* perfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfilViewController.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
-		EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_cliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +211,7 @@
 			files = (
 				31F55EAC23E4EDF80017DA8A /* HealthKit.framework in Frameworks */,
 				57CF14DA23C1C4D500389C06 /* MapKit.framework in Frameworks */,
-				6125D40E7917335374265AE9 /* Pods_cicili_cliente.framework in Frameworks */,
+				0E75940BC197856D40BBBBAB /* Pods_cicili_conductor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +223,7 @@
 			children = (
 				31F55EAB23E4EDF80017DA8A /* HealthKit.framework */,
 				57CF14D923C1C4D500389C06 /* MapKit.framework */,
-				EF0370C19C30C3020A7A98C5 /* Pods_cicili_cliente.framework */,
+				82163BCB08987EE848432F40 /* Pods_cicili_conductor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,8 +293,8 @@
 				3137F9B523A8BA4800D8D8FF /* ViewController.swift */,
 				3137F9B723A8BA4800D8D8FF /* Main.storyboard */,
 				3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */,
+				311CE12123EE852A00A160DF /* GoogleService-Info.plist */,
 				3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */,
-				31357FF923E51AA30037A4D9 /* GoogleService-Info.plist */,
 				3137F9C223A8BA5000D8D8FF /* Info.plist */,
 				3137F9BA23A8BA4800D8D8FF /* cicili_conductor.xcdatamodeld */,
 			);
@@ -308,6 +314,7 @@
 			children = (
 				31C2EBF723EBB5BE00F2323C /* AcceptOrderViewController.swift */,
 				31C2EBF923EBB5F700F2323C /* RemoteNotification.swift */,
+				31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */,
 			);
 			path = AcceptOrder;
 			sourceTree = "<group>";
@@ -365,6 +372,7 @@
 				57D35CCF23E5161100DE251C /* Order.swift */,
 				57D5DAF923E7185A0019392D /* ReusableIdText.swift */,
 				57E7C08723E9D8B000D51FE7 /* NewOrder.swift */,
+				31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,6 +446,8 @@
 			children = (
 				9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */,
 				50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */,
+				3A07504309748D5FBE418727 /* Pods-cicili_conductor.debug.xcconfig */,
+				645FEFE2CBDEE004E0539239 /* Pods-cicili_conductor.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -505,6 +515,7 @@
 			files = (
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
 				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
+				311CE12223EE852B00A160DF /* GoogleService-Info.plist in Resources */,
 				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
 				57D5DAF223E61E0E0019392D /* NewOrder.storyboard in Resources */,
 				57ACFB5E23C9C64F00357C85 /* PaymentDataStoryboard.storyboard in Resources */,
@@ -513,7 +524,6 @@
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
 				57D35CCE23E4CFFD00DE251C /* SendNearDriverViewController.xib in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
-				31357FFA23E51AA30037A4D9 /* GoogleService-Info.plist in Resources */,
 				57D5DAF623E65A210019392D /* CancelOrderViewController.xib in Resources */,
 				57E7C08C23EAEAE000D51FE7 /* CardOrderViewController.xib in Resources */,
 				3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */,
@@ -539,7 +549,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cicili_cliente-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-cicili_conductor-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -552,15 +562,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -582,6 +592,7 @@
 				9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */,
 				57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */,
 				9065F15623E34AD900F60A40 /* PedidoHistoricoTableViewCell.swift in Sources */,
+				31F9E7A423F0741A00403DC6 /* ResponseOrder.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
 				57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */,
 				31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */,
@@ -637,6 +648,7 @@
 				311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
+				31F9E7A823F0DCF600403DC6 /* RequestedOrderViewController.swift in Sources */,
 				57D5DAF523E65A210019392D /* CancelOrderViewController.swift in Sources */,
 				900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */,
 				5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */,
@@ -785,7 +797,7 @@
 		};
 		3137F9C623A8BA5000D8D8FF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */;
+			baseConfigurationReference = 3A07504309748D5FBE418727 /* Pods-cicili_conductor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cicili_conductor/cicili_clienteDebug.entitlements;
@@ -800,7 +812,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cicili.conductorios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cicili.clienteios;
 				PRODUCT_NAME = cicili_conductor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -812,7 +824,7 @@
 		};
 		3137F9C723A8BA5000D8D8FF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */;
+			baseConfigurationReference = 645FEFE2CBDEE004E0539239 /* Pods-cicili_conductor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = cicili_conductor/cicili_cliente.entitlements;
@@ -826,7 +838,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cicili.conductorios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cicili.clienteos;
 				PRODUCT_NAME = cicili_conductor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = YES;

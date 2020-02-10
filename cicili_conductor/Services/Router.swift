@@ -38,6 +38,10 @@ enum Router: URLRequestConvertible {
     case cancelReason(autorizathionToken: String)
     case cancelOrder(autorizathionToken: String, parametersSet: Parameters)
     
+    //******* Conductor
+    case getOrder(autorizathionToken: String , idPedido: String)
+    case setConectDisconect(autorizathionToken: String , parametersSet: Parameters)
+    
     
     // HTTP method
        
@@ -49,6 +53,7 @@ enum Router: URLRequestConvertible {
             .bankData,
             .addressConsult,
             .mainSearch,
+            .getOrder,
             .cancelReason:
             return .get
         case .registerClient,
@@ -61,6 +66,7 @@ enum Router: URLRequestConvertible {
              .validateCodeRegister,
              .signIn,
              .order,
+             .setConectDisconect,
              .cancelOrder:
             return .post
         }
@@ -71,7 +77,7 @@ enum Router: URLRequestConvertible {
     var endpoint: String {
         switch self {
         case .signIn:
-            return "mv/cliente/login"
+            return "mv/conductor/login"
         case .registerClient:
             return "mv/cliente/registrar"
         case .validateCodeRegister(let code):
@@ -82,7 +88,7 @@ enum Router: URLRequestConvertible {
         case .help:
             return "catalogos/tiposaclaracion/1"
         case .requestPassword:
-            return "mv/cliente/password/solicitar"
+            return "mv/conductor/password/solicitar"
         case .changuePassword:
             return "mv/cliente/password/cambiar"
         case .personalData:
@@ -110,8 +116,12 @@ enum Router: URLRequestConvertible {
             return "catalogos/motivoscancelacion/1"
         case .cancelOrder:
             return "mv/cliente/pedido/cancelar"
+        // Conductor
+        case .getOrder(let idPedido):
+            return "mv/conductor/pedido/obtener/\(idPedido.idPedido)"
+        case .setConectDisconect:
+            return "mv/conductor/conectar"
         }
-        
     }
     
     
@@ -157,7 +167,8 @@ enum Router: URLRequestConvertible {
                        debugPrint(parameters)
             
         case.mainSearch(let autorizathionToken, let parameters),
-            .cancelOrder(let autorizathionToken, let parameters):
+            .cancelOrder(let autorizathionToken, let parameters),
+            .setConectDisconect(let autorizathionToken, let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
@@ -198,9 +209,18 @@ enum Router: URLRequestConvertible {
                    urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
                    urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
                    urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+            
+            
         case.clientStatus(let autorizathionToken),
             .addressConsult(let autorizathionToken),
             .cancelReason(let autorizathionToken):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
+            urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+        
+        //****** Conductor
+        case.getOrder(let autorizathionToken, _):
+            // Set encode to application/x-www-form-urlencoded
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
