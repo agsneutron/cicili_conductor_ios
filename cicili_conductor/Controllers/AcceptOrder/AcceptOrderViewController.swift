@@ -41,10 +41,11 @@ class AcceptOrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(true, animated: true)
         self.cliente = appDelegate.responseCliente
         
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
+        /*navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))*/
 
         // Do any additional setup after loading the view.
         let notif = appDelegate.responseNotification
@@ -105,7 +106,30 @@ class AcceptOrderViewController: UIViewController {
     
     
     @IBAction func sendAcceptOrder(_ sender: Any) {
-        self.performSegue(withIdentifier: Constants.Storyboard.segueAcceptOrder, sender: self)
+        acceptOrder()
+        
+    }
+    
+    func acceptOrder() {
+    
+        
+        let fbToken = appDelegate.FBToken
+        let notif = appDelegate.responseNotification
+        var varPedido: String? = nil
+        varPedido = notif?[idPedido] as? String
+        
+           
+        RequestManager.acceptOrder(oauthToken: cliente!.token!, parameters: [WSKeys.parameters.pedido: varPedido ?? 0], success: { response in
+                        
+            debugPrint("En success requestorder \(response.codeError)")
+            self.performSegue(withIdentifier: Constants.Storyboard.segueAcceptOrder, sender: self)
+            
+            
+        })
+        { error in
+            self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+        }
+                
     }
     /*
     // MARK: - Navigation

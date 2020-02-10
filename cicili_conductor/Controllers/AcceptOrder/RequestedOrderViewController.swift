@@ -20,6 +20,9 @@ class RequestedOrderViewController: UIViewController {
     @IBOutlet weak var txtStatus: UILabel!
     @IBOutlet weak var txtPedido: UILabel!
     
+    
+    @IBOutlet weak var btnProcessOrder: RoundButton!
+    
     let idPedido = "idPedido"
     let pstatus = "status"
     var cliente: Cliente?
@@ -30,6 +33,7 @@ class RequestedOrderViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
         self.cliente = appDelegate.responseCliente
         getDataOrder()
         NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationResponse(notification:)), name: Notification.Name("NotificationResponse"), object: nil)
@@ -130,7 +134,84 @@ class RequestedOrderViewController: UIViewController {
     }
     
     
+    @IBAction func CancelOrder(_ sender: RoundButton) {
+        let controllers = self.navigationController?.viewControllers
+         for vc in controllers! {
+           if vc is MainTabController {
+             _ = self.navigationController?.popToViewController(vc as! MainTabController, animated: true)
+           }
+        }
+        
+    }
     @IBAction func openWaze(_ sender: RoundButton) {
         //let location =  CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    
+    
+    @IBAction func btnProcessOrder(_ sender: RoundButton) {
+        var varStatus: String? = "2" // aceptado
+        switch sender.currentTitle
+        {
+            case "Cargar":
+                varStatus = "5"
+                //self.txtStatus.text = "Cargando Pedido ..."
+                //sender.setTitle("Finalizar Carga",for: .normal)
+            case "Finalizar Carga":
+                varStatus = "6"
+                //self.txtStatus.text = "Carga Finalizada"
+                //sender.setTitle("Cobrar",for: .normal)
+            case "Cobrar":
+                varStatus = "7"
+                //self.txtStatus.text = "Pedido Cobrado"
+                //sender.setTitle("Finalizar Pedido",for: .normal)
+            case "Finalizar Pedido":
+                varStatus = "8"
+                //self.txtStatus.text = "Pedido Finalizado"
+                //sender.setTitle("Pedido Finalizado",for: .normal)
+             default:
+                varStatus = "0"
+                break
+        }
+        
+        ChangeStatusOrder(pStatus: varStatus!)
+        
+        
+    }
+    
+    func ChangeStatusOrder(pStatus: String) {
+        let notif = appDelegate.responseNotification
+        var varPedido: String? = nil
+        varPedido = notif?[idPedido] as? String
+        
+           
+        RequestManager.ChangeStatusOrder(oauthToken: cliente!.token!, parameters: [WSKeys.parameters.pedido: varPedido ?? 0,WSKeys.parameters.status: pStatus], success: { response in
+                        
+            debugPrint("En success requestorder \(response.codeError)")
+            switch self.btnProcessOrder.currentTitle
+            {
+                case "Cargar":
+                    self.txtStatus.text = "Cargando Pedido ..."
+                    self.btnProcessOrder.setTitle("Finalizar Carga",for: .normal)
+                case "Finalizar Carga":
+                    self.txtStatus.text = "Carga Finalizada"
+                    self.btnProcessOrder.setTitle("Cobrar",for: .normal)
+                case "Cobrar":
+                    self.txtStatus.text = "Pedido Cobrado"
+                    self.btnProcessOrder.setTitle("Finalizar Pedido",for: .normal)
+                case "Finalizar Pedido":
+                    self.txtStatus.text = "Pedido Finalizado"
+                    self.btnProcessOrder.setTitle("Pedido Finalizado",for: .normal)
+                    //self.dismiss(animated: true, completion: nil)
+                 default:
+                    self.txtStatus.text = "Error!!!"
+                    break
+            }
+            
+        })
+        { error in
+            self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+        }
+                
     }
 }

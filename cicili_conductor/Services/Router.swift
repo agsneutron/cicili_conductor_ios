@@ -41,6 +41,8 @@ enum Router: URLRequestConvertible {
     //******* Conductor
     case getOrder(autorizathionToken: String , idPedido: String)
     case setConectDisconect(autorizathionToken: String , parametersSet: Parameters)
+    case acceptOrder(autorizathionToken: String , parametersSet: Parameters)
+    case changeStatusOrder(autorizathionToken: String , parametersSet: Parameters)
     
     
     // HTTP method
@@ -67,6 +69,8 @@ enum Router: URLRequestConvertible {
              .signIn,
              .order,
              .setConectDisconect,
+             .acceptOrder,
+             .changeStatusOrder,
              .cancelOrder:
             return .post
         }
@@ -121,7 +125,14 @@ enum Router: URLRequestConvertible {
             return "mv/conductor/pedido/obtener/\(idPedido.idPedido)"
         case .setConectDisconect:
             return "mv/conductor/conectar"
+        case .acceptOrder:
+            return "mv/conductor/aceptarpedido"
+        case .changeStatusOrder:
+            return "mv/conductor/actualizarpedido"
+            
         }
+        
+        
     }
     
     
@@ -168,6 +179,8 @@ enum Router: URLRequestConvertible {
             
         case.mainSearch(let autorizathionToken, let parameters),
             .cancelOrder(let autorizathionToken, let parameters),
+            .acceptOrder(let autorizathionToken, let parameters),
+            .changeStatusOrder(let autorizathionToken, let parameters),
             .setConectDisconect(let autorizathionToken, let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)

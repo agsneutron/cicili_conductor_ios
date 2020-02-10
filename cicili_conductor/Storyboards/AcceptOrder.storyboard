@@ -218,7 +218,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvx-Zq-QvH" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
                                 <rect key="frame" x="43" y="373" width="240" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cargar" image="icon_right">
+                                <state key="normal" title="Cargar">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -232,6 +232,9 @@
                                         <real key="value" value="13"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnProcessOrder:" destination="D2g-Lu-X0U" eventType="touchUpInside" id="uWM-D8-mQi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5x-LK-3ZO" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
                                 <rect key="frame" x="43" y="409" width="55" height="30"/>
@@ -267,6 +270,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="CancelOrder:" destination="D2g-Lu-X0U" eventType="touchUpInside" id="Zc4-IV-hVS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofm-xG-ke3" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
                                 <rect key="frame" x="244" y="409" width="39" height="30"/>
@@ -309,6 +315,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="B16-Lc-8xS"/>
                     <connections>
+                        <outlet property="btnProcessOrder" destination="wvx-Zq-QvH" id="ifk-yL-H3U"/>
                         <outlet property="txtCantidad" destination="9FI-wz-mwG" id="dG3-n1-fqs"/>
                         <outlet property="txtCliente" destination="BSw-Cr-wxs" id="Qcc-mb-AgN"/>
                         <outlet property="txtDireccion" destination="rgD-nv-QR5" id="rfz-V1-9SJ"/>
@@ -325,7 +332,4 @@
             <point key="canvasLocation" x="762.31884057971024" y="135.9375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="icon_right" width="26.5" height="26"/>
-    </resources>
 </document>

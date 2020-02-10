@@ -214,6 +214,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
 
         completionHandler(UIBackgroundFetchResult.newData)
+        responseNotification = userInfo
+        self.showAcceptOrder(userInfo: userInfo)
       }
       // [END receive_message]
       func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
