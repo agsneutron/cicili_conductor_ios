@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var responseToken : [AnyHashable: Any]?
     var FBToken: String?
     var responseCliente: Cliente?
+    let pstatus = "status"
 
     func showAcceptOrder(userInfo : [AnyHashable: Any]){
         let navigationController = self.window?.rootViewController as? UINavigationController?
@@ -39,7 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //viewOrder.sendDataNotification()
             NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
         } else {
-            currentView?.performSegue(withIdentifier: Constants.Storyboard.segueToAcceptOrder, sender: self)
+            print(userInfo)
+            
+            if userInfo[pstatus] as! String != "11" {
+                currentView?.performSegue(withIdentifier: Constants.Storyboard.segueToAcceptOrder, sender: self)
+            }
             //NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
         }
 

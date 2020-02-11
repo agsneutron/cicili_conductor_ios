@@ -24,7 +24,7 @@ class RequestedOrderViewController: UIViewController {
     @IBOutlet weak var btnProcessOrder: RoundButton!
     
     let idPedido = "idPedido"
-    let pstatus = "status"
+    let pstatus = "nombreStatus"
     var cliente: Cliente?
     
     let latitude = 19.2508805
@@ -143,6 +143,14 @@ class RequestedOrderViewController: UIViewController {
         }
         
     }
+    func closeToViewController(){
+        let controllers = self.navigationController?.viewControllers
+         for vc in controllers! {
+           if vc is MainTabController {
+             _ = self.navigationController?.popToViewController(vc as! MainTabController, animated: true)
+           }
+        }
+    }
     @IBAction func openWaze(_ sender: RoundButton) {
         //let location =  CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
@@ -202,7 +210,7 @@ class RequestedOrderViewController: UIViewController {
                 case "Finalizar Pedido":
                     self.txtStatus.text = "Pedido Finalizado"
                     self.btnProcessOrder.setTitle("Pedido Finalizado",for: .normal)
-                    //self.dismiss(animated: true, completion: nil)
+                    self.closeToViewController()
                  default:
                     self.txtStatus.text = "Error!!!"
                     break
