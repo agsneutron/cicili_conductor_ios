@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/GoogleUtilities-framework/GoogleUtilities.framework
 ${BUILT_PRODUCTS_DIR}/Protobuf-framework/protobuf.framework
 ${BUILT_PRODUCTS_DIR}/nanopb-framework/nanopb.framework

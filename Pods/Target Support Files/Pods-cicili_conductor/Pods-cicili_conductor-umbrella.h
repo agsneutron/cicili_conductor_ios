@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_cicili_clienteVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_cicili_clienteVersionString[];
+FOUNDATION_EXPORT double Pods_cicili_conductorVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_cicili_conductorVersionString[];
 
