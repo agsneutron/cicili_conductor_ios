@@ -19,5 +19,5 @@ target 'cicili_conductor' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'MaterialComponents/BottomSheet'
   pod 'MaterialComponents/BottomSheet+ShapeThemer'
-  
+  # pod 'RevealingSplashView'
 end

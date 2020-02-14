@@ -34,6 +34,7 @@
 		31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586723C404CD00707C82 /* RequestOrderViewController.swift */; };
 		31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586923C6374B00707C82 /* CardMapViewController.swift */; };
 		31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586A23C6374B00707C82 /* CardMapViewController.xib */; };
+		31BF497823F70E5500CA868A /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF497723F70E5500CA868A /* PassengerAnnotation.swift */; };
 		31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2EBF723EBB5BE00F2323C /* AcceptOrderViewController.swift */; };
 		31C2EBFA23EBB5F700F2323C /* RemoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2EBF923EBB5F700F2323C /* RemoteNotification.swift */; };
 		31F55EAC23E4EDF80017DA8A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F55EAB23E4EDF80017DA8A /* HealthKit.framework */; };
@@ -133,6 +134,7 @@
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
 		31B3586923C6374B00707C82 /* CardMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMapViewController.swift; sourceTree = "<group>"; };
 		31B3586A23C6374B00707C82 /* CardMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMapViewController.xib; sourceTree = "<group>"; };
+		31BF497723F70E5500CA868A /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		31C2EBF723EBB5BE00F2323C /* AcceptOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptOrderViewController.swift; sourceTree = "<group>"; tabWidth = 1; };
 		31C2EBF923EBB5F700F2323C /* RemoteNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotification.swift; sourceTree = "<group>"; };
 		31F55EA723E4AB5B0017DA8A /* cicili_cliente.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cicili_cliente.entitlements; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 		318AB9C023F50FC700A62183 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				31BF497723F70E5500CA868A /* PassengerAnnotation.swift */,
 				318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */,
 			);
 			path = View;
@@ -674,6 +677,7 @@
 				5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */,
 				9065F15423E295C000F60A40 /* DetalleProgramarPedidoViewController.swift in Sources */,
 				311DB69423D2417600C8A989 /* SuburbsViewController.swift in Sources */,
+				31BF497823F70E5500CA868A /* PassengerAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
