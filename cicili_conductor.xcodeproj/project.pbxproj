@@ -26,6 +26,9 @@
 		3137F9BC23A8BA4800D8D8FF /* cicili_conductor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3137F9BA23A8BA4800D8D8FF /* cicili_conductor.xcdatamodeld */; };
 		3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */; };
 		3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3137F9BF23A8BA5000D8D8FF /* LaunchScreen.storyboard */; };
+		318AB9BD23F50F5E00A62183 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9BC23F50F5E00A62183 /* DataService.swift */; };
+		318AB9BF23F50F7A00A62183 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9BE23F50F7A00A62183 /* UpdateService.swift */; };
+		318AB9C223F50FDC00A62183 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */; };
 		31936E9023D00DF300D49CDB /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31936E8F23D00DF300D49CDB /* AddressTableViewController.swift */; };
 		31AC78AA23E10971003230C0 /* HideCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC78A923E10971003230C0 /* HideCursor.swift */; };
 		31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586723C404CD00707C82 /* RequestOrderViewController.swift */; };
@@ -122,6 +125,9 @@
 		3137F9BD23A8BA5000D8D8FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3137F9C023A8BA5000D8D8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3137F9C223A8BA5000D8D8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		318AB9BC23F50F5E00A62183 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		318AB9BE23F50F7A00A62183 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
+		318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		31936E8F23D00DF300D49CDB /* AddressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		31AC78A923E10971003230C0 /* HideCursor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideCursor.swift; sourceTree = "<group>"; };
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_conductor */ = {
 			isa = PBXGroup;
 			children = (
+				318AB9C023F50FC700A62183 /* View */,
 				31F55EAA23E4EDF80017DA8A /* cicili_clienteDebug.entitlements */,
 				31F55EA723E4AB5B0017DA8A /* cicili_cliente.entitlements */,
 				57C22D4323C7A57800835B8F /* ControllerModel */,
@@ -299,6 +306,14 @@
 				3137F9BA23A8BA4800D8D8FF /* cicili_conductor.xcdatamodeld */,
 			);
 			path = cicili_conductor;
+			sourceTree = "<group>";
+		};
+		318AB9C023F50FC700A62183 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		31AC78A823E10929003230C0 /* TextFieldControllers */ = {
@@ -338,6 +353,8 @@
 			children = (
 				57B857EA23BDE90A0012BF94 /* Router.swift */,
 				57CD140823BE88AE0056913B /* RequestManager.swift */,
+				318AB9BC23F50F5E00A62183 /* DataService.swift */,
+				318AB9BE23F50F7A00A62183 /* UpdateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -622,9 +639,11 @@
 				57F80F3723D0DBC600913033 /* Status.swift in Sources */,
 				310DB09323E3D2FE0068F72C /* NearDrivers.swift in Sources */,
 				90E29AF723D7B93E00677E48 /* perfilViewController.swift in Sources */,
+				318AB9BF23F50F7A00A62183 /* UpdateService.swift in Sources */,
 				3137F9BC23A8BA4800D8D8FF /* cicili_conductor.xcdatamodeld in Sources */,
 				57ACFB6823CA26EB00357C85 /* Address.swift in Sources */,
 				57F0183923DC2BFE00213DFC /* AddressLocationViewController.swift in Sources */,
+				318AB9C223F50FDC00A62183 /* DriverAnnotation.swift in Sources */,
 				57E7C08B23EAEAE000D51FE7 /* CardOrderViewController.swift in Sources */,
 				90E29AEF23D25BF300677E48 /* MainTabController.swift in Sources */,
 				57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */,
@@ -634,6 +653,7 @@
 				900741D623DFA40B00B1B29D /* direccionesViewController.swift in Sources */,
 				311DB69623D241A200C8A989 /* SuburbsTableViewCell.swift in Sources */,
 				31936E9023D00DF300D49CDB /* AddressTableViewController.swift in Sources */,
+				318AB9BD23F50F5E00A62183 /* DataService.swift in Sources */,
 				57B2057623C6645A005FF554 /* PersonalDataViewController.swift in Sources */,
 				57D35CD023E5161100DE251C /* Order.swift in Sources */,
 				57E7C08823E9D8B000D51FE7 /* NewOrder.swift in Sources */,
@@ -736,7 +756,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};

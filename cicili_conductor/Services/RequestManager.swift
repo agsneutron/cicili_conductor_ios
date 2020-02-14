@@ -36,7 +36,7 @@ class RequestManager: NSObject{
         //debugPrint(response.result)
         //print("************RESULT value************")
         //debugPrint(response.result.value)
-            
+   
            switch response.result {
            case .success:
             let json = JSON(response.result.value!)
@@ -46,8 +46,8 @@ class RequestManager: NSObject{
             let errorcode: Int = json[WSKeys.parameters.error].intValue
             let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
             let cliente_data = json[WSKeys.parameters.data].dictionaryObject
-            //print("*********CLIENTE DATA***************")
-            //debugPrint(cliente_data)
+            print("*********CLIENTE DATA***************")
+            debugPrint(cliente_data)
             let cliente = Mapper<Cliente>().map( JSONObject: cliente_data)
             //print("*********CLIENTE RESULT***************")
             //debugPrint(cliente?.token! as Any)

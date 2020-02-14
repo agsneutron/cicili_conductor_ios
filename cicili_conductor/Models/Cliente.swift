@@ -35,7 +35,7 @@ class Cliente: Mappable {
     
     func mapping(map: Map) {
         
-        idCliente         <- map["idCliente"]
+        idCliente         <- map["idConductor"]
         status            <- map["status"]
         token             <- map["token"]
         correoElectronico <- map["correoElectronico"]
