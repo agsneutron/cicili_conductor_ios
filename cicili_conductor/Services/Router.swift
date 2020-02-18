@@ -41,6 +41,7 @@ enum Router: URLRequestConvertible {
     //******* Conductor
     case getOrder(autorizathionToken: String , idPedido: String)
     case setConectDisconect(autorizathionToken: String , parametersSet: Parameters)
+    case setUpdateCoordinate(autorizathionToken: String , parametersSet: Parameters)
     case acceptOrder(autorizathionToken: String , parametersSet: Parameters)
     case changeStatusOrder(autorizathionToken: String , parametersSet: Parameters)
     
@@ -69,6 +70,7 @@ enum Router: URLRequestConvertible {
              .signIn,
              .order,
              .setConectDisconect,
+             .setUpdateCoordinate,
              .acceptOrder,
              .changeStatusOrder,
              .cancelOrder:
@@ -125,6 +127,8 @@ enum Router: URLRequestConvertible {
             return "mv/conductor/pedido/obtener/\(idPedido.idPedido)"
         case .setConectDisconect:
             return "mv/conductor/conectar"
+        case .setUpdateCoordinate:
+            return "mv/conductor/actualizarubicacion"
         case .acceptOrder:
             return "mv/conductor/aceptarpedido"
         case .changeStatusOrder:
@@ -181,6 +185,7 @@ enum Router: URLRequestConvertible {
             .cancelOrder(let autorizathionToken, let parameters),
             .acceptOrder(let autorizathionToken, let parameters),
             .changeStatusOrder(let autorizathionToken, let parameters),
+            .setUpdateCoordinate(let autorizathionToken, let parameters),
             .setConectDisconect(let autorizathionToken, let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
