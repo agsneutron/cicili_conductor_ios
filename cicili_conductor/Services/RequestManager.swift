@@ -570,6 +570,37 @@ class RequestManager: NSObject{
             
         }
     }
+    
+    class func getBoardData(oauthToken: String, idWeek: String, success: @escaping ([NewOrder]) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.getBoardData(autorizathionToken: oauthToken, idWeek: idWeek)).responseJSON{
+        response in
+        
+        // Evalute result
+        switch response.result {
+        case .success:
+            let json = JSON(response.result.value!)
+               debugPrint("*********RES json getBoardData*********")
+               debugPrint(json)
+              
+               let errorcode: Int = json[WSKeys.parameters.error].intValue
+            
+               if errorcode == WSKeys.parameters.okresponse {
+                   let responseData = json[WSKeys.parameters.data].arrayObject
+                   let statusObject = Mapper<NewOrder>().mapArray(JSONArray: responseData as! [[String : Any]])
+                   
+                   success(statusObject)
+              } else {
+                  failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+              }
+        case .failure(let error):
+               failure(error as NSError)
+           }
+            
+            
+        }
+    }
     class func setConectDisconect(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
@@ -672,6 +703,65 @@ class RequestManager: NSObject{
         }
             
             
+        }
+    }
+    
+    class func getHistorical(oauthToken: String, success: @escaping ([NewOrder]) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.getHistorical(autorizathionToken: oauthToken)).responseJSON{
+        response in
+        
+        // Evalute result
+        switch response.result {
+            case .success:
+               
+                let json = JSON(response.result.value!)
+                debugPrint("*********RES json*********")
+                debugPrint(json)
+                
+                let errorcode: Int = json[WSKeys.parameters.error].intValue
+             
+                if errorcode == WSKeys.parameters.okresponse {
+                    let responseData = json[WSKeys.parameters.data].arrayObject
+                    let statusObject = Mapper<NewOrder>().mapArray(JSONArray: responseData as! [[String : Any]])
+                    success(statusObject)
+               } else {
+                   failure(NSError(domain: "com.cicili.AddressConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+               }
+            case .failure(let error):
+                failure(error as NSError)
+        }
+            
+            
+        }
+    }
+    
+    class func getWeeks(oauthToken: String, success: @escaping ([ReusableIdText]) -> Void, failure: @escaping (NSError) -> Void){
+           // Fetch request
+        Alamofire.request(Router.getWeeks(autorizathionToken: oauthToken)).responseJSON{
+           response in
+           
+            // Evalute result
+            switch response.result {
+                case .success:
+                    let json = JSON(response.result.value!)
+                    debugPrint("*********RES json*********")
+                    debugPrint(json)
+                   
+                    let errorcode: Int = json[WSKeys.parameters.error].intValue
+                 
+                    if errorcode == WSKeys.parameters.okresponse {
+                        let responseData = json[WSKeys.parameters.data].arrayObject
+                        let statusObject = Mapper<ReusableIdText>().mapArray(JSONArray: responseData as! [[String : Any]])
+                        
+                        success(statusObject)
+                   } else {
+                       failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                   }
+                case .failure(let error):
+                    failure(error as NSError)
+            }
         }
     }
     

@@ -10,6 +10,8 @@ import UIKit
 
 class CommentsTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var starStackQualification: UIStackView!
     @IBOutlet weak var lblCliente: UILabel!
     @IBOutlet weak var lblPedido: UILabel!
     @IBOutlet weak var lblComentarios: UILabel!

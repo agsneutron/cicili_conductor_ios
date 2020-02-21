@@ -29,6 +29,11 @@ class NewOrder: Mappable {
     var status : Int = 0
     var longitud : Double = 0.0
     var latitud : Double = 0.0
+    var precio : Double = 0.0
+    var distancia: String?
+    var tiempo: String?
+    var numeroPipa: String?
+    var planta: String?
 
     required convenience init?(map: Map) {
         self.init()
@@ -57,6 +62,11 @@ class NewOrder: Mappable {
          status             <- map["status"]
          longitud           <- map["longitud"]
          latitud            <- map["latitud"]
+        precio            <- map["precio"]
+        distancia            <- map["distancia"]
+        tiempo            <- map["tiempo"]
+        numeroPipa         <- map["numeroPipa"]
+        planta         <- map["planta"]
     }
     
 }

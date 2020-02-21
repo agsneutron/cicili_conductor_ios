@@ -12,6 +12,7 @@
 		3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12023C94729004EA64A /* AddressTableViewCell.swift */; };
 		3105B12523CA4266004EA64A /* AddressTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12423CA4266004EA64A /* AddressTable.swift */; };
 		310DB09323E3D2FE0068F72C /* NearDrivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DB09223E3D2FE0068F72C /* NearDrivers.swift */; };
+		31119D0B23FEFEEE003B67DB /* HistoricalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31119D0A23FEFEEE003B67DB /* HistoricalTable.swift */; };
 		311CE12223EE852B00A160DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 311CE12123EE852A00A160DF /* GoogleService-Info.plist */; };
 		311DB68B23D0E15900C8A989 /* AvailableDriversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB68A23D0E15900C8A989 /* AvailableDriversViewController.swift */; };
 		311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DB68E23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift */; };
@@ -31,6 +32,10 @@
 		31510F3B23FD03F1005D9967 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510F3A23FD03F1005D9967 /* ResponseData.swift */; };
 		31510F3D23FD156E005D9967 /* DetailCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510F3C23FD156E005D9967 /* DetailCommentsViewController.swift */; };
 		31510F3F23FD17F7005D9967 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510F3E23FD17F7005D9967 /* CommentsTableViewCell.swift */; };
+		3154D05223FEDE7D00AB6E70 /* HistoricalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154D05123FEDE7D00AB6E70 /* HistoricalTableViewCell.swift */; };
+		3154D05423FEDEDE00AB6E70 /* HistoricalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */; };
+		3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3189226024005DEB003FF7D0 /* BoardViewController.swift */; };
+		31892263240077D8003FF7D0 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31892262240077D8003FF7D0 /* BoardTableViewCell.swift */; };
 		318AB9BD23F50F5E00A62183 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9BC23F50F5E00A62183 /* DataService.swift */; };
 		318AB9BF23F50F7A00A62183 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9BE23F50F7A00A62183 /* UpdateService.swift */; };
 		318AB9C223F50FDC00A62183 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */; };
@@ -117,6 +122,7 @@
 		3105B12023C94729004EA64A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		3105B12423CA4266004EA64A /* AddressTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTable.swift; sourceTree = "<group>"; };
 		310DB09223E3D2FE0068F72C /* NearDrivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearDrivers.swift; sourceTree = "<group>"; };
+		31119D0A23FEFEEE003B67DB /* HistoricalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTable.swift; sourceTree = "<group>"; };
 		311CE12123EE852A00A160DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		311DB68A23D0E15900C8A989 /* AvailableDriversViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversViewController.swift; sourceTree = "<group>"; };
 		311DB68E23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 		31510F3A23FD03F1005D9967 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		31510F3C23FD156E005D9967 /* DetailCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCommentsViewController.swift; sourceTree = "<group>"; };
 		31510F3E23FD17F7005D9967 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		3154D05123FEDE7D00AB6E70 /* HistoricalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTableViewCell.swift; sourceTree = "<group>"; };
+		3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTableViewController.swift; sourceTree = "<group>"; };
+		3189226024005DEB003FF7D0 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		31892262240077D8003FF7D0 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		318AB9BC23F50F5E00A62183 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		318AB9BE23F50F7A00A62183 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
@@ -324,6 +334,25 @@
 			path = cicili_conductor;
 			sourceTree = "<group>";
 		};
+		3154D05023FEDE2900AB6E70 /* Historical */ = {
+			isa = PBXGroup;
+			children = (
+				3154D05123FEDE7D00AB6E70 /* HistoricalTableViewCell.swift */,
+				3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */,
+				31119D0A23FEFEEE003B67DB /* HistoricalTable.swift */,
+			);
+			path = Historical;
+			sourceTree = "<group>";
+		};
+		3189225F24005DB9003FF7D0 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				3189226024005DEB003FF7D0 /* BoardViewController.swift */,
+				31892262240077D8003FF7D0 /* BoardTableViewCell.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
 		318AB9C023F50FC700A62183 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +469,8 @@
 		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3189225F24005DB9003FF7D0 /* Board */,
+				3154D05023FEDE2900AB6E70 /* Historical */,
 				31C05B7A23FC80A5003A260D /* Queries */,
 				31C2EBF623EBB54300F2323C /* AcceptOrder */,
 				31AC78A823E10929003230C0 /* TextFieldControllers */,
@@ -639,6 +670,7 @@
 				9055278823E67E540088FCB0 /* aclaracionViewController.swift in Sources */,
 				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57ACFB6623C9E68400357C85 /* AddressDataViewController.swift in Sources */,
+				31119D0B23FEFEEE003B67DB /* HistoricalTable.swift in Sources */,
 				9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */,
 				57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */,
 				9065F15623E34AD900F60A40 /* PedidoHistoricoTableViewCell.swift in Sources */,
@@ -646,6 +678,7 @@
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
 				57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */,
 				31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */,
+				3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */,
 				31510F3F23FD17F7005D9967 /* CommentsTableViewCell.swift in Sources */,
 				5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */,
 				90C9179C23C7144C0017B615 /* roundedBtn.swift in Sources */,
@@ -666,10 +699,13 @@
 				57B857EB23BDE90A0012BF94 /* Router.swift in Sources */,
 				90E29AED23D24F5E00677E48 /* usuarioViewController.swift in Sources */,
 				57D1BAF823C0028F00551DA7 /* Asentamiento.swift in Sources */,
+				3154D05223FEDE7D00AB6E70 /* HistoricalTableViewCell.swift in Sources */,
+				31892263240077D8003FF7D0 /* BoardTableViewCell.swift in Sources */,
 				57B7B33F23C26E8500731CE7 /* VerifyCodeViewController.swift in Sources */,
 				311DB69823D241DE00C8A989 /* SuburbsTable.swift in Sources */,
 				57B7B33B23C26D4A00731CE7 /* MainViewController.swift in Sources */,
 				57C22D4723C7A61100835B8F /* LoginModel.swift in Sources */,
+				3154D05423FEDEDE00AB6E70 /* HistoricalTableViewController.swift in Sources */,
 				57CD140923BE88AE0056913B /* RequestManager.swift in Sources */,
 				57F80F3723D0DBC600913033 /* Status.swift in Sources */,
 				310DB09323E3D2FE0068F72C /* NearDrivers.swift in Sources */,

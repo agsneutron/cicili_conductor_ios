@@ -46,6 +46,9 @@ enum Router: URLRequestConvertible {
     case changeStatusOrder(autorizathionToken: String , parametersSet: Parameters)
     case getQualifications(autorizathionToken: String)
     case getComments(autorizathionToken: String)
+    case getHistorical(autorizathionToken: String)
+    case getWeeks(autorizathionToken: String)
+    case getBoardData(autorizathionToken: String, idWeek: String)
     
     
     // HTTP method
@@ -61,6 +64,9 @@ enum Router: URLRequestConvertible {
             .getOrder,
             .getQualifications,
             .getComments,
+            .getBoardData,
+            .getHistorical,
+            .getWeeks,
             .cancelReason:
             return .get
         case .registerClient,
@@ -141,6 +147,13 @@ enum Router: URLRequestConvertible {
             return "mv/conductor/porcentajes"
         case .getComments:
             return "mv/conductor/calificaciones"
+        case .getHistorical:
+            return "mv/conductor/pedido/obtener"
+        case .getWeeks:
+            return "catalogos/semanas"
+        case .getBoardData(let idWeek):
+            return "mv/conductor/tablero/\(idWeek.idWeek)"
+            
             
         }
         
@@ -245,6 +258,8 @@ enum Router: URLRequestConvertible {
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
 
         case .getQualifications(let autorizathionToken),
+             .getHistorical(let autorizathionToken),
+             .getWeeks(let autorizathionToken),
              .getComments(let autorizathionToken):
         
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: nil)
@@ -252,7 +267,8 @@ enum Router: URLRequestConvertible {
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             
         //****** Conductor
-        case.getOrder(let autorizathionToken, _):
+        case .getOrder(let autorizathionToken, _),
+             .getBoardData(let autorizathionToken, _):
             // Set encode to application/x-www-form-urlencoded
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")

@@ -15,7 +15,12 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
     var commentsObject : [CommentsData]?
     var commentsArray = [CommentsTable]()
     
+    var arrImageViews = [UIImageView]()
+    var imageView: UIImageView!
+    var intRate: Int = 0
+    
     @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +46,29 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    func setUpStarStack(cell: CommentsTableViewCell, calificacion: Int) {
+        
+        cell.starStackQualification.axis = NSLayoutConstraint.Axis.horizontal
+        cell.starStackQualification.distribution = .fillEqually
+        cell.starStackQualification.alignment = .fill
+        cell.starStackQualification.spacing = 30
+        cell.starStackQualification.tag = 5007
+        
+        for i in 0..<5{
+            imageView = UIImageView()
+            if (i < calificacion){
+                imageView.image = UIImage(named: "fill")
+            }else{
+                imageView.image = UIImage(named: "nofill")
+            }
+            cell.starStackQualification.addArrangedSubview(imageView)
+            arrImageViews.append(imageView)
+        }
+        //starStackView.translatesAutoresizingMaskIntoConstraints = false
+                
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return commentsArray.count
@@ -59,7 +87,7 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
         cell.lblFecha?.text = "Fecha: \(comments.fecha!)"
         cell.lblComentarios?.text = "Comentario: \(comments.comentario!)"
         cell.lblCalificacion?.text = "Calificación: \(comments.calificacion)"
-        
+        setUpStarStack(cell: cell, calificacion: comments.calificacion)
         
         return cell
     }
