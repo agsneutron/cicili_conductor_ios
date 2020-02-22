@@ -14,16 +14,15 @@ struct Direccion {
     var text : String
 
 }
-class direccionesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SupplementaryDataViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
     @IBOutlet weak var tableView: UITableView!
 
     let DireccionesData = [
-        Direccion(id: 1, title: "Casa", text: "Unidad victoria rebeca 119"),
-        Direccion(id: 2, title: "Trabajo", text: "Cerrada san antonio 11"),
-        Direccion(id: 3, title: "Negocio", text: "Catalpas 1018 el castaño"),
-        Direccion(id: 4, title: "Casa campo", text: "PEdro velez 989 sauces"),
+        Direccion(id: 1, title: "Documentos", text: "Listado de documentos"),
+        Direccion(id: 2, title: "Cuentas", text: "configuracion de cuenta"),
+        Direccion(id: 3, title: "Pipas", text: "Información de la pipa"),
 
     ]
     
@@ -34,6 +33,7 @@ class direccionesViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
            // Do any additional setup after loading the view.
        }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            // #warning Incomplete implementation, return the number of rows
@@ -52,5 +52,17 @@ class direccionesViewController: UIViewController, UITableViewDataSource, UITabl
            
            return cell
        }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //performSegue(withIdentifier: "presentMainFromAddress", sender: self)
+        switch indexPath.row {
+        case 0:
+            self.performSegue(withIdentifier: Constants.Storyboard.documentsSegue, sender: self)
+        case 1:
+            self.performSegue(withIdentifier: Constants.Storyboard.accountSegue, sender: self)
+        default:
+            self.performSegue(withIdentifier: Constants.Storyboard.tankTruckSegue, sender: self)
+        }
+       
+        
+    }
 }

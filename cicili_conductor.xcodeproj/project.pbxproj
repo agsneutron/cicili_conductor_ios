@@ -36,6 +36,9 @@
 		3154D05423FEDEDE00AB6E70 /* HistoricalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */; };
 		3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3189226024005DEB003FF7D0 /* BoardViewController.swift */; };
 		31892263240077D8003FF7D0 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31892262240077D8003FF7D0 /* BoardTableViewCell.swift */; };
+		318922662400A672003FF7D0 /* DocumentsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */; };
+		318922682400A6B5003FF7D0 /* AccountStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318922672400A6B5003FF7D0 /* AccountStoryboard.storyboard */; };
+		3189226A2400A6FC003FF7D0 /* TankTruckStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318922692400A6FC003FF7D0 /* TankTruckStoryboard.storyboard */; };
 		318AB9BD23F50F5E00A62183 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9BC23F50F5E00A62183 /* DataService.swift */; };
 		318AB9BF23F50F7A00A62183 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9BE23F50F7A00A62183 /* UpdateService.swift */; };
 		318AB9C223F50FDC00A62183 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */; };
@@ -52,6 +55,9 @@
 		31F55EAC23E4EDF80017DA8A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F55EAB23E4EDF80017DA8A /* HealthKit.framework */; };
 		31F9E7A423F0741A00403DC6 /* ResponseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */; };
 		31F9E7A823F0DCF600403DC6 /* RequestedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */; };
+		31FA1A562400BEF80038C270 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA1A552400BEF80038C270 /* DocumentsViewController.swift */; };
+		31FA1A582400BF160038C270 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA1A572400BF160038C270 /* AccountViewController.swift */; };
+		31FA1A5A2400BF320038C270 /* TankTruckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA1A592400BF320038C270 /* TankTruckViewController.swift */; };
 		5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */; };
 		5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CA9123D14957007284F2 /* ImagePicker.swift */; };
 		57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */; };
@@ -103,7 +109,7 @@
 		57F0183D23DC563E00213DFC /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183C23DC563E00213DFC /* MapPin.swift */; };
 		57F0183F23DC824600213DFC /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0183E23DC824600213DFC /* MapPinView.swift */; };
 		57F80F3723D0DBC600913033 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F80F3623D0DBC600913033 /* Status.swift */; };
-		900741D623DFA40B00B1B29D /* direccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D523DFA40B00B1B29D /* direccionesViewController.swift */; };
+		900741D623DFA40B00B1B29D /* SupplementaryDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D523DFA40B00B1B29D /* SupplementaryDataViewController.swift */; };
 		900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */; };
 		9055278823E67E540088FCB0 /* aclaracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055278723E67E540088FCB0 /* aclaracionViewController.swift */; };
 		9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */; };
@@ -148,6 +154,9 @@
 		3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTableViewController.swift; sourceTree = "<group>"; };
 		3189226024005DEB003FF7D0 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		31892262240077D8003FF7D0 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
+		318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DocumentsStoryboard.storyboard; sourceTree = "<group>"; };
+		318922672400A6B5003FF7D0 /* AccountStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountStoryboard.storyboard; sourceTree = "<group>"; };
+		318922692400A6FC003FF7D0 /* TankTruckStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TankTruckStoryboard.storyboard; sourceTree = "<group>"; };
 		318AB9BC23F50F5E00A62183 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		318AB9BE23F50F7A00A62183 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
@@ -166,6 +175,9 @@
 		31F55EAB23E4EDF80017DA8A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseOrder.swift; sourceTree = "<group>"; };
 		31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestedOrderViewController.swift; sourceTree = "<group>"; };
+		31FA1A552400BEF80038C270 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
+		31FA1A572400BF160038C270 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		31FA1A592400BF320038C270 /* TankTruckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankTruckViewController.swift; sourceTree = "<group>"; };
 		3A07504309748D5FBE418727 /* Pods-cicili_conductor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_conductor.debug.xcconfig"; path = "Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor.debug.xcconfig"; sourceTree = "<group>"; };
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
 		5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyStatus.swift; sourceTree = "<group>"; };
@@ -221,7 +233,7 @@
 		57F80F3623D0DBC600913033 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		645FEFE2CBDEE004E0539239 /* Pods-cicili_conductor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_conductor.release.xcconfig"; path = "Target Support Files/Pods-cicili_conductor/Pods-cicili_conductor.release.xcconfig"; sourceTree = "<group>"; };
 		82163BCB08987EE848432F40 /* Pods_cicili_conductor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cicili_conductor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		900741D523DFA40B00B1B29D /* direccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionesViewController.swift; sourceTree = "<group>"; };
+		900741D523DFA40B00B1B29D /* SupplementaryDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryDataViewController.swift; sourceTree = "<group>"; };
 		900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direccionDetalleViewController.swift; sourceTree = "<group>"; };
 		9055278723E67E540088FCB0 /* aclaracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aclaracionViewController.swift; sourceTree = "<group>"; };
 		9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +365,18 @@
 			path = Board;
 			sourceTree = "<group>";
 		};
+		31892264240087CB003FF7D0 /* SupplementaryData */ = {
+			isa = PBXGroup;
+			children = (
+				900741D523DFA40B00B1B29D /* SupplementaryDataViewController.swift */,
+				900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */,
+				31FA1A552400BEF80038C270 /* DocumentsViewController.swift */,
+				31FA1A572400BF160038C270 /* AccountViewController.swift */,
+				31FA1A592400BF320038C270 /* TankTruckViewController.swift */,
+			);
+			path = SupplementaryData;
+			sourceTree = "<group>";
+		};
 		318AB9C023F50FC700A62183 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +426,9 @@
 				57ACFB5D23C9C64F00357C85 /* PaymentDataStoryboard.storyboard */,
 				57ACFB6323C9E65000357C85 /* AddressData.storyboard */,
 				57D5DAF123E61E0E0019392D /* NewOrder.storyboard */,
+				318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */,
+				318922672400A6B5003FF7D0 /* AccountStoryboard.storyboard */,
+				318922692400A6FC003FF7D0 /* TankTruckStoryboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -469,6 +496,7 @@
 		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				31892264240087CB003FF7D0 /* SupplementaryData */,
 				3189225F24005DB9003FF7D0 /* Board */,
 				3154D05023FEDE2900AB6E70 /* Historical */,
 				31C05B7A23FC80A5003A260D /* Queries */,
@@ -492,8 +520,6 @@
 				90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */,
 				90E29AEE23D25BF300677E48 /* MainTabController.swift */,
 				90E29AF623D7B93E00677E48 /* perfilViewController.swift */,
-				900741D523DFA40B00B1B29D /* direccionesViewController.swift */,
-				900741D723DFABED00B1B29D /* direccionDetalleViewController.swift */,
 				57F0183823DC2BFE00213DFC /* AddressLocationViewController.swift */,
 				9065F14F23E28BCA00F60A40 /* PedidosViewController.swift */,
 				9065F15123E2959A00F60A40 /* DetallePedidosViewController.swift */,
@@ -593,8 +619,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				318922662400A672003FF7D0 /* DocumentsStoryboard.storyboard in Resources */,
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
 				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
+				3189226A2400A6FC003FF7D0 /* TankTruckStoryboard.storyboard in Resources */,
 				311CE12223EE852B00A160DF /* GoogleService-Info.plist in Resources */,
 				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
 				57D5DAF223E61E0E0019392D /* NewOrder.storyboard in Resources */,
@@ -602,6 +630,7 @@
 				3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */,
 				312CE81923EBCDB900655B00 /* AcceptOrder.storyboard in Resources */,
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
+				318922682400A6B5003FF7D0 /* AccountStoryboard.storyboard in Resources */,
 				57D35CCE23E4CFFD00DE251C /* SendNearDriverViewController.xib in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
 				57D5DAF623E65A210019392D /* CancelOrderViewController.xib in Resources */,
@@ -687,6 +716,7 @@
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
 				57E3620123D21469003931AD /* DataByZipCode.swift in Sources */,
 				3105B12523CA4266004EA64A /* AddressTable.swift in Sources */,
+				31FA1A562400BEF80038C270 /* DocumentsViewController.swift in Sources */,
 				57B7B34823C2B4F000731CE7 /* Response.swift in Sources */,
 				57E7C08E23EBA35C00D51FE7 /* ConfirmCancelViewController.swift in Sources */,
 				3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */,
@@ -721,10 +751,11 @@
 				57E7C08B23EAEAE000D51FE7 /* CardOrderViewController.swift in Sources */,
 				90E29AEF23D25BF300677E48 /* MainTabController.swift in Sources */,
 				57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */,
+				31FA1A582400BF160038C270 /* AccountViewController.swift in Sources */,
 				57F0183B23DC41DA00213DFC /* LocationManager.swift in Sources */,
 				311DB68B23D0E15900C8A989 /* AvailableDriversViewController.swift in Sources */,
 				57D5DAF823E668630019392D /* NewOrderViewController.swift in Sources */,
-				900741D623DFA40B00B1B29D /* direccionesViewController.swift in Sources */,
+				900741D623DFA40B00B1B29D /* SupplementaryDataViewController.swift in Sources */,
 				3130151D21DB188C004E8AF0 /* CommentsData.swift in Sources */,
 				311DB69623D241A200C8A989 /* SuburbsTableViewCell.swift in Sources */,
 				31936E9023D00DF300D49CDB /* AddressTableViewController.swift in Sources */,
@@ -736,6 +767,7 @@
 				311DB69123D0E39100C8A989 /* AvailableDrivers.swift in Sources */,
 				57ACFB6223C9DA2700357C85 /* Payment.swift in Sources */,
 				3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */,
+				31FA1A5A2400BF320038C270 /* TankTruckViewController.swift in Sources */,
 				57B7B34623C2A47000731CE7 /* ListViewController.swift in Sources */,
 				57BB85D023C654AE0057EE45 /* ForgotPasswordViewController.swift in Sources */,
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
