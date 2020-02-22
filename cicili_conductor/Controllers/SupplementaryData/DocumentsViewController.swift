@@ -8,14 +8,34 @@
 
 import UIKit
 
-class DocumentsViewController: UIViewController {
+class DocumentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var cliente: Cliente?
+    var documentsDataArray : [DocumentsData] = []
+    
+    @IBOutlet weak var documentsTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cliente = appDelegate.responseCliente
+        documentsTable.dataSource = self
+        documentsTable.delegate = self
+        getDocumentsData()
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
 
         // Do any additional setup after loading the view.
+    }
+    
+    func getDocumentsData(){
+        RequestManager.getDocumentsData(oauthToken: self.cliente!.token!, idConductor: String(self.cliente!.idCliente), success: { response in
+            self.documentsDataArray = response
+            self.documentsTable.reloadData()
+             debugPrint("---\(response)---")
+            })
+            { error in
+               debugPrint("---ERROR---")
+            }
     }
     
     func closeToViewController(){
@@ -42,4 +62,20 @@ class DocumentsViewController: UIViewController {
     }
     */
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return documentsDataArray.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell: DocumentsTableViewCell = self.documentsTable.dequeueReusableCell(withIdentifier: "DocumentsTableViewCell") as! DocumentsTableViewCell
+        
+        
+        let object = documentsDataArray[indexPath.row]
+        cell.lblDocument?.text = "\(object.nombreTipo!)"
+        cell.lblStatus?.text = "\(object.nombreStatus!)"
+        cell.lblFileName?.text = "\(object.archivo!)"
+        
+        return cell
+    }
 }

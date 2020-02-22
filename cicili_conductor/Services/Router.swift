@@ -49,6 +49,7 @@ enum Router: URLRequestConvertible {
     case getHistorical(autorizathionToken: String)
     case getWeeks(autorizathionToken: String)
     case getBoardData(autorizathionToken: String, idWeek: String)
+    case getDocumentsData(autorizathionToken: String, idConductor: String)
     
     
     // HTTP method
@@ -65,6 +66,7 @@ enum Router: URLRequestConvertible {
             .getQualifications,
             .getComments,
             .getBoardData,
+            .getDocumentsData,
             .getHistorical,
             .getWeeks,
             .cancelReason:
@@ -153,6 +155,8 @@ enum Router: URLRequestConvertible {
             return "catalogos/semanas"
         case .getBoardData(let idWeek):
             return "mv/conductor/tablero/\(idWeek.idWeek)"
+        case .getDocumentsData(let idConductor):
+            return "mv/conductor/archivo/\(idConductor.idConductor)"
             
             
         }
@@ -268,6 +272,7 @@ enum Router: URLRequestConvertible {
             
         //****** Conductor
         case .getOrder(let autorizathionToken, _),
+             .getDocumentsData(let autorizathionToken, _),
              .getBoardData(let autorizathionToken, _):
             // Set encode to application/x-www-form-urlencoded
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)

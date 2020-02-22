@@ -47,6 +47,8 @@
 		31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586723C404CD00707C82 /* RequestOrderViewController.swift */; };
 		31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586923C6374B00707C82 /* CardMapViewController.swift */; };
 		31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586A23C6374B00707C82 /* CardMapViewController.xib */; };
+		31BE0A732401C5D400FE7D70 /* DocumentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BE0A722401C5D400FE7D70 /* DocumentsData.swift */; };
+		31BE0A752401D09600FE7D70 /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BE0A742401D09600FE7D70 /* DocumentsTableViewCell.swift */; };
 		31BF497823F70E5500CA868A /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF497723F70E5500CA868A /* PassengerAnnotation.swift */; };
 		31C05B7C23FC8104003A260D /* QualificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C05B7B23FC8104003A260D /* QualificationViewController.swift */; };
 		31C05B7E23FC81E5003A260D /* QueriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C05B7D23FC81E5003A260D /* QueriesViewController.swift */; };
@@ -165,6 +167,8 @@
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
 		31B3586923C6374B00707C82 /* CardMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMapViewController.swift; sourceTree = "<group>"; };
 		31B3586A23C6374B00707C82 /* CardMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMapViewController.xib; sourceTree = "<group>"; };
+		31BE0A722401C5D400FE7D70 /* DocumentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsData.swift; sourceTree = "<group>"; };
+		31BE0A742401D09600FE7D70 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		31BF497723F70E5500CA868A /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		31C05B7B23FC8104003A260D /* QualificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualificationViewController.swift; sourceTree = "<group>"; };
 		31C05B7D23FC81E5003A260D /* QueriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueriesViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +377,7 @@
 				31FA1A552400BEF80038C270 /* DocumentsViewController.swift */,
 				31FA1A572400BF160038C270 /* AccountViewController.swift */,
 				31FA1A592400BF320038C270 /* TankTruckViewController.swift */,
+				31BE0A742401D09600FE7D70 /* DocumentsTableViewCell.swift */,
 			);
 			path = SupplementaryData;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */,
 				31510F3A23FD03F1005D9967 /* ResponseData.swift */,
 				3130151C21DB188C004E8AF0 /* CommentsData.swift */,
+				31BE0A722401C5D400FE7D70 /* DocumentsData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 				9065F15623E34AD900F60A40 /* PedidoHistoricoTableViewCell.swift in Sources */,
 				31F9E7A423F0741A00403DC6 /* ResponseOrder.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
+				31BE0A752401D09600FE7D70 /* DocumentsTableViewCell.swift in Sources */,
 				57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */,
 				31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */,
 				3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */,
@@ -777,6 +784,7 @@
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
 				31F9E7A823F0DCF600403DC6 /* RequestedOrderViewController.swift in Sources */,
 				57D5DAF523E65A210019392D /* CancelOrderViewController.swift in Sources */,
+				31BE0A732401C5D400FE7D70 /* DocumentsData.swift in Sources */,
 				900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */,
 				5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */,
 				9065F15423E295C000F60A40 /* DetalleProgramarPedidoViewController.swift in Sources */,

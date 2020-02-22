@@ -380,21 +380,15 @@ class RequestManager: NSObject{
         Alamofire.request(Router.searchZC(autorizathionToken: oauthToken , code:codeToVerify)).responseJSON{
         response in
         
-             debugPrint("*********RES*********")
-             debugPrint(response)
              // Evalute result
              switch response.result {
                  case .success:
                      let json = JSON(response.result.value!)
-                     debugPrint("*********RES json*********")
-                     debugPrint(json)
                     
                      let errorcode: Int = json[WSKeys.parameters.error].intValue
                      if errorcode == WSKeys.parameters.okresponse {
                          let responseData = json[WSKeys.parameters.data].dictionaryObject
                          let statusObject = Mapper<DataByZipCode>().map( JSONObject: responseData)
-                        debugPrint("*********RES statusObject*********")
-                        debugPrint(statusObject)
                          success(statusObject!)
                     } else {
                         failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
@@ -411,15 +405,12 @@ class RequestManager: NSObject{
         Alamofire.request(Router.addressConsult(autorizathionToken: oauthToken)).responseJSON{
            response in
            
-            debugPrint("*********RES*********")
-            debugPrint(response)
             // Evalute result
             switch response.result {
                 case .success:
                    
                     let json = JSON(response.result.value!)
-                    debugPrint("*********RES json*********")
-                    debugPrint(json)
+
                     
                     let errorcode: Int = json[WSKeys.parameters.error].intValue
                  
@@ -442,16 +433,12 @@ class RequestManager: NSObject{
         Alamofire.request(Router.mainSearch(autorizathionToken: oauthToken, parametersSet: parameters)).responseJSON{
            response in
            
-            debugPrint("*********RES*********")
-            debugPrint(response)
             // Evalute result
             switch response.result {
                 case .success:
                    
                     let json = JSON(response.result.value!)
-                    debugPrint("*********RES json*********")
-                    debugPrint(json)
-                    
+
                     let errorcode: Int = json[WSKeys.parameters.error].intValue
                  
                     if errorcode == WSKeys.parameters.okresponse {
@@ -474,19 +461,12 @@ class RequestManager: NSObject{
         // Fetch request
         Alamofire.request(Router.order(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
         response in
-        
-            debugPrint("*********RES*********")
-            debugPrint(response)
+
         // Evalute result
         switch response.result {
         case .success:
            let json = JSON(response.result.value!)
-            
-            debugPrint("*********JSON RES VALUE*********")
-            debugPrint(json)
-            
-            debugPrint("*********RES DATA VALUE*********")
-            debugPrint(json["data"])
+
             let errorcode: Int = json[WSKeys.parameters.error].intValue
                                
             if errorcode == WSKeys.parameters.okresponse {
@@ -508,15 +488,10 @@ class RequestManager: NSObject{
               // Fetch request
            Alamofire.request(Router.cancelReason(autorizathionToken: oauthToken)).responseJSON{
               response in
-              
-               debugPrint("*********RES*********")
-               debugPrint(response)
                // Evalute result
                switch response.result {
                    case .success:
                        let json = JSON(response.result.value!)
-                       debugPrint("*********RES json*********")
-                       debugPrint(json)
                       
                        let errorcode: Int = json[WSKeys.parameters.error].intValue
                     
@@ -541,19 +516,11 @@ class RequestManager: NSObject{
         // Fetch request
         Alamofire.request(Router.getOrder(autorizathionToken: oauthToken, idPedido: idPedido)).responseJSON{
         response in
-        
-            debugPrint("*********Pedido*********")
-            debugPrint(response)
+
         // Evalute result
         switch response.result {
         case .success:
             let json = JSON(response.result.value!)
-            
-            debugPrint("*********JSON RES VALUE*********")
-            debugPrint(json)
-            
-            debugPrint("*********RES DATA VALUE*********")
-            debugPrint(json["data"])
             let errorcode: Int = json[WSKeys.parameters.error].intValue
                                
             if errorcode == WSKeys.parameters.okresponse {
@@ -581,14 +548,42 @@ class RequestManager: NSObject{
         switch response.result {
         case .success:
             let json = JSON(response.result.value!)
-               debugPrint("*********RES json getBoardData*********")
+               let errorcode: Int = json[WSKeys.parameters.error].intValue
+            
+               if errorcode == WSKeys.parameters.okresponse {
+                   let responseData = json[WSKeys.parameters.data].arrayObject
+                   let statusObject = Mapper<NewOrder>().mapArray(JSONArray: responseData as! [[String : Any]])
+                   
+                   success(statusObject)
+              } else {
+                  failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+              }
+        case .failure(let error):
+               failure(error as NSError)
+           }
+            
+            
+        }
+    }
+    
+    class func getDocumentsData(oauthToken: String, idConductor: String, success: @escaping ([DocumentsData]) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.getDocumentsData(autorizathionToken: oauthToken, idConductor: idConductor)).responseJSON{
+        response in
+        
+        // Evalute result
+        switch response.result {
+        case .success:
+            let json = JSON(response.result.value!)
+               debugPrint("*********RES json getDocumentsData*********")
                debugPrint(json)
               
                let errorcode: Int = json[WSKeys.parameters.error].intValue
             
                if errorcode == WSKeys.parameters.okresponse {
                    let responseData = json[WSKeys.parameters.data].arrayObject
-                   let statusObject = Mapper<NewOrder>().mapArray(JSONArray: responseData as! [[String : Any]])
+                   let statusObject = Mapper<DocumentsData>().mapArray(JSONArray: responseData as! [[String : Any]])
                    
                    success(statusObject)
               } else {
