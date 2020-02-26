@@ -701,6 +701,37 @@ class RequestManager: NSObject{
         }
     }
     
+    class func getTankTruck(oauthToken: String, success: @escaping (TankTruckData) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.getTankTruck(autorizathionToken: oauthToken)).responseJSON{
+        response in
+        
+        // Evalute result
+        switch response.result {
+            case .success:
+               
+                let json = JSON(response.result.value!)
+                debugPrint("*********getTankTruck json*********")
+                debugPrint(json)
+                
+                let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                if errorcode == WSKeys.parameters.okresponse {
+                    let responseData = json[WSKeys.parameters.data].dictionaryObject
+                    let statusObject = Mapper<TankTruckData>().map( JSONObject: responseData)
+                    success(statusObject!)
+                } else {
+                    failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                }
+            case .failure(let error):
+                failure(error as NSError)
+        }
+            
+            
+        }
+    }
+    
     class func getHistorical(oauthToken: String, success: @escaping ([NewOrder]) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
@@ -760,6 +791,28 @@ class RequestManager: NSObject{
         }
     }
     
+    /*func getSalesReport(oauthToken: String) -> Void {
+           // Fetch request
+        var parametros: SalesParameters?
+        parametros!.type = "xls"
+        parametros!.initialDate = "01/01/2020"
+        parametros!.endDate = "01/03/2020"
+        
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            documentsURL.appendPathComponent("hola.xls")
+            return (documentsURL, [.removePreviousFile])
+        }
+        
+        Alamofire.download(Router.getSalesReport(autorizathionToken: oauthToken, pParameters: parametros!), to: destination).responseData { response in
+            if let destinationUrl = response.destinationURL {
+                print("destinationUrl \(destinationUrl.absoluteURL)")
+            }
+        }
+        
+        
+    }*/
+    
     class func setUpdateCoordinate(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
@@ -778,6 +831,36 @@ class RequestManager: NSObject{
             
             debugPrint("*********RES DATA VALUE*********")
             debugPrint(json["data"])
+            let errorcode: Int = json[WSKeys.parameters.error].intValue
+                               
+            if errorcode == WSKeys.parameters.okresponse {
+                let responseData = json.dictionaryObject
+                let statusObject = Mapper<Response>().map( JSONObject: responseData)
+                success(statusObject!)
+            } else {
+                failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+            }
+        case .failure(let error):
+               failure(error as NSError)
+           }
+            
+            
+        }
+    }
+    
+    class func updateColorTankTruck(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.updateColorTankTruck(autorizathionToken: oauthToken, parametersSet: parameters)).responseJSON{
+        response in
+        
+            debugPrint("*********update updateColorTankTruck*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
+            let json = JSON(response.result.value!)
+            
             let errorcode: Int = json[WSKeys.parameters.error].intValue
                                
             if errorcode == WSKeys.parameters.okresponse {

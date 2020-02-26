@@ -598,20 +598,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0Wp-sQ-Qbg" customClass="AvailableDriversTableViewCell" customModule="cicili_conductor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Wp-sQ-Qbg" id="jda-Vn-DYR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sfv-8S-mYo">
-                                                    <rect key="frame" x="7" y="5" width="39" height="33"/>
+                                                    <rect key="frame" x="7" y="5" width="39" height="33.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="39" id="egi-5W-bIW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhO-LQ-Xsp">
-                                                    <rect key="frame" x="54" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="54" y="11" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -771,8 +771,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6ZI-pu-cwq">
                                 <rect key="frame" x="20" y="10" width="335" height="32"/>
                                 <segments>
-                                    <segment title="Pedidos anteriores"/>
-                                    <segment title="Proximos"/>
+                                    <segment title="Litros"/>
+                                    <segment title="Ventas"/>
                                 </segments>
                                 <connections>
                                     <action selector="PedidoswitchView:" destination="TxG-Bp-n17" eventType="valueChanged" id="pIC-wN-FdW"/>
@@ -1374,174 +1374,175 @@
             </objects>
             <point key="canvasLocation" x="3004" y="210"/>
         </scene>
-        <!--Detalle Programar Pedido View Controller-->
+        <!--Sales Report View Controller-->
         <scene sceneID="dSr-Fo-rfE">
             <objects>
-                <viewController id="1Uh-4u-BSl" customClass="DetalleProgramarPedidoViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1Uh-4u-BSl" customClass="SalesReportViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="USp-0J-yjX">
                         <rect key="frame" x="0.0" y="0.0" width="355" height="557"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programar pedido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v4-aA-mdO">
-                                <rect key="frame" x="108.5" y="268" width="138" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="oJ7-dS-A7R">
+                                <rect key="frame" x="16" y="40" width="157" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="e4Y-XR-3aD">
+                                <rect key="frame" x="182" y="40" width="157" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selecciona el periodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-h4-EE2">
+                                <rect key="frame" x="16" y="11" width="323" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXQ-sM-Exq" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="48" y="82" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Excel">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="excelReport:" destination="1Uh-4u-BSl" eventType="touchUpInside" id="0wa-z4-vdd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1j-VI-aCI" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="217" y="82" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PDF">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pdfReport:" destination="1Uh-4u-BSl" eventType="touchUpInside" id="O67-9B-T6q"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9g-li-krf">
+                                <rect key="frame" x="16" y="134" width="323" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="4v4-aA-mdO" firstAttribute="centerX" secondItem="USp-0J-yjX" secondAttribute="centerX" id="8Qi-gN-FHK"/>
-                            <constraint firstItem="4v4-aA-mdO" firstAttribute="centerY" secondItem="USp-0J-yjX" secondAttribute="centerY" id="NCT-vz-4xz"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="r9a-oj-7GD"/>
                     </view>
+                    <connections>
+                        <outlet property="progressBar" destination="I9g-li-krf" id="WNa-SD-VCk"/>
+                        <outlet property="txtFechaFinal" destination="e4Y-XR-3aD" id="JNt-C8-XNf"/>
+                        <outlet property="txtFechaInicio" destination="oJ7-dS-A7R" id="yxm-Yk-Xf1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b28-Sp-MnT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3218" y="-1768"/>
+            <point key="canvasLocation" x="3216.8000000000002" y="-1768.0659670164919"/>
         </scene>
-        <!--Detalle Pedido View Controller-->
+        <!--Liters Report View Controller-->
         <scene sceneID="ndQ-gO-4f9">
             <objects>
-                <viewController id="zO2-VE-V90" customClass="DetallePedidoViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zO2-VE-V90" customClass="LitersReportViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HdX-yA-Ag2">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="557"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M52-JQ-OVF">
-                                <rect key="frame" x="0.0" y="5" width="335" height="552"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PedidosDetalleViewCell" id="Lto-iD-boi" customClass="PedidoHistoricoTableViewCell" customModule="cicili_conductor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="331.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lto-iD-boi" id="9Gn-Po-6hZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="331.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="spatial" mapType="standard" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzA-JZ-aMK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="150"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="0nG-e6-AnX"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="ds5-FK-eYt" id="RQ5-U1-mze"/>
-                                                    </connections>
-                                                </mapView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kob-a2-2oY">
-                                                    <rect key="frame" x="0.0" y="150" width="335" height="160.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lru-Yq-NtQ">
-                                                            <rect key="frame" x="10" y="15" width="315" height="24"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                            <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="direccion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3m-DY-UlI">
-                                                            <rect key="frame" x="10" y="39" width="315" height="16"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="92c-Tg-yf4">
-                                                            <rect key="frame" x="10" y="75" width="315" height="18"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tn-82-I6T">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="18"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dho-Mm-6fJ">
-                                                                    <rect key="frame" x="105" y="0.0" width="105" height="18"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68i-8b-Deq">
-                                                                    <rect key="frame" x="210" y="0.0" width="105" height="18"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ob4-LF-SLk">
-                                                            <rect key="frame" x="0.0" y="113" width="335" height="47.5"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9on-Lo-IXr">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="166.5" height="47.5"/>
-                                                                    <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <state key="normal" title="Aclaración">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </state>
-                                                                    <connections>
-                                                                        <segue destination="zCF-cg-pJQ" kind="presentation" id="f76-np-cV3"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3q-L0-GHa">
-                                                                    <rect key="frame" x="168.5" y="0.0" width="166.5" height="47.5"/>
-                                                                    <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <state key="normal" title="Facturar">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </state>
-                                                                </button>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="lru-Yq-NtQ" secondAttribute="trailing" constant="10" id="1Gh-OB-8AG"/>
-                                                        <constraint firstItem="J3m-DY-UlI" firstAttribute="leading" secondItem="kob-a2-2oY" secondAttribute="leading" constant="10" id="1Gi-Qm-rL5"/>
-                                                        <constraint firstAttribute="trailing" secondItem="92c-Tg-yf4" secondAttribute="trailing" constant="10" id="7JG-OE-kgE"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ob4-LF-SLk" secondAttribute="trailing" id="PTC-Ju-1w9"/>
-                                                        <constraint firstItem="92c-Tg-yf4" firstAttribute="top" secondItem="J3m-DY-UlI" secondAttribute="bottom" constant="20" id="T4Z-JE-gUL"/>
-                                                        <constraint firstAttribute="height" constant="160" id="X03-24-nGW"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ob4-LF-SLk" secondAttribute="bottom" id="Ztg-UC-zV9"/>
-                                                        <constraint firstAttribute="trailing" secondItem="J3m-DY-UlI" secondAttribute="trailing" constant="10" id="ane-ts-6vj"/>
-                                                        <constraint firstItem="J3m-DY-UlI" firstAttribute="top" secondItem="lru-Yq-NtQ" secondAttribute="bottom" id="cfm-Jf-vlG"/>
-                                                        <constraint firstItem="lru-Yq-NtQ" firstAttribute="top" secondItem="kob-a2-2oY" secondAttribute="top" constant="15" id="j9i-il-Ccw"/>
-                                                        <constraint firstItem="ob4-LF-SLk" firstAttribute="top" secondItem="92c-Tg-yf4" secondAttribute="bottom" constant="20" id="kHp-kN-mgV"/>
-                                                        <constraint firstItem="lru-Yq-NtQ" firstAttribute="leading" secondItem="kob-a2-2oY" secondAttribute="leading" constant="10" id="qSi-mL-HVQ"/>
-                                                        <constraint firstItem="ob4-LF-SLk" firstAttribute="leading" secondItem="kob-a2-2oY" secondAttribute="leading" id="sSH-cF-B3m"/>
-                                                        <constraint firstItem="92c-Tg-yf4" firstAttribute="leading" secondItem="kob-a2-2oY" secondAttribute="leading" constant="10" id="ucv-sS-KZM"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="bzA-JZ-aMK" secondAttribute="trailing" id="4QQ-I1-bFj"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="kob-a2-2oY" secondAttribute="bottom" constant="10" id="DXt-Wn-NcC"/>
-                                                <constraint firstItem="bzA-JZ-aMK" firstAttribute="leading" secondItem="9Gn-Po-6hZ" secondAttribute="leading" id="FPk-NY-9gL"/>
-                                                <constraint firstAttribute="trailing" secondItem="kob-a2-2oY" secondAttribute="trailing" id="Kc8-in-Svh"/>
-                                                <constraint firstItem="kob-a2-2oY" firstAttribute="leading" secondItem="9Gn-Po-6hZ" secondAttribute="leading" id="Kqw-La-n3G"/>
-                                                <constraint firstItem="kob-a2-2oY" firstAttribute="top" secondItem="bzA-JZ-aMK" secondAttribute="bottom" id="o5y-iS-kO7"/>
-                                                <constraint firstItem="bzA-JZ-aMK" firstAttribute="top" secondItem="9Gn-Po-6hZ" secondAttribute="top" id="zmk-q3-JxL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="ContentCardView" destination="9Gn-Po-6hZ" id="R2T-ll-yZ1"/>
-                                            <outlet property="direccionLabel" destination="J3m-DY-UlI" id="byF-IA-51A"/>
-                                            <outlet property="fechaLabel" destination="2tn-82-I6T" id="mkh-re-xQC"/>
-                                            <outlet property="litrosLabel" destination="Dho-Mm-6fJ" id="rqm-m3-5Ph"/>
-                                            <outlet property="precioLabel" destination="68i-8b-Deq" id="ae5-f0-E61"/>
-                                            <outlet property="tituloPedidoDetalle" destination="lru-Yq-NtQ" id="OVb-aM-phr"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="0de-XV-yyL">
+                                <rect key="frame" x="6" y="49" width="157" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Zjw-q2-YAF">
+                                <rect key="frame" x="172" y="49" width="157" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selecciona el periodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKd-6m-0rp">
+                                <rect key="frame" x="6" y="20" width="323" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLz-b3-zaa" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="38" y="91" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Excel">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="excelReport:" destination="1Uh-4u-BSl" eventType="touchUpInside" id="cq2-g4-fYp"/>
+                                    <action selector="excelReport:" destination="zO2-VE-V90" eventType="touchUpInside" id="s7b-NX-W4X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUH-ls-wOP" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="207" y="91" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PDF">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pdfReport:" destination="zO2-VE-V90" eventType="touchUpInside" id="HCX-RC-xvb"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIV-tz-vqQ">
+                                <rect key="frame" x="6" y="143" width="323" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="M52-JQ-OVF" firstAttribute="leading" secondItem="HdX-yA-Ag2" secondAttribute="leading" id="TKV-13-q0l"/>
-                            <constraint firstItem="M52-JQ-OVF" firstAttribute="top" secondItem="HdX-yA-Ag2" secondAttribute="top" constant="5" id="WxY-u4-0P9"/>
-                            <constraint firstAttribute="bottom" secondItem="M52-JQ-OVF" secondAttribute="bottom" id="v39-kS-wnt"/>
-                            <constraint firstAttribute="trailing" secondItem="M52-JQ-OVF" secondAttribute="trailing" id="wEO-Zs-QBN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sOD-Td-df2"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="M52-JQ-OVF" id="Nkv-fh-4EO"/>
+                        <outlet property="progressBar" destination="fIV-tz-vqQ" id="wMy-gP-GQG"/>
+                        <outlet property="txtFechaFinal" destination="Zjw-q2-YAF" id="Dzr-vt-asW"/>
+                        <outlet property="txtFechaInicio" destination="0de-XV-yyL" id="UYo-sz-FWc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpD-pU-4HV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1553,23 +1554,23 @@
             <objects>
                 <viewController id="zCF-cg-pJQ" customClass="aclaracionViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tb5-yK-lbl">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="537"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aclaración" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKS-dg-ZxV">
-                                <rect key="frame" x="104" y="20" width="127" height="34"/>
+                                <rect key="frame" x="124" y="20" width="127" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envíanos el asunto que deseas aclarar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-e2-n0p">
-                                <rect key="frame" x="37" y="54" width="261" height="18"/>
+                                <rect key="frame" x="57" y="54" width="261" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sz8-ae-2cX" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="488" width="295" height="44"/>
+                                <rect key="frame" x="20" y="618" width="335" height="44"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="r4s-JW-f3y"/>
@@ -1587,7 +1588,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdl-5g-7cA" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="439" width="295" height="44"/>
+                                <rect key="frame" x="20" y="569" width="335" height="44"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0A3-K7-Xeb"/>
@@ -1602,7 +1603,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Selecciona categoría" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jwg-f5-W7m">
-                                <rect key="frame" x="20" y="97" width="295" height="44"/>
+                                <rect key="frame" x="20" y="97" width="335" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="171-iq-aVE"/>
                                 </constraints>
@@ -1610,7 +1611,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe tu mensaje" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oul-j9-sAJ">
-                                <rect key="frame" x="20" y="151" width="295" height="44"/>
+                                <rect key="frame" x="20" y="151" width="335" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="q7x-uM-ZTR"/>
                                 </constraints>
@@ -2198,14 +2199,14 @@
         <image name="CiciliTagline-(3)" width="1004.5" height="476"/>
         <image name="WhatsApp Image 2019-11-19 at 8.27.59 PM (1)" width="960" height="1280"/>
         <image name="bg_1" width="414" height="896"/>
-        <image name="dollarsign.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="dollarsign.circle.fill" catalog="system" width="64" height="60"/>
         <image name="flama_media-1" width="434" height="598"/>
-        <image name="flame.fill" catalog="system" width="32" height="32"/>
-        <image name="house.fill" catalog="system" width="32" height="32"/>
+        <image name="flame.fill" catalog="system" width="54" height="64"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="icon_calendar" width="26.5" height="26.5"/>
-        <image name="person.circle" catalog="system" width="32" height="32"/>
-        <image name="person.fill" catalog="system" width="32" height="32"/>
-        <image name="questionmark.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="questionmark.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
 </document>

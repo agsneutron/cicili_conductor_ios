@@ -42,6 +42,7 @@ enum Router: URLRequestConvertible {
     case getOrder(autorizathionToken: String , idPedido: String)
     case setConectDisconect(autorizathionToken: String , parametersSet: Parameters)
     case setUpdateCoordinate(autorizathionToken: String , parametersSet: Parameters)
+    case updateColorTankTruck(autorizathionToken: String , parametersSet: Parameters)
     case acceptOrder(autorizathionToken: String , parametersSet: Parameters)
     case changeStatusOrder(autorizathionToken: String , parametersSet: Parameters)
     case getQualifications(autorizathionToken: String)
@@ -50,6 +51,9 @@ enum Router: URLRequestConvertible {
     case getWeeks(autorizathionToken: String)
     case getBoardData(autorizathionToken: String, idWeek: String)
     case getDocumentsData(autorizathionToken: String, idConductor: String)
+    case getTankTruck(autorizathionToken: String)
+    case getSalesReport(autorizathionToken: String, parametersSet: Parameters, pType: String, pContenttype: String)
+    case getLitersReport(autorizathionToken: String, parametersSet: Parameters, pType: String, pContenttype: String)
     
     
     // HTTP method
@@ -69,6 +73,9 @@ enum Router: URLRequestConvertible {
             .getDocumentsData,
             .getHistorical,
             .getWeeks,
+            .getSalesReport,
+            .getLitersReport,
+            .getTankTruck,
             .cancelReason:
             return .get
         case .registerClient,
@@ -83,6 +90,7 @@ enum Router: URLRequestConvertible {
              .order,
              .setConectDisconect,
              .setUpdateCoordinate,
+             .updateColorTankTruck,
              .acceptOrder,
              .changeStatusOrder,
              .cancelOrder:
@@ -157,6 +165,14 @@ enum Router: URLRequestConvertible {
             return "mv/conductor/tablero/\(idWeek.idWeek)"
         case .getDocumentsData(let idConductor):
             return "mv/conductor/archivo/\(idConductor.idConductor)"
+        case .getTankTruck:
+            return "mv/conductor/autotanque"
+        case .updateColorTankTruck:
+            return "mv/conductor/autotanque/editar"
+        case .getSalesReport(let pType):
+            return "reportes/montoventa/\(pType.pType)"
+        case .getLitersReport(let pType):
+            return "reportes/cantidadventa/\(pType.pType)"
             
             
         }
@@ -186,7 +202,7 @@ enum Router: URLRequestConvertible {
         //urlRequest.timeoutInterval = TimeInterval(10 * 1000)
         switch self {
         case.help:
-            
+
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
              
         case.signIn(let parameters),
@@ -210,6 +226,7 @@ enum Router: URLRequestConvertible {
             .cancelOrder(let autorizathionToken, let parameters),
             .acceptOrder(let autorizathionToken, let parameters),
             .changeStatusOrder(let autorizathionToken, let parameters),
+            .updateColorTankTruck(let autorizathionToken, let parameters),
             .setUpdateCoordinate(let autorizathionToken, let parameters),
             .setConectDisconect(let autorizathionToken, let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
@@ -264,6 +281,7 @@ enum Router: URLRequestConvertible {
         case .getQualifications(let autorizathionToken),
              .getHistorical(let autorizathionToken),
              .getWeeks(let autorizathionToken),
+             .getTankTruck(let autorizathionToken),
              .getComments(let autorizathionToken):
         
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: nil)
@@ -278,7 +296,16 @@ enum Router: URLRequestConvertible {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
-        
+            
+            //****** Conductor
+        case .getSalesReport(let autorizathionToken, let parametersSet,let pContenttype, _),
+             .getLitersReport(let autorizathionToken, let parametersSet,let pContenttype, _):
+                // Set encode to application/x-www-form-urlencoded
+                urlRequest = try URLEncoding.queryString.encode(urlRequest, with: parametersSet)
+                print("\(urlRequest)")
+                urlRequest.setValue(pContenttype, forHTTPHeaderField: "Content-Type")
+                urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+                
             
         }
         

@@ -34,6 +34,9 @@
 		31510F3F23FD17F7005D9967 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510F3E23FD17F7005D9967 /* CommentsTableViewCell.swift */; };
 		3154D05223FEDE7D00AB6E70 /* HistoricalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154D05123FEDE7D00AB6E70 /* HistoricalTableViewCell.swift */; };
 		3154D05423FEDEDE00AB6E70 /* HistoricalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */; };
+		317710482406BED40045DD44 /* LitersReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317710472406BED40045DD44 /* LitersReportViewController.swift */; };
+		3178F9892402556400FD3157 /* TankTruckData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178F9882402556400FD3157 /* TankTruckData.swift */; };
+		3181A3C324035C1900DCEC12 /* SalesReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181A3C224035C1900DCEC12 /* SalesReportViewController.swift */; };
 		3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3189226024005DEB003FF7D0 /* BoardViewController.swift */; };
 		31892263240077D8003FF7D0 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31892262240077D8003FF7D0 /* BoardTableViewCell.swift */; };
 		318922662400A672003FF7D0 /* DocumentsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */; };
@@ -44,6 +47,7 @@
 		318AB9C223F50FDC00A62183 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */; };
 		31936E9023D00DF300D49CDB /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31936E8F23D00DF300D49CDB /* AddressTableViewController.swift */; };
 		31AC78AA23E10971003230C0 /* HideCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC78A923E10971003230C0 /* HideCursor.swift */; };
+		31B1F8F12404E9870013CB59 /* SalesParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B1F8F02404E9870013CB59 /* SalesParameters.swift */; };
 		31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586723C404CD00707C82 /* RequestOrderViewController.swift */; };
 		31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B3586923C6374B00707C82 /* CardMapViewController.swift */; };
 		31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B3586A23C6374B00707C82 /* CardMapViewController.xib */; };
@@ -154,6 +158,9 @@
 		31510F3E23FD17F7005D9967 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		3154D05123FEDE7D00AB6E70 /* HistoricalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTableViewCell.swift; sourceTree = "<group>"; };
 		3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTableViewController.swift; sourceTree = "<group>"; };
+		317710472406BED40045DD44 /* LitersReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitersReportViewController.swift; sourceTree = "<group>"; };
+		3178F9882402556400FD3157 /* TankTruckData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankTruckData.swift; sourceTree = "<group>"; };
+		3181A3C224035C1900DCEC12 /* SalesReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportViewController.swift; sourceTree = "<group>"; };
 		3189226024005DEB003FF7D0 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		31892262240077D8003FF7D0 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DocumentsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -164,6 +171,7 @@
 		318AB9C123F50FDC00A62183 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		31936E8F23D00DF300D49CDB /* AddressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		31AC78A923E10971003230C0 /* HideCursor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideCursor.swift; sourceTree = "<group>"; };
+		31B1F8F02404E9870013CB59 /* SalesParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesParameters.swift; sourceTree = "<group>"; };
 		31B3586723C404CD00707C82 /* RequestOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderViewController.swift; sourceTree = "<group>"; };
 		31B3586923C6374B00707C82 /* CardMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMapViewController.swift; sourceTree = "<group>"; };
 		31B3586A23C6374B00707C82 /* CardMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMapViewController.xib; sourceTree = "<group>"; };
@@ -360,6 +368,16 @@
 			path = Historical;
 			sourceTree = "<group>";
 		};
+		3181A3C124035BC700DCEC12 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				3181A3C224035C1900DCEC12 /* SalesReportViewController.swift */,
+				31B1F8F02404E9870013CB59 /* SalesParameters.swift */,
+				317710472406BED40045DD44 /* LitersReportViewController.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
 		3189225F24005DB9003FF7D0 /* Board */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +501,7 @@
 				31510F3A23FD03F1005D9967 /* ResponseData.swift */,
 				3130151C21DB188C004E8AF0 /* CommentsData.swift */,
 				31BE0A722401C5D400FE7D70 /* DocumentsData.swift */,
+				3178F9882402556400FD3157 /* TankTruckData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -502,6 +521,7 @@
 		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3181A3C124035BC700DCEC12 /* Reports */,
 				31892264240087CB003FF7D0 /* SupplementaryData */,
 				3189225F24005DB9003FF7D0 /* Board */,
 				3154D05023FEDE2900AB6E70 /* Historical */,
@@ -705,6 +725,7 @@
 				9055278823E67E540088FCB0 /* aclaracionViewController.swift in Sources */,
 				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57ACFB6623C9E68400357C85 /* AddressDataViewController.swift in Sources */,
+				31B1F8F12404E9870013CB59 /* SalesParameters.swift in Sources */,
 				31119D0B23FEFEEE003B67DB /* HistoricalTable.swift in Sources */,
 				9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */,
 				57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */,
@@ -726,6 +747,7 @@
 				31FA1A562400BEF80038C270 /* DocumentsViewController.swift in Sources */,
 				57B7B34823C2B4F000731CE7 /* Response.swift in Sources */,
 				57E7C08E23EBA35C00D51FE7 /* ConfirmCancelViewController.swift in Sources */,
+				3178F9892402556400FD3157 /* TankTruckData.swift in Sources */,
 				3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */,
 				31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */,
 				57D1BAF623C001D200551DA7 /* Direcciones.swift in Sources */,
@@ -760,9 +782,11 @@
 				57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */,
 				31FA1A582400BF160038C270 /* AccountViewController.swift in Sources */,
 				57F0183B23DC41DA00213DFC /* LocationManager.swift in Sources */,
+				3181A3C324035C1900DCEC12 /* SalesReportViewController.swift in Sources */,
 				311DB68B23D0E15900C8A989 /* AvailableDriversViewController.swift in Sources */,
 				57D5DAF823E668630019392D /* NewOrderViewController.swift in Sources */,
 				900741D623DFA40B00B1B29D /* SupplementaryDataViewController.swift in Sources */,
+				317710482406BED40045DD44 /* LitersReportViewController.swift in Sources */,
 				3130151D21DB188C004E8AF0 /* CommentsData.swift in Sources */,
 				311DB69623D241A200C8A989 /* SuburbsTableViewCell.swift in Sources */,
 				31936E9023D00DF300D49CDB /* AddressTableViewController.swift in Sources */,

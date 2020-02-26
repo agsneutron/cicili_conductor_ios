@@ -15,6 +15,12 @@ struct WSKeys {
         static let path         = "app/"
         static let url     = WSKeys.API.protocolo + WSKeys.API.host + WSKeys.API.port + WSKeys.API.path
     }
+    struct salesParameters
+    {
+        var type = ""
+        var initialDate = ""
+        var endDate = ""
+    }
     
     struct parameters {
         static let expired = "token_expired"
@@ -82,6 +88,7 @@ struct WSKeys {
         static let monto = "monto"
         
         static let status = "status"
+        static let pColor = "color"
         
         
 

@@ -76,7 +76,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKv-sZ-CSM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKv-sZ-CSM">
                                         <rect key="frame" x="25" y="217" width="355" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -111,6 +111,9 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="updateColorTankTruck:" destination="aj6-WV-Deo" eventType="touchUpInside" id="sQf-Au-0OB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -119,6 +122,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0VW-zD-kTb"/>
                     </view>
+                    <connections>
+                        <outlet property="lblCaducidad" destination="U1H-9H-lZl" id="yzz-0F-ovR"/>
+                        <outlet property="lblEstado" destination="Yxy-q8-pN9" id="tWf-tS-qgS"/>
+                        <outlet property="lblMarca" destination="ubR-Pb-elv" id="Wbc-Ji-8UN"/>
+                        <outlet property="lblModelo" destination="5k9-Ip-F3U" id="qKs-K7-dIB"/>
+                        <outlet property="lblMunicipio" destination="0Fj-N1-h9b" id="GD6-g1-bm1"/>
+                        <outlet property="lblPipa" destination="M1g-Jo-GUr" id="vIu-D7-4l8"/>
+                        <outlet property="lblPlacas" destination="urh-Dn-EHf" id="fYL-nw-vns"/>
+                        <outlet property="lblPlanta" destination="BKv-sZ-CSM" id="HTo-cs-1fi"/>
+                        <outlet property="lblRegion" destination="YFP-Wn-Onw" id="XlC-bD-e1L"/>
+                        <outlet property="txtColor" destination="Pr6-WY-DKl" id="CB6-mb-zOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDr-qk-rBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
