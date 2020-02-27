@@ -62,7 +62,7 @@ class QualificationViewController: UIViewController {
             if (i == 0){
                 imageView.tag = 5009
             }
-            imageView.image = UIImage(named: "nofill")
+            imageView.image = UIImage(named: "icon_star")
             starStackView.addArrangedSubview(imageView)
             arrImageViews.append(imageView)
         }
@@ -81,10 +81,10 @@ class QualificationViewController: UIViewController {
                     intRating = i! + 1
                     intRate = Int(intRating)
                     print("rating : \(intRate)")
-                    imageView.image = UIImage(named: "fill")
+                    imageView.image = UIImage(named: "icon_star_fill")
                 }else{
                     if (imageView.tag != 5009){
-                        imageView.image =  UIImage(named: "nofill")
+                        imageView.image =  UIImage(named: "icon_star")
                     }
                 }
                 

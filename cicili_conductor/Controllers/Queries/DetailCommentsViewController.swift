@@ -48,7 +48,7 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
     
     func setUpStarStack(cell: CommentsTableViewCell, calificacion: Int) {
         
-        cell.starStackQualification.axis = NSLayoutConstraint.Axis.horizontal
+        //cell.starStackQualification.axis = NSLayoutConstraint.Axis.horizontal
         cell.starStackQualification.distribution = .fillEqually
         cell.starStackQualification.alignment = .fill
         cell.starStackQualification.spacing = 30
@@ -57,9 +57,9 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
         for i in 0..<5{
             imageView = UIImageView()
             if (i < calificacion){
-                imageView.image = UIImage(named: "fill")
+                imageView.image = UIImage(named: "icon_star_fill")
             }else{
-                imageView.image = UIImage(named: "nofill")
+                imageView.image = UIImage(named: "icon_star")
             }
             cell.starStackQualification.addArrangedSubview(imageView)
             arrImageViews.append(imageView)
