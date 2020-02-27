@@ -16,16 +16,11 @@ class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var lblFecha: UILabel!
     @IBOutlet weak var lblCalificacion: UILabel!
     
-    @IBOutlet weak var ContentCardView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        ContentCardView.layer.cornerRadius = 20.0
-          ContentCardView.layer.shadowColor = UIColor.gray.cgColor
-          ContentCardView.layer.shadowOffset = CGSize(width: 1.0, height: 100.0)
-          ContentCardView.layer.shadowRadius = 9.0
-          ContentCardView.layer.shadowOpacity = 0.6
+
         
     }
 
