@@ -22,7 +22,7 @@ class Cliente: Mappable {
     var nacimiento: String?
     var telefono: String?
     var sexo: String?
-    var formaPago: [Payment]?
+    var cuentaConductor: [AccountData]?
     var direcciones: [Direcciones]?
     var imagen: String?
 
@@ -46,7 +46,7 @@ class Cliente: Mappable {
         nacimiento        <- map["nacimiento"]
         telefono          <- map["telefono"]
         sexo              <- map["sexo"]
-        formaPago         <- map["formaPago"]
+        cuentaConductor         <- map["cuentaConductor"]
         direcciones       <- map["direcciones"]
         imagen            <- map["imagen"]
           //<- map[""]

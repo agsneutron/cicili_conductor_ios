@@ -732,6 +732,37 @@ class RequestManager: NSObject{
         }
     }
     
+    class func getAccountData(oauthToken: String, idConductor: String, success: @escaping (AccountData) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.getAccountData(autorizathionToken: oauthToken, idConductor: idConductor)).responseJSON{
+        response in
+        
+        // Evalute result
+        switch response.result {
+            case .success:
+               
+                let json = JSON(response.result.value!)
+                debugPrint("*********getAccountData json*********")
+                debugPrint(json)
+                
+                let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                if errorcode == WSKeys.parameters.okresponse {
+                    let responseData = json[WSKeys.parameters.data].dictionaryObject
+                    let statusObject = Mapper<AccountData>().map( JSONObject: responseData)
+                    success(statusObject!)
+                } else {
+                    failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                }
+            case .failure(let error):
+                failure(error as NSError)
+        }
+            
+            
+        }
+    }
+    
     class func getHistorical(oauthToken: String, success: @escaping ([NewOrder]) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
@@ -773,6 +804,34 @@ class RequestManager: NSObject{
                 case .success:
                     let json = JSON(response.result.value!)
                     debugPrint("*********RES json*********")
+                    debugPrint(json)
+                   
+                    let errorcode: Int = json[WSKeys.parameters.error].intValue
+                 
+                    if errorcode == WSKeys.parameters.okresponse {
+                        let responseData = json[WSKeys.parameters.data].arrayObject
+                        let statusObject = Mapper<ReusableIdText>().mapArray(JSONArray: responseData as! [[String : Any]])
+                        
+                        success(statusObject)
+                   } else {
+                       failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                   }
+                case .failure(let error):
+                    failure(error as NSError)
+            }
+        }
+    }
+    
+    class func getBanks(oauthToken: String, success: @escaping ([ReusableIdText]) -> Void, failure: @escaping (NSError) -> Void){
+           // Fetch request
+        Alamofire.request(Router.getBanks(autorizathionToken: oauthToken)).responseJSON{
+           response in
+           
+            // Evalute result
+            switch response.result {
+                case .success:
+                    let json = JSON(response.result.value!)
+                    debugPrint("*********RES banks json*********")
                     debugPrint(json)
                    
                     let errorcode: Int = json[WSKeys.parameters.error].intValue

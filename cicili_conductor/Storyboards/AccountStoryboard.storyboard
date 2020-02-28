@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXE-en-ctF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sdk-Nq-Cf0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,29 +8,170 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account View Controller-->
-        <scene sceneID="5pn-Kf-dYS">
+        <!--Cuenta-->
+        <scene sceneID="Aro-fG-hiA">
             <objects>
-                <viewController id="IXE-en-ctF" customClass="AccountViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="G3V-64-hYi">
+                <viewController id="sdk-Nq-Cf0" customClass="CuentaBancariaViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VO1-ad-9tc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acoount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDB-F0-hlV">
-                                <rect key="frame" x="186" y="220" width="64" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos de la Cuenta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAj-eo-YER">
+                                <rect key="frame" x="20" y="54" width="374" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="8by-gP-MNR">
+                                <rect key="frame" x="0.0" y="83" width="414" height="250"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLh-wb-1pA">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="173"/>
+                                    </scrollView>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gT3-60-FUI">
+                                        <rect key="frame" x="187.5" y="213" width="39" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="gT3-60-FUI" firstAttribute="centerX" secondItem="8by-gP-MNR" secondAttribute="centerX" id="9q9-X6-gzh"/>
+                                    <constraint firstAttribute="height" constant="250" id="AIS-fS-vF3"/>
+                                    <constraint firstItem="gT3-60-FUI" firstAttribute="top" secondItem="bLh-wb-1pA" secondAttribute="bottom" constant="20" id="FFz-7N-fAk"/>
+                                    <constraint firstItem="bLh-wb-1pA" firstAttribute="leading" secondItem="8by-gP-MNR" secondAttribute="leading" id="NkV-Rr-d8x"/>
+                                    <constraint firstAttribute="bottom" secondItem="gT3-60-FUI" secondAttribute="bottom" id="Pbh-FM-xew"/>
+                                    <constraint firstAttribute="trailing" secondItem="bLh-wb-1pA" secondAttribute="trailing" id="hd4-no-fqq"/>
+                                    <constraint firstItem="bLh-wb-1pA" firstAttribute="top" secondItem="8by-gP-MNR" secondAttribute="top" constant="20" id="qGb-XK-eTb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phk-pi-cpX">
+                                <rect key="frame" x="0.0" y="407" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="kQc-pP-F6s"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR9-yf-yhd" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="353" width="374" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LUP-pB-vkv"/>
+                                </constraints>
+                                <color key="tintColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Modificar datos de cuenta" image="icon_add2">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openUpdateAccount:" destination="sdk-Nq-Cf0" eventType="touchUpInside" id="oCs-zx-NDe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MGk-uf-aFH" firstAttribute="trailing" secondItem="8by-gP-MNR" secondAttribute="trailing" id="54H-1h-CO3"/>
+                            <constraint firstItem="LR9-yf-yhd" firstAttribute="top" secondItem="8by-gP-MNR" secondAttribute="bottom" constant="20" id="7KY-s4-RHn"/>
+                            <constraint firstItem="gAj-eo-YER" firstAttribute="leading" secondItem="MGk-uf-aFH" secondAttribute="leading" constant="20" id="VQ5-Zj-Z5Y"/>
+                            <constraint firstItem="8by-gP-MNR" firstAttribute="leading" secondItem="MGk-uf-aFH" secondAttribute="leading" id="aSg-sC-CTt"/>
+                            <constraint firstItem="MGk-uf-aFH" firstAttribute="trailing" secondItem="LR9-yf-yhd" secondAttribute="trailing" constant="20" id="eOY-FL-w0f"/>
+                            <constraint firstItem="MGk-uf-aFH" firstAttribute="trailing" secondItem="gAj-eo-YER" secondAttribute="trailing" constant="20" id="jIZ-43-xuN"/>
+                            <constraint firstItem="LR9-yf-yhd" firstAttribute="leading" secondItem="MGk-uf-aFH" secondAttribute="leading" constant="20" id="lXi-hM-YZH"/>
+                            <constraint firstItem="phk-pi-cpX" firstAttribute="leading" secondItem="MGk-uf-aFH" secondAttribute="leading" id="ofU-hE-TaX"/>
+                            <constraint firstItem="MGk-uf-aFH" firstAttribute="trailing" secondItem="phk-pi-cpX" secondAttribute="trailing" id="q28-nc-qfc"/>
+                            <constraint firstItem="phk-pi-cpX" firstAttribute="top" secondItem="LR9-yf-yhd" secondAttribute="bottom" constant="10" id="rRW-aH-pKI"/>
+                            <constraint firstItem="gAj-eo-YER" firstAttribute="top" secondItem="MGk-uf-aFH" secondAttribute="top" constant="10" id="sUr-gz-tJg"/>
+                            <constraint firstItem="8by-gP-MNR" firstAttribute="top" secondItem="gAj-eo-YER" secondAttribute="bottom" constant="5" id="zHU-R0-w5M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MGk-uf-aFH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cuenta" image="icon_dollar" id="Xya-0j-KiD"/>
+                    <connections>
+                        <outlet property="addPaymentMethod" destination="LR9-yf-yhd" id="m4g-Cm-Laz"/>
+                        <outlet property="pageControl" destination="gT3-60-FUI" id="RQC-h1-POP"/>
+                        <outlet property="scrollView" destination="bLh-wb-1pA" id="6SD-3k-T1k"/>
+                        <segue destination="xhT-bP-UDg" kind="show" identifier="segueAccountUpdate" id="j5z-aj-Ngi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Hb-YA-tBF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="23"/>
+        </scene>
+        <!--Account Update View Controller-->
+        <scene sceneID="Xjb-ot-LMO">
+            <objects>
+                <viewController id="xhT-bP-UDg" customClass="AccountUpdateViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ggl-OM-YUG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-8w-KzJ">
+                                <rect key="frame" x="32" y="111" width="329" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtAccoontNumber:" destination="fCS-hG-JKH" eventType="editingDidEnd" id="kVM-5Q-xV5"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cuenta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4L-L6-MHF">
+                                <rect key="frame" x="32" y="82" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Banco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xo-xa-woZ">
+                                <rect key="frame" x="32" y="162" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jwv-bw-9kP">
+                                <rect key="frame" x="20" y="191" width="366" height="157"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Own-M6-RNH" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="105" y="366" width="219" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Actualizar"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnUpdateAccount:" destination="xhT-bP-UDg" eventType="touchUpInside" id="H2M-aR-dhJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="RA6-Qj-res"/>
+                        <viewLayoutGuide key="safeArea" id="nOh-cy-zy4"/>
                     </view>
+                    <navigationItem key="navigationItem" id="33e-Oh-DU9"/>
+                    <connections>
+                        <outlet property="picckerBank" destination="Jwv-bw-9kP" id="nJd-cW-UPD"/>
+                        <outlet property="txtAccountNumber" destination="Si1-8w-KzJ" id="xdi-TG-bq9"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hd6-03-Smw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mos-kd-kcQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fCS-hG-JKH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="96" y="42"/>
+            <point key="canvasLocation" x="921.73913043478262" y="25.446428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_add2" width="25" height="25"/>
+        <image name="icon_dollar" width="25" height="25"/>
+    </resources>
 </document>

@@ -21,10 +21,10 @@ class perfilViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     let PerfilesData = [
-        Perfil(id: 1, title: "Sexo", text: "Masculino"),
-        Perfil(id: 2, title: "Fecha de Nacimiento", text: "10 Julio 1984"),
-        Perfil(id: 3, title: "Teléfono", text: "(722) 261 9771"),
-        Perfil(id: 4, title: "Correo Electrónico", text: "nexus.gsan@gmail.com"),
+        Perfil(id: 1, title: "Sexo", text: "Hombre"),
+        Perfil(id: 2, title: "Fecha de Nacimiento", text: "22-11-2007"),
+        Perfil(id: 3, title: "Teléfono", text: "(722) 7444444444"),
+        Perfil(id: 4, title: "Correo Electrónico", text: "migtoacosta@gmail.com"),
 
     ]
     

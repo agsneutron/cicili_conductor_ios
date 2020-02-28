@@ -49,11 +49,13 @@ enum Router: URLRequestConvertible {
     case getComments(autorizathionToken: String)
     case getHistorical(autorizathionToken: String)
     case getWeeks(autorizathionToken: String)
+    case getBanks(autorizathionToken: String)
     case getBoardData(autorizathionToken: String, idWeek: String)
     case getDocumentsData(autorizathionToken: String, idConductor: String)
     case getTankTruck(autorizathionToken: String)
     case getSalesReport(autorizathionToken: String, parametersSet: Parameters, pType: String, pContenttype: String)
     case getLitersReport(autorizathionToken: String, parametersSet: Parameters, pType: String, pContenttype: String)
+    case getAccountData(autorizathionToken: String, idConductor: String)
     
     
     // HTTP method
@@ -71,8 +73,10 @@ enum Router: URLRequestConvertible {
             .getComments,
             .getBoardData,
             .getDocumentsData,
+            .getAccountData,
             .getHistorical,
             .getWeeks,
+            .getBanks,
             .getSalesReport,
             .getLitersReport,
             .getTankTruck,
@@ -159,6 +163,8 @@ enum Router: URLRequestConvertible {
             return "mv/conductor/calificaciones"
         case .getHistorical:
             return "mv/conductor/pedido/obtener"
+        case .getBanks:
+            return "catalogos/bancos"
         case .getWeeks:
             return "catalogos/semanas"
         case .getBoardData(let idWeek):
@@ -173,7 +179,8 @@ enum Router: URLRequestConvertible {
             return "reportes/montoventa/\(pType.pType)"
         case .getLitersReport(let pType):
             return "reportes/cantidadventa/\(pType.pType)"
-            
+        case .getAccountData(let idConductor):
+            return "mv/conductor/cuenta/\(idConductor.idConductor)"
             
         }
         
@@ -281,6 +288,7 @@ enum Router: URLRequestConvertible {
         case .getQualifications(let autorizathionToken),
              .getHistorical(let autorizathionToken),
              .getWeeks(let autorizathionToken),
+             .getBanks(let autorizathionToken),
              .getTankTruck(let autorizathionToken),
              .getComments(let autorizathionToken):
         
@@ -291,6 +299,7 @@ enum Router: URLRequestConvertible {
         //****** Conductor
         case .getOrder(let autorizathionToken, _),
              .getDocumentsData(let autorizathionToken, _),
+             .getAccountData(let autorizathionToken, _),
              .getBoardData(let autorizathionToken, _):
             // Set encode to application/x-www-form-urlencoded
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
