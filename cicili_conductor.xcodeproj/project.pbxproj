@@ -41,6 +41,27 @@
 		3154D05423FEDEDE00AB6E70 /* HistoricalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */; };
 		317710482406BED40045DD44 /* LitersReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317710472406BED40045DD44 /* LitersReportViewController.swift */; };
 		3178F9892402556400FD3157 /* TankTruckData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178F9882402556400FD3157 /* TankTruckData.swift */; };
+		317B7255240ECCF500B803B7 /* MainHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7254240ECCF500B803B7 /* MainHelpViewController.swift */; };
+		317B7257240ECD4400B803B7 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7256240ECD4400B803B7 /* LegalViewController.swift */; };
+		317B7259240ECD8B00B803B7 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7258240ECD8B00B803B7 /* FAQViewController.swift */; };
+		317B725B240ECDB200B803B7 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B725A240ECDB200B803B7 /* AskViewController.swift */; };
+		317B725D240ECE0600B803B7 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B725C240ECE0600B803B7 /* FAQTableViewCell.swift */; };
+		317B725F240ECE5600B803B7 /* FAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B725E240ECE5600B803B7 /* FAQTableViewController.swift */; };
+		317B7261240ECECD00B803B7 /* FAQDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7260240ECECD00B803B7 /* FAQDetailViewController.swift */; };
+		317B7263240ECF2D00B803B7 /* FAQDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7262240ECF2D00B803B7 /* FAQDetailTableViewCell.swift */; };
+		317B7266240ECF8800B803B7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7265240ECF8800B803B7 /* MessageViewController.swift */; };
+		317B7268240ED01600B803B7 /* ClaimConsult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7267240ED01600B803B7 /* ClaimConsult.swift */; };
+		317B726A240ED05200B803B7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7269240ED05100B803B7 /* Message.swift */; };
+		317B726C240ED0AC00B803B7 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B726B240ED0AB00B803B7 /* FAQ.swift */; };
+		317B726E240ED0E700B803B7 /* InputMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B726D240ED0E700B803B7 /* InputMessage.swift */; };
+		317B7270240ED10E00B803B7 /* NewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B726F240ED10E00B803B7 /* NewMessage.swift */; };
+		317B7272240ED13700B803B7 /* NewChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7271240ED13700B803B7 /* NewChatMessage.swift */; };
+		317B7274240ED19200B803B7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7273240ED19200B803B7 /* MessageTableViewCell.swift */; };
+		317B7276240ED1B000B803B7 /* MessageChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7275240ED1B000B803B7 /* MessageChatTableViewCell.swift */; };
+		317B7278240ED1D400B803B7 /* MessageChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7277240ED1D400B803B7 /* MessageChatViewController.swift */; };
+		317B727A240EDA4A00B803B7 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B7279240EDA4A00B803B7 /* Claim.swift */; };
+		317B727C240EDE6700B803B7 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B727B240EDE6700B803B7 /* Message.storyboard */; };
+		317B727E240EDEC200B803B7 /* MessageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B727D240EDEC200B803B7 /* MessageChat.storyboard */; };
 		3181A3C324035C1900DCEC12 /* SalesReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181A3C224035C1900DCEC12 /* SalesReportViewController.swift */; };
 		3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3189226024005DEB003FF7D0 /* BoardViewController.swift */; };
 		31892263240077D8003FF7D0 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31892262240077D8003FF7D0 /* BoardTableViewCell.swift */; };
@@ -170,6 +191,27 @@
 		3154D05323FEDEDE00AB6E70 /* HistoricalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTableViewController.swift; sourceTree = "<group>"; };
 		317710472406BED40045DD44 /* LitersReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitersReportViewController.swift; sourceTree = "<group>"; };
 		3178F9882402556400FD3157 /* TankTruckData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankTruckData.swift; sourceTree = "<group>"; };
+		317B7254240ECCF500B803B7 /* MainHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHelpViewController.swift; sourceTree = "<group>"; };
+		317B7256240ECD4400B803B7 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		317B7258240ECD8B00B803B7 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		317B725A240ECDB200B803B7 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
+		317B725C240ECE0600B803B7 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		317B725E240ECE5600B803B7 /* FAQTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewController.swift; sourceTree = "<group>"; };
+		317B7260240ECECD00B803B7 /* FAQDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetailViewController.swift; sourceTree = "<group>"; };
+		317B7262240ECF2D00B803B7 /* FAQDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetailTableViewCell.swift; sourceTree = "<group>"; };
+		317B7265240ECF8800B803B7 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		317B7267240ED01600B803B7 /* ClaimConsult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimConsult.swift; sourceTree = "<group>"; };
+		317B7269240ED05100B803B7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		317B726B240ED0AB00B803B7 /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
+		317B726D240ED0E700B803B7 /* InputMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMessage.swift; sourceTree = "<group>"; };
+		317B726F240ED10E00B803B7 /* NewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessage.swift; sourceTree = "<group>"; };
+		317B7271240ED13700B803B7 /* NewChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatMessage.swift; sourceTree = "<group>"; };
+		317B7273240ED19200B803B7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		317B7275240ED1B000B803B7 /* MessageChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageChatTableViewCell.swift; sourceTree = "<group>"; };
+		317B7277240ED1D400B803B7 /* MessageChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageChatViewController.swift; sourceTree = "<group>"; };
+		317B7279240EDA4A00B803B7 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
+		317B727B240EDE6700B803B7 /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		317B727D240EDEC200B803B7 /* MessageChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageChat.storyboard; sourceTree = "<group>"; };
 		3181A3C224035C1900DCEC12 /* SalesReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportViewController.swift; sourceTree = "<group>"; };
 		3189226024005DEB003FF7D0 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		31892262240077D8003FF7D0 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
@@ -378,6 +420,32 @@
 			path = Historical;
 			sourceTree = "<group>";
 		};
+		317B7253240ECCA500B803B7 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				317B7254240ECCF500B803B7 /* MainHelpViewController.swift */,
+				317B7256240ECD4400B803B7 /* LegalViewController.swift */,
+				317B7258240ECD8B00B803B7 /* FAQViewController.swift */,
+				317B725A240ECDB200B803B7 /* AskViewController.swift */,
+				317B725C240ECE0600B803B7 /* FAQTableViewCell.swift */,
+				317B725E240ECE5600B803B7 /* FAQTableViewController.swift */,
+				317B7260240ECECD00B803B7 /* FAQDetailViewController.swift */,
+				317B7262240ECF2D00B803B7 /* FAQDetailTableViewCell.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		317B7264240ECF5800B803B7 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				317B7265240ECF8800B803B7 /* MessageViewController.swift */,
+				317B7273240ED19200B803B7 /* MessageTableViewCell.swift */,
+				317B7275240ED1B000B803B7 /* MessageChatTableViewCell.swift */,
+				317B7277240ED1D400B803B7 /* MessageChatViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		3181A3C124035BC700DCEC12 /* Reports */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +534,8 @@
 				318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */,
 				318922672400A6B5003FF7D0 /* AccountStoryboard.storyboard */,
 				318922692400A6FC003FF7D0 /* TankTruckStoryboard.storyboard */,
+				317B727B240EDE6700B803B7 /* Message.storyboard */,
+				317B727D240EDEC200B803B7 /* MessageChat.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -517,6 +587,13 @@
 				31BE0A722401C5D400FE7D70 /* DocumentsData.swift */,
 				3178F9882402556400FD3157 /* TankTruckData.swift */,
 				314EB2E624083F000074D825 /* AccountData.swift */,
+				317B7267240ED01600B803B7 /* ClaimConsult.swift */,
+				317B7269240ED05100B803B7 /* Message.swift */,
+				317B726B240ED0AB00B803B7 /* FAQ.swift */,
+				317B726D240ED0E700B803B7 /* InputMessage.swift */,
+				317B726F240ED10E00B803B7 /* NewMessage.swift */,
+				317B7271240ED13700B803B7 /* NewChatMessage.swift */,
+				317B7279240EDA4A00B803B7 /* Claim.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -536,6 +613,8 @@
 		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				317B7264240ECF5800B803B7 /* Message */,
+				317B7253240ECCA500B803B7 /* Help */,
 				3181A3C124035BC700DCEC12 /* Reports */,
 				31892264240087CB003FF7D0 /* SupplementaryData */,
 				3189225F24005DB9003FF7D0 /* Board */,
@@ -662,12 +741,14 @@
 			files = (
 				318922662400A672003FF7D0 /* DocumentsStoryboard.storyboard in Resources */,
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
+				317B727C240EDE6700B803B7 /* Message.storyboard in Resources */,
 				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
 				3189226A2400A6FC003FF7D0 /* TankTruckStoryboard.storyboard in Resources */,
 				311CE12223EE852B00A160DF /* GoogleService-Info.plist in Resources */,
 				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
 				57D5DAF223E61E0E0019392D /* NewOrder.storyboard in Resources */,
 				57ACFB5E23C9C64F00357C85 /* PaymentDataStoryboard.storyboard in Resources */,
+				317B727E240EDEC200B803B7 /* MessageChat.storyboard in Resources */,
 				3137F9C123A8BA5000D8D8FF /* LaunchScreen.storyboard in Resources */,
 				312CE81923EBCDB900655B00 /* AcceptOrder.storyboard in Resources */,
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
@@ -736,14 +817,17 @@
 				3105B11F23C94522004EA64A /* AddressTableCardViewController.swift in Sources */,
 				314EB2E4240818080074D825 /* SlidePayment.swift in Sources */,
 				9065F15023E28BCA00F60A40 /* PedidosViewController.swift in Sources */,
+				317B7270240ED10E00B803B7 /* NewMessage.swift in Sources */,
 				31510F3B23FD03F1005D9967 /* ResponseData.swift in Sources */,
 				57ACFB6023C9C8DC00357C85 /* PaymentDataViewController.swift in Sources */,
 				57D1BAF223BFB01B00551DA7 /* RegisterViewController.swift in Sources */,
+				317B7278240ED1D400B803B7 /* MessageChatViewController.swift in Sources */,
 				9055278823E67E540088FCB0 /* aclaracionViewController.swift in Sources */,
 				90C9179B23C7144C0017B615 /* fieldUnderline.swift in Sources */,
 				57ACFB6623C9E68400357C85 /* AddressDataViewController.swift in Sources */,
 				31B1F8F12404E9870013CB59 /* SalesParameters.swift in Sources */,
 				31119D0B23FEFEEE003B67DB /* HistoricalTable.swift in Sources */,
+				317B7259240ECD8B00B803B7 /* FAQViewController.swift in Sources */,
 				9065F15223E2959A00F60A40 /* DetallePedidosViewController.swift in Sources */,
 				57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */,
 				9065F15623E34AD900F60A40 /* PedidoHistoricoTableViewCell.swift in Sources */,
@@ -756,9 +840,11 @@
 				31510F3F23FD17F7005D9967 /* CommentsTableViewCell.swift in Sources */,
 				5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */,
 				90C9179C23C7144C0017B615 /* roundedBtn.swift in Sources */,
+				317B7263240ECF2D00B803B7 /* FAQDetailTableViewCell.swift in Sources */,
 				57B2057823C66BC2005FF554 /* Personal.swift in Sources */,
 				57CD140C23BEAD0C0056913B /* Cliente.swift in Sources */,
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
+				317B726E240ED0E700B803B7 /* InputMessage.swift in Sources */,
 				57E3620123D21469003931AD /* DataByZipCode.swift in Sources */,
 				3105B12523CA4266004EA64A /* AddressTable.swift in Sources */,
 				3129D2C12407A6190035C245 /* CuentaBancariaViewController.swift in Sources */,
@@ -768,11 +854,13 @@
 				3178F9892402556400FD3157 /* TankTruckData.swift in Sources */,
 				3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */,
 				31B3586823C404CD00707C82 /* RequestOrderViewController.swift in Sources */,
+				317B7257240ECD4400B803B7 /* LegalViewController.swift in Sources */,
 				57D1BAF623C001D200551DA7 /* Direcciones.swift in Sources */,
 				57F0183F23DC824600213DFC /* MapPinView.swift in Sources */,
 				31C05B7E23FC81E5003A260D /* QueriesViewController.swift in Sources */,
 				57D35CCD23E4CFFD00DE251C /* SendNearDriverViewController.swift in Sources */,
 				57F0183D23DC563E00213DFC /* MapPin.swift in Sources */,
+				317B726A240ED05200B803B7 /* Message.swift in Sources */,
 				57B857EB23BDE90A0012BF94 /* Router.swift in Sources */,
 				90E29AED23D24F5E00677E48 /* usuarioViewController.swift in Sources */,
 				57D1BAF823C0028F00551DA7 /* Asentamiento.swift in Sources */,
@@ -783,11 +871,14 @@
 				57B7B33B23C26D4A00731CE7 /* MainViewController.swift in Sources */,
 				57C22D4723C7A61100835B8F /* LoginModel.swift in Sources */,
 				3154D05423FEDEDE00AB6E70 /* HistoricalTableViewController.swift in Sources */,
+				317B7272240ED13700B803B7 /* NewChatMessage.swift in Sources */,
 				57CD140923BE88AE0056913B /* RequestManager.swift in Sources */,
+				317B7268240ED01600B803B7 /* ClaimConsult.swift in Sources */,
 				57F80F3723D0DBC600913033 /* Status.swift in Sources */,
 				310DB09323E3D2FE0068F72C /* NearDrivers.swift in Sources */,
 				90E29AF723D7B93E00677E48 /* perfilViewController.swift in Sources */,
 				318AB9BF23F50F7A00A62183 /* UpdateService.swift in Sources */,
+				317B7276240ED1B000B803B7 /* MessageChatTableViewCell.swift in Sources */,
 				31510F3D23FD156E005D9967 /* DetailCommentsViewController.swift in Sources */,
 				3137F9BC23A8BA4800D8D8FF /* cicili_conductor.xcdatamodeld in Sources */,
 				57ACFB6823CA26EB00357C85 /* Address.swift in Sources */,
@@ -799,6 +890,7 @@
 				90E29AEF23D25BF300677E48 /* MainTabController.swift in Sources */,
 				57B7B34123C28A1E00731CE7 /* DIsmissSegue.swift in Sources */,
 				31FA1A582400BF160038C270 /* AccountViewController.swift in Sources */,
+				317B7255240ECCF500B803B7 /* MainHelpViewController.swift in Sources */,
 				57F0183B23DC41DA00213DFC /* LocationManager.swift in Sources */,
 				3181A3C324035C1900DCEC12 /* SalesReportViewController.swift in Sources */,
 				311DB68B23D0E15900C8A989 /* AvailableDriversViewController.swift in Sources */,
@@ -813,21 +905,29 @@
 				314EB2E724083F010074D825 /* AccountData.swift in Sources */,
 				57D35CD023E5161100DE251C /* Order.swift in Sources */,
 				57E7C08823E9D8B000D51FE7 /* NewOrder.swift in Sources */,
+				317B726C240ED0AC00B803B7 /* FAQ.swift in Sources */,
 				31AC78AA23E10971003230C0 /* HideCursor.swift in Sources */,
+				317B7261240ECECD00B803B7 /* FAQDetailViewController.swift in Sources */,
+				317B725B240ECDB200B803B7 /* AskViewController.swift in Sources */,
 				311DB69123D0E39100C8A989 /* AvailableDrivers.swift in Sources */,
+				317B7266240ECF8800B803B7 /* MessageViewController.swift in Sources */,
 				57ACFB6223C9DA2700357C85 /* Payment.swift in Sources */,
 				3137F9B423A8BA4800D8D8FF /* AppDelegate.swift in Sources */,
 				31FA1A5A2400BF320038C270 /* TankTruckViewController.swift in Sources */,
 				57B7B34623C2A47000731CE7 /* ListViewController.swift in Sources */,
+				317B725D240ECE0600B803B7 /* FAQTableViewCell.swift in Sources */,
+				317B727A240EDA4A00B803B7 /* Claim.swift in Sources */,
 				57BB85D023C654AE0057EE45 /* ForgotPasswordViewController.swift in Sources */,
 				57CD140E23BEB97C0056913B /* Constants.swift in Sources */,
 				31C2EBFA23EBB5F700F2323C /* RemoteNotification.swift in Sources */,
+				317B7274240ED19200B803B7 /* MessageTableViewCell.swift in Sources */,
 				311C7DE5240991C2000AEC47 /* AccountUpdateViewController.swift in Sources */,
 				311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
 				31F9E7A823F0DCF600403DC6 /* RequestedOrderViewController.swift in Sources */,
 				57D5DAF523E65A210019392D /* CancelOrderViewController.swift in Sources */,
+				317B725F240ECE5600B803B7 /* FAQTableViewController.swift in Sources */,
 				31BE0A732401C5D400FE7D70 /* DocumentsData.swift in Sources */,
 				900741D823DFABED00B1B29D /* direccionDetalleViewController.swift in Sources */,
 				5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */,

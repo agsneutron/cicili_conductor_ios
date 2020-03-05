@@ -90,6 +90,8 @@ struct WSKeys {
         static let status = "status"
         static let pColor = "color"
         
+        static let clabe = "clabe"
+        static let banco = "banco"
         
 
     }

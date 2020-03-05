@@ -45,6 +45,7 @@ class CuentaBancariaViewController: UIViewController, UIScrollViewDelegate, UIPi
         addPaymentMethod.isEnabled = true
         self.cliente = appDelegate.responseCliente
         categoryList.removeAll()
+        PaymentData.removeAll()
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
                view.addGestureRecognizer(gesture)
         
@@ -106,8 +107,8 @@ class CuentaBancariaViewController: UIViewController, UIScrollViewDelegate, UIPi
         
 
         print("****************VIEWDIDAPPEAR*******************")
-        self.initSlides()
         PaymentData.removeAll()
+       getAccountData()
        /*  RequestManager.fetchPaymentConsult(oauthToken: self.cliente!.token!, success: { response in
                               
             print("En success PaymentConsult list  \(response)")
@@ -127,7 +128,7 @@ class CuentaBancariaViewController: UIViewController, UIScrollViewDelegate, UIPi
         
         slidePayment = createSlidePaymentIni()
         setupSlidePaymentScrollView(slidePayment: slidePayment)
-        setupSlidePaymentScrollView(slidePayment: slidePayment)
+        //setupSlidePaymentScrollView(slidePayment: slidePayment)
                             
         pageControl.numberOfPages = slidePayment.count
         pageControl.currentPage = 0
@@ -147,7 +148,7 @@ class CuentaBancariaViewController: UIViewController, UIScrollViewDelegate, UIPi
     
     func createSlidePaymentIni() -> [SlidePayment] {
 
-                
+        slidePayment.removeAll()
         let slide1:SlidePayment = Bundle.main.loadNibNamed("SlidePayment", owner: self, options: nil)?.first as! SlidePayment
         slide1.imagen.image = UIImage(named: "visa_logo")
                 

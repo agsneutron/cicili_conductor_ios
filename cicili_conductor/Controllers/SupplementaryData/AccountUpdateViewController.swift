@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AccountUpdateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -54,15 +55,12 @@ class AccountUpdateViewController: UIViewController, UIPickerViewDelegate, UIPic
             }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    /*func setDefaultValue(item: ReusableIdText, inComponent: Int){
+        if let indexPosition = banksArray.firstIndex(where: item.text){
+       pickerView.selectRow(indexPosition, inComponent: inComponent, animated: true)
+     }
+    }*/
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -87,7 +85,21 @@ class AccountUpdateViewController: UIViewController, UIPickerViewDelegate, UIPic
 
 
     @IBAction func btnUpdateAccount(_ sender: RoundButton) {
-        
+        self.changeDataAccount()
     }
+    
+    func changeDataAccount(){
+        RequestManager.changeDataAccount(oauthToken: cliente!.token!, parameters: [WSKeys.parameters.clabe: txtAccountNumber.text!, WSKeys.parameters.banco: self.selectedBank], success: { response in
+                            
+                debugPrint("En success changeDataAccount \(response)")
+            NotificationCenter.default.post(name: Notification.Name("NotificationAccountUpdate"), object: nil, userInfo: nil)
+            self.handleCancel()
+                
+            })
+            { error in
+                self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+            }
+    }
+    
     
 }

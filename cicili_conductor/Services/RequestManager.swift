@@ -633,6 +633,36 @@ class RequestManager: NSObject{
         }
     }
     
+    class func changeDataAccount(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.changeDataAccount(autorizathionToken: oauthToken, parametersSet: parameters)).responseJSON{
+        response in
+        
+        // Evalute result
+        switch response.result {
+        case .success:
+            let json = JSON(response.result.value!)
+            
+            let errorcode: Int = json[WSKeys.parameters.error].intValue
+                               
+            if errorcode == WSKeys.parameters.okresponse {
+                let responseData = json.dictionaryObject
+                let statusObject = Mapper<Response>().map( JSONObject: responseData)
+                debugPrint("*********changeDataAccount VALUE*********")
+                debugPrint("\(String(describing: responseData?.description))")
+                success(statusObject!)
+            } else {
+                failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+            }
+        case .failure(let error):
+               failure(error as NSError)
+           }
+            
+            
+        }
+    }
+    
     class func getQualifications(oauthToken: String, success: @escaping (ResponseData) -> Void, failure: @escaping (NSError) -> Void){
         
         // Fetch request
@@ -1039,6 +1069,307 @@ class RequestManager: NSObject{
         }
     }
     
+    //search ask
+          class func fetchAsk(oauthToken: String, success: @escaping ([ClaimConsult]) -> Void, failure: @escaping (NSError) -> Void){
+                    
+                    // Fetch request
+                 Alamofire.request(Router.consultAsk(autorizathionToken: oauthToken)).responseJSON{
+                 response in
+                 
+                      debugPrint("*********RES*********")
+                      debugPrint(response)
+                      // Evalute result
+                      switch response.result {
+                          case .success:
+                                           
+                                            let json = JSON(response.result.value!)
+                                            debugPrint("*********RES json oorders list*********")
+                                            debugPrint(json)
+                                            
+                                            let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                         
+                                            if errorcode == WSKeys.parameters.okresponse {
+                                                let responseData = json[WSKeys.parameters.data].arrayObject
+                                                let statusObject = Mapper<ClaimConsult>().mapArray(JSONArray: responseData as! [[String : Any]])
+                                                success(statusObject)
+                                           } else {
+                                               failure(NSError(domain: "com.cicili.AskConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                                           }
+                                        case .failure(let error):
+                                            failure(error as NSError)
+                          
+                      }
+                 }
+             }
+          
+    
+    //FAQ
+    class func fetchFAQ(oauthToken: String, success: @escaping ([ReusableIdText]) -> Void, failure: @escaping (NSError) -> Void){
+              
+              // Fetch request
+           Alamofire.request(Router.help(autorizathionToken: oauthToken)).responseJSON{
+           response in
+           
+                debugPrint("*********RES*********")
+                debugPrint(response)
+                // Evalute result
+                switch response.result {
+                    case .success:
+                                     
+                                      let json = JSON(response.result.value!)
+                                      debugPrint("*********RES json oorders list*********")
+                                      debugPrint(json)
+                                      
+                                      let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                                      if errorcode == WSKeys.parameters.okresponse {
+                                          let responseData = json[WSKeys.parameters.data].arrayObject
+                                          let statusObject = Mapper<ReusableIdText>().mapArray(JSONArray: responseData as! [[String : Any]])
+                                          success(statusObject)
+                                     } else {
+                                         failure(NSError(domain: "com.cicili.AskConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                                     }
+                                  case .failure(let error):
+                                      failure(error as NSError)
+                    
+                }
+           }
+       }
+    
+    //get faq list by cat
+    class func fetchFAQList(oauthToken: String, id: String, success: @escaping ([FAQ]) -> Void, failure: @escaping (NSError) -> Void){
+              
+              // Fetch request
+           Alamofire.request(Router.faqList(autorizathionToken: oauthToken , id:id)).responseJSON{
+           response in
+           
+                debugPrint("*********RES*********")
+                debugPrint(response)
+                // Evalute result
+                switch response.result {
+                    case .success:
+                                     
+                                      let json = JSON(response.result.value!)
+                                      debugPrint("*********RES json oorders list*********")
+                                      debugPrint(json)
+                                      
+                                      let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                                      if errorcode == WSKeys.parameters.okresponse {
+                                          let responseData = json[WSKeys.parameters.data].arrayObject
+                                          let statusObject = Mapper<FAQ>().mapArray(JSONArray: responseData as! [[String : Any]])
+                                          success(statusObject)
+                                     } else {
+                                         failure(NSError(domain: "com.cicili.CLaimConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                                     }
+                                  case .failure(let error):
+                                      failure(error as NSError)
+                    
+                }
+           }
+       }
+    
+    //get message listfor acl or ask
+    class func fetchMessages(oauthToken: String, id: String, success: @escaping ([Message]) -> Void, failure: @escaping (NSError) -> Void){
+              
+              // Fetch request
+           Alamofire.request(Router.getMessages(autorizathionToken: oauthToken , id:id)).responseJSON{
+           response in
+           
+                debugPrint("*********RES*********")
+                debugPrint(response)
+                // Evalute result
+                switch response.result {
+                    case .success:
+                                     
+                                      let json = JSON(response.result.value!)
+                                      debugPrint("*********RES json oorders list*********")
+                                      debugPrint(json)
+                                      
+                                      let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                                      if errorcode == WSKeys.parameters.okresponse {
+                                          let responseData = json[WSKeys.parameters.data].arrayObject
+                                          let statusObject = Mapper<Message>().mapArray(JSONArray: responseData as! [[String : Any]])
+                                          success(statusObject)
+                                     } else {
+                                         failure(NSError(domain: "com.cicili.GetMEssagesConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                                     }
+                                  case .failure(let error):
+                                      failure(error as NSError)
+                    
+                }
+           }
+       }
+    
+    //sendmessage
+    class func setMessage(oauthToken: String, parameters: Parameters, success: @escaping ([Message]) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.sendMessage(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
+        response in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+            switch response.result {
+            case .success:
+               let json = JSON(response.result.value!)
+                
+                debugPrint("*********JSON RES VALUE*********")
+                debugPrint(json)
+                
+                debugPrint("*********RES DATA VALUE*********")
+                debugPrint(json["data"])
+                let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                if errorcode == WSKeys.parameters.okresponse {
+                   let responseData = json[WSKeys.parameters.data].arrayObject
+                    let statusObject = Mapper<Message>().mapArray(JSONArray: responseData as! [[String : Any]])
+                    success(statusObject)
+                } else {
+                    failure(NSError(domain: "com.cicili.NewMessageData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                }
+               
+            case .failure(let error):
+                failure(error as NSError)
+            }
+        }
+    }
+    
+    //get message listfor acl or ask
+    class func fetchChatMessages(oauthToken: String, id: String, success: @escaping ([Message]) -> Void, failure: @escaping (NSError) -> Void){
+              
+              // Fetch request
+           Alamofire.request(Router.getChatMessages(autorizathionToken: oauthToken , id:id)).responseJSON{
+           response in
+           
+                debugPrint("*********RES*********")
+                debugPrint(response)
+                // Evalute result
+                switch response.result {
+                    case .success:
+                                     
+                                      let json = JSON(response.result.value!)
+                                      debugPrint("*********RES json oorders list*********")
+                                      debugPrint(json)
+                                      
+                                      let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                                      if errorcode == WSKeys.parameters.okresponse {
+                                          let responseData = json[WSKeys.parameters.data].arrayObject
+                                          let statusObject = Mapper<Message>().mapArray(JSONArray: responseData as! [[String : Any]])
+                                          success(statusObject)
+                                     } else {
+                                         failure(NSError(domain: "com.cicili.GetMEssagesConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                                     }
+                                  case .failure(let error):
+                                      failure(error as NSError)
+                    
+                }
+           }
+       }
+    
+    //sendmessage
+    class func setChatMessage(oauthToken: String, parameters: Parameters, success: @escaping ([Message]) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.sendChatMessage(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
+        response in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+            switch response.result {
+            case .success:
+               let json = JSON(response.result.value!)
+                
+                debugPrint("*********JSON RES VALUE*********")
+                debugPrint(json)
+                
+                debugPrint("*********RES DATA VALUE*********")
+                debugPrint(json["data"])
+                let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                   
+                if errorcode == WSKeys.parameters.okresponse {
+                   let responseData = json[WSKeys.parameters.data].arrayObject
+                    let statusObject = Mapper<Message>().mapArray(JSONArray: responseData as! [[String : Any]])
+                    success(statusObject)
+                } else {
+                    failure(NSError(domain: "com.cicili.NewMessageData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                }
+               
+            case .failure(let error):
+                failure(error as NSError)
+            }
+        }
+    }
+    
+    
+    //get claims categories
+    class func fetchClaimType(oauthToken: String, success: @escaping ([ReusableIdText]) -> Void, failure: @escaping (NSError) -> Void){
+              // Fetch request
+           Alamofire.request(Router.claimType(autorizathionToken: oauthToken)).responseJSON{
+              response in
+              
+               debugPrint("*********RES*********")
+               debugPrint(response)
+               // Evalute result
+               switch response.result {
+                   case .success:
+                       let json = JSON(response.result.value!)
+                       debugPrint("*********RES json*********")
+                       debugPrint(json)
+                      
+                       let errorcode: Int = json[WSKeys.parameters.error].intValue
+                    
+                       if errorcode == WSKeys.parameters.okresponse {
+                           let responseData = json[WSKeys.parameters.data].arrayObject
+                                                  let statusObject = Mapper<ReusableIdText>().mapArray(JSONArray: responseData as! [[String : Any]])
+                                                  success(statusObject)
+                      } else {
+                          failure(NSError(domain: "com.cicili.ClaimType", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                      }
+                   case .failure(let error):
+                       failure(error as NSError)
+               }
+           }
+       }
+    
+    //to add claim
+       class func setClaimData(oauthToken: String, parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+           
+           // Fetch request
+           Alamofire.request(Router.claimData(autorizathionToken: oauthToken , parametersSet: parameters)).responseJSON{
+           response in
+           
+               debugPrint("*********RES*********")
+               debugPrint(response)
+           // Evalute result
+               switch response.result {
+               case .success:
+                  let json = JSON(response.result.value!)
+                   
+                   debugPrint("*********JSON RES VALUE*********")
+                   debugPrint(json)
+                   
+                   debugPrint("*********RES DATA VALUE*********")
+                   debugPrint(json["data"])
+                   let errorcode: Int = json[WSKeys.parameters.error].intValue
+                                      
+                   if errorcode == WSKeys.parameters.okresponse {
+                       let responseData = json[WSKeys.parameters.data].dictionaryObject
+                       let statusObject = Mapper<Response>().map( JSONObject: responseData)
+                       success(statusObject!)
+                   } else {
+                       failure(NSError(domain: "com.cicili.OrderData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                   }
+                  
+               case .failure(let error):
+                   failure(error as NSError)
+               }
+           }
+       }
 }
 
 
