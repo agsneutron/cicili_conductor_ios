@@ -15,7 +15,7 @@ class MessageChatViewController: UIViewController, UITableViewDataSource, UITabl
  var cliente : Cliente?
  var orderId: Int?
  var getMessage = [Message]()
- 
+ let indexStatus = "status"
  @IBOutlet weak var imgClient: UIImageView!
  @IBOutlet weak var lblFirst: UILabel!
 
@@ -54,9 +54,35 @@ class MessageChatViewController: UIViewController, UITableViewDataSource, UITabl
      tblMessages.delegate = self
      tblMessages.rowHeight = UITableView.automaticDimension
      tblMessages.estimatedRowHeight = 600
+    
+     NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationChat(notification:)), name: Notification.Name("NotificationChat"), object: nil)
+
+     }
      
- }
+     @objc func NotificationChat(notification: Notification){
+         print("Leego notificacion")
+         let notif = appDelegate.responseNotification
+         var varStatus: String? = nil
+         varStatus = notif?[indexStatus] as? String
+         
+        if (varStatus == "20"){
+            viewDidAppear(true)
+        }
+        if (varStatus == "3"){
+           self.customAlertController(tittle_t: Constants.AlertTittles.titleOrderCanceled, message_t: Constants.AlertMessages.messageOrderCanceled, buttonAction: Constants.textAction.actionOK, doHandler: self.closeViewController)
+        }
+     }
  
+    
+    func closeViewController(action: UIAlertAction){
+        let controllers = self.navigationController?.viewControllers
+         for vc in controllers! {
+           if vc is MainTabController {
+             _ = self.navigationController?.popToViewController(vc as! MainTabController, animated: true)
+           }
+        }
+    }
+    
  func base64ToImage(_ base64String: String) -> UIImage? {
         guard let imageData = Data(base64Encoded: base64String) else { return nil }
         return UIImage(data: imageData)
@@ -70,7 +96,7 @@ class MessageChatViewController: UIViewController, UITableViewDataSource, UITabl
 
  func loadData(){
      //load data if exists
-    RequestManager.fetchChatMessages(oauthToken: self.cliente!.token!, id: "\(String(describing: orderId))", success: { response in
+    RequestManager.fetchChatMessages(oauthToken: self.cliente!.token!, id: "\(String(describing: orderId!))", success: { response in
                                     
                 if response.count > 0 {
                                       //                       print("En success getclaim for order response \(response)")
@@ -146,11 +172,11 @@ class MessageChatViewController: UIViewController, UITableViewDataSource, UITabl
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell: MessageChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell") as! MessageChatTableViewCell
     
-     
-     cell.txtText.text = getMessage[indexPath.row].texto!
-     cell.txtUser.text = getMessage[indexPath.row].usuario!
-     cell.txtTime.text = "\(getMessage[indexPath.row].fecha!)"
-
+    if (getMessage.count>0){
+         cell.txtText.text = getMessage[indexPath.row].mensaje!
+         cell.txtUser.text = getMessage[indexPath.row].usuario!
+         cell.txtTime.text = "\(getMessage[indexPath.row].fecha!)"
+    }
      return cell
  }
 

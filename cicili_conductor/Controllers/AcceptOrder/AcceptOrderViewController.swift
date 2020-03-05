@@ -25,6 +25,7 @@ class AcceptOrderViewController: UIViewController {
     
     @IBOutlet weak var requestedOrder: UIView!
     
+    let indexStatus = "status"
    
     
     let idPedido = "idPedido"
@@ -57,7 +58,29 @@ class AcceptOrderViewController: UIViewController {
             self.getPedido(pidPedido: varPedido!)
         }
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationCancelOrder(notification:)), name: Notification.Name("NotificationCancelOrder"), object: nil)
+
+    }
+                
+    @objc func NotificationCancelOrder(notification: Notification){
+                    print("Leego notificacion")
+                    let notif = appDelegate.responseNotification
+                    var varStatus: String? = nil
+                    varStatus = notif?[indexStatus] as? String
+                    
+                   if (varStatus == "3"){
+                      self.customAlertController(tittle_t: Constants.AlertTittles.titleOrderCanceled, message_t: Constants.AlertMessages.messageOrderCanceled, buttonAction: Constants.textAction.actionOK, doHandler: self.closeViewController)
+                   }
+        }
+            
+               
+    func closeViewController(action: UIAlertAction){
+                   let controllers = self.navigationController?.viewControllers
+                    for vc in controllers! {
+                      if vc is MainTabController {
+                        _ = self.navigationController?.popToViewController(vc as! MainTabController, animated: true)
+                      }
+                   }
     }
     
     @objc func handleCancel() {

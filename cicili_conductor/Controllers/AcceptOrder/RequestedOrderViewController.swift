@@ -20,6 +20,7 @@ class RequestedOrderViewController: UIViewController {
     @IBOutlet weak var txtStatus: UILabel!
     @IBOutlet weak var txtPedido: UILabel!
     
+    let indexStatus = "status"
     
     @IBOutlet weak var btnProcessOrder: RoundButton!
     
@@ -45,12 +46,57 @@ class RequestedOrderViewController: UIViewController {
         let notif = appDelegate.responseNotification
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
+        var varStatus: String? = nil
+        varStatus = notif?[indexStatus] as? String
         
         if varPedido != nil {
             
             self.txtStatus.text = notif?[pstatus] as? String
+            switch varStatus {
+            case "20":
+                 self.OpenChat()
+            default:
+                if (varStatus == "3"){
+                   self.customAlertController(tittle_t: Constants.AlertTittles.titleOrderCanceled, message_t: Constants.AlertMessages.messageOrderCanceled, buttonAction: Constants.textAction.actionOK, doHandler: self.closeViewController)
+                }
+            }
         }
     }
+    
+    func closeViewController(action: UIAlertAction){
+        let controllers = self.navigationController?.viewControllers
+         for vc in controllers! {
+           if vc is MainTabController {
+             _ = self.navigationController?.popToViewController(vc as! MainTabController, animated: true)
+           }
+        }
+    }
+    
+    func OpenChat(){
+        self.performSegue(withIdentifier: Constants.Storyboard.segueChat, sender: self)
+        
+    }
+    
+    
+    @IBAction func btnOpenChat(_ sender: RoundButton) {
+        OpenChat()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+        
+          if segue.identifier ==  Constants.Storyboard.segueChat{
+            let notif = appDelegate.responseNotification
+            var varPedido: String? = nil
+            varPedido = notif?[idPedido] as? String
+            
+            let ChatController = segue.destination as! MessageChatViewController
+            ChatController.orderId = Int(varPedido!)
+           
+          }
+      
+     }
     
     func getDataOrder(){
         let notif = appDelegate.responseNotification

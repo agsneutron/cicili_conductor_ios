@@ -42,8 +42,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print(userInfo)
             
-            if userInfo[pstatus] as! String != "11" {
+            if userInfo[pstatus] as! String == "1" {
                 currentView?.performSegue(withIdentifier: Constants.Storyboard.segueToAcceptOrder, sender: self)
+            }
+            if (currentView is MessageChatViewController ){
+                if (userInfo[pstatus] as! String == "20" || userInfo[pstatus] as! String == "3") {
+                    NotificationCenter.default.post(name: Notification.Name("NotificationChat"), object: nil, userInfo: userInfo)
+                }
+            }else{
+                if (currentView is AcceptOrderViewController ){
+                    if (userInfo[pstatus] as! String == "3") {
+                        NotificationCenter.default.post(name: Notification.Name("NotificationCancelOrder"), object: nil, userInfo: userInfo)
+                    }
+                }
             }
             //NotificationCenter.default.post(name: Notification.Name("NotificationResponse"), object: nil, userInfo: userInfo)
         }

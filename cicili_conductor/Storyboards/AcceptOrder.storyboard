@@ -342,6 +342,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnOpenChat:" destination="05J-y8-CZf" eventType="touchUpInside" id="0Rm-r6-vJh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -641,11 +644,22 @@
                         <outlet property="txtPrecio" destination="gZx-hX-N1j" id="N9k-na-O0O"/>
                         <outlet property="txtStatus" destination="Uhc-Sw-9lY" id="CGv-ic-hgz"/>
                         <outlet property="txtTiempo" destination="gCA-7g-uQv" id="VLF-Pm-HN8"/>
+                        <segue destination="IHy-Zs-4Su" kind="show" identifier="segueChat" id="GP0-HQ-8ex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdf-4h-OPJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="762.31884057971024" y="135.9375"/>
+        </scene>
+        <!--MessageChat-->
+        <scene sceneID="IbB-vm-SnJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MessageChat" id="IHy-Zs-4Su" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YeL-jD-HqY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5Q-yX-chM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1232" y="-64"/>
         </scene>
     </scenes>
     <resources>
