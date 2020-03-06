@@ -30,52 +30,6 @@
                                 <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGv-c3-94O" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="744" width="374" height="44"/>
-                                <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="89z-dr-jpR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Aceptar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="sendAcceptOrder:" destination="c3y-Gh-XuP" eventType="touchUpInside" id="uog-hf-qC3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuA-If-DeJ" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="798" width="374" height="44"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6Ov-HX-UcC"/>
-                                </constraints>
-                                <state key="normal" title="Cancelar">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero de Pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUc-72-2Qr">
                                 <rect key="frame" x="20" y="284" width="374" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -183,6 +137,55 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGv-c3-94O" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="488" width="374" height="44"/>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="89z-dr-jpR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Aceptar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendAcceptOrder:" destination="c3y-Gh-XuP" eventType="touchUpInside" id="uog-hf-qC3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuA-If-DeJ" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="542" width="374" height="44"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6Ov-HX-UcC"/>
+                                </constraints>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnCancel:" destination="c3y-Gh-XuP" eventType="touchUpInside" id="xv0-wm-ZNV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -202,7 +205,6 @@
                             <constraint firstItem="Nes-1W-w7B" firstAttribute="trailing" secondItem="Ews-zE-SEu" secondAttribute="trailing" constant="20" id="WXD-BH-rht"/>
                             <constraint firstItem="zbe-YQ-vRQ" firstAttribute="top" secondItem="Q3E-UV-ftD" secondAttribute="bottom" constant="35" id="aV6-lE-Jde"/>
                             <constraint firstItem="Ews-zE-SEu" firstAttribute="top" secondItem="zbe-YQ-vRQ" secondAttribute="bottom" constant="35" id="adA-pe-xs7"/>
-                            <constraint firstItem="Nes-1W-w7B" firstAttribute="bottom" secondItem="tuA-If-DeJ" secondAttribute="bottom" constant="20" id="hOj-hE-u87"/>
                             <constraint firstItem="yGv-c3-94O" firstAttribute="leading" secondItem="Nes-1W-w7B" secondAttribute="leading" constant="20" id="jY7-a0-R9x"/>
                             <constraint firstItem="Nes-1W-w7B" firstAttribute="trailing" secondItem="XUc-72-2Qr" secondAttribute="trailing" constant="20" id="jhl-4W-SSg"/>
                             <constraint firstItem="tuA-If-DeJ" firstAttribute="leading" secondItem="Nes-1W-w7B" secondAttribute="leading" constant="20" id="mkK-ay-WbR"/>
@@ -210,6 +212,7 @@
                             <constraint firstItem="Nes-1W-w7B" firstAttribute="trailing" secondItem="tuA-If-DeJ" secondAttribute="trailing" constant="20" id="n5w-Ss-jz4"/>
                             <constraint firstItem="jwh-PV-6OQ" firstAttribute="leading" secondItem="Nes-1W-w7B" secondAttribute="leading" constant="20" id="p3h-Ix-3lX"/>
                             <constraint firstItem="Nes-1W-w7B" firstAttribute="trailing" secondItem="Q3E-UV-ftD" secondAttribute="trailing" constant="20" id="qCs-3Y-RqE"/>
+                            <constraint firstItem="yGv-c3-94O" firstAttribute="top" secondItem="59w-WR-pHN" secondAttribute="bottom" constant="8" id="wWL-rd-2PV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nes-1W-w7B"/>
                     </view>
@@ -322,7 +325,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="CancelOrder:" destination="05J-y8-CZf" eventType="touchUpInside" id="6CX-s4-AA8"/>
+                                            <action selector="btnCancel:" destination="05J-y8-CZf" eventType="touchUpInside" id="xiM-tt-OXv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKF-pN-mv6" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
@@ -571,7 +574,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUN-MP-z4c" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="774" width="374" height="44"/>
+                                <rect key="frame" x="20" y="666" width="374" height="44"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="LXL-Pj-NQE"/>
@@ -600,7 +603,6 @@
                             <constraint firstItem="nuM-SQ-TiF" firstAttribute="centerX" secondItem="hhb-d9-fae" secondAttribute="centerX" id="0ek-ak-yNu"/>
                             <constraint firstItem="Eam-54-aF6" firstAttribute="top" secondItem="ZUP-lu-n0v" secondAttribute="bottom" constant="35" id="16p-Bc-r81"/>
                             <constraint firstItem="u6o-r5-ILs" firstAttribute="top" secondItem="nuM-SQ-TiF" secondAttribute="bottom" constant="20" id="3m6-D9-MAf"/>
-                            <constraint firstItem="JUN-MP-z4c" firstAttribute="bottom" secondItem="HyK-wr-79o" secondAttribute="bottom" constant="10" id="6di-fL-WIO"/>
                             <constraint firstItem="ZUP-lu-n0v" firstAttribute="leading" secondItem="HyK-wr-79o" secondAttribute="leading" constant="20" id="DCe-hD-fvg"/>
                             <constraint firstItem="d6H-aV-Eyf" firstAttribute="top" secondItem="u6o-r5-ILs" secondAttribute="bottom" constant="10" id="Di9-Ck-XBl"/>
                             <constraint firstItem="HyK-wr-79o" firstAttribute="trailing" secondItem="ZUP-lu-n0v" secondAttribute="trailing" constant="20" id="E0E-2I-mNj"/>
@@ -609,6 +611,7 @@
                             <constraint firstItem="JUN-MP-z4c" firstAttribute="leading" secondItem="HyK-wr-79o" secondAttribute="leading" constant="20" id="KMo-qI-T3x"/>
                             <constraint firstItem="ZUP-lu-n0v" firstAttribute="top" secondItem="Uhc-Sw-9lY" secondAttribute="bottom" constant="35" id="MEx-PQ-vxL"/>
                             <constraint firstItem="yJj-g4-usw" firstAttribute="leading" secondItem="HyK-wr-79o" secondAttribute="leading" constant="20" id="RbG-yl-bol"/>
+                            <constraint firstItem="JUN-MP-z4c" firstAttribute="top" secondItem="yJj-g4-usw" secondAttribute="bottom" constant="21.5" id="VD5-I6-dwN"/>
                             <constraint firstItem="HyK-wr-79o" firstAttribute="trailing" secondItem="8yi-la-j12" secondAttribute="trailing" constant="20" id="XJ2-hl-a73"/>
                             <constraint firstItem="HyK-wr-79o" firstAttribute="trailing" secondItem="yJj-g4-usw" secondAttribute="trailing" constant="20" id="YKc-5k-ox9"/>
                             <constraint firstItem="HyK-wr-79o" firstAttribute="trailing" secondItem="Eam-54-aF6" secondAttribute="trailing" constant="20" id="YT4-fe-OLi"/>
@@ -634,6 +637,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HCM-h2-9Qz"/>
                     <connections>
+                        <outlet property="btnCancel" destination="0i3-nc-4cl" id="CUM-Y7-o7s"/>
                         <outlet property="btnProcessOrder" destination="JUN-MP-z4c" id="pjr-6s-qyE"/>
                         <outlet property="txtCantidad" destination="RC8-Bk-gZM" id="04s-hf-XLW"/>
                         <outlet property="txtCliente" destination="Kci-15-2DD" id="8P2-Sg-LWT"/>

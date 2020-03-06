@@ -161,9 +161,9 @@ enum Router: URLRequestConvertible {
         case .order:
             return "mv/cliente/pedido/solicitar"
         case .cancelReason:
-            return "catalogos/motivoscancelacion/1"
+            return "catalogos/motivoscancelacion/2"
         case .cancelOrder:
-            return "mv/cliente/pedido/cancelar"
+            return "mv/conductor/pedido/cancelar"
         // Conductor
         case .getOrder(let idPedido):
             return "mv/conductor/pedido/obtener/\(idPedido.idPedido)"

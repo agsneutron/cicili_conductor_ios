@@ -484,23 +484,28 @@ class RequestManager: NSObject{
     }
     
     //get cancel reason
-       class func fetchCancelReason(oauthToken: String, success: @escaping (ReusableIdText) -> Void, failure: @escaping (NSError) -> Void){
+       class func fetchCancelReason(oauthToken: String, success: @escaping ([ReusableIdText]) -> Void, failure: @escaping (NSError) -> Void){
               // Fetch request
            Alamofire.request(Router.cancelReason(autorizathionToken: oauthToken)).responseJSON{
               response in
+              
+               debugPrint("*********RES*********")
+               debugPrint(response)
                // Evalute result
                switch response.result {
                    case .success:
                        let json = JSON(response.result.value!)
+                       debugPrint("*********RES json*********")
+                       debugPrint(json)
                       
                        let errorcode: Int = json[WSKeys.parameters.error].intValue
                     
                        if errorcode == WSKeys.parameters.okresponse {
-                           let responseData = json[WSKeys.parameters.data].dictionaryObject
-                           let statusObject = Mapper<ReusableIdText>().map( JSONObject: responseData)
-                           success(statusObject!)
+                           let responseData = json[WSKeys.parameters.data].arrayObject
+                           let statusObject = Mapper<ReusableIdText>().mapArray(JSONArray: responseData as! [[String : Any]])
+                           success(statusObject)
                       } else {
-                          failure(NSError(domain: "com.cicili.ClientStatusData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+                          failure(NSError(domain: "com.cicili.CancelReason", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
                       }
                    case .failure(let error):
                        failure(error as NSError)
@@ -1039,30 +1044,26 @@ class RequestManager: NSObject{
     //*********************************************************************************
     
     //get cancel order
-    class func setCancelOrder(oauthToken: String,  parameters: Parameters, success: @escaping ([Response]) -> Void, failure: @escaping (NSError) -> Void){
+    class func setCancelOrder(oauthToken: String,  parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
            // Fetch request
-        Alamofire.request(Router.cancelOrder(autorizathionToken: oauthToken, parametersSet: parameters)).responseJSON{
-           response in
+        Alamofire.request(Router.cancelOrder(autorizathionToken: oauthToken, parametersSet: parameters)).responseObject { (response: DataResponse<Response>) in
            
             debugPrint("*********RES*********")
             debugPrint(response)
             // Evalute result
             switch response.result {
-                case .success:
-                   
-                    let json = JSON(response.result.value!)
-                    debugPrint("*********RES json*********")
-                    debugPrint(json)
-                    
-                    let errorcode: Int = json[WSKeys.parameters.error].intValue
-                 
-                    if errorcode == WSKeys.parameters.okresponse {
-                        let responseData = json[WSKeys.parameters.data].arrayObject
-                        let statusObject = Mapper<Response>().mapArray(JSONArray: responseData as! [[String : Any]])
-                        success(statusObject)
-                   } else {
-                       failure(NSError(domain: "com.cicili.MainSearchData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
-                   }
+            case .success:
+                 let objectResponse = response.result.value
+                 debugPrint("*********RES VALUE*********")
+                 debugPrint(objectResponse?.codeError as Any)
+             
+                 if objectResponse?.codeError == WSKeys.parameters.okresponse {
+                     debugPrint("okresponse")
+                     success(objectResponse!)
+                     
+                 } else {
+                      failure(NSError(domain: "com.cicili.CancelData", code: objectResponse!.codeError, userInfo: [NSLocalizedDescriptionKey: objectResponse!.messageError ?? ""]))
+                 }
                 case .failure(let error):
                     failure(error as NSError)
             }

@@ -121,7 +121,7 @@ class NewOrderViewController: UIViewController {
         RequestManager.fetchCancelReason(oauthToken: self.cliente!.token! , success: { response in
         
                     print("En success get cancel reason \(response)")
-                    self.cardViewController.cancelReason = [response]
+                    self.cardViewController.cancelReasons = response
          
             })
             { error in

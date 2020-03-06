@@ -3,26 +3,27 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CancelOrderViewController" customModule="cicili_cliente" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CancelOrderViewController" customModule="cicili_conductor" customModuleProvider="target">
             <connections>
-                <outlet property="handleArea" destination="SXa-Hs-a7G" id="Lxw-FJ-GpP"/>
-                <outlet property="pickerCancel" destination="b9p-rY-gcH" id="lb1-pu-Vr5"/>
+                <outlet property="handleArea" destination="1Hw-36-sgD" id="3rl-7I-MuM"/>
+                <outlet property="pickerCancel" destination="U2i-Gh-f7E" id="1Vo-QK-YbY"/>
+                <outlet property="view" destination="Ptl-RI-ue1" id="w38-jd-QUJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gCG-a2-HnG">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ptl-RI-ue1">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EZc-BN-uBV">
-                    <rect key="frame" x="0.0" y="45" width="414" height="288"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knj-Rb-eam">
+                    <rect key="frame" x="0.0" y="45" width="414" height="816"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vya-b9-uTo" customClass="RoundButton" customModule="cicili_cliente" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCz-Fh-h9x" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
                             <rect key="frame" x="107" y="224" width="220" height="44"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,14 +36,14 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="btnCancel:" destination="-1" eventType="touchUpInside" id="ODC-Zw-Q2Y"/>
+                                <action selector="btnCancel:" destination="-1" eventType="touchUpInside" id="xgd-wQ-0To"/>
                             </connections>
                         </button>
-                        <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9p-rY-gcH">
+                        <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2i-Gh-f7E">
                             <rect key="frame" x="0.0" y="37" width="414" height="175"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         </pickerView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¿ Porqué motivo quieres cancelar tu pedido ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8X-QU-3pz">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¿ Porqué motivo quieres cancelar tu pedido ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9o-nr-iUe">
                             <rect key="frame" x="8" y="16" width="398" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -52,18 +53,18 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXa-Hs-a7G" userLabel="Handle Area">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hw-36-sgD" userLabel="Handle Area">
                     <rect key="frame" x="0.0" y="-20" width="414" height="65"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjd-N3-Y0B">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-bv-Y6q">
                             <rect key="frame" x="176.5" y="29" width="61" height="7"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="61" id="6ft-vt-N8w"/>
-                                <constraint firstAttribute="height" constant="7" id="CxY-7Z-Pa3"/>
+                                <constraint firstAttribute="width" constant="61" id="V4y-Td-V6G"/>
+                                <constraint firstAttribute="height" constant="7" id="tB1-cY-aAl"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cancelar mi Pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmG-BE-tqL">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cancelar mi Pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewa-tL-eaM">
                             <rect key="frame" x="129" y="40" width="157" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -73,24 +74,24 @@
                     </subviews>
                     <color key="backgroundColor" red="0.33585184810000002" green="0.38934940099999998" blue="0.53312206269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="pjd-N3-Y0B" firstAttribute="centerY" secondItem="SXa-Hs-a7G" secondAttribute="centerY" id="2gk-lP-doj"/>
-                        <constraint firstAttribute="height" constant="65" id="XjQ-Ps-YOf"/>
-                        <constraint firstItem="pjd-N3-Y0B" firstAttribute="centerX" secondItem="SXa-Hs-a7G" secondAttribute="centerX" id="gYF-nL-u9e"/>
+                        <constraint firstAttribute="height" constant="65" id="A83-dQ-988"/>
+                        <constraint firstItem="8Bx-bv-Y6q" firstAttribute="centerX" secondItem="1Hw-36-sgD" secondAttribute="centerX" id="Bye-Nx-LHA"/>
+                        <constraint firstItem="8Bx-bv-Y6q" firstAttribute="centerY" secondItem="1Hw-36-sgD" secondAttribute="centerY" id="CEl-BD-ddZ"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="EZc-BN-uBV" firstAttribute="centerX" secondItem="gCG-a2-HnG" secondAttribute="centerX" id="1iC-Nm-c8o"/>
-                <constraint firstItem="SXa-Hs-a7G" firstAttribute="trailing" secondItem="EZc-BN-uBV" secondAttribute="trailing" id="DtG-EV-juC"/>
-                <constraint firstItem="SXa-Hs-a7G" firstAttribute="top" secondItem="gCG-a2-HnG" secondAttribute="top" constant="-20" id="Gmi-Ab-C3y"/>
-                <constraint firstItem="SXa-Hs-a7G" firstAttribute="leading" secondItem="EZc-BN-uBV" secondAttribute="leading" id="c2w-yo-bQU"/>
-                <constraint firstItem="nJe-jQ-oNm" firstAttribute="bottom" secondItem="EZc-BN-uBV" secondAttribute="bottom" constant="1" id="cUX-nG-feJ"/>
-                <constraint firstItem="EZc-BN-uBV" firstAttribute="leading" secondItem="gCG-a2-HnG" secondAttribute="leading" id="xfK-Zf-4yz"/>
-                <constraint firstItem="EZc-BN-uBV" firstAttribute="top" secondItem="SXa-Hs-a7G" secondAttribute="bottom" id="ytU-uj-3FU"/>
+                <constraint firstItem="Knj-Rb-eam" firstAttribute="top" secondItem="1Hw-36-sgD" secondAttribute="bottom" id="0lz-n7-FVF"/>
+                <constraint firstItem="Wok-0u-O0P" firstAttribute="bottom" secondItem="Knj-Rb-eam" secondAttribute="bottom" constant="1" id="G0o-Ou-4Zv"/>
+                <constraint firstItem="1Hw-36-sgD" firstAttribute="leading" secondItem="Knj-Rb-eam" secondAttribute="leading" id="H9z-lE-UtP"/>
+                <constraint firstItem="1Hw-36-sgD" firstAttribute="trailing" secondItem="Knj-Rb-eam" secondAttribute="trailing" id="eG9-y1-56h"/>
+                <constraint firstItem="Knj-Rb-eam" firstAttribute="leading" secondItem="Ptl-RI-ue1" secondAttribute="leading" id="hAg-tu-Mdu"/>
+                <constraint firstItem="1Hw-36-sgD" firstAttribute="top" secondItem="Ptl-RI-ue1" secondAttribute="top" constant="-20" id="xhc-i9-t0A"/>
+                <constraint firstItem="Knj-Rb-eam" firstAttribute="centerX" secondItem="Ptl-RI-ue1" secondAttribute="centerX" id="zUO-mI-yRM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="nJe-jQ-oNm"/>
+            <viewLayoutGuide key="safeArea" id="Wok-0u-O0P"/>
             <point key="canvasLocation" x="-752.17391304347836" y="104.46428571428571"/>
         </view>
     </objects>

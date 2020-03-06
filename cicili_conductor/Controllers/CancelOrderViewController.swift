@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol DataCancelDelegate {
+    func sendData(data : Response?, message: String)
+}
+
 class CancelOrderViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
-    var cancelReason : [ReusableIdText] = []
+    var cancelReasons : [ReusableIdText] = []
     var token: String?
-    var orderId: Int = 0
+    var orderId: Int?
     var selectedCancelReason: Int = 0
+    var reason : String?
+    var delegate: DataCancelDelegate?
     @IBOutlet weak var pickerCancel: UIPickerView!
     @IBOutlet weak var handleArea: UIView!
     
@@ -24,24 +30,42 @@ class CancelOrderViewController: UIViewController, UIPickerViewDelegate, UIPicke
         // Do any additional setup after loading the view.
         
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
-               view.addGestureRecognizer(gesture)
-        
-        self.pickerCancel.delegate = self
-        self.pickerCancel.dataSource = self
+                view.addGestureRecognizer(gesture)
+                let texto = ReusableIdText()
+                texto.id=0
+                texto.text = "Selecciona un motivo"
+            
+            pickerCancel.delegate = self
+            pickerCancel.dataSource = self
+            cancelReasons = [texto]
         
     }
 
     @IBAction func btnCancel(_ sender: RoundButton) {
         
-        RequestManager.setCancelOrder(oauthToken: token ?? " ", parameters: [WSKeys.parameters.motivo: selectedCancelReason, WSKeys.parameters.pedido: orderId] , success: { response in
-               
-        print("En success get cancel reason \(response)")
-                          
-        })
-        { error in
-            debugPrint("---ERROR---")
+        if (selectedCancelReason != 0) {
+            RequestManager.setCancelOrder(oauthToken: token ?? " ", parameters: [WSKeys.parameters.motivo: selectedCancelReason, WSKeys.parameters.pedido: orderId] , success: { response in
+                var cancelResponse = Response()
+                cancelResponse = response
+                debugPrint("En success order cancel \(cancelResponse.data ?? "ERROR AL CANCELAR ORDEN")")
+                self.delegate!.sendData(data:cancelResponse, message: self.reason!)
+                
+            })
+            { error in
+                debugPrint("---ERROR---")
+            }
+        }else{
+            self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageSelectReason)
         }
                
+    }
+    
+    func loadData (_pOrder: Int, _pCliente: String, _pCancelReasons: [ReusableIdText]){
+        self.token = _pCliente
+        self.orderId = _pOrder
+        self.cancelReasons = _pCancelReasons
+        self.pickerCancel.reloadAllComponents()
+           
     }
     
     /*
@@ -59,18 +83,19 @@ class CancelOrderViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return cancelReason.count
+        return cancelReasons.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return cancelReason[row].text
+        return cancelReasons[row].text
     }
-    //sexpicker selected
+    //setpicker selected
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
         
-        selectedCancelReason = cancelReason[row].id
+        selectedCancelReason = cancelReasons[row].id
+        self.reason = cancelReasons[row].text
     }
 
 }
