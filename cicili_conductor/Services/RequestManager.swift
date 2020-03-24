@@ -282,10 +282,12 @@ class RequestManager: NSObject{
     
     //to validatecoderegister
     
-    class func fetchValidateCodeRegister(oauthToken: String, codeToVerify: String, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+    class func fetchValidateCodeRegister(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
            
            // Fetch request
-        Alamofire.request(Router.validateCodeRegister(autorizathionToken: oauthToken , code:codeToVerify)).responseObject { (response: DataResponse<Response>) in
+    
+            
+        Alamofire.request(Router.validateCodeRegister(with: parameters)).responseObject { (response: DataResponse<Response>) in
            
                debugPrint("*********RES*********")
                debugPrint(response)
@@ -297,7 +299,7 @@ class RequestManager: NSObject{
                 debugPrint(objectResponse?.codeError as Any)
             
                 if objectResponse?.codeError == WSKeys.parameters.okresponse {
-                    debugPrint("okresponse")
+                    debugPrint("fetchValidateCodeRegister")
                     success(objectResponse!)
                     
                 } else {

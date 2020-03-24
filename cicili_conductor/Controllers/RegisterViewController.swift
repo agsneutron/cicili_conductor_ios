@@ -10,9 +10,6 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var userTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +26,12 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: UIButton) {
         
-        if let username = userTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty, let phone = phoneTextField.text, !phone.isEmpty, let confirmpassword = confirmPasswordTextField.text, !confirmpassword.isEmpty {
-            RequestManager.fetchRegisterClient(parameters: [WSKeys.parameters.PEMAIL: username, WSKeys.parameters.PPASSWORD: password, WSKeys.parameters.PCELLPHONE: phone], success: { response in
+        if let username = userTextField.text, !username.isEmpty {
+            RequestManager.fetchRegisterClient(parameters: [WSKeys.parameters.PEMAIL: username], success: { response in
                       
                 if !response.token!.isEmpty {
                            print("En success y token no nil \(response)")
                            self.userTextField.text = ""
-                           self.passwordTextField.text = ""
                            //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
                             guard let verifyCodeController = self.storyboard?.instantiateViewController(
                         withIdentifier: "VerifyStoryboard") as? VerifyCodeViewController else {
@@ -60,14 +56,6 @@ class RegisterViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

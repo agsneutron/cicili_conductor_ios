@@ -22,7 +22,7 @@ enum Router: URLRequestConvertible {
     case signIn(with: Parameters)
     case registerClient(with: Parameters)
     case validateCodePsw(with: Parameters)
-    case validateCodeRegister(autorizathionToken:String , code:String)
+    case validateCodeRegister(with: Parameters)
     case help(autorizathionToken:String)
     case requestPassword(with: Parameters)
     case changuePassword(with: Parameters)
@@ -128,9 +128,8 @@ enum Router: URLRequestConvertible {
             return "mv/conductor/login"
         case .registerClient:
             return "mv/cliente/registrar"
-        case .validateCodeRegister(let code):
-            Router.codeValue = code.code
-            return "verifica/\(Router.codeValue ?? "")"
+        case .validateCodeRegister:
+            return "mv/conductor/verifica"
         case .validateCodePsw:
             return "mv/cliente/password/validar"
         case .help:
@@ -138,7 +137,7 @@ enum Router: URLRequestConvertible {
         case .requestPassword:
             return "mv/conductor/password/solicitar"
         case .changuePassword:
-            return "mv/cliente/password/cambiar"
+            return "mv/conductor/password/cambiar"
         case .personalData:
             return "mv/cliente/actualizar"
         case .paymentData:
@@ -256,7 +255,8 @@ enum Router: URLRequestConvertible {
             debugPrint("PARAMETERS__________-")
             debugPrint(parameters)
             
-        case.validateCodePsw(let parameters):
+        case.validateCodePsw(let parameters),
+            .validateCodeRegister(let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
                        //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
                        urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
@@ -303,7 +303,7 @@ enum Router: URLRequestConvertible {
             debugPrint(parametersSet)
             
             
-        case.validateCodeRegister(let autorizathionToken, _),
+        case
             .searchZC(let autorizathionToken, _),
             .faqList(let autorizathionToken, _),
             .getMessages(let autorizathionToken, _),

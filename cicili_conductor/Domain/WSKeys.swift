@@ -33,7 +33,7 @@ struct WSKeys {
         static let data = "data"
         static let statuscode = 200
         static let okVerification = "true"
-        
+        static let CODIGO = "codigo"
         
         static let PUSERNAME = "user"
         static let PPASSWORD = "password"

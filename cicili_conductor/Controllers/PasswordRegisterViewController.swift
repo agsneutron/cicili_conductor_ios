@@ -1,0 +1,65 @@
+//
+//  PasswordRegisterViewController.swift
+//  cicili_conductor
+//
+//  Created by ARIANA SANCHEZ on 23/03/20.
+//  Copyright © 2020 CICILI. All rights reserved.
+//
+
+import UIKit
+
+class PasswordRegisterViewController: UIViewController {
+
+    @IBOutlet weak var txtPasswordConfirm: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var lblEmail: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
+
+        txtPassword.becomeFirstResponder()
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    @objc func handleCancel() {
+        //self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    @IBAction func btnPasswordRegister(_ sender: RoundButton) {
+        self.view.endEditing(true)
+        if let password = txtPassword.text, !password.isEmpty, let passwordConfirm = txtPasswordConfirm.text, !passwordConfirm.isEmpty {
+            RequestManager.fetchChanguePassword(parameters: [WSKeys.parameters.PUSERNAME: lblEmail.text, WSKeys.parameters.PPASSWORD: password], success: { response in
+                           
+                        if !response.data!.isEmpty{
+                               print("En success changued password  \(response)")
+                               self.txtPasswordConfirm.text = ""
+                               self.txtPassword.text = ""
+                            
+                               self.customAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.closeViewController)
+                               
+                               }
+                           })
+                           { error in
+                               self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
+                           }
+                   } else {
+                       self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageRequeridoLogin)
+                   }
+        }
+        
+    
+    func closeViewController(action: UIAlertAction){
+        let controllers = self.navigationController?.viewControllers
+         for vc in controllers! {
+           if vc is InitialNavigationViewController {
+             _ = self.navigationController?.popToViewController(vc as! InitialNavigationViewController, animated: true)
+           }
+        }
+    }
+    
+}
