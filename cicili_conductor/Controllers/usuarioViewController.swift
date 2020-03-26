@@ -34,6 +34,16 @@ class usuarioViewController: UIViewController {
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
        }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       self.cliente = appDelegate.responseCliente
+       circularImage.image = base64ToImage(cliente!.imagen!)
+       lblUserName.text = "\(String(describing: cliente!.nombre!)) \(String(describing: cliente!.apellidoPaterno!)) \( String(describing: cliente!.apellidoMaterno!))"
+        
+       
+        
+    }
+    
     @IBAction func switchView(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             perfilView.alpha = 0
@@ -42,6 +52,11 @@ class usuarioViewController: UIViewController {
             perfilView.alpha = 1
             direccionesView.alpha = 0
         }
+    }
+    
+    
+    @IBAction func btnUpdateImage(_ sender: RoundButton) {
+        self.imagePicker.present(from: sender)
     }
     
     func base64ToImage(_ base64String: String) -> UIImage? {

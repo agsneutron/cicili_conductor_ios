@@ -17,14 +17,16 @@ struct Perfil {
 class perfilViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-   
+   let appDelegate = UIApplication.shared.delegate as! AppDelegate
+   var cliente : Cliente?
+    
     @IBOutlet weak var tableView: UITableView!
     
-    let PerfilesData = [
-        Perfil(id: 1, title: "Sexo", text: "Hombre"),
-        Perfil(id: 2, title: "Fecha de Nacimiento", text: "22-11-2007"),
-        Perfil(id: 3, title: "Teléfono", text: "(722) 7444444444"),
-        Perfil(id: 4, title: "Correo Electrónico", text: "migtoacosta@gmail.com"),
+    var PerfilesData = [
+        Perfil(id: 1, title: "Sexo", text: ""),
+        Perfil(id: 2, title: "Fecha de Nacimiento", text: ""),
+        Perfil(id: 3, title: "Teléfono", text: ""),
+        Perfil(id: 4, title: "Correo Electrónico", text: ""),
 
     ]
     
@@ -33,8 +35,36 @@ class perfilViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        self.cliente = appDelegate.responseCliente
+        PerfilesData = [
+            Perfil(id: 1, title: "Sexo", text: cliente!.sexo!),
+               Perfil(id: 2, title: "Fecha de Nacimiento", text: cliente!.nacimiento!),
+               Perfil(id: 3, title: "Teléfono", text: cliente!.telefono!),
+               Perfil(id: 4, title: "Correo Electrónico", text: cliente!.correoElectronico!),
+
+           ]
+        
+        tableView.reloadData()
            // Do any additional setup after loading the view.
        }
+    
+    override func viewDidAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+       self.cliente = appDelegate.responseCliente
+        PerfilesData = [
+            Perfil(id: 1, title: "Sexo", text: cliente!.sexo!),
+               Perfil(id: 2, title: "Fecha de Nacimiento", text: cliente!.nacimiento!),
+               Perfil(id: 3, title: "Teléfono", text: cliente!.telefono!),
+               Perfil(id: 4, title: "Correo Electrónico", text: cliente!.correoElectronico!),
+
+           ]
+        
+        tableView.reloadData()
+     
+     
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            // #warning Incomplete implementation, return the number of rows
@@ -53,5 +83,22 @@ class perfilViewController: UIViewController, UITableViewDataSource, UITableView
            
            return cell
        }
+    
+    @IBAction func btnEditPersonalData(_ sender: RoundButton) {
+        self.performSegue(withIdentifier: Constants.Storyboard.editPersonalSegueId, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+              // Get the new view controller using segue.destination.
+              // Pass the selected object to the new view controller.
+         
+        if segue.identifier ==  Constants.Storyboard.editPersonalSegueId{
+               let editPersonalViewController = segue.destination as! PersonalDataViewController
+               editPersonalViewController.cliente = self.cliente
+               editPersonalViewController.mode = 1
+               
+               
+           }
+          }
     
 }

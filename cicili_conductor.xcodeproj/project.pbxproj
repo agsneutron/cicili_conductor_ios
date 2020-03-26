@@ -95,7 +95,6 @@
 		31FA1A5A2400BF320038C270 /* TankTruckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA1A592400BF320038C270 /* TankTruckViewController.swift */; };
 		5702B72A23CFDD8A00DA81D3 /* VerifyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */; };
 		5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712CA9123D14957007284F2 /* ImagePicker.swift */; };
-		57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */; };
 		57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */; };
 		57ACFB5C23C9969F00357C85 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ACFB5B23C9969F00357C85 /* ImageConverter.swift */; };
 		57ACFB5E23C9C64F00357C85 /* PaymentDataStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ACFB5D23C9C64F00357C85 /* PaymentDataStoryboard.storyboard */; };
@@ -156,6 +155,7 @@
 		90E29AED23D24F5E00677E48 /* usuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */; };
 		90E29AEF23D25BF300677E48 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AEE23D25BF300677E48 /* MainTabController.swift */; };
 		90E29AF723D7B93E00677E48 /* perfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AF623D7B93E00677E48 /* perfilViewController.swift */; };
+		948A2A59242D6F23000DADC2 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948A2A58242D6F23000DADC2 /* PersonalData.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -252,7 +252,6 @@
 		50B2BA13B77AF2DC449B010E /* Pods-cicili_cliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.release.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.release.xcconfig"; sourceTree = "<group>"; };
 		5702B72923CFDD8A00DA81D3 /* VerifyStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyStatus.swift; sourceTree = "<group>"; };
 		5712CA9123D14957007284F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalData.storyboard; sourceTree = "<group>"; };
 		57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		57ACFB5B23C9969F00357C85 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		57ACFB5D23C9C64F00357C85 /* PaymentDataStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentDataStoryboard.storyboard; sourceTree = "<group>"; };
@@ -315,6 +314,7 @@
 		90E29AEC23D24F5E00677E48 /* usuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usuarioViewController.swift; sourceTree = "<group>"; };
 		90E29AEE23D25BF300677E48 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		90E29AF623D7B93E00677E48 /* perfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfilViewController.swift; sourceTree = "<group>"; };
+		948A2A58242D6F23000DADC2 /* PersonalData.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonalData.storyboard; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -530,9 +530,9 @@
 		57B7B34223C28C0000731CE7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				948A2A58242D6F23000DADC2 /* PersonalData.storyboard */,
 				312CE81823EBCDB900655B00 /* AcceptOrder.storyboard */,
 				57B7B34323C28C4000731CE7 /* List.storyboard */,
-				57AA27DF23C57E3D00275CF1 /* PersonalData.storyboard */,
 				57AA27E323C64DC300275CF1 /* ForgotPassword.storyboard */,
 				57ACFB5D23C9C64F00357C85 /* PaymentDataStoryboard.storyboard */,
 				57ACFB6323C9E65000357C85 /* AddressData.storyboard */,
@@ -762,6 +762,7 @@
 				312CE81923EBCDB900655B00 /* AcceptOrder.storyboard in Resources */,
 				3137F9BE23A8BA5000D8D8FF /* Assets.xcassets in Resources */,
 				318922682400A6B5003FF7D0 /* AccountStoryboard.storyboard in Resources */,
+				948A2A59242D6F23000DADC2 /* PersonalData.storyboard in Resources */,
 				57D35CCE23E4CFFD00DE251C /* SendNearDriverViewController.xib in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
 				311094C62429CA3F00495BC5 /* GoogleService-Info.plist in Resources */,
@@ -769,7 +770,6 @@
 				57D5DAF623E65A210019392D /* CancelOrderViewController.xib in Resources */,
 				57E7C08C23EAEAE000D51FE7 /* CardOrderViewController.xib in Resources */,
 				3137F9B923A8BA4800D8D8FF /* Main.storyboard in Resources */,
-				57AA27E023C57E3D00275CF1 /* PersonalData.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
