@@ -282,21 +282,46 @@ class RequestManager: NSObject{
     
     //to validatecoderegister
     
-    class func fetchValidateCodeRegister(parameters: Parameters, success: @escaping (Response) -> Void, failure: @escaping (NSError) -> Void){
+    class func fetchValidateCodeRegister(parameters: Parameters, success: @escaping (Cliente) -> Void, failure: @escaping (NSError) -> Void){
            
            // Fetch request
-    
+        Alamofire.request(Router.validateCodeRegister(with: parameters)).responseJSON{
+        response in
+        
+            debugPrint("*********RES*********")
+            debugPrint(response)
+        // Evalute result
+        switch response.result {
+        case .success:
             
-        Alamofire.request(Router.validateCodeRegister(with: parameters)).responseObject { (response: DataResponse<Response>) in
+            let json = JSON(response.result.value!)
+            print("json ", json)
+            let errorcode =  json[WSKeys.parameters.error].intValue
+                
+            let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
+            let cliente_data = json[WSKeys.parameters.data].dictionaryObject
+            let cliente = Mapper<Cliente>().map( JSONObject: cliente_data)
+            if errorcode == WSKeys.parameters.okresponse{
+             
+                success(cliente!)
+            
+            } else {
+                failure(NSError(domain: "com.cicili.RegisterClient", code: (errorcode), userInfo: [NSLocalizedDescriptionKey: messagedescription ]))
+            }
+           case .failure(let error):
+               failure(error as NSError)
+           }
+        }
+            
+       /* Alamofire.request(Router.validateCodeRegister(with: parameters)).responseObject { (response: DataResponse<Response>) in
            
                debugPrint("*********RES*********")
                debugPrint(response)
-           // Evalute result
            switch response.result {
            case .success:
                 let objectResponse = response.result.value
                 debugPrint("*********RES VALUE*********")
-                debugPrint(objectResponse?.codeError as Any)
+                debugPrint(objectResponse?.data)
             
                 if objectResponse?.codeError == WSKeys.parameters.okresponse {
                     debugPrint("fetchValidateCodeRegister")
@@ -308,7 +333,7 @@ class RequestManager: NSObject{
         case .failure(let error):
             failure(error as NSError)
             }
-        }
+        }*/
     }
     
     //get bank data
@@ -337,6 +362,8 @@ class RequestManager: NSObject{
             } else {
                 failure(NSError(domain: "com.cicili.BankData", code: (response.response?.statusCode)!, userInfo: [NSLocalizedDescriptionKey: json["error"].stringValue ]))
             }
+            
+            
            case .failure(let error):
                failure(error as NSError)
            }

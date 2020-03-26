@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:625634084597:ios:253d3893c943a5e80d67bc</string>
+	<string>1:625634084597:ios:c5bd74549d5d77ff0d67bc</string>
 	<key>DATABASE_URL</key>
 	<string>https://absolute-feat-236220.firebaseio.com</string>
 </dict>

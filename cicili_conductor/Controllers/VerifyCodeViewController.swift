@@ -13,7 +13,7 @@ class VerifyCodeViewController: UIViewController {
     @IBOutlet weak var codeTextField: UITextField!
     
     var token : String?
-    var sEmail: String?
+    var sEmail: String=""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +38,11 @@ class VerifyCodeViewController: UIViewController {
         if let codeInput = codeTextField.text, !codeInput.isEmpty {
             RequestManager.fetchValidateCodeRegister(parameters: [WSKeys.parameters.CODIGO: codeInput], success: { response in
                                   
-                    if response.codeError == WSKeys.parameters.okresponse {
+                    if response != nil{
                         print("En success verifyCodeButton \(response)")
-                        //self.sEmail = response.data.correoElectronico
+                        self.sEmail = response.correoElectronico!
                         self.codeTextField.text = ""
-                        self.customAlertController(tittle_t: Constants.AlertTittles.tCodeVerificationSuccess, message_t: Constants.AlertMessages.codeVerificationSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.goLogin)
+                        self.customAlertController(tittle_t: Constants.AlertTittles.tCodeVerificationSuccess, message_t: Constants.AlertMessages.codeVerificationSuccess, buttonAction: Constants.textAction.actionPassword, doHandler: self.goLogin)
                     }
                     else{
                         self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: Constants.ErrorMessages.messageVerificaCodigo )
@@ -74,7 +74,7 @@ class VerifyCodeViewController: UIViewController {
    
         if segue.identifier ==  Constants.Storyboard.registerPasswordSegue{
             let newOrderController = segue.destination as! PasswordRegisterViewController
-            newOrderController.lblEmail.text = self.sEmail
+            newOrderController.sEmail = sEmail
             
             
         }

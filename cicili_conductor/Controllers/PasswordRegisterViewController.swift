@@ -13,9 +13,10 @@ class PasswordRegisterViewController: UIViewController {
     @IBOutlet weak var txtPasswordConfirm: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblEmail: UILabel!
+    var sEmail: String=""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.lblEmail.text = sEmail
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: .plain, target: self, action: #selector(handleCancel))
 
@@ -27,20 +28,19 @@ class PasswordRegisterViewController: UIViewController {
     @objc func handleCancel() {
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     @IBAction func btnPasswordRegister(_ sender: RoundButton) {
         self.view.endEditing(true)
         if let password = txtPassword.text, !password.isEmpty, let passwordConfirm = txtPasswordConfirm.text, !passwordConfirm.isEmpty {
-            RequestManager.fetchChanguePassword(parameters: [WSKeys.parameters.PUSERNAME: lblEmail.text, WSKeys.parameters.PPASSWORD: password], success: { response in
+            RequestManager.fetchChanguePassword(parameters: [WSKeys.parameters.PUSERNAME: sEmail, WSKeys.parameters.PPASSWORD: password], success: { response in
                            
                         if !response.data!.isEmpty{
                                print("En success changued password  \(response)")
                                self.txtPasswordConfirm.text = ""
                                self.txtPassword.text = ""
                             
-                               self.customAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.closeViewController)
+                               self.customAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.codeVerificationSuccess2, buttonAction: Constants.textAction.actionSignIn, doHandler: self.closeViewController)
                                
                                }
                            })
@@ -56,8 +56,9 @@ class PasswordRegisterViewController: UIViewController {
     func closeViewController(action: UIAlertAction){
         let controllers = self.navigationController?.viewControllers
          for vc in controllers! {
-           if vc is InitialNavigationViewController {
-             _ = self.navigationController?.popToViewController(vc as! InitialNavigationViewController, animated: true)
+            print(vc)
+           if vc is ViewController {
+             _ = self.navigationController?.popToViewController(vc as! ViewController, animated: true)
            }
         }
     }

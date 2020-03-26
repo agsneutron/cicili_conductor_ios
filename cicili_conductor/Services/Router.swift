@@ -248,15 +248,15 @@ enum Router: URLRequestConvertible {
         case.signIn(let parameters),
             .registerClient(let parameters),
             .requestPassword(let parameters),
-            .changuePassword(let parameters):
+            .changuePassword(let parameters),
+            .validateCodeRegister(let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
             //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
             urlRequest.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             debugPrint("PARAMETERS__________-")
             debugPrint(parameters)
             
-        case.validateCodePsw(let parameters),
-            .validateCodeRegister(let parameters):
+        case.validateCodePsw(let parameters):
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: parameters)
                        //urlRequest = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
                        urlRequest.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
