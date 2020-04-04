@@ -67,7 +67,9 @@ class LitersReportViewController: UIViewController {
         @objc func tapDoneIni() {
             if let datePicker = self.txtFechaInicio.inputView as? UIDatePicker { // 2-1
                 let dateformatter = DateFormatter() // 2-2
-                dateformatter.dateStyle = .medium // 2-3
+                    dateformatter.dateStyle = .medium // 2-3
+                dateformatter.locale = Locale(identifier: "es_MX")
+                dateformatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
                 self.txtFechaInicio.text = dateformatter.string(from: datePicker.date) //2-4
             }
             self.txtFechaInicio.resignFirstResponder() // 2-5
@@ -75,7 +77,9 @@ class LitersReportViewController: UIViewController {
         @objc func tapDoneFin() {
             if let datePicker = self.txtFechaFinal.inputView as? UIDatePicker { // 2-1
                 let dateformatter = DateFormatter() // 2-2
-                dateformatter.dateStyle = .medium // 2-3
+                    dateformatter.dateStyle = .medium // 2-3
+                dateformatter.locale = Locale(identifier: "es_MX")
+                dateformatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
                 self.txtFechaFinal.text = dateformatter.string(from: datePicker.date) //2-4
             }
             self.txtFechaFinal.resignFirstResponder() // 2-5
@@ -98,7 +102,7 @@ class LitersReportViewController: UIViewController {
             parametros = SalesParameters(type: "xls", initialDate: "01-10-2019", endDate: "01-03-2020", conductor: String(self.cliente!.idCliente))*/
             self.progressBar.progress = 0
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                var documentsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
                 documentsURL.appendPathComponent("ReporteVentas.xls")
                 return (documentsURL, [.removePreviousFile])
             }
@@ -123,7 +127,7 @@ class LitersReportViewController: UIViewController {
         @IBAction func pdfReport(_ sender: RoundButton) {
             self.progressBar.progress = 0
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                var documentsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
                 documentsURL.appendPathComponent("ReporteVentas.pdf")
                 return (documentsURL, [.removePreviousFile])
             }
