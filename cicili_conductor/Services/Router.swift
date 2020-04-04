@@ -41,6 +41,7 @@ enum Router: URLRequestConvertible {
     //******* Conductor
     case getOrder(autorizathionToken: String , idPedido: String)
     case setConectDisconect(autorizathionToken: String , parametersSet: Parameters)
+    case isActiveOrder(autorizathionToken: String)
     case setUpdateCoordinate(autorizathionToken: String , parametersSet: Parameters)
     case updateColorTankTruck(autorizathionToken: String , parametersSet: Parameters)
     case acceptOrder(autorizathionToken: String , parametersSet: Parameters)
@@ -73,6 +74,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case.help,
             .clientStatus,
+            .isActiveOrder,
             .searchZC,
             .bankData,
             .addressConsult,
@@ -130,16 +132,18 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/registrar"
         case .validateCodeRegister:
             return "mv/conductor/verifica"
+        case .isActiveOrder:
+            return "mv/conductor/pedidoactivo"
         case .validateCodePsw:
             return "mv/cliente/password/validar"
         case .help:
-            return "catalogos/tiposaclaracion/1"
+            return "catalogos/tiposaclaracion/2"
         case .requestPassword:
-            return "mv/conductor/password/solicitar"
+            return "mv/cliente/password/solicitar"
         case .changuePassword:
-            return "mv/conductor/password/cambiar"
+            return "mv/cliente/password/cambiar"
         case .personalData:
-            return "mv/cliente/actualizar"
+            return "mv/conductor/actualizar"
         case .paymentData:
             return "mv/cliente/formapago/registrar"
         case .addressData:
@@ -335,6 +339,7 @@ enum Router: URLRequestConvertible {
              .getWeeks(let autorizathionToken),
              .getBanks(let autorizathionToken),
              .getTankTruck(let autorizathionToken),
+             .isActiveOrder(let autorizathionToken),
              .getComments(let autorizathionToken):
         
             urlRequest = try Alamofire.URLEncoding.queryString.encode(urlRequest, with: nil)

@@ -111,6 +111,9 @@ class LitersReportViewController: UIViewController {
             }).responseData { response in
                 if let destinationUrl = response.destinationURL {
                     print("destinationUrl \(destinationUrl.absoluteURL)")
+                    self.showAlertController(tittle_t: Constants.AlertTittles.downloadFile, message_t: Constants.AlertMessages.messageDownloadFile)
+                }else{
+                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleErrorDownloadFile, message_t: Constants.ErrorMessages.messageDownloadFile)
                 }
             }
         }
@@ -133,6 +136,9 @@ class LitersReportViewController: UIViewController {
             }).responseData { response in
                 if let destinationUrl = response.destinationURL {
                     print("destinationUrl \(destinationUrl.absoluteURL)")
+                    self.showAlertController(tittle_t: Constants.AlertTittles.downloadFile, message_t: Constants.AlertMessages.messageDownloadFile)
+                }else{
+                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleErrorDownloadFile, message_t: Constants.ErrorMessages.messageDownloadFile)
                 }
             }
         }

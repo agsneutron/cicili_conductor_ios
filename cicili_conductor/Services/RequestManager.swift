@@ -202,12 +202,12 @@ class RequestManager: NSObject{
         case .success:
             let objectResponse = response.result.value
             
-            if objectResponse!.codeError.hashValue == WSKeys.parameters.okresponse {
+            if objectResponse!.codeError == WSKeys.parameters.okresponse {
                 
                 success(objectResponse!)
             
             } else {
-                failure(NSError(domain: "com.cicili.PersonalData", code: (objectResponse?.codeError.hashValue)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
+                failure(NSError(domain: "com.cicili.PersonalData", code: (objectResponse?.codeError)!, userInfo: [NSLocalizedDescriptionKey: objectResponse?.messageError! ?? "ERROR"]))
             }
            case .failure(let error):
                failure(error as NSError)
@@ -729,6 +729,37 @@ class RequestManager: NSObject{
         case .failure(let error):
                failure(error as NSError)
            }
+            
+            
+        }
+    }
+    
+    class func isActiveOrder(oauthToken: String, success: @escaping (NewOrder) -> Void, failure: @escaping (NSError) -> Void){
+        
+        // Fetch request
+        Alamofire.request(Router.isActiveOrder(autorizathionToken: oauthToken)).responseJSON{
+        response in
+        
+        // Evalute result
+        switch response.result {
+            case .success:
+               
+                let json = JSON(response.result.value!)
+                debugPrint("*********RES json*********")
+                debugPrint(json)
+                
+                let errorcode: Int = json[WSKeys.parameters.error].intValue
+             
+                if errorcode == WSKeys.parameters.okresponse {
+                    let responseData = json[WSKeys.parameters.data].dictionaryObject
+                    let statusObject = Mapper<NewOrder>().map( JSONObject: responseData)
+                    success(statusObject!)
+               } else {
+                   failure(NSError(domain: "com.cicili.AddressConsultData", code: errorcode, userInfo: [NSLocalizedDescriptionKey: json[WSKeys.parameters.messageError].stringValue ]))
+               }
+            case .failure(let error):
+                failure(error as NSError)
+        }
             
             
         }

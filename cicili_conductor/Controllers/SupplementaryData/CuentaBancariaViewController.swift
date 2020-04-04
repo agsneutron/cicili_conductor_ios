@@ -230,7 +230,10 @@ class CuentaBancariaViewController: UIViewController, UIScrollViewDelegate, UIPi
    
         if segue.identifier ==  Constants.Storyboard.segueAccountUpdate{
             let segueController = segue.destination as! AccountUpdateViewController
-            segueController.accountNumber = self.accountData!.clabe!
+            if (accountData != nil){
+                segueController.accountNumber = self.accountData!.clabe!
+            }
+            
         }
     }
     

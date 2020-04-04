@@ -40,7 +40,7 @@ class ForgotPasswordViewController: UIViewController {
                            //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
                            // self.showAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess)
                         
-                           self.customAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.goLogin)
+                           self.customAlertController(tittle_t: Constants.AlertTittles.tChangeSuccess, message_t: Constants.AlertMessages.changeSuccess, buttonAction: Constants.textAction.actionSignIn, doHandler: self.closeViewController)
                            
                            }
                        })
@@ -50,6 +50,16 @@ class ForgotPasswordViewController: UIViewController {
                } else {
                    self.showAlertController(tittle_t: Constants.ErrorTittles.titleRequerido, message_t: Constants.ErrorMessages.messageRequeridoLogin)
                }
+    }
+    
+    func closeViewController(action: UIAlertAction){
+        let controllers = self.navigationController?.viewControllers
+         for vc in controllers! {
+            print(vc)
+           if vc is ViewController {
+             _ = self.navigationController?.popToViewController(vc as! ViewController, animated: true)
+           }
+        }
     }
     
     func goLogin(action: UIAlertAction){

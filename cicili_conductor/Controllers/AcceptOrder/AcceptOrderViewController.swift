@@ -62,7 +62,8 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
-    
+    var pedidoActivo: String? = nil
+    var pedidoActivoStatus: String? = nil
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,13 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         if varPedido != nil {
 
             self.getPedido(pidPedido: varPedido!)
+        }else{
+            if (pedidoActivo != nil){
+                if (pedidoActivoStatus != "1"){
+                    self.performSegue(withIdentifier: Constants.Storyboard.segueAcceptOrder, sender: self)
+                }
+                self.getPedido(pidPedido: pedidoActivo!)
+            }
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationCancelOrder(notification:)), name: Notification.Name("NotificationCancelOrder"), object: nil)
@@ -132,6 +140,10 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         let notif = appDelegate.responseNotification
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
+        
+        if (varPedido == nil){
+            varPedido = pedidoActivo
+        }
         
         if varPedido != nil {
 
@@ -188,6 +200,10 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         if varPedido != nil {
 
             self.cardViewController.orderId = Int(varPedido!)
+        }else{
+            if (pedidoActivo != nil){
+                self.cardViewController.orderId = Int(pedidoActivo!)
+            }
         }
         //self.cardViewController.orderId = order!.id
         RequestManager.fetchCancelReason(oauthToken: self.cliente!.token! , success: { response in
@@ -352,6 +368,11 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
         
+        if (varPedido == nil){
+            if (pedidoActivo != nil){
+                varPedido = pedidoActivo!
+            }
+        }
            
         RequestManager.acceptOrder(oauthToken: cliente!.token!, parameters: [WSKeys.parameters.pedido: varPedido ?? 0], success: { response in
                         
@@ -365,13 +386,16 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         }
                 
     }
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier ==  Constants.Storyboard.segueAcceptOrder {
+            let newOrderController = segue.destination as! RequestedOrderViewController
+            newOrderController.pedidoActivo = self.pedidoActivo
+            
+        }
     }
-    */
+    
 
 }

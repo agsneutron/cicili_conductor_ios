@@ -12,6 +12,7 @@ class LostPasswordViewController: UIViewController {
 
    
     @IBOutlet weak var userTextField: UITextField!
+    var userAccount: String=""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,12 +76,14 @@ class LostPasswordViewController: UIViewController {
                                 if response.data == WSKeys.parameters.okVerification{
                                     print("En success validated code \(response)")
                                                            
-                                    //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)
-                                    guard let forgotPasswordController = self.storyboard?.instantiateViewController(
+                                    self.userAccount = usernameAccount
+                                    self.performSegue(withIdentifier: Constants.Storyboard.segueRecoveryPasswordCode, sender: self)
+                                    
+                                    /*guard let forgotPasswordController = self.storyboard?.instantiateViewController(
                                     withIdentifier: "ForgotPasswordStoryboard") as? ForgotPasswordViewController else {
                                     fatalError("Unable to create ForgotPasswordController")}
                                     forgotPasswordController.userInput = usernameAccount
-                                    self.present(forgotPasswordController, animated: true, completion: nil)
+                                    self.present(forgotPasswordController, animated: true, completion: nil)*/
                                 }
                                 })
                                 { error in
@@ -100,7 +103,18 @@ class LostPasswordViewController: UIViewController {
             
         self.present(alert, animated: true)
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+   
+        if segue.identifier ==  Constants.Storyboard.segueRecoveryPasswordCode{
+            let newOrderController = segue.destination as! ForgotPasswordViewController
+            newOrderController.userInput = self.userAccount
+           
+            
+            
+        }
+    }
     @objc func handleCancel() {
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)

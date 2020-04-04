@@ -63,12 +63,13 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
+    var pedidoActivo: String? = nil
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cliente = appDelegate.responseCliente
         setupCard()
         navigationController?.setNavigationBarHidden(true, animated: true)
-        self.cliente = appDelegate.responseCliente
         getDataOrder()
         NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationResponse(notification:)), name: Notification.Name("NotificationResponse"), object: nil)
         // Do any additional setup after loading the view.
@@ -147,6 +148,10 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
         
+        if (varPedido == nil){
+            varPedido = pedidoActivo
+        }
+        
         if varPedido != nil {
 
             self.cardViewController.orderId = Int(varPedido!)
@@ -212,6 +217,7 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
             self.cardViewController.orderId = Int(varPedido!)
         }
         //self.cardViewController.orderId = order!.id
+        print("En success get cancel reason \(self.cliente!)")
         RequestManager.fetchCancelReason(oauthToken: self.cliente!.token! , success: { response in
         
                     print("En success get cancel reason \(response)")
@@ -331,6 +337,10 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         if varPedido != nil {
             getPedido(pidPedido: varPedido!)
             
+        }else{
+            if (pedidoActivo != nil){
+                self.getPedido(pidPedido: pedidoActivo!)
+            }
         }
     }
     
