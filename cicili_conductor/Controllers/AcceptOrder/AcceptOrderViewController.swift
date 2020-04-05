@@ -328,13 +328,13 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
                         
             debugPrint("En success requestorder \(response.direccion!)")
             
-            self.txtTitle.text = "Pedido: \(response.id)"
+            self.txtTitle.text = "\(response.id)"
             self.txtStatus.text = "\(response.nombreStatus!) "
-            self.txtDate.text = "Fecha: \(response.fechaSolicitada!)"
-            self.txtHour.text = "Hora: \(response.horaSolicitada!) "
-            self.txtPayment.text = "Forma de Pago: \(response.formaPago!) "
-            self.txtQuantity.text = "Cantidad: \(response.cantidad)"
-            self.txtAmount.text = "Precio: \(response.precio) "
+            self.txtDate.text = "\(response.fechaSolicitada!)"
+            self.txtHour.text = "\(response.horaSolicitada!) "
+            self.txtPayment.text = "\(response.formaPago!) "
+            self.txtQuantity.text = "\(response.cantidad)"
+            self.txtAmount.text = "\(response.precio) "
             
             
         })
