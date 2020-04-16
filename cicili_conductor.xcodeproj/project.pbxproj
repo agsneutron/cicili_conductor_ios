@@ -88,6 +88,7 @@
 		31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2EBF723EBB5BE00F2323C /* AcceptOrderViewController.swift */; };
 		31C2EBFA23EBB5F700F2323C /* RemoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2EBF923EBB5F700F2323C /* RemoteNotification.swift */; };
 		31F55EAC23E4EDF80017DA8A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F55EAB23E4EDF80017DA8A /* HealthKit.framework */; };
+		31F95E852448D19700C9DE56 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 31F95E842448D19600C9DE56 /* alert.mp3 */; };
 		31F9E7A423F0741A00403DC6 /* ResponseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */; };
 		31F9E7A823F0DCF600403DC6 /* RequestedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */; };
 		31FA1A562400BEF80038C270 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA1A552400BEF80038C270 /* DocumentsViewController.swift */; };
@@ -243,6 +244,7 @@
 		31F55EA723E4AB5B0017DA8A /* cicili_cliente.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cicili_cliente.entitlements; sourceTree = "<group>"; };
 		31F55EAA23E4EDF80017DA8A /* cicili_clienteDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cicili_clienteDebug.entitlements; sourceTree = "<group>"; };
 		31F55EAB23E4EDF80017DA8A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		31F95E842448D19600C9DE56 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
 		31F9E7A323F0741A00403DC6 /* ResponseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseOrder.swift; sourceTree = "<group>"; };
 		31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestedOrderViewController.swift; sourceTree = "<group>"; };
 		31FA1A552400BEF80038C270 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_conductor */ = {
 			isa = PBXGroup;
 			children = (
+				31F95E832448D14200C9DE56 /* Music */,
 				318AB9C023F50FC700A62183 /* View */,
 				31F55EAA23E4EDF80017DA8A /* cicili_clienteDebug.entitlements */,
 				31F55EA723E4AB5B0017DA8A /* cicili_cliente.entitlements */,
@@ -525,6 +528,14 @@
 				31F9E7A723F0DCF600403DC6 /* RequestedOrderViewController.swift */,
 			);
 			path = AcceptOrder;
+			sourceTree = "<group>";
+		};
+		31F95E832448D14200C9DE56 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				31F95E842448D19600C9DE56 /* alert.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		57B7B34223C28C0000731CE7 /* Storyboards */ = {
@@ -754,6 +765,7 @@
 				317B727C240EDE6700B803B7 /* Message.storyboard in Resources */,
 				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
 				3189226A2400A6FC003FF7D0 /* TankTruckStoryboard.storyboard in Resources */,
+				31F95E852448D19700C9DE56 /* alert.mp3 in Resources */,
 				57AA27E423C64DC300275CF1 /* ForgotPassword.storyboard in Resources */,
 				57D5DAF223E61E0E0019392D /* NewOrder.storyboard in Resources */,
 				57ACFB5E23C9C64F00357C85 /* PaymentDataStoryboard.storyboard in Resources */,

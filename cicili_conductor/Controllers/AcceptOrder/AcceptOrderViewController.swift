@@ -6,10 +6,11 @@
 //  Copyright © 2020 CICILI. All rights reserved.
 //
 import UIKit
+import AVFoundation
 
 class AcceptOrderViewController: UIViewController, DataCancelDelegate {
 
-    
+    var audioPlayer = AVAudioPlayer()
 
     var cliente: Cliente?
 
@@ -67,6 +68,15 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do{
+            self.audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "alert",ofType: "mp3")!))
+            self.audioPlayer.prepareToPlay()
+            self.audioPlayer.play()
+        }
+        catch{
+            print(error)
+        }
         
         navigationController?.setNavigationBarHidden(true, animated: true)
         self.cliente = appDelegate.responseCliente
@@ -375,7 +385,7 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         }
            
         RequestManager.acceptOrder(oauthToken: cliente!.token!, parameters: [WSKeys.parameters.pedido: varPedido ?? 0], success: { response in
-                        
+            self.audioPlayer.stop()
             debugPrint("En success requestorder \(response.codeError)")
             self.performSegue(withIdentifier: Constants.Storyboard.segueAcceptOrder, sender: self)
             
