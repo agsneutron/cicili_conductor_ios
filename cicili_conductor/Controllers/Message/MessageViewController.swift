@@ -67,6 +67,9 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
         tblMessages.rowHeight = UITableView.automaticDimension
         tblMessages.estimatedRowHeight = 600
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     func base64ToImage(_ base64String: String) -> UIImage? {
@@ -178,5 +181,18 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
 
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
 
 }

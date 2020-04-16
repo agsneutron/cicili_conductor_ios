@@ -79,16 +79,17 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         let notif = appDelegate.responseNotification
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
-        
+        print("varPedido ",varPedido)
         if varPedido != nil {
 
             self.getPedido(pidPedido: varPedido!)
         }else{
             if (pedidoActivo != nil){
                 if (pedidoActivoStatus != "1"){
+
                     self.performSegue(withIdentifier: Constants.Storyboard.segueAcceptOrder, sender: self)
                 }
-                self.getPedido(pidPedido: pedidoActivo!)
+                self.getPedido(pidPedido: String(pedidoActivo!))
             }
         }
         
@@ -142,7 +143,7 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         varPedido = notif?[idPedido] as? String
         
         if (varPedido == nil){
-            varPedido = pedidoActivo
+            varPedido = String(pedidoActivo!)
         }
         
         if varPedido != nil {
@@ -196,9 +197,8 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         let notif = appDelegate.responseNotification
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
-        
+        print("varPedido ",varPedido)
         if varPedido != nil {
-
             self.cardViewController.orderId = Int(varPedido!)
         }else{
             if (pedidoActivo != nil){
@@ -370,7 +370,7 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         
         if (varPedido == nil){
             if (pedidoActivo != nil){
-                varPedido = pedidoActivo!
+                varPedido = String(pedidoActivo!)
             }
         }
            
@@ -392,7 +392,9 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier ==  Constants.Storyboard.segueAcceptOrder {
             let newOrderController = segue.destination as! RequestedOrderViewController
-            newOrderController.pedidoActivo = self.pedidoActivo
+            if self.pedidoActivo != nil{
+                newOrderController.pedidoActivo = self.pedidoActivo
+            }
             
         }
     }

@@ -105,10 +105,15 @@ class SalesReportViewController: UIViewController {
         /*let parametros: SalesParameters?
         parametros = SalesParameters(type: "xls", initialDate: "01-10-2019", endDate: "01-03-2020", conductor: String(self.cliente!.idCliente))*/
         self.progressBar.progress = 0
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+        /*let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             var documentsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
             documentsURL.appendPathComponent("ReporteVentas.xls")
             return (documentsURL, [.removePreviousFile])
+        }*/
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let file = directoryURL.appendingPathComponent("downloads/file.xls", isDirectory: false)
+            return (file, [.createIntermediateDirectories, .removePreviousFile])
         }
         
         var fecha: String = self.txtFechaInicio!.text!

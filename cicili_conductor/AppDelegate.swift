@@ -212,6 +212,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Print full message.
         print(userInfo)
+        responseNotification = userInfo
+        self.showAcceptOrder(userInfo: userInfo)
       }
 
       func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
@@ -313,6 +315,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
 
         completionHandler()
+        responseNotification = userInfo
+        self.showAcceptOrder(userInfo: userInfo)
       }
         
         

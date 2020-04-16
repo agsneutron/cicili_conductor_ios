@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class ForgotPasswordViewController: UIViewController {
 
@@ -15,6 +17,7 @@ class ForgotPasswordViewController: UIViewController {
     
     var userInput : String?
     
+    var currentUser = Auth.auth().currentUser
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +35,24 @@ class ForgotPasswordViewController: UIViewController {
        
         if let password = passwordTextField.text, !password.isEmpty, let passwordConfirm = confirmPasswordTextField.text, !passwordConfirm.isEmpty, let userName = userInput, !userName.isEmpty {
                 RequestManager.fetchChanguePassword(parameters: [WSKeys.parameters.PUSERNAME: userName, WSKeys.parameters.PPASSWORD: password], success: { response in
-                       
+                       print("En success changued password  \(response)")
                     if !response.data!.isEmpty{
-                           print("En success changued password  \(response)")
+                        
+                        self.currentUser?.updatePassword(to: password)
+                        { (error) in
+                              print("error changued password  \(error)")
+                            if error != nil {
+                                if let errorCode = AuthErrorCode(rawValue: error!._code) {
+                                    switch errorCode {
+                                    case .invalidEmail:
+                                        self.showAlert(message: ERROR_MSG_INVALID_EMAIL)
+                                    default:
+                                        self.showAlert(message: ERROR_MSG_UNEXPECTED_ERROR)
+                                    }
+                                }
+                            }
+                        }
+                        
                            self.confirmPasswordTextField.text = ""
                            self.passwordTextField.text = ""
                            //self.performSegue(withIdentifier: Constants.Storyboard.loginSegueId, sender: self)

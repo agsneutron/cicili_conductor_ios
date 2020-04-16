@@ -83,6 +83,12 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         var varStatus: String? = nil
         varStatus = notif?[indexStatus] as? String
         
+        if (varPedido == nil){
+            if (pedidoActivo != nil){
+                varPedido = String(pedidoActivo!)
+            }
+        }
+        
         if varPedido != nil {
             
             self.txtStatus.text = notif?[pstatus] as? String
@@ -131,6 +137,11 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
             let notif = appDelegate.responseNotification
             var varPedido: String? = nil
             varPedido = notif?[idPedido] as? String
+            if (varPedido == nil){
+                if (pedidoActivo != nil){
+                    varPedido = String(pedidoActivo!)
+                }
+            }
             
             let ChatController = segue.destination as! MessageChatViewController
             ChatController.orderId = Int(varPedido!)
@@ -211,6 +222,12 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         let notif = appDelegate.responseNotification
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
+        
+        if (varPedido == nil){
+            if (pedidoActivo != nil){
+                varPedido = String(pedidoActivo!)
+            }
+        }
         
         if varPedido != nil {
 
@@ -351,15 +368,15 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         print("Token FB : \(fbToken)")
            
         RequestManager.getOrderData(oauthToken: cliente!.token!, idPedido: pidPedido, success: { response in
-            self.txtDireccion.text = "Dirección: \(response.direccion!)"
-            self.txtPrecio.text = "Precio: \(response.precio)"
-            self.txtCantidad.text = "Cantidad: \(response.cantidad)"
-            self.txtFormaPago.text = "Forma Pago: \(response.formaPago!)"
-            self.txtTiempo.text = "Llegada: \(response.tiempo!)"
-            self.txtDistancia.text = "Distancia: \(response.distancia!)"
-            self.txtCliente.text = "Cliente: \(response.nombreCliente!)"
+            self.txtDireccion.text = "\(response.direccion!)"
+            self.txtPrecio.text = "\(response.precio)"
+            self.txtCantidad.text = "\(response.cantidad)"
+            self.txtFormaPago.text = "\(response.formaPago!)"
+            self.txtTiempo.text = "\(response.tiempo!)"
+            self.txtDistancia.text = "\(response.distancia!)"
+            self.txtCliente.text = "\(response.nombreCliente!)"
             self.txtStatus.text = "\(response.nombreStatus!)"
-            self.txtPedido.text = "Pedido: \(response.id)"
+            self.txtPedido.text = "\(response.id)"
             
             self.stringDireccion = response.direccion!
             self.location =  CLLocationCoordinate2D(latitude: response.latitud, longitude: response.longitud)
@@ -499,6 +516,11 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         var varPedido: String? = nil
         varPedido = notif?[idPedido] as? String
         
+        if (varPedido == nil){
+            if (pedidoActivo != nil){
+                varPedido = String(pedidoActivo!)
+            }
+        }
            
         RequestManager.ChangeStatusOrder(oauthToken: cliente!.token!, parameters: [WSKeys.parameters.pedido: varPedido ?? 0,WSKeys.parameters.status: pStatus], success: { response in
                         

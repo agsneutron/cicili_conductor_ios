@@ -518,7 +518,7 @@ class RequestManager: NSObject{
            Alamofire.request(Router.cancelReason(autorizathionToken: oauthToken)).responseJSON{
               response in
               
-               debugPrint("*********RES*********")
+               debugPrint("*********RES cancel reazons*********")
                debugPrint(response)
                // Evalute result
                switch response.result {
@@ -550,6 +550,9 @@ class RequestManager: NSObject{
         // Fetch request
         Alamofire.request(Router.getOrder(autorizathionToken: oauthToken, idPedido: idPedido)).responseJSON{
         response in
+            
+            debugPrint("*********RES cancel getOrderData *********")
+            debugPrint(response)
 
         // Evalute result
         switch response.result {
