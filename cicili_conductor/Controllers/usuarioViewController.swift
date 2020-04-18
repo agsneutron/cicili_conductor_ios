@@ -22,6 +22,7 @@ class usuarioViewController: UIViewController {
     override func viewDidLoad() {
            super.viewDidLoad()
            // Do any additional setup after loading the view.
+       
         self.cliente = appDelegate.responseCliente
         lblUserName.text = "\(String(describing: cliente!.nombre!)) \(String(describing: cliente!.apellidoPaterno!)) \( String(describing: cliente!.apellidoMaterno!))"
         
@@ -62,6 +63,21 @@ class usuarioViewController: UIViewController {
     func base64ToImage(_ base64String: String) -> UIImage? {
         guard let imageData = Data(base64Encoded: base64String) else { return nil }
         return UIImage(data: imageData)
+    }
+    
+    func closeViewController(){
+        let controllers = self.navigationController?.viewControllers
+         for vc in controllers! {
+            print(vc)
+           if vc is ViewController {
+             _ = self.navigationController?.popToViewController(vc as! ViewController, animated: true)
+           }
+        }
+    }
+    @IBAction func ExitApp(_ sender: UIButton) {
+        self.cliente = nil
+        appDelegate.responseCliente = nil
+        self.closeViewController()
     }
 }
 

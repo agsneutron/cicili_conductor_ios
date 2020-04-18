@@ -75,7 +75,7 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
             self.audioPlayer.play()
         }
         catch{
-            print(error)
+            print("error en audio ", error)
         }
         
         navigationController?.setNavigationBarHidden(true, animated: true)

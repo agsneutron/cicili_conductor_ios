@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t88-Zv-BRa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t88-Zv-BRa">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,13 +56,13 @@
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-H1-9JL">
                                         <rect key="frame" x="0.0" y="207.5" width="375" height="208"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cicili_01" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-Os-hAv">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-Os-hAv">
                                                 <rect key="frame" x="40" y="79" width="295" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="13I-4z-TPO"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2M-8t-Npg" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
                                                 <rect key="frame" x="50" y="133" width="275" height="44"/>
@@ -81,13 +81,13 @@
                                                     <action selector="singIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gM0-gJ-SbI"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="migtoacosta@gmail.com" borderStyle="roundedRect" placeholder="Usuario" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-Ag-gun">
+                                            <textField opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-Ag-gun">
                                                 <rect key="frame" x="40" y="15" width="295" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="Sa9-nc-Ju9"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -696,16 +696,6 @@
                                                     <constraint firstAttribute="height" constant="44" id="KaS-Sg-NI4"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9e-Cb-Kld">
-                                                <rect key="frame" x="325" y="13" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Salir">
-                                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnSalir:" destination="ds5-FK-eYt" eventType="touchUpInside" id="uM2-Jk-tVv"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -871,19 +861,34 @@
                                                     <action selector="btnUpdateImage:" destination="p8B-fh-Y9W" eventType="touchUpInside" id="hBc-p2-5QL"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiq-j0-vgW">
+                                                <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="S7m-Xh-GBX"/>
+                                                    <constraint firstAttribute="width" constant="30" id="f3B-sR-n3F"/>
+                                                </constraints>
+                                                <state key="normal" image="exit"/>
+                                                <state key="highlighted" image="exit"/>
+                                                <connections>
+                                                    <action selector="ExitApp:" destination="p8B-fh-Y9W" eventType="touchUpInside" id="Jum-Bu-rdm"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="dfJ-g8-B7a" firstAttribute="top" secondItem="4AY-5C-He9" secondAttribute="bottom" constant="20" id="0xe-5m-fyl"/>
                                             <constraint firstItem="4o0-Xc-jaD" firstAttribute="top" secondItem="dfJ-g8-B7a" secondAttribute="bottom" id="7dP-Aj-ib9"/>
+                                            <constraint firstItem="hiq-j0-vgW" firstAttribute="top" secondItem="Vee-tS-PiJ" secondAttribute="top" constant="8" id="F3b-dX-k9S"/>
                                             <constraint firstAttribute="trailing" secondItem="dfJ-g8-B7a" secondAttribute="trailing" constant="20" id="HJg-1S-2rT"/>
                                             <constraint firstItem="4AY-5C-He9" firstAttribute="top" secondItem="DfT-Yp-Rj2" secondAttribute="bottom" constant="5" id="Phw-fl-sGy"/>
                                             <constraint firstItem="dfJ-g8-B7a" firstAttribute="centerX" secondItem="Vee-tS-PiJ" secondAttribute="centerX" id="aoK-ZJ-xe4"/>
                                             <constraint firstItem="dfJ-g8-B7a" firstAttribute="leading" secondItem="Vee-tS-PiJ" secondAttribute="leading" constant="20" id="gEo-eT-Gls"/>
                                             <constraint firstItem="4o0-Xc-jaD" firstAttribute="centerX" secondItem="Vee-tS-PiJ" secondAttribute="centerX" id="gQt-j9-Zhy"/>
+                                            <constraint firstAttribute="trailing" secondItem="hiq-j0-vgW" secondAttribute="trailing" constant="8" id="hh8-Ne-X3c"/>
                                             <constraint firstAttribute="bottom" secondItem="4o0-Xc-jaD" secondAttribute="bottom" constant="10" id="jag-CE-Am1"/>
                                             <constraint firstItem="DfT-Yp-Rj2" firstAttribute="centerX" secondItem="Vee-tS-PiJ" secondAttribute="centerX" id="oTU-Ui-Sv3"/>
                                             <constraint firstAttribute="height" constant="210" id="vhL-Fk-HDA"/>
+                                            <constraint firstItem="dfJ-g8-B7a" firstAttribute="top" secondItem="hiq-j0-vgW" secondAttribute="bottom" constant="107" id="yAt-sc-gen"/>
                                             <constraint firstItem="4AY-5C-He9" firstAttribute="centerX" secondItem="Vee-tS-PiJ" secondAttribute="centerX" id="yQY-1w-0Eh"/>
                                         </constraints>
                                     </view>
@@ -1728,7 +1733,7 @@
             <objects>
                 <viewController id="e3o-oS-taQ" customClass="BoardViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zvb-eb-hSw">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="552"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="567"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consulta por Semana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjY-Ay-HqK">
@@ -1738,7 +1743,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XMe-Iv-HK3">
-                                <rect key="frame" x="6" y="140" width="348" height="412"/>
+                                <rect key="frame" x="6" y="140" width="348" height="427"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoardTableViewCell" rowHeight="62" id="TUA-RE-zxt" customClass="BoardTableViewCell" customModule="cicili_conductor" customModuleProvider="target">
@@ -1870,7 +1875,7 @@
                                 </prototypes>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwP-cM-h7B">
-                                <rect key="frame" x="6" y="28" width="357" height="104"/>
+                                <rect key="frame" x="6" y="28" width="348" height="104"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1907,7 +1912,7 @@
             <objects>
                 <viewController id="dG9-uD-uvY" customClass="HistoricalTableViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z2A-NX-Sb2">
-                        <rect key="frame" x="0.0" y="0.0" width="351" height="552"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="567"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uyp-KP-a68">
@@ -2113,7 +2118,7 @@
                                                             <rect key="frame" x="0.0" y="10" width="351" height="50"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_usuario" translatesAutoresizingMaskIntoConstraints="NO" id="oi4-FL-bsx">
-                                                                    <rect key="frame" x="0.0" y="8.5" width="21" height="33"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="21" height="50"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQB-Ct-LW2">
                                                                     <rect key="frame" x="41" y="0.0" width="310" height="50"/>
@@ -2279,48 +2284,48 @@
             <objects>
                 <viewController id="rEx-Lw-Aop" customClass="QualificationViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nQW-rp-3Gf">
-                        <rect key="frame" x="0.0" y="0.0" width="351" height="552"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="567"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flama_media-1" translatesAutoresizingMaskIntoConstraints="NO" id="rLU-hn-kKo">
-                                <rect key="frame" x="20" y="30" width="311" height="120"/>
+                                <rect key="frame" x="20" y="30" width="320" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="vS2-KQ-YKN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completados" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQm-CS-A6m">
-                                <rect key="frame" x="130" y="211" width="91.5" height="18"/>
+                                <rect key="frame" x="134.5" y="211" width="91.5" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oay-KE-kV7">
-                                <rect key="frame" x="20" y="170" width="311" height="41"/>
+                                <rect key="frame" x="20" y="170" width="320" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calificación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k1-8g-A8Q">
-                                <rect key="frame" x="124.5" y="259" width="102" height="24"/>
+                                <rect key="frame" x="129" y="259" width="102" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" red="0.53333333329999999" green="0.81568627449999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-x3-O3d">
-                                <rect key="frame" x="50.5" y="318" width="250" height="25"/>
+                                <rect key="frame" x="55" y="318" width="250" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3yd-GN-9n3"/>
                                     <constraint firstAttribute="height" constant="25" id="QNc-Kv-WJe"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOP-AW-W8S">
-                                <rect key="frame" x="20" y="378" width="311" height="41"/>
+                                <rect key="frame" x="20" y="378" width="320" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KX-sn-SdF" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="488" width="311" height="44"/>
+                                <rect key="frame" x="20" y="503" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="jNS-1K-wmQ"/>
@@ -2896,6 +2901,7 @@
         <image name="CiciliTagline-(3)" width="1004.5" height="476"/>
         <image name="WhatsApp Image 2019-11-19 at 8.27.59 PM (1)" width="960" height="1280"/>
         <image name="bg_1" width="414" height="896"/>
+        <image name="exit" width="512" height="512"/>
         <image name="flama_media-1" width="434" height="598"/>
         <image name="icon_calendar" width="26.5" height="26.5"/>
         <image name="icon_dollar" width="25" height="25"/>

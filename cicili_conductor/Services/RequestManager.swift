@@ -742,7 +742,7 @@ class RequestManager: NSObject{
         // Fetch request
         Alamofire.request(Router.isActiveOrder(autorizathionToken: oauthToken)).responseJSON{
         response in
-        
+        print("isActiveOrder ", response)
         // Evalute result
         switch response.result {
             case .success:
