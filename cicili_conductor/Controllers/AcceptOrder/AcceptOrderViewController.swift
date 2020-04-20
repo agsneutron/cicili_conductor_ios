@@ -69,6 +69,7 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print ("entro viewDidLoad")
         do{
             self.audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "alert",ofType: "mp3")!))
             self.audioPlayer.prepareToPlay()

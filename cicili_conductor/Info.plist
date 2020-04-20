@@ -60,7 +60,10 @@
 	<string>La aplicación requiere acceso a tus imágenes para  establecer foto de perfil.</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
