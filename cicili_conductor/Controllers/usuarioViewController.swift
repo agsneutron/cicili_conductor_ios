@@ -75,9 +75,10 @@ class usuarioViewController: UIViewController {
         }
     }
     @IBAction func ExitApp(_ sender: UIButton) {
-        self.cliente = nil
-        appDelegate.responseCliente = nil
-        self.closeViewController()
+        
+        NotificationCenter.default.post(name: Notification.Name("NotificationExit"), object: nil, userInfo: nil)
+
+        //self.closeViewController()
     }
 }
 
