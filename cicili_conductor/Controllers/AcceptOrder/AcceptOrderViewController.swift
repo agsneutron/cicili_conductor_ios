@@ -345,7 +345,7 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
             self.txtHour.text = "\(response.horaSolicitada!) "
             self.txtPayment.text = "\(response.formaPago!) "
             self.txtQuantity.text = "\(response.cantidad)"
-            self.txtAmount.text = "\(response.precio) "
+            self.txtAmount.text = "\(response.monto) "
             
             
         })

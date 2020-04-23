@@ -82,13 +82,15 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
         
         // Configure the cell...
         let comments = commentsArray[indexPath.row]
-        cell.lblCliente?.text = "Cliente: \(comments.nombreCliente!)"
-        cell.lblPedido?.text = "Pedido: \(comments.idPedido)"
-        cell.lblFecha?.text = "Fecha: \(comments.fecha!)"
+        cell.lblCliente?.text = "\(comments.nombreCliente!)"
+        cell.lblPedido?.text = "\(comments.idPedido)"
+        cell.lblFecha?.text = "\(comments.fecha!)"
         cell.lblComentarios?.text = "Comentario: \(comments.comentario!)"
         cell.lblCalificacion?.text = "Calificación: \(comments.calificacion)"
         setUpStarStack(cell: cell, calificacion: comments.calificacion)
         
+        print(cell.lblComentarios?.text)
+        print(cell.lblCalificacion?.text)
         return cell
     }
     

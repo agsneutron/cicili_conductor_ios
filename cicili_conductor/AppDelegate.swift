@@ -120,7 +120,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         
         if let stringOne = defaults.string(forKey: defaultsKeys.keyOne){
-            print("defaults ", stringOne)
+            print("defaults stringOne", stringOne)
+            print("defaults stringTwo", defaults.string(forKey: defaultsKeys.keyTwo))
             NotificationCenter.default.post(name: Notification.Name("localstorage"), object: nil, userInfo: nil)
         }
         

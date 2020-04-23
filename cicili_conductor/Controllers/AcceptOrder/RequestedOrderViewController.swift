@@ -369,7 +369,7 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
            
         RequestManager.getOrderData(oauthToken: cliente!.token!, idPedido: pidPedido, success: { response in
             self.txtDireccion.text = "\(response.direccion!)"
-            self.txtPrecio.text = "\(response.precio)"
+            self.txtPrecio.text = "\(response.monto)"
             self.txtCantidad.text = "\(response.cantidad)"
             self.txtFormaPago.text = "\(response.formaPago!)"
             self.txtTiempo.text = "\(response.tiempo!)"

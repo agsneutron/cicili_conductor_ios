@@ -866,7 +866,7 @@ class RequestManager: NSObject{
         // Fetch request
         Alamofire.request(Router.getHistorical(autorizathionToken: oauthToken)).responseJSON{
         response in
-        
+        print("getHistorical ",response)
         // Evalute result
         switch response.result {
             case .success:
