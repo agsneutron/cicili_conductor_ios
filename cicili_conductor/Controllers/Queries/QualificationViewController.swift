@@ -30,7 +30,7 @@ class QualificationViewController: UIViewController {
         
         self.cliente = appDelegate.responseCliente
         self.getQualifications()
-        self.setUpStarStack()
+        //self.setUpStarStack()
         // Do any additional setup after loading the view.
     }
     
@@ -42,7 +42,7 @@ class QualificationViewController: UIViewController {
             debugPrint("En success getQualifications \(response.calificacion)")
             self.totalCalificacion.text = "\(response.calificacion)"
             self.totalCompletados.text = "\(response.completados)"
-                
+            self.setStarFill(val: response.calificacion)
             })
             { error in
                 self.showAlertController(tittle_t: Constants.ErrorTittles.titleVerifica, message_t: error.localizedDescription)
@@ -70,7 +70,31 @@ class QualificationViewController: UIViewController {
                 
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func setStarFill(val: Int) {
+        starStackView.axis = NSLayoutConstraint.Axis.horizontal
+        starStackView.distribution = .fillEqually
+        starStackView.alignment = .fill
+        starStackView.spacing = 30
+        starStackView.tag = 5007
+        
+        for i in 0..<5{
+            imageView = UIImageView()
+            if (i == 0){
+                imageView.tag = 5009
+            }
+            if (i < val){
+                imageView.image = UIImage(named: "icon_star_fill")
+            }else{
+                imageView.image = UIImage(named: "icon_star")
+            }
+            starStackView.addArrangedSubview(imageView)
+            arrImageViews.append(imageView)
+        }
+        //starStackView.translatesAutoresizingMaskIntoConstraints = false
+                
+    }
+    
+    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touchLocation = touches.first
         let location = touchLocation?.location(in: starStackView)
         if (touchLocation?.view?.tag == 5007){
@@ -89,7 +113,7 @@ class QualificationViewController: UIViewController {
                 }
                 
             })
-        }
+        }*/
     }
     
     
