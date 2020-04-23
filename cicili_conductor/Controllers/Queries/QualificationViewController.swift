@@ -113,8 +113,8 @@ class QualificationViewController: UIViewController {
                 }
                 
             })
-        }*/
-    }
+        }
+    }*/
     
     
     

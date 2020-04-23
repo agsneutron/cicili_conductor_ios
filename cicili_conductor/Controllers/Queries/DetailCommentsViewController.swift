@@ -18,6 +18,7 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
     var arrImageViews = [UIImageView]()
     var imageView: UIImageView!
     var intRate: Int = 0
+    var counter: Int = 0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -87,10 +88,11 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
         cell.lblFecha?.text = "\(comments.fecha!)"
         cell.lblComentarios?.text = "Comentario: \(comments.comentario!)"
         cell.lblCalificacion?.text = "Calificación: \(comments.calificacion)"
-        setUpStarStack(cell: cell, calificacion: comments.calificacion)
-        
-        print(cell.lblComentarios?.text)
-        print(cell.lblCalificacion?.text)
+        if (counter < commentsArray.count) {
+            setUpStarStack(cell: cell, calificacion: comments.calificacion)
+        }
+        counter += 1
+
         return cell
     }
     
