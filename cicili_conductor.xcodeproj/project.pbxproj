@@ -66,6 +66,7 @@
 		317B727C240EDE6700B803B7 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B727B240EDE6700B803B7 /* Message.storyboard */; };
 		317B727E240EDEC200B803B7 /* MessageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B727D240EDEC200B803B7 /* MessageChat.storyboard */; };
 		3181A3C324035C1900DCEC12 /* SalesReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181A3C224035C1900DCEC12 /* SalesReportViewController.swift */; };
+		318900D324512E0600439893 /* LoadConfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318900D224512E0600439893 /* LoadConfViewController.swift */; };
 		3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3189226024005DEB003FF7D0 /* BoardViewController.swift */; };
 		31892263240077D8003FF7D0 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31892262240077D8003FF7D0 /* BoardTableViewCell.swift */; };
 		318922662400A672003FF7D0 /* DocumentsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */; };
@@ -220,6 +221,7 @@
 		317B727B240EDE6700B803B7 /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		317B727D240EDEC200B803B7 /* MessageChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageChat.storyboard; sourceTree = "<group>"; };
 		3181A3C224035C1900DCEC12 /* SalesReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportViewController.swift; sourceTree = "<group>"; };
+		318900D224512E0600439893 /* LoadConfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadConfViewController.swift; sourceTree = "<group>"; };
 		3189226024005DEB003FF7D0 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		31892262240077D8003FF7D0 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		318922652400A672003FF7D0 /* DocumentsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DocumentsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 				9055278723E67E540088FCB0 /* aclaracionViewController.swift */,
 				3144F4E0242975F5004BF035 /* PasswordRegisterViewController.swift */,
 				3144F4E42429821D004BF035 /* InitialNavigationViewController.swift */,
+				318900D224512E0600439893 /* LoadConfViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				31BE0A752401D09600FE7D70 /* DocumentsTableViewCell.swift in Sources */,
 				57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */,
 				31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */,
+				318900D324512E0600439893 /* LoadConfViewController.swift in Sources */,
 				3189226124005DEB003FF7D0 /* BoardViewController.swift in Sources */,
 				31510F3F23FD17F7005D9967 /* CommentsTableViewCell.swift in Sources */,
 				5712CA9223D14957007284F2 /* ImagePicker.swift in Sources */,

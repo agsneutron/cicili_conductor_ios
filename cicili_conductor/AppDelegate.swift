@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var FBToken: String?
     var responseCliente: Cliente?
     let pstatus = "status"
+    //LocalStorage
+    
 
     func showAcceptOrder(userInfo : [AnyHashable: Any]){
         let navigationController = self.window?.rootViewController as? UINavigationController?
@@ -71,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print("Lo primero")
         FirebaseApp.configure()
    
         // [START set_messaging_delegate]
@@ -110,7 +113,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         //END location
+        struct defaultsKeys {
+            static let keyOne = "userStringKey"
+            static let keyTwo = "passStringKey"
+        }
+        let defaults = UserDefaults.standard
         
+        if let stringOne = defaults.string(forKey: defaultsKeys.keyOne){
+            print("defaults ", stringOne)
+            NotificationCenter.default.post(name: Notification.Name("localstorage"), object: nil, userInfo: nil)
+        }
         
         return true
     }
