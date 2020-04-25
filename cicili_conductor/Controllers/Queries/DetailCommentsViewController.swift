@@ -31,7 +31,7 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
         
         
         for comment in commentsObject!{
-            print("En comment \(comment)")
+            //print("En comment \(comment)")
             self.commentsArray.append(CommentsTable(idPedido: comment.idPedido,fecha: comment.fecha!,calificacion: comment.calificacion,comentario: comment.comentario!,nombreCliente: comment.nombreCliente!)!)
         }
         
@@ -49,25 +49,22 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
     
     func setUpStarStack(cell: CommentsTableViewCell, calificacion: Int) {
         
-        //cell.starStackQualification.axis = NSLayoutConstraint.Axis.horizontal
-        cell.starStackQualification.distribution = .fillEqually
-        cell.starStackQualification.alignment = .fill
-        cell.starStackQualification.spacing = 30
-        cell.starStackQualification.tag = 5007
-        
-        for i in 0..<5{
-            imageView = UIImageView()
-            if (i < calificacion){
+        var intRating: Int = 0
+        cell.arrImageViews.forEach ({ (imageView) in
+            
+            let i = cell.arrImageViews.firstIndex(of: imageView)
+            if i! < calificacion {
                 imageView.image = UIImage(named: "icon_star_fill")
             }else{
-                imageView.image = UIImage(named: "icon_star")
+                imageView.image =  UIImage(named: "icon_star")
             }
-            cell.starStackQualification.addArrangedSubview(imageView)
-            arrImageViews.append(imageView)
-        }
-        //starStackView.translatesAutoresizingMaskIntoConstraints = false
+            
+        })
+        
+        
                 
     }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,10 +85,8 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
         cell.lblFecha?.text = "\(comments.fecha!)"
         cell.lblComentarios?.text = "Comentario: \(comments.comentario!)"
         cell.lblCalificacion?.text = "Calificación: \(comments.calificacion)"
-        if (counter < commentsArray.count) {
-            setUpStarStack(cell: cell, calificacion: comments.calificacion)
-        }
-        counter += 1
+
+        setUpStarStack(cell: cell, calificacion: comments.calificacion)
 
         return cell
     }

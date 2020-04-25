@@ -39,7 +39,7 @@ class QualificationViewController: UIViewController {
         
         RequestManager.getQualifications(oauthToken: cliente!.token!, success: { response in
                             
-            debugPrint("En success getQualifications \(response.calificacion)")
+            //debugPrint("En success getQualifications \(response.calificacion)")
             self.totalCalificacion.text = "\(response.calificacion)"
             self.totalCompletados.text = "\(response.completados)"
             self.setStarFill(val: response.calificacion)

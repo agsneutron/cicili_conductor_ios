@@ -11,6 +11,8 @@
 		3105B11F23C94522004EA64A /* AddressTableCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B11E23C94522004EA64A /* AddressTableCardViewController.swift */; };
 		3105B12123C94729004EA64A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12023C94729004EA64A /* AddressTableViewCell.swift */; };
 		3105B12523CA4266004EA64A /* AddressTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B12423CA4266004EA64A /* AddressTable.swift */; };
+		310630222454071E00D92531 /* OderDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310630212454071E00D92531 /* OderDetail.storyboard */; };
+		31063024245419C000D92531 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31063023245419C000D92531 /* OrderDetailViewController.swift */; };
 		310DB09323E3D2FE0068F72C /* NearDrivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DB09223E3D2FE0068F72C /* NearDrivers.swift */; };
 		311094C62429CA3F00495BC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 311094C52429CA3E00495BC5 /* GoogleService-Info.plist */; };
 		31119D0B23FEFEEE003B67DB /* HistoricalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31119D0A23FEFEEE003B67DB /* HistoricalTable.swift */; };
@@ -164,6 +166,8 @@
 		3105B11E23C94522004EA64A /* AddressTableCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableCardViewController.swift; sourceTree = "<group>"; };
 		3105B12023C94729004EA64A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		3105B12423CA4266004EA64A /* AddressTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTable.swift; sourceTree = "<group>"; };
+		310630212454071E00D92531 /* OderDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OderDetail.storyboard; sourceTree = "<group>"; };
+		31063023245419C000D92531 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		310DB09223E3D2FE0068F72C /* NearDrivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearDrivers.swift; sourceTree = "<group>"; };
 		311094C52429CA3E00495BC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31119D0A23FEFEEE003B67DB /* HistoricalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalTable.swift; sourceTree = "<group>"; };
@@ -518,6 +522,7 @@
 				31510F3C23FD156E005D9967 /* DetailCommentsViewController.swift */,
 				31510F3E23FD17F7005D9967 /* CommentsTableViewCell.swift */,
 				3130151E21DB1D80004E8AF0 /* CommentsTable.swift */,
+				31063023245419C000D92531 /* OrderDetailViewController.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				317B727B240EDE6700B803B7 /* Message.storyboard */,
 				317B727D240EDEC200B803B7 /* MessageChat.storyboard */,
 				3144F4DE24297358004BF035 /* ChangePasswordStoryboard.storyboard */,
+				310630212454071E00D92531 /* OderDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -779,6 +785,7 @@
 				318922682400A6B5003FF7D0 /* AccountStoryboard.storyboard in Resources */,
 				948A2A59242D6F23000DADC2 /* PersonalData.storyboard in Resources */,
 				57D35CCE23E4CFFD00DE251C /* SendNearDriverViewController.xib in Resources */,
+				310630222454071E00D92531 /* OderDetail.storyboard in Resources */,
 				57ACFB6423C9E65000357C85 /* AddressData.storyboard in Resources */,
 				311094C62429CA3F00495BC5 /* GoogleService-Info.plist in Resources */,
 				314EB2E5240818080074D825 /* SlidePayment.xib in Resources */,
@@ -837,6 +844,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31063024245419C000D92531 /* OrderDetailViewController.swift in Sources */,
 				57D5DAFA23E7185A0019392D /* ReusableIdText.swift in Sources */,
 				3137F9B623A8BA4800D8D8FF /* ViewController.swift in Sources */,
 				3105B11F23C94522004EA64A /* AddressTableCardViewController.swift in Sources */,

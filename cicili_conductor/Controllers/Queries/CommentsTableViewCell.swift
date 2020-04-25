@@ -19,7 +19,8 @@ class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCalificacion: UILabel!
     
     @IBOutlet weak var ContentCardView: UIView!
-    
+     var imageViewC: UIImageView!
+    var arrImageViews = [UIImageView]()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +29,20 @@ class CommentsTableViewCell: UITableViewCell {
           ContentCardView.layer.shadowOffset = CGSize(width: 1.0, height: 100.0)
           ContentCardView.layer.shadowRadius = 9.0
           ContentCardView.layer.shadowOpacity = 0.6
+        
+        starStackQualification.distribution = .fillEqually
+        starStackQualification.alignment = .fill
+        starStackQualification.spacing = 30
+        starStackQualification.tag = 5007
+        
+        
+        for i in 0..<5{
+            imageViewC = UIImageView()
+            imageViewC.image = UIImage(named: "icon_star")
+            
+            starStackQualification.addArrangedSubview(imageViewC)
+            arrImageViews.append(imageViewC)
+        }
         
     }
 
