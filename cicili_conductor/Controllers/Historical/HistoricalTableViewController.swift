@@ -18,7 +18,7 @@ class HistoricalTableViewController: UIViewController, UITableViewDataSource, UI
     var historicalArray = [HistoricalTable]()
     @IBOutlet weak var tableViewHistorical: UITableView!
     
-
+    var idPedido: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class HistoricalTableViewController: UIViewController, UITableViewDataSource, UI
         tableViewHistorical.delegate = self
         tableViewHistorical.reloadData()
        
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,6 +37,9 @@ class HistoricalTableViewController: UIViewController, UITableViewDataSource, UI
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.getHistorical()
+    }
     // MARK: - get historical orders
     
     func getHistorical() {
@@ -48,7 +51,7 @@ class HistoricalTableViewController: UIViewController, UITableViewDataSource, UI
                 if (object.direccion != nil){
                     direccion = object.direccion!
                 }
-                self.historicalArray.append(HistoricalTable(horaSolicitada: object.horaSolicitada!,fechaSolicitada: object.fechaSolicitada!,monto: object.monto,formaPago: object.formaPago!,direccion: direccion,nombreStatus: object.nombreStatus!)!)
+                self.historicalArray.append(HistoricalTable(id: String(object.id), precio: String(object.precio), cantidad: String(object.cantidad) ,horaSolicitada: object.horaSolicitada!,fechaSolicitada: object.fechaSolicitada!,monto: object.monto,formaPago: object.formaPago!,direccion: direccion,nombreStatus: object.nombreStatus!)!)
             }
             self.tableViewHistorical.reloadData()
             
@@ -71,8 +74,14 @@ class HistoricalTableViewController: UIViewController, UITableViewDataSource, UI
         
         
         let object = historicalArray[indexPath.row]
+        cell.txtPedido.text = "\(object.id!)"
+        FunctionsApp.currencyFormat(tipAmount : NSNumber(value: Double(object.precio!)!), txtObject : cell.txtPrecio, etiqueta: "")
+        FunctionsApp.decimalFormat(tipAmount : NSNumber(value: Double(object.cantidad!)!), txtObject : cell.txtLitros, etiqueta: "")
+        //cell.txtPrecio.text = "\(object.precio!)"
+        //cell.txtLitros.text = "\(object.cantidad!)"
         cell.hora?.text = "\(object.horaSolicitada!)"
-        cell.monto?.text = "$ \(object.monto)"
+        FunctionsApp.currencyFormat(tipAmount : NSNumber(value: object.monto), txtObject : cell.monto, etiqueta: "")
+        //cell.monto?.text = "$ \(object.monto)"
         cell.fecha?.text = "\(object.fechaSolicitada!)"
         cell.formaPago?.text = "\(object.formaPago!)"
         cell.direccion?.text = "\(object.direccion!)"
@@ -81,6 +90,24 @@ class HistoricalTableViewController: UIViewController, UITableViewDataSource, UI
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          let comments = historicalArray[indexPath.row]
+        idPedido = comments.id
+         self.performSegue(withIdentifier: Constants.Storyboard.segueOrderHistoricalDetail, sender: self)
+         
+     }
+     
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
     
+         if segue.identifier ==  Constants.Storyboard.segueOrderHistoricalDetail{
+             let newController = segue.destination as! OrderDetailViewController
+             
+             newController.idPedido = idPedido
+             newController.historic = "S"
+         }
+     
+     }
 
 }

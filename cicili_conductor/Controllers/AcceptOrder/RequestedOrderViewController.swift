@@ -362,15 +362,14 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
     }
     
     func getPedido(pidPedido: String) {
-    
-        
-        let fbToken = appDelegate.FBToken
-        print("Token FB : \(fbToken)")
            
         RequestManager.getOrderData(oauthToken: cliente!.token!, idPedido: pidPedido, success: { response in
             self.txtDireccion.text = "\(response.direccion!)"
-            self.txtPrecio.text = "\(response.monto)"
-            self.txtCantidad.text = "\(response.cantidad)"
+            FunctionsApp.decimalFormat(tipAmount : NSNumber(value: response.cantidad), txtObject : self.txtCantidad, etiqueta: "")
+            FunctionsApp.currencyFormat(tipAmount : NSNumber(value: response.monto), txtObject: self.txtPrecio, etiqueta: "")
+            
+            //self.txtPrecio.text = "\(response.monto)"
+            //self.txtCantidad.text = "\(response.cantidad)"
             self.txtFormaPago.text = "\(response.formaPago!)"
             self.txtTiempo.text = "\(response.tiempo!)"
             self.txtDistancia.text = "\(response.distancia!)"

@@ -38,7 +38,7 @@ class QueriesViewController: UIViewController {
                     direccion = object.direccion!
                 }
                 //print(" object : \(i) ID: \(object.direccion!)")
-                self.historicalArray.append(HistoricalTable(horaSolicitada: object.horaSolicitada!,fechaSolicitada: object.fechaSolicitada!,monto: object.monto,formaPago: object.formaPago!,direccion: direccion,nombreStatus: object.nombreStatus!)!)
+                self.historicalArray.append(HistoricalTable(id: String(object.id), precio: String(object.precio), cantidad: String(object.cantidad) ,horaSolicitada: object.horaSolicitada!,fechaSolicitada: object.fechaSolicitada!,monto: object.monto,formaPago: object.formaPago!,direccion: direccion,nombreStatus: object.nombreStatus!)!)
             }
             
         })

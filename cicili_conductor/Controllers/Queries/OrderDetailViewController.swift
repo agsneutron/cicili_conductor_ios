@@ -13,6 +13,7 @@ import MapKit
 class OrderDetailViewController: UIViewController {
 
     var idPedido : String? = nil
+    var historic : String? = nil
     @IBOutlet weak var txtDireccion: UILabel!
     @IBOutlet weak var txtPrecio: UILabel!
     @IBOutlet weak var txtCantidad: UILabel!
@@ -69,7 +70,10 @@ class OrderDetailViewController: UIViewController {
     @objc func handleCancel() {
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
-       //navigationController?.setNavigationBarHidden(true, animated: true)
+        if historic == "S" {
+           navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+
     }
     
     func getPedido(pidPedido: String) {

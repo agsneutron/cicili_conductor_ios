@@ -107,6 +107,7 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
             let newController = segue.destination as! OrderDetailViewController
             
             newController.idPedido = idPedido
+            newController.historic = "N"
             
         }
     

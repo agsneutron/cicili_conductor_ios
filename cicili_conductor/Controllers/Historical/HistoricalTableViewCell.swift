@@ -16,6 +16,13 @@ class HistoricalTableViewCell: UITableViewCell {
     @IBOutlet weak var formaPago: UILabel!
     @IBOutlet weak var direccion: UILabel!
     @IBOutlet weak var status: UILabel!
+    
+    @IBOutlet weak var txtPedido: UILabel!
+    
+    @IBOutlet weak var txtPrecio: UILabel!
+    
+    @IBOutlet weak var txtLitros: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -12,6 +12,9 @@ import UIKit
 class HistoricalTable {
     
     //MARK: Properties
+    var id: String?
+    var precio: String?
+    var cantidad: String?
     var horaSolicitada: String?
     var fechaSolicitada: String?
     var monto: Double=0.0
@@ -22,10 +25,13 @@ class HistoricalTable {
     
     //MARK: Initialization
     
-    init?(horaSolicitada: String,fechaSolicitada: String,monto: Double,formaPago: String,direccion: String, nombreStatus: String) {
+    init?(id: String,precio: String,cantidad: String,horaSolicitada: String,fechaSolicitada: String,monto: Double,formaPago: String,direccion: String, nombreStatus: String) {
         
         
         // Initialize stored properties.
+        self.id = id
+        self.precio = precio
+        self.cantidad = cantidad
         self.horaSolicitada = horaSolicitada
         self.fechaSolicitada = fechaSolicitada
         self.monto = monto

@@ -344,8 +344,10 @@ class AcceptOrderViewController: UIViewController, DataCancelDelegate {
             self.txtDate.text = "\(response.fechaSolicitada!)"
             self.txtHour.text = "\(response.horaSolicitada!) "
             self.txtPayment.text = "\(response.formaPago!) "
-            self.txtQuantity.text = "\(response.cantidad)"
-            self.txtAmount.text = "\(response.monto) "
+            FunctionsApp.decimalFormat(tipAmount : NSNumber(value: response.cantidad), txtObject : self.txtQuantity, etiqueta: "")
+            FunctionsApp.currencyFormat(tipAmount : NSNumber(value: response.monto), txtObject: self.txtAmount, etiqueta: "")
+            //self.txtQuantity.text = "\(response.cantidad)"
+            //self.txtAmount.text = "\(response.monto) "
             
             
         })
