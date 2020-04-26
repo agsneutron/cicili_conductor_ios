@@ -30,20 +30,23 @@ class HistoricalTableViewController: UIViewController, UITableViewDataSource, UI
         tableViewHistorical.reloadData()
        
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationReload(notification:)), name: Notification.Name("NotificationReload"), object: nil)
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+        }
+                    
+        @objc func NotificationReload(notification: Notification){
+            print(" recibe NotificationReload")
+                self.getHistorical()
+            }
 
     override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
         self.getHistorical()
     }
     // MARK: - get historical orders
     
     func getHistorical() {
-        
+        self.historicalArray.removeAll()
         RequestManager.getHistorical(oauthToken: cliente!.token!, success: { response in
             
             var direccion: String = ""

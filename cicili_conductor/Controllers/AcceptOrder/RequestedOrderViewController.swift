@@ -106,13 +106,20 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         }
     }
     
+    func sendNotification(){
+        print(" envia NotificationReload")
+        NotificationCenter.default.post(name: Notification.Name("NotificationReload"), object: nil, userInfo: nil)
+    }
+    
     func closeViewController(action: UIAlertAction){
+        sendNotification()
         let controllers = self.navigationController?.viewControllers
          for vc in controllers! {
            if vc is MainTabController {
              _ = self.navigationController?.popToViewController(vc as! MainTabController, animated: true)
            }
         }
+        
     }
     
     func updateAction(action: UIAlertAction){
@@ -176,6 +183,7 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
         
     }
     func returnMainViewController(){
+        sendNotification()
                    let controllers = self.navigationController?.viewControllers
                     for vc in controllers! {
                       if vc is MainTabController {
@@ -456,12 +464,14 @@ class RequestedOrderViewController: UIViewController, DataCancelDelegate {
     
 
     func closeToViewController(){
+        sendNotification()
         let controllers = self.navigationController?.viewControllers
          for vc in controllers! {
            if vc is MainTabController {
              _ = self.navigationController?.popToViewController(vc as! MainTabController, animated: true)
            }
         }
+      
     }
     @IBAction func openWaze(_ sender: RoundButton) {
         //let location =  CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
