@@ -111,8 +111,10 @@ class BoardViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let object = boardDataArray[indexPath.row]
         cell.lblDia?.text = "Día: \(object.fechaSolicitada!)"
         cell.lblPipa?.text = "Pipa: \(object.numeroPipa!)"
-        cell.lblMonto?.text = "$ \(object.monto)"
-        cell.lblLitros?.text = "Litros: \(object.cantidad)"
+        FunctionsApp.currencyFormat(tipAmount : NSNumber(value: object.monto), txtObject : cell.lblMonto, etiqueta: "")
+        FunctionsApp.decimalFormat(tipAmount : NSNumber(value: object.cantidad), txtObject : cell.lblLitros, etiqueta: "Litros: ")
+        //cell.lblMonto?.text = "$ \(object.monto)"
+        //cell.lblLitros?.text = "Litros: \(object.cantidad)"
         cell.lblPlacas?.text = "Placas: \(object.placa!)"
         cell.lblPlanta?.text = "\(object.planta!)"
         cell.lblConductor?.text = "Conductor: \(object.nombreConductor!)"
@@ -120,4 +122,5 @@ class BoardViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         return cell
     }
 
+    
 }

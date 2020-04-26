@@ -19,6 +19,7 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
     var imageView: UIImageView!
     var intRate: Int = 0
     var counter: Int = 0
+    var idPedido: String?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -87,8 +88,27 @@ class DetailCommentsViewController: UIViewController, UITableViewDataSource, UIT
         cell.lblCalificacion?.text = "Calificación: \(comments.calificacion)"
 
         setUpStarStack(cell: cell, calificacion: comments.calificacion)
-
+   
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let comments = commentsArray[indexPath.row]
+        idPedido = String(comments.idPedido)
+        self.performSegue(withIdentifier: Constants.Storyboard.segueOrderDetail, sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+   
+        if segue.identifier ==  Constants.Storyboard.segueOrderDetail{
+            let newController = segue.destination as! OrderDetailViewController
+            
+            newController.idPedido = idPedido
+            
+        }
+    
+    }
 }

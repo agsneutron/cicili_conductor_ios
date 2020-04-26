@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WTk-2L-zoZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WTk-2L-zoZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,29 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gg8-aA-Vj6">
-                                <rect key="frame" x="0.0" y="33" width="414" height="325"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gg8-aA-Vj6">
+                                <rect key="frame" x="1" y="113" width="412" height="353.5"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Numero de Pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nh-au-BgE">
-                                <rect key="frame" x="143" y="400" width="127.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero de Pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nh-au-BgE">
+                                <rect key="frame" x="143.5" y="516" width="127.5" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pedido X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOX-JS-JJs">
-                                <rect key="frame" x="20" y="366" width="374" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedido X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOX-JS-JJs">
+                                <rect key="frame" x="153" y="474.5" width="108" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="euA-dE-FDt">
-                                <rect key="frame" x="19" y="546" width="374" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="euA-dE-FDt">
+                                <rect key="frame" x="20" y="662" width="374" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_reloj" translatesAutoresizingMaskIntoConstraints="NO" id="MVa-V2-CCg">
                                         <rect key="frame" x="0.0" y="8.5" width="33" height="33"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ldZ-yu-q02">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldZ-yu-q02">
                                         <rect key="frame" x="53" y="0.0" width="321" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-Aw-sP9">
@@ -65,13 +64,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JAs-Ox-Py8">
-                                <rect key="frame" x="19" y="426" width="374" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JAs-Ox-Py8">
+                                <rect key="frame" x="20" y="542" width="374" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_usuario" translatesAutoresizingMaskIntoConstraints="NO" id="JU6-fz-hfY">
                                         <rect key="frame" x="0.0" y="8.5" width="33" height="33"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xt-yy-bWO">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xt-yy-bWO">
                                         <rect key="frame" x="53" y="0.0" width="321" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cliente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fR0-Sc-9ND">
@@ -104,13 +103,13 @@
                                     <constraint firstAttribute="trailing" secondItem="5Xt-yy-bWO" secondAttribute="trailing" id="upf-Mh-aLO"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a8P-Lk-bgS">
-                                <rect key="frame" x="19" y="486" width="374" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a8P-Lk-bgS">
+                                <rect key="frame" x="20" y="602" width="374" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_distancia" translatesAutoresizingMaskIntoConstraints="NO" id="iFI-Ya-wg4">
                                         <rect key="frame" x="0.0" y="8.5" width="33" height="33"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-o7-H4Y">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-o7-H4Y">
                                         <rect key="frame" x="53" y="0.0" width="321" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distancia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-X9-Abf">
@@ -137,8 +136,8 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BHL-WO-cWO">
-                                <rect key="frame" x="-1" y="676" width="414" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BHL-WO-cWO">
+                                <rect key="frame" x="0.0" y="792" width="414" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwp-VD-ppI">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="60"/>
@@ -218,13 +217,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZAP-h4-k1k">
-                                <rect key="frame" x="19" y="606" width="374" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZAP-h4-k1k">
+                                <rect key="frame" x="20" y="722" width="374" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_direccion" translatesAutoresizingMaskIntoConstraints="NO" id="6xl-Vz-E7i">
                                         <rect key="frame" x="0.0" y="8.5" width="33" height="33"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rU-cB-Sbx">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rU-cB-Sbx">
                                         <rect key="frame" x="53" y="0.0" width="321" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uz-Wy-RI9">
@@ -251,18 +250,57 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estatus de Pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdh-ZF-p5i">
+                                <rect key="frame" x="99" y="70" width="216" height="34.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="a8P-Lk-bgS" firstAttribute="top" secondItem="JAs-Ox-Py8" secondAttribute="bottom" constant="10" id="31T-Na-hny"/>
-                            <constraint firstItem="ZAP-h4-k1k" firstAttribute="top" secondItem="euA-dE-FDt" secondAttribute="bottom" constant="10" id="Jye-8w-39W"/>
-                            <constraint firstItem="BHL-WO-cWO" firstAttribute="top" secondItem="ZAP-h4-k1k" secondAttribute="bottom" constant="20" id="WMN-iR-EEL"/>
-                            <constraint firstItem="5nh-au-BgE" firstAttribute="top" secondItem="pOX-JS-JJs" secondAttribute="bottom" id="fih-zQ-eid"/>
-                            <constraint firstItem="euA-dE-FDt" firstAttribute="top" secondItem="a8P-Lk-bgS" secondAttribute="bottom" constant="10" id="jnU-kq-uOX"/>
-                            <constraint firstItem="5nh-au-BgE" firstAttribute="top" secondItem="pOX-JS-JJs" secondAttribute="bottom" id="voI-7P-IBs"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="centerX" secondItem="R3j-52-njb" secondAttribute="centerX" id="0hY-bk-ZRK"/>
+                            <constraint firstItem="JAs-Ox-Py8" firstAttribute="leading" secondItem="euA-dE-FDt" secondAttribute="leading" id="2UF-Si-l03"/>
+                            <constraint firstItem="euA-dE-FDt" firstAttribute="top" secondItem="a8P-Lk-bgS" secondAttribute="bottom" constant="10" id="3AQ-ea-7V0"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="centerX" secondItem="euA-dE-FDt" secondAttribute="centerX" id="4QC-1l-h9c"/>
+                            <constraint firstItem="Gg8-aA-Vj6" firstAttribute="leading" secondItem="eXB-ui-7dL" secondAttribute="leading" constant="1" id="67t-KR-KPB"/>
+                            <constraint firstItem="pOX-JS-JJs" firstAttribute="top" secondItem="Gg8-aA-Vj6" secondAttribute="bottom" constant="8" id="99q-ri-e2D"/>
+                            <constraint firstItem="Gg8-aA-Vj6" firstAttribute="top" secondItem="Cdh-ZF-p5i" secondAttribute="bottom" constant="8.5" id="A14-vX-uC3"/>
+                            <constraint firstItem="JAs-Ox-Py8" firstAttribute="leading" secondItem="ZAP-h4-k1k" secondAttribute="leading" id="DrN-ab-URN"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="centerX" secondItem="5nh-au-BgE" secondAttribute="centerX" id="EXQ-vi-VBb"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="leading" secondItem="eXB-ui-7dL" secondAttribute="leading" id="Ep0-lr-0oa"/>
+                            <constraint firstItem="pOX-JS-JJs" firstAttribute="top" secondItem="Gg8-aA-Vj6" secondAttribute="bottom" constant="8" id="OQk-dK-uXa"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="centerX" secondItem="JAs-Ox-Py8" secondAttribute="centerX" id="PHw-bc-hWw"/>
+                            <constraint firstItem="JAs-Ox-Py8" firstAttribute="top" secondItem="5nh-au-BgE" secondAttribute="bottom" constant="8" id="QxK-H2-cmg"/>
+                            <constraint firstItem="JAs-Ox-Py8" firstAttribute="leading" secondItem="a8P-Lk-bgS" secondAttribute="leading" id="TtP-8g-JEH"/>
+                            <constraint firstItem="JAs-Ox-Py8" firstAttribute="leading" secondItem="R3j-52-njb" secondAttribute="leadingMargin" id="WNk-r9-445"/>
+                            <constraint firstItem="Cdh-ZF-p5i" firstAttribute="top" secondItem="R3j-52-njb" secondAttribute="top" constant="70" id="cQy-Wn-IUA"/>
+                            <constraint firstItem="Gg8-aA-Vj6" firstAttribute="centerX" secondItem="5nh-au-BgE" secondAttribute="centerX" id="dju-6u-Y97"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="top" secondItem="ZAP-h4-k1k" secondAttribute="bottom" constant="20" id="gQS-Cl-eCL"/>
+                            <constraint firstItem="ZAP-h4-k1k" firstAttribute="top" secondItem="euA-dE-FDt" secondAttribute="bottom" constant="10" id="huh-dD-sRy"/>
+                            <constraint firstItem="5nh-au-BgE" firstAttribute="top" secondItem="pOX-JS-JJs" secondAttribute="bottom" constant="8" symbolic="YES" id="jAG-ls-sho"/>
+                            <constraint firstItem="a8P-Lk-bgS" firstAttribute="top" secondItem="JAs-Ox-Py8" secondAttribute="bottom" constant="10" id="nYe-lv-NIB"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="centerX" secondItem="a8P-Lk-bgS" secondAttribute="centerX" id="pRw-NF-63p"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="centerX" secondItem="ZAP-h4-k1k" secondAttribute="centerX" id="qsZ-vC-UhZ"/>
+                            <constraint firstItem="Gg8-aA-Vj6" firstAttribute="centerX" secondItem="pOX-JS-JJs" secondAttribute="centerX" id="qwJ-4P-UI9"/>
+                            <constraint firstItem="eXB-ui-7dL" firstAttribute="bottom" secondItem="BHL-WO-cWO" secondAttribute="bottom" constant="10" id="vlU-0X-ew3"/>
+                            <constraint firstItem="BHL-WO-cWO" firstAttribute="centerX" secondItem="Cdh-ZF-p5i" secondAttribute="centerX" id="zPr-r1-68G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eXB-ui-7dL"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Gg8-aA-Vj6" id="IQn-EW-6xJ"/>
+                        <outlet property="txtCantidad" destination="Pm4-3Z-1sX" id="9dC-Uc-QL3"/>
+                        <outlet property="txtCliente" destination="QDg-hD-zgi" id="SbK-IK-BZh"/>
+                        <outlet property="txtDireccion" destination="Fi6-LZ-uiN" id="nje-zl-Ks7"/>
+                        <outlet property="txtDistancia" destination="MMn-cM-t8H" id="lO4-6t-yVl"/>
+                        <outlet property="txtFormaPago" destination="1oT-vE-wWG" id="ytn-4e-yis"/>
+                        <outlet property="txtPedido" destination="pOX-JS-JJs" id="bPw-Zp-4oH"/>
+                        <outlet property="txtPrecio" destination="Q6q-sP-Ud7" id="aeD-B0-RlO"/>
+                        <outlet property="txtStatus" destination="Cdh-ZF-p5i" id="Wx1-dS-XFG"/>
+                        <outlet property="txtTiempo" destination="zOb-xj-2af" id="A17-Xi-Oig"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBY-QB-phh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -160,6 +160,7 @@
 		90E29AEF23D25BF300677E48 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AEE23D25BF300677E48 /* MainTabController.swift */; };
 		90E29AF723D7B93E00677E48 /* perfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AF623D7B93E00677E48 /* perfilViewController.swift */; };
 		948A2A59242D6F23000DADC2 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948A2A58242D6F23000DADC2 /* PersonalData.storyboard */; };
+		94D3C69D24554A1800634A7E /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D3C69C24554A1800634A7E /* FunctionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,6 +324,7 @@
 		90E29AEE23D25BF300677E48 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		90E29AF623D7B93E00677E48 /* perfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfilViewController.swift; sourceTree = "<group>"; };
 		948A2A58242D6F23000DADC2 /* PersonalData.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonalData.storyboard; sourceTree = "<group>"; };
+		94D3C69C24554A1800634A7E /* FunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -402,6 +404,7 @@
 		3137F9B223A8BA4800D8D8FF /* cicili_conductor */ = {
 			isa = PBXGroup;
 			children = (
+				94D3C69B245549F500634A7E /* Functions */,
 				31F95E832448D14200C9DE56 /* Music */,
 				318AB9C023F50FC700A62183 /* View */,
 				31F55EAA23E4EDF80017DA8A /* cicili_clienteDebug.entitlements */,
@@ -696,6 +699,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		94D3C69B245549F500634A7E /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				94D3C69C24554A1800634A7E /* FunctionsViewController.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		E5999ED992A7C891C58A05DC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +892,7 @@
 				57E0BEB523BAA32200F60209 /* WSKeys.swift in Sources */,
 				317B726E240ED0E700B803B7 /* InputMessage.swift in Sources */,
 				57E3620123D21469003931AD /* DataByZipCode.swift in Sources */,
+				94D3C69D24554A1800634A7E /* FunctionsViewController.swift in Sources */,
 				3105B12523CA4266004EA64A /* AddressTable.swift in Sources */,
 				3129D2C12407A6190035C245 /* CuentaBancariaViewController.swift in Sources */,
 				31FA1A562400BEF80038C270 /* DocumentsViewController.swift in Sources */,
