@@ -109,6 +109,7 @@ class BoardViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         
         let object = boardDataArray[indexPath.row]
+        cell.lblPedido?.text = "Pedido: \(object.id)"
         cell.lblDia?.text = "Día: \(object.fechaSolicitada!)"
         cell.lblPipa?.text = "Pipa: \(object.numeroPipa!)"
         FunctionsApp.currencyFormat(tipAmount : NSNumber(value: object.monto), txtObject : cell.lblMonto, etiqueta: "")

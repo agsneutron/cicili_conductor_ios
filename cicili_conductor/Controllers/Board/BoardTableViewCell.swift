@@ -11,6 +11,7 @@ import UIKit
 class BoardTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var lblPedido: UILabel!
     @IBOutlet weak var lblDia: UILabel!
     
     @IBOutlet weak var lblMonto: UILabel!
