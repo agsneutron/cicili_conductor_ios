@@ -34,6 +34,7 @@ struct WSKeys {
         static let statuscode = 200
         static let okVerification = "true"
         static let CODIGO = "codigo"
+        static let TIPO_DISPOSITIVO = "tipo_dispositivo"
         
         static let PUSERNAME = "user"
         static let PPASSWORD = "password"
