@@ -26,13 +26,11 @@ class CommentsTableViewCell: UITableViewCell {
         // Initialization code
         ContentCardView.layer.cornerRadius = 20.0
           ContentCardView.layer.shadowColor = UIColor.gray.cgColor
-          ContentCardView.layer.shadowOffset = CGSize(width: 1.0, height: 100.0)
-          ContentCardView.layer.shadowRadius = 9.0
-          ContentCardView.layer.shadowOpacity = 0.6
+
         
         starStackQualification.distribution = .fillEqually
         starStackQualification.alignment = .fill
-        starStackQualification.spacing = 30
+        starStackQualification.spacing = 5
         starStackQualification.tag = 5007
         
         
