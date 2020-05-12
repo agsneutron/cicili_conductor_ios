@@ -76,6 +76,9 @@ class usuarioViewController: UIViewController {
     }
     
    
+    @IBAction func ExitApp2(_ sender: UIBarButtonItem) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationExit"), object: nil, userInfo: nil)
+    }
     @IBAction func ExitApp(_ sender: UIButton) {
         
         NotificationCenter.default.post(name: Notification.Name("NotificationExit"), object: nil, userInfo: nil)
