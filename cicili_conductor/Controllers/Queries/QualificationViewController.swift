@@ -41,7 +41,7 @@ class QualificationViewController: UIViewController {
                             
             //debugPrint("En success getQualifications \(response.calificacion)")
             self.totalCalificacion.text = "\(response.calificacion)"
-            self.totalCompletados.text = "\(response.completados)"
+            self.totalCompletados.text = "\(response.completados) %"
             self.setStarFill(val: response.calificacion)
             })
             { error in
