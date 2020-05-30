@@ -112,7 +112,7 @@ class SalesReportViewController: UIViewController {
         }*/
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let file = directoryURL.appendingPathComponent("downloads/file.xls", isDirectory: false)
+            let file = directoryURL.appendingPathComponent("ReporteVentas.xls", isDirectory: false)
             return (file, [.createIntermediateDirectories, .removePreviousFile])
         }
         
@@ -136,9 +136,9 @@ class SalesReportViewController: UIViewController {
     @IBAction func pdfReport(_ sender: RoundButton) {
         self.progressBar.progress = 0
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            var documentsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
+            var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             documentsURL.appendPathComponent("ReporteVentas.pdf")
-            return (documentsURL, [.removePreviousFile])
+            return (documentsURL, [.createIntermediateDirectories, .removePreviousFile])
         }
         
 
@@ -147,6 +147,7 @@ class SalesReportViewController: UIViewController {
         self.progressBar.progress = Float(progress.fractionCompleted)
             
         }).responseData { response in
+            print("error \(response.error)")
             if let destinationUrl = response.destinationURL {
                 print("destinationUrl \(destinationUrl.absoluteURL)")
                 self.showAlertController(tittle_t: Constants.AlertTittles.downloadFile, message_t: Constants.AlertMessages.messageDownloadFile)

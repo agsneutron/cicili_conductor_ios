@@ -56,6 +56,7 @@ enum Router: URLRequestConvertible {
     case getTankTruck(autorizathionToken: String)
     case getSalesReport(autorizathionToken: String, parametersSet: Parameters, pType: String, pContenttype: String)
     case getLitersReport(autorizathionToken: String, parametersSet: Parameters, pType: String, pContenttype: String)
+    case getSpecificContract(autorizathionToken: String, parametersSet: Parameters, pType: String, pContenttype: String)
     case getAccountData(autorizathionToken: String, idConductor: String)
     case changeDataAccount(autorizathionToken: String , parametersSet: Parameters)
     
@@ -63,6 +64,7 @@ enum Router: URLRequestConvertible {
     case faqList(autorizathionToken: String, id: String)
     case getMessages(autorizathionToken: String, id: String)
     case getChatMessages(autorizathionToken: String, id: String)
+    
     case sendMessage(autorizathionToken: String, parametersSet: Parameters)
     case sendChatMessage(autorizathionToken: String, parametersSet: Parameters)
     case claimType(autorizathionToken: String)
@@ -96,6 +98,7 @@ enum Router: URLRequestConvertible {
             .consultAsk,
             .faqList,
             .getMessages,
+            .getSpecificContract,
             .getChatMessages:
             return .get
         case .registerClient,
@@ -200,6 +203,8 @@ enum Router: URLRequestConvertible {
             return "reportes/montoventa/\(pType.pType)"
         case .getLitersReport(let pType):
             return "reportes/cantidadventa/\(pType.pType)"
+        case .getSpecificContract:
+            return "documentos/conductor"
         case .getAccountData(let idConductor):
             return "mv/conductor/cuenta/\(idConductor.idConductor)"
         case .changeDataAccount:
@@ -219,6 +224,7 @@ enum Router: URLRequestConvertible {
             return "aclaracion/seguimiento/agregar"
         case .getChatMessages(let param):
             return "chat/obtener/\(param.id)"
+        
         case .sendChatMessage:
             return "chat/agregar"
             
@@ -358,14 +364,14 @@ enum Router: URLRequestConvertible {
             
             //****** Conductor
         case .getSalesReport(let autorizathionToken, let parametersSet,let pContenttype, _),
-             .getLitersReport(let autorizathionToken, let parametersSet,let pContenttype, _):
+             .getLitersReport(let autorizathionToken, let parametersSet,let pContenttype, _),
+             .getSpecificContract(let autorizathionToken, let parametersSet,let pContenttype, _):
                 // Set encode to application/x-www-form-urlencoded
                 urlRequest = try URLEncoding.queryString.encode(urlRequest, with: parametersSet)
                 print("\(urlRequest)")
                 urlRequest.setValue(pContenttype, forHTTPHeaderField: "Content-Type")
                 urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
-                
-            
+        
         }
         
         return urlRequest

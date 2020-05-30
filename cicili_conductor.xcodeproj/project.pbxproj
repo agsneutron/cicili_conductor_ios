@@ -161,6 +161,9 @@
 		90E29AF723D7B93E00677E48 /* perfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E29AF623D7B93E00677E48 /* perfilViewController.swift */; };
 		948A2A59242D6F23000DADC2 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948A2A58242D6F23000DADC2 /* PersonalData.storyboard */; };
 		94D3C69D24554A1800634A7E /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D3C69C24554A1800634A7E /* FunctionsViewController.swift */; };
+		94FCB0B72481BD6300FF4881 /* ContratoGenericoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94FCB0B62481BD6300FF4881 /* ContratoGenericoStoryboard.storyboard */; };
+		94FCB0BA2481BD8C00FF4881 /* ContratoGenericoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FCB0B92481BD8C00FF4881 /* ContratoGenericoViewController.swift */; };
+		94FCB0C12481C10000FF4881 /* ContratoEspecificoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FCB0C02481C10000FF4881 /* ContratoEspecificoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -325,6 +328,9 @@
 		90E29AF623D7B93E00677E48 /* perfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfilViewController.swift; sourceTree = "<group>"; };
 		948A2A58242D6F23000DADC2 /* PersonalData.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonalData.storyboard; sourceTree = "<group>"; };
 		94D3C69C24554A1800634A7E /* FunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
+		94FCB0B62481BD6300FF4881 /* ContratoGenericoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContratoGenericoStoryboard.storyboard; sourceTree = "<group>"; };
+		94FCB0B92481BD8C00FF4881 /* ContratoGenericoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContratoGenericoViewController.swift; sourceTree = "<group>"; };
+		94FCB0C02481C10000FF4881 /* ContratoEspecificoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContratoEspecificoViewController.swift; sourceTree = "<group>"; };
 		9A66A5C12307FEA7406BFDFC /* Pods-cicili_cliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cicili_cliente.debug.xcconfig"; path = "Target Support Files/Pods-cicili_cliente/Pods-cicili_cliente.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -565,6 +571,7 @@
 				317B727D240EDEC200B803B7 /* MessageChat.storyboard */,
 				3144F4DE24297358004BF035 /* ChangePasswordStoryboard.storyboard */,
 				310630212454071E00D92531 /* OderDetail.storyboard */,
+				94FCB0B62481BD6300FF4881 /* ContratoGenericoStoryboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -642,6 +649,7 @@
 		57D1BAF023BFAF7900551DA7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				94FCB0B82481BD6A00FF4881 /* Contratos */,
 				317B7264240ECF5800B803B7 /* Message */,
 				317B7253240ECCA500B803B7 /* Help */,
 				3181A3C124035BC700DCEC12 /* Reports */,
@@ -705,6 +713,15 @@
 				94D3C69C24554A1800634A7E /* FunctionsViewController.swift */,
 			);
 			path = Functions;
+			sourceTree = "<group>";
+		};
+		94FCB0B82481BD6A00FF4881 /* Contratos */ = {
+			isa = PBXGroup;
+			children = (
+				94FCB0B92481BD8C00FF4881 /* ContratoGenericoViewController.swift */,
+				94FCB0C02481C10000FF4881 /* ContratoEspecificoViewController.swift */,
+			);
+			path = Contratos;
 			sourceTree = "<group>";
 		};
 		E5999ED992A7C891C58A05DC /* Pods */ = {
@@ -782,6 +799,7 @@
 				3144F4DF24297358004BF035 /* ChangePasswordStoryboard.storyboard in Resources */,
 				318922662400A672003FF7D0 /* DocumentsStoryboard.storyboard in Resources */,
 				57B7B34423C28C4000731CE7 /* List.storyboard in Resources */,
+				94FCB0B72481BD6300FF4881 /* ContratoGenericoStoryboard.storyboard in Resources */,
 				317B727C240EDE6700B803B7 /* Message.storyboard in Resources */,
 				31B3586C23C6374B00707C82 /* CardMapViewController.xib in Resources */,
 				3189226A2400A6FC003FF7D0 /* TankTruckStoryboard.storyboard in Resources */,
@@ -879,6 +897,7 @@
 				31F9E7A423F0741A00403DC6 /* ResponseOrder.swift in Sources */,
 				57B7B33D23C26E4000731CE7 /* LostPasswordViewController.swift in Sources */,
 				31BE0A752401D09600FE7D70 /* DocumentsTableViewCell.swift in Sources */,
+				94FCB0C12481C10000FF4881 /* ContratoEspecificoViewController.swift in Sources */,
 				57E3620323D214EF003931AD /* KeysDatailZC.swift in Sources */,
 				31C2EBF823EBB5BE00F2323C /* AcceptOrderViewController.swift in Sources */,
 				318900D324512E0600439893 /* LoadConfViewController.swift in Sources */,
@@ -971,6 +990,7 @@
 				311C7DE5240991C2000AEC47 /* AccountUpdateViewController.swift in Sources */,
 				311DB68F23D0E35E00C8A989 /* AvailableDriversTableViewCell.swift in Sources */,
 				57D1BAEE23BF516E00551DA7 /* AlertManager.swift in Sources */,
+				94FCB0BA2481BD8C00FF4881 /* ContratoGenericoViewController.swift in Sources */,
 				3144F4E1242975F5004BF035 /* PasswordRegisterViewController.swift in Sources */,
 				31B3586B23C6374B00707C82 /* CardMapViewController.swift in Sources */,
 				31F9E7A823F0DCF600403DC6 /* RequestedOrderViewController.swift in Sources */,

@@ -102,13 +102,13 @@ class LitersReportViewController: UIViewController {
             parametros = SalesParameters(type: "xls", initialDate: "01-10-2019", endDate: "01-03-2020", conductor: String(self.cliente!.idCliente))*/
             self.progressBar.progress = 0
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                var documentsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
-                documentsURL.appendPathComponent("ReporteVentas.xls")
+                var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                documentsURL.appendPathComponent("ReporteLitros.xls")
                 return (documentsURL, [.removePreviousFile])
             }
             
 
-            Alamofire.download(Router.getLitersReport(autorizathionToken: self.cliente!.token!, parametersSet: ["fecha_inicial": self.txtFechaInicio.text , "fecha_final": self.txtFechaFinal.text, "conductor": String(self.cliente!.idCliente), "autotanque": "", "planta":"", "region":""], pType: "xls",pContenttype:"application/vnd.ms-excel"), to: destination).downloadProgress(closure: { (progress) in
+            Alamofire.download(Router.getLitersReport(autorizathionToken: self.cliente!.token!, parametersSet: ["fecha_inicial": self.txtFechaInicio.text! , "fecha_final": self.txtFechaFinal.text!, "conductor": String(self.cliente!.idCliente), "autotanque": "", "planta":"", "region":""], pType: "xls",pContenttype:"application/vnd.ms-excel"), to: destination).downloadProgress(closure: { (progress) in
                 
                 self.progressBar.progress = Float(progress.fractionCompleted)
                 
@@ -127,13 +127,13 @@ class LitersReportViewController: UIViewController {
         @IBAction func pdfReport(_ sender: RoundButton) {
             self.progressBar.progress = 0
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                var documentsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
-                documentsURL.appendPathComponent("ReporteVentas.pdf")
+                var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                documentsURL.appendPathComponent("ReporteLitros.pdf")
                 return (documentsURL, [.removePreviousFile])
             }
             
 
-            Alamofire.download(Router.getLitersReport(autorizathionToken: self.cliente!.token!, parametersSet: ["fecha_inicial": self.txtFechaInicio.text , "fecha_final": self.txtFechaFinal.text, "conductor": String(self.cliente!.idCliente), "autotanque": "", "planta":"", "region":""], pType: "pdf", pContenttype:"application/pdf"), to: destination).downloadProgress(closure: { (progress) in
+            Alamofire.download(Router.getLitersReport(autorizathionToken: self.cliente!.token!, parametersSet: ["fecha_inicial": self.txtFechaInicio.text! , "fecha_final": self.txtFechaFinal.text!, "conductor": String(self.cliente!.idCliente), "autotanque": "", "planta":"", "region":""], pType: "pdf", pContenttype:"application/pdf"), to: destination).downloadProgress(closure: { (progress) in
             
             self.progressBar.progress = Float(progress.fractionCompleted)
                 

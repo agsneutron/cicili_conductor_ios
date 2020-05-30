@@ -1460,7 +1460,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="e4Y-XR-3aD">
-                                <rect key="frame" x="182" y="81" width="157" height="34"/>
+                                <rect key="frame" x="182" y="81" width="120" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="Ddy-Z2-WFP"/>
                                 </constraints>
@@ -1468,18 +1468,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el periodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-h4-EE2">
-                                <rect key="frame" x="16" y="52" width="323" height="18"/>
+                                <rect key="frame" x="16" y="52" width="286" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I9g-li-krf">
-                                <rect key="frame" x="16" y="175" width="323" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="I9g-li-krf">
+                                <rect key="frame" x="16" y="175" width="286" height="11"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="5r1-2r-rq6"/>
+                                </constraints>
                                 <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXQ-sM-Exq" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="49" y="137" width="100" height="30"/>
+                                <rect key="frame" x="49" y="137" width="37" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="bfH-wB-PDK"/>
                                 </constraints>
@@ -1502,7 +1505,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1j-VI-aCI" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="231" y="137" width="74" height="30"/>
+                                <rect key="frame" x="168" y="137" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="NVY-KV-S08"/>
                                 </constraints>
@@ -1565,7 +1568,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="0de-XV-yyL">
-                                <rect key="frame" x="6" y="81" width="157" height="34"/>
+                                <rect key="frame" x="6" y="81" width="120" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="Sdz-o6-gzy"/>
                                 </constraints>
@@ -1573,7 +1576,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Zjw-q2-YAF">
-                                <rect key="frame" x="172" y="81" width="157" height="34"/>
+                                <rect key="frame" x="135" y="81" width="157" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="sz3-lf-2IB"/>
                                 </constraints>
@@ -1581,17 +1584,20 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el periodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKd-6m-0rp">
-                                <rect key="frame" x="6" y="52" width="323" height="18"/>
+                                <rect key="frame" x="6" y="52" width="286" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fIV-tz-vqQ">
-                                <rect key="frame" x="6" y="175" width="323" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="fIV-tz-vqQ">
+                                <rect key="frame" x="6" y="175" width="286" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="Pew-9w-tMP"/>
+                                </constraints>
                                 <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLz-b3-zaa" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="39" y="137" width="100" height="30"/>
+                                <rect key="frame" x="39" y="137" width="37" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="m8k-It-yIT"/>
                                 </constraints>
@@ -1615,7 +1621,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUH-ls-wOP" customClass="RoundButton" customModule="cicili_conductor" customModuleProvider="target">
-                                <rect key="frame" x="221" y="137" width="74" height="30"/>
+                                <rect key="frame" x="158" y="137" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="uIR-BK-Swg"/>
                                 </constraints>
@@ -2107,13 +2113,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ymJ-Zt-RIK" userLabel="svprecio">
                                                                     <rect key="frame" x="0.0" y="13" width="101.5" height="26.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plW-OM-14z" userLabel="precio">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plW-OM-14z" userLabel="precio">
                                                                             <rect key="frame" x="0.0" y="0.0" width="101.5" height="14.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHe-Iy-aHI" userLabel="Lprecio">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Precio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHe-Iy-aHI" userLabel="Lprecio">
                                                                             <rect key="frame" x="0.0" y="14.5" width="101.5" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" red="0.32354873420000002" green="0.3851224184" blue="0.53335124249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2142,13 +2148,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2WE-AH-Ohb" userLabel="svmonto">
                                                                     <rect key="frame" x="232.5" y="13" width="101.5" height="26.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="monto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO3-zk-tpK">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="monto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO3-zk-tpK">
                                                                             <rect key="frame" x="0.0" y="0.0" width="101.5" height="14.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDC-Gu-C1z" userLabel="Lmonto">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Monto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDC-Gu-C1z" userLabel="Lmonto">
                                                                             <rect key="frame" x="0.0" y="14.5" width="101.5" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" red="0.32354873420000002" green="0.3851224184" blue="0.53335124249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2260,13 +2266,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="X1P-o3-uON">
                                                                     <rect key="frame" x="53" y="3.5" width="266" height="43.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre cliente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5V-W0-MMm">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nombre cliente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5V-W0-MMm">
                                                                             <rect key="frame" x="0.0" y="0.0" width="122" height="20.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <color key="textColor" red="0.33333333329999998" green="0.3921568627" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cliente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81v-Zm-y6a">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cliente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81v-Zm-y6a">
                                                                             <rect key="frame" x="0.0" y="25.5" width="48" height="18"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2815,36 +2821,47 @@
         <!--Contrato de Servicios-->
         <scene sceneID="nqY-YB-ZjR">
             <objects>
-                <viewController id="8Z1-d3-RVb" sceneMemberID="viewController">
+                <viewController id="8Z1-d3-RVb" customClass="ContratoEspecificoViewController" customModule="cicili_conductor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oBW-de-slU">
                         <rect key="frame" x="0.0" y="0.0" width="359" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUT-bQ-MKl">
-                                <rect key="frame" x="8" y="52" width="343" height="419"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hKJ-JL-jp1">
+                                <rect key="frame" x="7" y="52.5" width="345" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="lJK-Bv-nuK"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jo1-i6-4UR" customClass="PDFView">
+                                <rect key="frame" x="7" y="57" width="345" height="415"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gud-wh-Ymt" firstAttribute="bottom" secondItem="OUT-bQ-MKl" secondAttribute="bottom" constant="8" id="9nb-NJ-cza"/>
-                            <constraint firstItem="OUT-bQ-MKl" firstAttribute="top" secondItem="gud-wh-Ymt" secondAttribute="top" constant="8" id="Kdz-GQ-1eL"/>
-                            <constraint firstItem="gud-wh-Ymt" firstAttribute="trailing" secondItem="OUT-bQ-MKl" secondAttribute="trailing" constant="8" id="PPG-Ht-xcj"/>
-                            <constraint firstItem="OUT-bQ-MKl" firstAttribute="leading" secondItem="gud-wh-Ymt" secondAttribute="leading" constant="8" id="kTu-1r-jqY"/>
+                            <constraint firstItem="hKJ-JL-jp1" firstAttribute="top" secondItem="gud-wh-Ymt" secondAttribute="top" constant="8.5" id="12P-MV-vlE"/>
+                            <constraint firstItem="gud-wh-Ymt" firstAttribute="bottom" secondItem="jo1-i6-4UR" secondAttribute="bottom" constant="7" id="KEe-mg-8Bg"/>
+                            <constraint firstAttribute="trailing" secondItem="hKJ-JL-jp1" secondAttribute="trailing" constant="7" id="bwK-fE-PwI"/>
+                            <constraint firstItem="hKJ-JL-jp1" firstAttribute="leading" secondItem="oBW-de-slU" secondAttribute="leading" constant="7" id="cf5-Qa-8n9"/>
+                            <constraint firstItem="jo1-i6-4UR" firstAttribute="top" secondItem="hKJ-JL-jp1" secondAttribute="bottom" constant="3.5" id="jmp-of-1Vd"/>
+                            <constraint firstItem="jo1-i6-4UR" firstAttribute="leading" secondItem="gud-wh-Ymt" secondAttribute="leading" constant="7" id="yk5-y1-QzS"/>
+                            <constraint firstItem="gud-wh-Ymt" firstAttribute="trailing" secondItem="jo1-i6-4UR" secondAttribute="trailing" constant="7" id="zoh-TV-0C2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gud-wh-Ymt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contrato de Servicios" id="0yY-0F-2yd">
                         <barButtonItem key="backBarButtonItem" title="Regresar" id="L4Y-BA-sBb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pdfView" destination="jo1-i6-4UR" id="rsV-OP-7fd"/>
+                        <outlet property="progressBar" destination="hKJ-JL-jp1" id="c0G-98-p3u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dv-n6-Ad4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9638" y="-2194"/>
+            <point key="canvasLocation" x="9637.6000000000004" y="-2194.4527736131936"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="kjY-Y0-Uvd">
