@@ -299,14 +299,19 @@ class RequestManager: NSObject{
             let errorcode =  json[WSKeys.parameters.error].intValue
                 
             let messagedescription: String = json[WSKeys.parameters.messageError].stringValue
-            let cliente_data = json[WSKeys.parameters.data].dictionaryObject
-            let cliente = Mapper<Cliente>().map( JSONObject: cliente_data)
-            if errorcode == WSKeys.parameters.okresponse{
-             
-                success(cliente!)
             
-            } else {
-                failure(NSError(domain: "com.cicili.RegisterClient", code: (errorcode), userInfo: [NSLocalizedDescriptionKey: messagedescription ]))
+            if (json[WSKeys.parameters.data] != "false"){
+                let cliente_data = json[WSKeys.parameters.data].dictionaryObject
+                let cliente = Mapper<Cliente>().map( JSONObject: cliente_data)
+            
+            
+                if errorcode == WSKeys.parameters.okresponse{
+                 
+                    success(cliente!)
+                
+                } else {
+                    failure(NSError(domain: "com.cicili.RegisterClient", code: (errorcode), userInfo: [NSLocalizedDescriptionKey: messagedescription ]))
+                }
             }
            case .failure(let error):
                failure(error as NSError)

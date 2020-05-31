@@ -37,7 +37,7 @@ class VerifyCodeViewController: UIViewController {
         
         if let codeInput = codeTextField.text, !codeInput.isEmpty {
             RequestManager.fetchValidateCodeRegister(parameters: [WSKeys.parameters.CODIGO: codeInput], success: { response in
-                                  
+                     print("verifyCodeButton ", response)
                     if response != nil{
                         print("En success verifyCodeButton \(response)")
                         self.sEmail = response.correoElectronico!

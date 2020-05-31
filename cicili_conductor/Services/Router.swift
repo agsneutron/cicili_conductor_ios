@@ -20,6 +20,7 @@ enum Router: URLRequestConvertible {
     static var lonValue: String?
     
     case signIn(with: Parameters)
+    case getGenericContract(pContenttype: String)
     case registerClient(with: Parameters)
     case validateCodePsw(with: Parameters)
     case validateCodeRegister(with: Parameters)
@@ -98,6 +99,7 @@ enum Router: URLRequestConvertible {
             .consultAsk,
             .faqList,
             .getMessages,
+            .getGenericContract,
             .getSpecificContract,
             .getChatMessages:
             return .get
@@ -160,6 +162,8 @@ enum Router: URLRequestConvertible {
             return "mv/cliente/asentamientos/\(Router.codeValue ?? "")"
         case .addressConsult:
             return "mv/cliente/direcciones"
+        case .getGenericContract:
+            return "documentos/conductor"
         //case .mainSearch(let values):
         //    return "mv/cliente/autotanques/disponibles?latitud=\(values.lat)&longitud=\(values.lon)"
         case .mainSearch:
@@ -371,6 +375,11 @@ enum Router: URLRequestConvertible {
                 print("\(urlRequest)")
                 urlRequest.setValue(pContenttype, forHTTPHeaderField: "Content-Type")
                 urlRequest.setValue(autorizathionToken, forHTTPHeaderField: "Authorization")
+            
+        case .getGenericContract(let pContenttype):
+            // Set encode to application/x-www-form-urlencoded
+            urlRequest = try URLEncoding.queryString.encode(urlRequest, with: nil)
+            urlRequest.setValue(pContenttype, forHTTPHeaderField: "Content-Type")
         
         }
         

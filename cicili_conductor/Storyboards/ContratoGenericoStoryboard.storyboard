@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bel-vC-tZo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,21 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-cR-xWv">
-                                <rect key="frame" x="20" y="54.5" width="374" height="1.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="FbJ-XM-kl6"/>
-                                </constraints>
-                            </progressView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MO8-Xx-fDd">
-                                <rect key="frame" x="21" y="63" width="383" height="799"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MO8-Xx-fDd" customClass="PDFView">
+                                <rect key="frame" x="5" y="89" width="404" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-cR-xWv">
+                                <rect key="frame" x="5" y="79" width="404" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="FbJ-XM-kl6"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MO8-Xx-fDd" firstAttribute="bottom" secondItem="obg-JV-rSd" secondAttribute="bottom" constant="5" id="1VO-Er-99U"/>
+                            <constraint firstItem="obg-JV-rSd" firstAttribute="trailing" secondItem="MO8-Xx-fDd" secondAttribute="trailing" constant="5" id="Cf9-Xa-Bnx"/>
+                            <constraint firstItem="MO8-Xx-fDd" firstAttribute="top" secondItem="obg-JV-rSd" secondAttribute="top" constant="45" id="IWJ-VX-1XT"/>
+                            <constraint firstItem="c7b-cR-xWv" firstAttribute="leading" secondItem="6Lb-oe-bDK" secondAttribute="leading" constant="5" id="afB-e2-yBw"/>
+                            <constraint firstItem="MO8-Xx-fDd" firstAttribute="leading" secondItem="obg-JV-rSd" secondAttribute="leading" constant="5" id="cA5-fA-OPY"/>
+                            <constraint firstItem="c7b-cR-xWv" firstAttribute="top" secondItem="obg-JV-rSd" secondAttribute="top" constant="35" id="lVp-M9-PQG"/>
+                            <constraint firstAttribute="trailing" secondItem="c7b-cR-xWv" secondAttribute="trailing" constant="5" id="peo-pJ-ZVO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="obg-JV-rSd"/>
                     </view>
+                    <connections>
+                        <outlet property="pdfView" destination="MO8-Xx-fDd" id="Hdi-Jb-ZX7"/>
+                        <outlet property="progressBar" destination="c7b-cR-xWv" id="HLT-R9-YHR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taz-A3-q8w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

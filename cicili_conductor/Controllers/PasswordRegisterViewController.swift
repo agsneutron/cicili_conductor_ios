@@ -10,6 +10,7 @@ import UIKit
 
 class PasswordRegisterViewController: UIViewController {
 
+    @IBOutlet weak var aceptoContrato: UISwitch!
     @IBOutlet weak var txtPasswordConfirm: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblEmail: UILabel!
@@ -31,6 +32,11 @@ class PasswordRegisterViewController: UIViewController {
     }
     
     @IBAction func btnPasswordRegister(_ sender: RoundButton) {
+        if (!aceptoContrato.isOn){
+            showAlert(message: "Debes aceptar las condiciones del contrato")
+            return
+
+        }
         self.view.endEditing(true)
         if let password = txtPassword.text, !password.isEmpty, let passwordConfirm = txtPasswordConfirm.text, !passwordConfirm.isEmpty {
             RequestManager.fetchChanguePassword(parameters: [WSKeys.parameters.PUSERNAME: sEmail, WSKeys.parameters.PPASSWORD: password], success: { response in
@@ -61,6 +67,21 @@ class PasswordRegisterViewController: UIViewController {
              _ = self.navigationController?.popToViewController(vc as! ViewController, animated: true)
            }
         }
+    }
+    
+    
+    @IBAction func openContract(_ sender: UIButton) {
+        self.performSegue(withIdentifier: Constants.Storyboard.contratoSegueID, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+     
+     if segue.identifier == Constants.Storyboard.contratoSegueID{
+         debugPrint("tocontrato")
+         
+     }
     }
     
 }
