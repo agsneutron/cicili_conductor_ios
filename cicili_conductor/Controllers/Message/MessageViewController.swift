@@ -125,7 +125,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
             RequestManager.setMessage(oauthToken: cliente!.token!, parameters: objectAsDict , success: { response in
                   
                 debugPrint("En success requestorder \(response)")
-                
+                self.textFieldMessage.text = ""
                 self.getMessage = response
                 self.tblMessages.reloadData()
                 let indexPath = NSIndexPath(row: self.getMessage.count-1, section: 0)
