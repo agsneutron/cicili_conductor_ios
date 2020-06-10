@@ -248,10 +248,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Print full message.
         print(userInfo)
-
-        completionHandler(UIBackgroundFetchResult.newData)
         responseNotification = userInfo
         self.showAcceptOrder(userInfo: userInfo)
+        completionHandler(UIBackgroundFetchResult.newData)
+        
       }
       // [END receive_message]
       func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -288,13 +288,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         // Print full message.
+        responseNotification = userInfo
+        self.showAcceptOrder(userInfo: userInfo)
         print(userInfo)
         completionHandler([])
         
         //let remoteNotification = RemoteNotification(id:1,body: "hola",title: "titulo")!
         //delegate?.getRemoteNotiication(remoteNotification: remoteNotification)
-        responseNotification = userInfo
-        self.showAcceptOrder(userInfo: userInfo)
+        
         
        /* self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = MainNavigationController()
@@ -331,10 +332,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Print full message.
         print(userInfo)
-
-        completionHandler()
         responseNotification = userInfo
         self.showAcceptOrder(userInfo: userInfo)
+        completionHandler()
+        
       }
         
         
